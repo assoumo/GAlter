@@ -1,4 +1,4 @@
-Symfony Standard Edition
+Galter
 ========================
 
 
