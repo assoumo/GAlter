@@ -684,11 +684,11 @@ class Form implements \IteratorAggregate, FormInterface
      */
     public function addError(FormError $error)
     {
-        if ($this->parent && $this->config->getErrorBubbling()) {
-            if (null === $error->getOrigin()) {
-                $error->setOrigin($this);
-            }
+        if (null === $error->getOrigin()) {
+            $error->setOrigin($this);
+        }
 
+        if ($this->parent && $this->config->getErrorBubbling()) {
             $this->parent->addError($error);
         } else {
             $this->errors[] = $error;
@@ -893,6 +893,10 @@ class Form implements \IteratorAggregate, FormInterface
 
             // Never initialize child forms automatically
             $options['auto_initialize'] = false;
+
+            if (null === $type && null === $this->config->getDataClass()) {
+                $type = 'text';
+            }
 
             if (null === $type) {
                 $child = $this->config->getFormFactory()->createForProperty($this->config->getDataClass(), $child, null, $options);

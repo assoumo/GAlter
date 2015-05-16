@@ -12,11 +12,11 @@
 namespace Symfony\Component\HttpKernel\Tests\DataCollector;
 
 use Symfony\Component\HttpKernel\DataCollector\DumpDataCollector;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\VarDumper\Cloner\Data;
 
 /**
- * DumpDataCollectorTest
- *
  * @author Nicolas Grekas <p@tchwork.com>
  */
 class DumpDataCollectorTest extends \PHPUnit_Framework_TestCase
@@ -49,13 +49,56 @@ class DumpDataCollectorTest extends \PHPUnit_Framework_TestCase
         );
         $this->assertSame($xDump, $dump);
 
-        $this->assertStringStartsWith(
-            'a:1:{i:0;a:5:{s:4:"data";O:39:"Symfony\Component\VarDumper\Cloner\Data":4:{s:45:"Symfony\Component\VarDumper\Cloner\Datadata";a:1:{i:0;a:1:{i:0;i:123;}}s:49:"Symfony\Component\VarDumper\Cloner\DatamaxDepth";i:-1;s:57:"Symfony\Component\VarDumper\Cloner\DatamaxItemsPerDepth";i:-1;s:54:"Symfony\Component\VarDumper\Cloner\DatauseRefHandles";i:-1;}s:4:"name";s:25:"DumpDataCollectorTest.php";s:4:"file";s:',
+        $this->assertStringMatchesFormat(
+            'a:1:{i:0;a:5:{s:4:"data";O:39:"Symfony\Component\VarDumper\Cloner\Data":4:{s:45:"Symfony\Component\VarDumper\Cloner\Datadata";a:1:{i:0;a:1:{i:0;i:123;}}s:49:"Symfony\Component\VarDumper\Cloner\DatamaxDepth";i:%i;s:57:"Symfony\Component\VarDumper\Cloner\DatamaxItemsPerDepth";i:%i;s:54:"Symfony\Component\VarDumper\Cloner\DatauseRefHandles";i:%i;}s:4:"name";s:25:"DumpDataCollectorTest.php";s:4:"file";s:%a',
             str_replace("\0", '', $collector->serialize())
         );
 
         $this->assertSame(0, $collector->getDumpsCount());
         $this->assertSame('a:0:{}', $collector->serialize());
+    }
+
+    public function testCollectDefault()
+    {
+        $data = new Data(array(array(123)));
+
+        $collector = new DumpDataCollector();
+
+        $collector->dump($data);
+        $line = __LINE__ - 1;
+
+        ob_start();
+        $collector->collect(new Request(), new Response());
+        $output = ob_get_clean();
+
+        $this->assertSame("DumpDataCollectorTest.php on line {$line}:\n123\n", $output);
+    }
+
+    public function testCollectHtml()
+    {
+        $data = new Data(array(array(123)));
+
+        $collector = new DumpDataCollector(null, 'test://%f:%l');
+
+        $collector->dump($data);
+        $line = __LINE__ - 1;
+        $file = __FILE__;
+        $xOutput = <<<EOTXT
+
+<span class="sf-dump-meta"><a href="test://{$file}:{$line}" title="{$file}">DumpDataCollectorTest.php</a> on line {$line}:</span> <pre class=sf-dump id=sf-dump data-indent-pad="  "><span class=sf-dump-num>123</span>
+</pre>
+
+EOTXT;
+
+        ob_start();
+        $response = new Response();
+        $response->headers->set('Content-Type', 'text/html');
+        $collector->collect(new Request(), $response);
+        $output = ob_get_clean();
+        $output = preg_replace('#<(script|style).*?</\1>#s', '', $output);
+        $output = preg_replace('/sf-dump-\d+/', 'sf-dump', $output);
+
+        $this->assertSame($xOutput, $output);
     }
 
     public function testFlush()
