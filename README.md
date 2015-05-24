@@ -33,5 +33,21 @@ Mme C. Barry.
 -Pour me  <a href="mailto:assoumourad@gmail.com">contacter.</a>
 
 <h2>Pour contribuer: </h2>
-
+<ul>
+<li>
+   <ul> si c'est la premiere foi alors : 
+    <li>cloner le projet   : ( git  clone "lien à recuperer")</li>
+    <li>cloner le projet   : ( git  init")</li>
+    <li>Si vous etes pas contributeur principal faites un fork pour envoyer votre contribution</li>
+  </ul>
+  <ul>Procedure génerale (pour les contributeurs seulement)  :
+    <li> faites un pull pour recuperer les mise a jours.</li>
+    <li> facultative  : creer une brache pour vous  (git checkout -b my-new-feature).</li>
+    <li> pour Commiter vos contributions avec  (git commit -am 'Add some feature').</li>
+    <li> faites un Push sur la meme branche pour envoyer vos contributions   (git push origin my-new-feature).</li>
+    <li></li>
+  </ul>
+ 
+</li>
+</ul>
 
