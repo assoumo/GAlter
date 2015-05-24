@@ -1,6 +1,11 @@
-<div>
-<a><img src="/doc/logo2_3.png"></a>
+<div >
+<img   width ="300" align="left" src="/doc/logo2_3.png"/> <img align="right" width ="300" src="/doc/logo2_3.png"/>
 </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
 <h2>Galter :</h2>
 
 <div style="text-align:center">
