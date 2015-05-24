@@ -1,5 +1,5 @@
 <div>
-<a><img src="doc/logo_2_3.png"></a>
+<a><img src="/doc/logo2_3.png"></a>
 </div>
 <h2>Galter :</h2>
 
