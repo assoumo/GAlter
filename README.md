@@ -5,7 +5,6 @@
 </div>
 
 <h2>Equipe de realisation : </h2>
----------------------------
 <ul>
   <li>ASSOU MOURAD.</li>
   <li>KABER MOHAMED.</li>
@@ -14,14 +13,13 @@
 </ul>
 
 <h2>Encadrante:</h2>
----------------
 Mme C. Barry.
 
 <h2>Contacte :</h2>
----------------
+
 -Le Blog du projet  : <a href="http://galter.weebly.com/">Blog.</a><br/>
 -Pour me  <a href="mailto:assoumourad@gmail.com">contacter.</a>
 
 <h2>Pour contribuer: </h2>
---------------------
+
 
