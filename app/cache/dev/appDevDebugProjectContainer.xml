@@ -3135,7 +3135,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>556e3a8516950</argument>
+            <argument>556f93a4f35e9</argument>
           </service>
         </argument>
       </argument>
@@ -3377,7 +3377,7 @@
                 <call method="setOptions">
                   <argument type="collection">
                     <argument key="login_path">fos_user_security_login</argument>
-                    <argument key="failure_path">/Accueil</argument>
+                    <argument key="failure_path">/login</argument>
                     <argument key="failure_forward">false</argument>
                     <argument key="failure_path_parameter">_failure_path</argument>
                   </argument>
@@ -3453,7 +3453,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>556e3a8516950</argument>
+            <argument>556f93a4f35e9</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

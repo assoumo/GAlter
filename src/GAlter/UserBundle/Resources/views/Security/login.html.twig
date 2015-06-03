@@ -1,0 +1,46 @@
+{% extends "::base.html.twig" %}
+
+{% block fos_user_content %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Login GAlter</h3>
+                        {% if error %}
+                            <div class="alert alert-danger">mot de passe et/ou mail incorrect</div>
+                        {% endif %}
+                    </div>
+                    <div class="panel-body">
+                        <form id="loginform" class="form-horizontal" role="form" action="{{ path("fos_user_security_check") }}" method="post">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            <fieldset>
+                                <div class="form-group">
+                                    <input id="username" type="text" class="form-control" name="_username" value="{{ last_username }}" placeholder="Pseudo ou email" required="required" >
+                                </div>
+                                <div class="form-group">
+
+                                    <input id="password" type="password" class="form-control" name="_password" placeholder="mot de passe" required="required">                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+                                    </label>
+                                </div>
+
+                               <div> <a href="{{ path('fos_user_resetting_request') }}"> Mot de passe oublié?</a> </div>
+
+                                <input  class="btn btn-success" type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans }}" />
+
+
+                            </fieldset>
+                        </form>
+                        <hr/>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock fos_user_content %}

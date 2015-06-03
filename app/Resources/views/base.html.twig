@@ -1,13 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <title>{% block title %}Mon site {% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+
+    {% block stylesheets %}
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/fonts/glyphicons-halflings-regular.eot" rel="stylesheet">
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css" rel="stylesheet">
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+        <link rel="stylesheet" href="  {{ asset('bundles/galtuser/css/themes/base/jquery.ui.all.css') }} ">
+        <link rel="stylesheet" href=" {{ asset('bundles/galteruser/css/demo.css') }}">
+
+    {% endblock %}
+    {% block javascripts_head%}
+
+
+
+
+
+        <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+
+        <script type="text/javascript" src="{{ asset('bundles/galteruser/js/bootstrap.min.js') }}"></script>
+
+    {% endblock %}
+
+
+
+
+</head>
+
+<body>
+
+{% block menu %}
+
+{% endblock %}
+
+<br/>
+<br/>
+
+{% block fos_user_content %}
+
+{% endblock fos_user_content %}
+
+
+
+
+    {% block body %}
+{% endblock %}
+
+</body>
 </html>
