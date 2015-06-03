@@ -1,7 +1,22 @@
-g_alter_user:
-    resource: "@GAlterUserBundle/Controller/"
+g_alter_gestion:
+    resource: "@GAlterGestionBundle/Controller/"
     type:     annotation
     prefix:   /
+
+# g_alter_gestion:
+#     resource: "@GAlterGestionBundle/Controller/"
+#     type:     annotation
+#     prefix:   /
+
+# galter_gestion:
+#     resource: "@GalterGestionBundle/Controller/"
+#     type:     annotation
+#     prefix:   /
+
+# g_alter_user:
+#     resource: "@GAlterUserBundle/Controller/"
+#     type:     annotation
+#     prefix:   /
 
 app:
     resource: @AppBundle/Controller/

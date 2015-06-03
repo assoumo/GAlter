@@ -23,13 +23,24 @@ class Responsable extends User
     /**
      * @ORM\OneToMany(targetEntity="GAlter\UserBundle\Entity\Etudiant", mappedBy="Responsable", cascade={"persist"})
      */
-    private $Etudiant;
+    protected $Etudiant;
 
 
+    /**
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Remarque_responsable_rapport", mappedBy="responsableId")
+     */
+    private $remarque_responsable_rapport;
+
+    /**
+     *@ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\Formation", cascade={"persist"}, inversedBy="responsable")
+     *@ORM\JoinColumn(name="formation_id", referencedColumnName="id")
+     */
+    private  $formations;
 
     public  function __construct(){
 
        $this->Etudiant= new \Doctrine\Common\Collections\ArrayCollection();
+
 
         parent::__construct();
     }
@@ -67,5 +78,39 @@ class Responsable extends User
     public function getEtudiant()
     {
         return $this->Etudiant;
+    }
+
+    /**
+     * Add formation
+     *
+     * @param \GAlter\GestionBundle\Entity\Formation $formation
+     *
+     * @return Responsable
+     */
+    public function addFormation(\GAlter\GestionBundle\Entity\Formation $formation)
+    {
+        $this->Formations[] = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Remove formation
+     *
+     * @param \GAlter\GestionBundle\Entity\Formation $formation
+     */
+    public function removeFormation(\GAlter\GestionBundle\Entity\Formation $formation)
+    {
+        $this->Formations->removeElement($formation);
+    }
+
+    /**
+     * Get formations
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFormations()
+    {
+        return $this->Formations;
     }
 }

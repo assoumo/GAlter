@@ -23,10 +23,56 @@ class Responsable extends User
     /**
      * @ORM\OneToMany(targetEntity="GAlter\UserBundle\Entity\Etudiant", mappedBy="Responsable", cascade={"persist"})
      */
-    private $Etudiant;
+    protected $Etudiant;
 
 
 
+    /**
+     *@ORM\ManyToMany(targetEntity="GAlter\GestionBundle\Entity\Formation", cascade={"persist"}, inversedBy="Responsable")
+     *
+     */
+    protected  $Formations;
+
+    public  function __construct(){
+
+       $this->Etudiant= new \Doctrine\Common\Collections\ArrayCollection();
 
 
+        parent::__construct();
+    }
+
+
+    /**
+     * Add etudiant
+     *
+     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
+     *
+     * @return Responsable
+     */
+    public function addEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant)
+    {
+        $this->Etudiant[] = $etudiant;
+
+        return $this;
+    }
+
+    /**
+     * Remove etudiant
+     *
+     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
+     */
+    public function removeEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant)
+    {
+        $this->Etudiant->removeElement($etudiant);
+    }
+
+    /**
+     * Get etudiant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getEtudiant()
+    {
+        return $this->Etudiant;
+    }
 }
