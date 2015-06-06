@@ -22,19 +22,17 @@ class Annee_Formation_Etudiant
      */
     private $id;
 
-     /**
-     *@ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="annee_Formation_Etudiant")
+    /**
+     *@ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="annee_formation_etudiant")
      *@ORM\JoinColumn(name="etudiant_id", referencedColumnName="id")
      */
-    private $etudiant;
+    private $etudiants;
 
-     /**
-     * @var integer
-     *
-     * @ORM\ManyToOne(targetEntity="Formation", inversedBy="annee_Formation_Etudiant")
-     * @ORM\JoinColumn(name="formation_id", referencedColumnName="id")
+    /**
+     *@ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Formation" , inversedBy="annee_formation_etudiant")
+     *@ORM\JoinColumn(name="formation_id", referencedColumnName="id")
      */
-    private $formationIdFormation;
+    private $Formations;
 
     /**
      * @var integer
@@ -145,5 +143,53 @@ class Annee_Formation_Etudiant
     public function getEtudiant()
     {
         return $this->etudiant;
+    }
+
+    /**
+     * Set etudiants
+     *
+     * @param \GAlter\UserBundle\Entity\Etudiant $etudiants
+     *
+     * @return Annee_Formation_Etudiant
+     */
+    public function setEtudiants(\GAlter\UserBundle\Entity\Etudiant $etudiants = null)
+    {
+        $this->etudiants = $etudiants;
+
+        return $this;
+    }
+
+    /**
+     * Get etudiants
+     *
+     * @return \GAlter\UserBundle\Entity\Etudiant
+     */
+    public function getEtudiants()
+    {
+        return $this->etudiants;
+    }
+
+    /**
+     * Set formations
+     *
+     * @param \GAlter\GestionBundle\Entity\Formation $formations
+     *
+     * @return Annee_Formation_Etudiant
+     */
+    public function setFormations(\GAlter\GestionBundle\Entity\Formation $formations = null)
+    {
+        $this->Formations = $formations;
+
+        return $this;
+    }
+
+    /**
+     * Get formations
+     *
+     * @return \GAlter\GestionBundle\Entity\Formation
+     */
+    public function getFormations()
+    {
+        return $this->Formations;
     }
 }

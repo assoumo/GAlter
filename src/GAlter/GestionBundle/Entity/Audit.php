@@ -21,13 +21,7 @@ class Audit
      */
     private $id;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_audit", type="integer")
-     */
-    private $idAudit;
-
+ 
 
     /**
      * @ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\Rapport", cascade={"persist"})

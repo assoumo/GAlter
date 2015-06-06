@@ -39,12 +39,6 @@ class rapport
      */
     private $audit;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_rapport", type="integer")
-     */
-    private $idRapport;
 
     /**
      * @var string

@@ -22,18 +22,12 @@ class projet
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="Projet")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="projet")
      * @ORM\JoinColumn(name="id_etudiant", referencedColumnName="id")
      */
     private $etudiant;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_projet", type="integer")
-     */
-    private $idProjet;
-
+    
     /**
      * @var string
      *

@@ -49,17 +49,33 @@ class Etudiant  extends User
 
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=250)
      */
     protected $prenom;
+
+    /**
+     *@ORM\Column(type="string", length=400)
+     */
+    protected $telephone; 
+    /**
+     *@ORM\Column(type="string", length=500)
+     */
+    protected $adresse; 
+    /**
+     *@ORM\Column(type="string", length=700)
+     */
+    protected $information_contrat;
+    /**
+     *@ORM\Column(type="integer")
+     */
+    protected $typecontrat; 
+
+
     /**
      * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", inversedBy="Etudiant")
      * @ORM\JoinColumn(name="Responsable", referencedColumnName="id")
      */
     private $Responsable;
-
-
-
 
     /**
      * Set prenom

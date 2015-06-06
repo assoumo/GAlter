@@ -23,17 +23,12 @@ class Agenda
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="agenda")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="agendas")
      * @ORM\JoinColumn(name="id_etudiant", referencedColumnName="id")
      */
     private $etudiant;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="id_agenda", type="string", length=255)
-     */
-    private $idAgenda;
+    
 
   
 

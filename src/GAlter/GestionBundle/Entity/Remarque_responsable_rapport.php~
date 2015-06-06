@@ -24,7 +24,7 @@ class Remarque_responsable_rapport
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", inversedBy="Remarque_responsable_rapport")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", inversedBy="remarque_responsable_rapport")
      * @ORM\JoinColumn(name="responsable_id", referencedColumnName="id")
      */
     private $responsableId;
@@ -32,7 +32,7 @@ class Remarque_responsable_rapport
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Rapport", inversedBy="remarque_responsable_rapport")
+     * @ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Rapport", inversedBy="remarque")
      * @ORM\JoinColumn(name="rapport_id", referencedColumnName="id")
      */
     private $responsableIdRapport;

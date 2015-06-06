@@ -144,4 +144,52 @@ class Annee_Formation_Etudiant
     {
         return $this->etudiant;
     }
+
+    /**
+     * Set etudiants
+     *
+     * @param \GAlter\UserBundle\Entity\Etudiant $etudiants
+     *
+     * @return Annee_Formation_Etudiant
+     */
+    public function setEtudiants(\GAlter\UserBundle\Entity\Etudiant $etudiants = null)
+    {
+        $this->etudiants = $etudiants;
+
+        return $this;
+    }
+
+    /**
+     * Get etudiants
+     *
+     * @return \GAlter\UserBundle\Entity\Etudiant
+     */
+    public function getEtudiants()
+    {
+        return $this->etudiants;
+    }
+
+    /**
+     * Set formations
+     *
+     * @param \GAlter\GestionBundle\Entity\Formation $formations
+     *
+     * @return Annee_Formation_Etudiant
+     */
+    public function setFormations(\GAlter\GestionBundle\Entity\Formation $formations = null)
+    {
+        $this->Formations = $formations;
+
+        return $this;
+    }
+
+    /**
+     * Get formations
+     *
+     * @return \GAlter\GestionBundle\Entity\Formation
+     */
+    public function getFormations()
+    {
+        return $this->Formations;
+    }
 }

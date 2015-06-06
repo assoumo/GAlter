@@ -27,13 +27,7 @@ class projet
      */
     private $etudiant;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_projet", type="integer")
-     */
-    private $idProjet;
-
+    
     /**
      * @var string
      *

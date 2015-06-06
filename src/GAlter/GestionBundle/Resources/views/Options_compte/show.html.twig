@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Options_compte</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Idparametre</th>
+                <td>{{ entity.idParametre }}</td>
+            </tr>
+            <tr>
+                <th>Alerteactive</th>
+                <td>{{ entity.alerteActive }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ entity.periode }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('options_compte') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('options_compte_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

@@ -20,6 +20,32 @@ class Responsable extends User
      */
     protected $id;
 
+    
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    protected $nom;
+    /**
+     *@ORM\Column(type="string", length=255)
+     */
+    protected $prenom;
+    /**
+     *@ORM\Column(type="string", length=255)
+     */
+    protected $adresse; 
+    
+    /**
+     *@ORM\Column(type="string", length=255)
+     */
+    protected $telephone; 
+    
+    /**
+     *@ORM\Column(type="string", length=255)
+     */
+    protected $organisation; 
+
+
     /**
      * @ORM\OneToMany(targetEntity="GAlter\UserBundle\Entity\Etudiant", mappedBy="Responsable", cascade={"persist"})
      */

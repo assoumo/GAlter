@@ -28,14 +28,7 @@ class Formation
      */
     private $responsable;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_formation", type="integer")
-     */
-    private $idFormation;
-
-
+  
     /**
      *@ORM\OneToMany(targetEntity="Annee_Formation_Etudiant", cascade={"persist"}, mappedBy="Formations")
      *
@@ -47,6 +40,12 @@ class Formation
      * @ORM\Column(name="libelle", type="string", length=255)
      */
     private $libelle;
+
+    /**
+     * @ORM\Column(name="description" , type="string", length=1000 )
+     */
+    private $description; 
+
 
     /**
      * @var string
@@ -206,5 +205,87 @@ class Formation
     public function getAnneeFormation()
     {
         return $this->annee_formation;
+    }
+
+    /**
+     * Set responsable
+     *
+     * @param \GAlter\UserBundle\Entity\Responsable $responsable
+     *
+     * @return Formation
+     */
+    public function setResponsable(\GAlter\UserBundle\Entity\Responsable $responsable = null)
+    {
+        $this->responsable = $responsable;
+
+        return $this;
+    }
+
+    /**
+     * Get responsable
+     *
+     * @return \GAlter\UserBundle\Entity\Responsable
+     */
+    public function getResponsable()
+    {
+        return $this->responsable;
+    }
+
+    /**
+     * Add anneeFormationEtudiant
+     *
+     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant
+     *
+     * @return Formation
+     */
+    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    {
+        $this->annee_formation_etudiant[] = $anneeFormationEtudiant;
+
+        return $this;
+    }
+
+    /**
+     * Remove anneeFormationEtudiant
+     *
+     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant
+     */
+    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    {
+        $this->annee_formation_etudiant->removeElement($anneeFormationEtudiant);
+    }
+
+    /**
+     * Get anneeFormationEtudiant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnneeFormationEtudiant()
+    {
+        return $this->annee_formation_etudiant;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return Formation
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
     }
 }

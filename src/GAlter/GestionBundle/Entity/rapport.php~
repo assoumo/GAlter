@@ -23,14 +23,13 @@ class rapport
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="rapport")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="rapports")
      * @ORM\JoinColumn(name="id_etudiant", referencedColumnName="id")
      */
     private $etudiant;
 
     /**
-     *@ORM\OneToMany(targetEntity="remarque_responsable_rapport", cascade={"persist"}, mappedBy="rapport")
-     *
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Remarque_responsable_rapport", cascade={"persist"}, mappedBy="responsableIdRapport")
      */
     private $remarque;
 
@@ -40,12 +39,6 @@ class rapport
      */
     private $audit;
 
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id_rapport", type="integer")
-     */
-    private $idRapport;
 
     /**
      * @var string
