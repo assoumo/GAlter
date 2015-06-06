@@ -27,9 +27,9 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $context = $this->context;
         $request = $this->request;
 
-        // galter_user_default_index
+        // galter_gestion_default_index
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'galter_user_default_index')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\DefaultController::indexAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'galter_gestion_default_index')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DefaultController::indexAction',));
         }
 
         // homepage

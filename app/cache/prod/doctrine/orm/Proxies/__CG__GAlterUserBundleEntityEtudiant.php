@@ -64,10 +64,10 @@ class Etudiant extends \GAlter\UserBundle\Entity\Etudiant implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', 'prenom', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Responsable', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+            return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'agendas', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'options_compte', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'rapports', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'annee_formation_etudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'projet', 'prenom', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Responsable', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
         }
 
-        return array('__isInitialized__', 'id', 'prenom', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Responsable', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+        return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'agendas', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'options_compte', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'rapports', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'annee_formation_etudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'projet', 'prenom', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Responsable', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
     }
 
     /**
@@ -215,6 +215,94 @@ class Etudiant extends \GAlter\UserBundle\Entity\Etudiant implements \Doctrine\O
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getResponsable', array());
 
         return parent::getResponsable();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setOptionsCompte(\GAlter\GestionBundle\Entity\Options_compte $optionsCompte = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setOptionsCompte', array($optionsCompte));
+
+        return parent::setOptionsCompte($optionsCompte);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getOptionsCompte()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getOptionsCompte', array());
+
+        return parent::getOptionsCompte();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAnneeFormationEtudiant', array($anneeFormationEtudiant));
+
+        return parent::addAnneeFormationEtudiant($anneeFormationEtudiant);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAnneeFormationEtudiant', array($anneeFormationEtudiant));
+
+        return parent::removeAnneeFormationEtudiant($anneeFormationEtudiant);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAnneeFormationEtudiant()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnneeFormationEtudiant', array());
+
+        return parent::getAnneeFormationEtudiant();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addAgenda(\GAlter\GestionBundle\Entity\Agenda $agenda)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addAgenda', array($agenda));
+
+        return parent::addAgenda($agenda);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeAgenda(\GAlter\GestionBundle\Entity\Agenda $agenda)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeAgenda', array($agenda));
+
+        return parent::removeAgenda($agenda);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAgenda()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAgenda', array());
+
+        return parent::getAgenda();
     }
 
     /**

@@ -64,10 +64,10 @@ class Responsable extends \GAlter\UserBundle\Entity\Responsable implements \Doct
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Responsable' . "\0" . 'Etudiant', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+            return array('__isInitialized__', 'id', 'Etudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Responsable' . "\0" . 'remarque_responsable_rapport', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Responsable' . "\0" . 'formations', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
         }
 
-        return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Responsable' . "\0" . 'Etudiant', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+        return array('__isInitialized__', 'id', 'Etudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Responsable' . "\0" . 'remarque_responsable_rapport', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Responsable' . "\0" . 'formations', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
     }
 
     /**
@@ -204,6 +204,39 @@ class Responsable extends \GAlter\UserBundle\Entity\Responsable implements \Doct
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEtudiant', array());
 
         return parent::getEtudiant();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addFormation(\GAlter\GestionBundle\Entity\Formation $formation)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addFormation', array($formation));
+
+        return parent::addFormation($formation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeFormation(\GAlter\GestionBundle\Entity\Formation $formation)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeFormation', array($formation));
+
+        return parent::removeFormation($formation);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getFormations()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFormations', array());
+
+        return parent::getFormations();
     }
 
     /**

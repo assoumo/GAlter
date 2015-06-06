@@ -81,7 +81,6 @@ class __TwigTemplate_37df5ee186b0f907a69eba5919c3ec830e0d67f4cbede823a7340a47741
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("security.login.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
 
-
                             </fieldset>
                         </form>
                         <hr/>
