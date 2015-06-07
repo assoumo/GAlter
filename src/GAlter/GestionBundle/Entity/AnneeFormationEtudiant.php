@@ -6,12 +6,12 @@ use GAlter\UserBundle\Etity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Annee_Formation_Etudiant
+ * AnneeFormationEtudiant
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\Annee_Formation_EtudiantRepository")
  */
-class Annee_Formation_Etudiant
+class AnneeFormationEtudiant
 {
     /**
      * @var integer
@@ -23,13 +23,13 @@ class Annee_Formation_Etudiant
     private $id;
 
     /**
-     *@ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="annee_formation_etudiant")
+     *@ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="AnneeFormationEtudiant")
      *@ORM\JoinColumn(name="etudiant_id", referencedColumnName="id")
      */
     private $etudiants;
 
     /**
-     *@ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Formation" , inversedBy="annee_formation_etudiant")
+     *@ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Formation" , inversedBy="AnneeFormationEtudiant")
      *@ORM\JoinColumn(name="formation_id", referencedColumnName="id")
      */
     private $Formations;
@@ -56,7 +56,7 @@ class Annee_Formation_Etudiant
      * Set etudiantIdetudiant
      *
      * @param integer $etudiantIdetudiant
-     * @return Annee_Formation_Etudiant
+     * @return AnneeFormationEtudiant
      */
     public function setEtudiantIdetudiant($etudiantIdetudiant)
     {
@@ -79,7 +79,7 @@ class Annee_Formation_Etudiant
      * Set formationIdFormation
      *
      * @param integer $formationIdFormation
-     * @return Annee_Formation_Etudiant
+     * @return AnneeFormationEtudiant
      */
     public function setFormationIdFormation($formationIdFormation)
     {
@@ -102,7 +102,7 @@ class Annee_Formation_Etudiant
      * Set anneeFormation
      *
      * @param integer $anneeFormation
-     * @return Annee_Formation_Etudiant
+     * @return AnneeFormationEtudiant
      */
     public function setAnneeFormation($anneeFormation)
     {
@@ -126,7 +126,7 @@ class Annee_Formation_Etudiant
      *
      * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
      *
-     * @return Annee_Formation_Etudiant
+     * @return AnneeFormationEtudiant
      */
     public function setEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant = null)
     {
@@ -150,7 +150,7 @@ class Annee_Formation_Etudiant
      *
      * @param \GAlter\UserBundle\Entity\Etudiant $etudiants
      *
-     * @return Annee_Formation_Etudiant
+     * @return AnneeFormationEtudiant
      */
     public function setEtudiants(\GAlter\UserBundle\Entity\Etudiant $etudiants = null)
     {
@@ -174,7 +174,7 @@ class Annee_Formation_Etudiant
      *
      * @param \GAlter\GestionBundle\Entity\Formation $formations
      *
-     * @return Annee_Formation_Etudiant
+     * @return AnneeFormationEtudiant
      */
     public function setFormations(\GAlter\GestionBundle\Entity\Formation $formations = null)
     {

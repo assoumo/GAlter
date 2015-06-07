@@ -5,12 +5,12 @@ namespace GAlter\GestionBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * remarque_responsable_rapport
+ * RemarqueResponsableRapport
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\remarque_responsable_rapportRepository")
  */
-class Remarque_responsable_rapport
+class RemarqueResponsableRapport
 {
     /**
      * @var integer
@@ -24,7 +24,7 @@ class Remarque_responsable_rapport
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", inversedBy="Remarque_responsable_rapport")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", inversedBy="RemarqueResponsableRapport")
      * @ORM\JoinColumn(name="responsable_id", referencedColumnName="id")
      */
     private $responsableId;
@@ -32,7 +32,7 @@ class Remarque_responsable_rapport
     /**
      * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="Rapport", inversedBy="remarque_responsable_rapport")
+     * @ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Rapport", inversedBy="remarque")
      * @ORM\JoinColumn(name="rapport_id", referencedColumnName="id")
      */
     private $responsableIdRapport;
@@ -59,7 +59,7 @@ class Remarque_responsable_rapport
      * Set responsableId
      *
      * @param integer $responsableId
-     * @return Remarque_responsable_rapport
+     * @return RemarqueResponsableRapport
      */
     public function setResponsableId($responsableId)
     {
@@ -82,7 +82,7 @@ class Remarque_responsable_rapport
      * Set responsableIdRapport
      *
      * @param integer $responsableIdRapport
-     * @return Remarque_responsable_rapport
+     * @return RemarqueResponsableRapport
      */
     public function setResponsableIdRapport($responsableIdRapport)
     {
@@ -105,7 +105,7 @@ class Remarque_responsable_rapport
      * Set remarqueContenu
      *
      * @param string $remarqueContenu
-     * @return Remarque_responsable_rapport
+     * @return RemarqueResponsableRapport
      */
     public function setRemarqueContenu($remarqueContenu)
     {

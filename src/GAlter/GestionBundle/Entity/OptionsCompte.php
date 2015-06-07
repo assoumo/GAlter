@@ -5,12 +5,12 @@ namespace GAlter\GestionBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Options_compte
+ * OptionsCompte
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\Options_compteRepository")
  */
-class Options_compte
+class OptionsCompte
 {
     /**
      * @var integer
@@ -23,7 +23,7 @@ class Options_compte
 
 
     /**
-     * @ORM\OneToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", cascade={"persist"}, mappedBy="options_compte")
+     * @ORM\OneToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", cascade={"persist"}, mappedBy="OptionsCompte")
      */
     private $etudiant;
 
@@ -63,7 +63,7 @@ class Options_compte
      * Set idParametre
      *
      * @param integer $idParametre
-     * @return options_compte
+     * @return OptionsCompte
      */
     public function setIdParametre($idParametre)
     {
@@ -86,7 +86,7 @@ class Options_compte
      * Set alerteActive
      *
      * @param boolean $alerteActive
-     * @return options_compte
+     * @return OptionsCompte
      */
     public function setAlerteActive($alerteActive)
     {
@@ -109,7 +109,7 @@ class Options_compte
      * Set periode
      *
      * @param integer $periode
-     * @return options_compte
+     * @return OptionsCompte
      */
     public function setPeriode($periode)
     {
@@ -132,7 +132,7 @@ class Options_compte
      * Set etudiant
      *
      * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
-     * @return options_compte
+     * @return OptionsCompte
      */
     public function setEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant = null)
     {
