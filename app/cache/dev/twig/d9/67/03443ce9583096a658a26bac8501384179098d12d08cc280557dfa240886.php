@@ -8,15 +8,15 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("::base.html.twig", "FOSUserBundle:Security:login.html.twig", 1);
+        $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "FOSUserBundle:Security:login.html.twig", 1);
         $this->blocks = array(
-            'fos_user_content' => array($this, 'block_fos_user_content'),
+            'content' => array($this, 'block_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "::base.html.twig";
+        return "GAlterUserBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,7 +25,7 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
     }
 
     // line 3
-    public function block_fos_user_content($context, array $blocks = array())
+    public function block_content($context, array $blocks = array())
     {
         // line 4
         echo "

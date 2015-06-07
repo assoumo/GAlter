@@ -13,17 +13,38 @@
         <link rel="stylesheet" href="  {{ asset('bundles/galtuser/css/themes/base/jquery.ui.all.css') }} ">
         <link rel="stylesheet" href=" {{ asset('bundles/galteruser/css/demo.css') }}">
 
+
+        <!-- BOOTSTRAP STYLES-->
+        <link rel="stylesheet" href="  {{ asset('bundles/assets/css/bootstrap.css') }} ">
+
+        <!-- FONTAWESOME STYLES-->
+        <link rel="stylesheet" href="  {{ asset('bundles/assets/css/font-awesome.css') }} ">
+
+        <!-- MORRIS CHART STYLES-->
+        <link rel="stylesheet" href="  {{ asset('bundles/assets/js/morris/morris-0.4.3.min.css') }} ">
+
+        <!-- CUSTOM STYLES-->
+        <link rel="stylesheet" href="  {{ asset('bundles/assets/css/custom.css') }} ">
+
+        <!-- GOOGLE FONTS-->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
     {% endblock %}
     {% block javascripts_head%}
-
-
-
-
 
         <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 
         <script type="text/javascript" src="{{ asset('bundles/galteruser/js/bootstrap.min.js') }}"></script>
-
+        <script src= "{{ asset('bundles/assets/js/jquery-1.10.2.js') }}"> </script>
+        <!-- BOOTSTRAP SCRIPTS -->
+        <script src="{{ asset('bundles/assets/js/bootstrap.min.js') }}"> </script>
+        <!-- METISMENU SCRIPTS -->
+        <script src="{{ asset('bundles/assets/js/jquery.metisMenu.js') }}"> </script>
+        <!-- MORRIS CHART SCRIPTS -->
+        <script src=" {{ asset('bundles/assets/js/morris/raphael-2.1.0.min.js') }}"> </script>
+        <script src=" {{ asset('bundles/assets/js/morris/morris.js') }}"> </script>
+        <!-- CUSTOM SCRIPTS -->
+        <script src=" {{ asset('bundles/assets/js/custom.js') }}"> </script>
     {% endblock %}
 
 
@@ -37,8 +58,7 @@
 
 {% endblock %}
 
-<br/>
-<br/>
+
 
 {% block fos_user_content %}
 
@@ -47,8 +67,13 @@
 
 
 
-    {% block body %}
+ {% block body %}
 {% endblock %}
 
+
+
+{% block footer %}
+
+{% endblock %}
 </body>
 </html>

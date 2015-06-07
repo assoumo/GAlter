@@ -10,15 +10,11 @@
         <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.css" rel="stylesheet">
         <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 
-        <link rel="stylesheet" href="  {{ asset('bundles/galtuser/css/themes/base/jquery.ui.all.css') }} ">
-        <link rel="stylesheet" href=" {{ asset('bundles/galteruser/css/demo.css') }}">
+        {#<link rel="stylesheet" href="{{ asset('bundles/galtuser/css/themes/base/jquery.ui.all.css') }} ">#}
+        {#<link rel="stylesheet" href="{{ asset('CSS/bootstrap.css') }}">#}
 
     {% endblock %}
     {% block javascripts_head%}
-
-
-
-
 
         <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
 
@@ -34,24 +30,13 @@
 <body>
 
 
-
-
-
 {% block menu %}
 
 {% endblock %}
 
 
-
-
-
-
-
-
 {% block body %}
 {% endblock %}
-
-
 
 
 {% block footer %}
@@ -60,14 +45,14 @@
 
 
 
-{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-    {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |
-    <a href="{{ path('fos_user_security_logout') }}">
-        {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-    </a>
-{% else %}
-    <a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>
-{% endif %}
+{#{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}#}
+    {#{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }} |#}
+    {#<a href="{{ path('fos_user_security_logout') }}">#}
+        {#{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}#}
+    {#</a>#}
+{#{% else %}#}
+    {#<a href="{{ path('fos_user_security_login') }}">{{ 'layout.login'|trans({}, 'FOSUserBundle') }}</a>#}
+{#{% endif %}#}
 
 {% if app.request.hasPreviousSession %}
     {% for type, messages in app.session.flashbag.all() %}
@@ -80,11 +65,11 @@
 {% endif %}
 
 <div>
-    {% block fos_user_content %}
-    {% endblock fos_user_content %}
+    {% block content %}
+    {% endblock  %}
 
 
-
+</div>
 </body>
 
 </html>
