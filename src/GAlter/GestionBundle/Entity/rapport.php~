@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\RapportRepository")
  */
-class rapport
+class Rapport
 {
     /**
      * @var integer
@@ -29,13 +29,13 @@ class rapport
     private $etudiant;
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Remarque_responsable_rapport", cascade={"persist"}, mappedBy="responsableIdRapport")
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueResponsableRapport", cascade={"persist"}, mappedBy="responsableIdRapport")
      */
     private $remarque;
 
 
     /**
-     * @ORM\OneToOne(targetEntity="audit", cascade={"persist"})
+     * @ORM\OneToOne(targetEntity="Audit", cascade={"persist"})
      */
     private $audit;
 
@@ -196,10 +196,10 @@ class rapport
     /**
      * Add remarque
      *
-     * @param \GAlter\GestionBundle\Entity\Remarque_responsable_rapport $remarque
+     * @param \GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque
      * @return rapport
      */
-    public function addRemarque(\GAlter\GestionBundle\Entity\Remarque_responsable_rapport $remarque)
+    public function addRemarque(\GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque)
     {
         $this->remarque[] = $remarque;
 
@@ -209,9 +209,9 @@ class rapport
     /**
      * Remove remarque
      *
-     * @param \GAlter\GestionBundle\Entity\Remarque_responsable_rapport $remarque
+     * @param \GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque
      */
-    public function removeRemarque(\GAlter\GestionBundle\Entity\Remarque_responsable_rapport $remarque)
+    public function removeRemarque(\GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque)
     {
         $this->remarque->removeElement($remarque);
     }

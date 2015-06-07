@@ -30,10 +30,10 @@ class Formation
 
   
     /**
-     *@ORM\OneToMany(targetEntity="Annee_Formation_Etudiant", cascade={"persist"}, mappedBy="Formations")
+     *@ORM\OneToMany(targetEntity="AnneeFormationEtudiant", cascade={"persist"}, mappedBy="Formations")
      *
      */
-    private $annee_formation_etudiant;
+    private $anneeFormationEtudiant;
     /**
      * @var string
      *
@@ -177,10 +177,10 @@ class Formation
     /**
      * Add annee_formation
      *
-     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormation
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormation
      * @return formation
      */
-    public function addAnneeFormation(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormation)
+    public function addAnneeFormation(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormation)
     {
         $this->annee_formation[] = $anneeFormation;
 
@@ -190,9 +190,9 @@ class Formation
     /**
      * Remove annee_formation
      *
-     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormation
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormation
      */
-    public function removeAnneeFormation(\GAlter\GestionBundle\Entity\Demo\Annee_Formation_Etudiant $anneeFormation)
+    public function removeAnneeFormation(\GAlter\GestionBundle\Entity\Demo\AnneeFormationEtudiant $anneeFormation)
     {
         $this->annee_formation->removeElement($anneeFormation);
     }
@@ -234,13 +234,13 @@ class Formation
     /**
      * Add anneeFormationEtudiant
      *
-     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
      *
      * @return Formation
      */
-    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
     {
-        $this->annee_formation_etudiant[] = $anneeFormationEtudiant;
+        $this->AnneeFormationEtudiant[] = $anneeFormationEtudiant;
 
         return $this;
     }
@@ -248,11 +248,11 @@ class Formation
     /**
      * Remove anneeFormationEtudiant
      *
-     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
      */
-    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
     {
-        $this->annee_formation_etudiant->removeElement($anneeFormationEtudiant);
+        $this->AnneeFormationEtudiant->removeElement($anneeFormationEtudiant);
     }
 
     /**
@@ -262,7 +262,7 @@ class Formation
      */
     public function getAnneeFormationEtudiant()
     {
-        return $this->annee_formation_etudiant;
+        return $this->AnneeFormationEtudiant;
     }
 
     /**

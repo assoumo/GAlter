@@ -7,21 +7,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use GAlter\GestionBundle\Entity\Options_compte;
+use GAlter\GestionBundle\Entity\OptionsCompte;
 use GAlter\GestionBundle\Form\Options_compteType;
 
 /**
- * Options_compte controller.
+ * OptionsCompte controller.
  *
- * @Route("/options_compte")
+ * @Route("/OptionsCompte")
  */
 class OptionscompteController extends Controller
 {
 
     /**
-     * Lists all Options_compte entities.
+     * Lists all OptionsCompte entities.
      *
-     * @Route("/", name="options_compte")
+     * @Route("/", name="OptionsCompte")
      * @Method("GET")
      * @Template()
      */
@@ -29,22 +29,22 @@ class OptionscompteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('GAlterGestionBundle:Options_compte')->findAll();
+        $entities = $em->getRepository('GAlterGestionBundle:OptionsCompte')->findAll();
 
         return array(
             'entities' => $entities,
         );
     }
     /**
-     * Creates a new Options_compte entity.
+     * Creates a new OptionsCompte entity.
      *
      * @Route("/", name="options_compte_create")
      * @Method("POST")
-     * @Template("GAlterGestionBundle:Options_compte:new.html.twig")
+     * @Template("GAlterGestionBundle:OptionsCompte:new.html.twig")
      */
     public function createAction(Request $request)
     {
-        $entity = new Options_compte();
+        $entity = new OptionsCompte();
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -63,13 +63,13 @@ class OptionscompteController extends Controller
     }
 
     /**
-     * Creates a form to create a Options_compte entity.
+     * Creates a form to create a OptionsCompte entity.
      *
-     * @param Options_compte $entity The entity
+     * @param OptionsCompte $entity The entity
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Options_compte $entity)
+    private function createCreateForm(OptionsCompte $entity)
     {
         $form = $this->createForm(new Options_compteType(), $entity, array(
             'action' => $this->generateUrl('options_compte_create'),
@@ -82,7 +82,7 @@ class OptionscompteController extends Controller
     }
 
     /**
-     * Displays a form to create a new Options_compte entity.
+     * Displays a form to create a new OptionsCompte entity.
      *
      * @Route("/new", name="options_compte_new")
      * @Method("GET")
@@ -90,7 +90,7 @@ class OptionscompteController extends Controller
      */
     public function newAction()
     {
-        $entity = new Options_compte();
+        $entity = new OptionsCompte();
         $form   = $this->createCreateForm($entity);
 
         return array(
@@ -100,7 +100,7 @@ class OptionscompteController extends Controller
     }
 
     /**
-     * Finds and displays a Options_compte entity.
+     * Finds and displays a OptionsCompte entity.
      *
      * @Route("/{id}", name="options_compte_show")
      * @Method("GET")
@@ -110,10 +110,10 @@ class OptionscompteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('GAlterGestionBundle:Options_compte')->find($id);
+        $entity = $em->getRepository('GAlterGestionBundle:OptionsCompte')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Options_compte entity.');
+            throw $this->createNotFoundException('Unable to find OptionsCompte entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -125,7 +125,7 @@ class OptionscompteController extends Controller
     }
 
     /**
-     * Displays a form to edit an existing Options_compte entity.
+     * Displays a form to edit an existing OptionsCompte entity.
      *
      * @Route("/{id}/edit", name="options_compte_edit")
      * @Method("GET")
@@ -135,10 +135,10 @@ class OptionscompteController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('GAlterGestionBundle:Options_compte')->find($id);
+        $entity = $em->getRepository('GAlterGestionBundle:OptionsCompte')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Options_compte entity.');
+            throw $this->createNotFoundException('Unable to find OptionsCompte entity.');
         }
 
         $editForm = $this->createEditForm($entity);
@@ -152,13 +152,13 @@ class OptionscompteController extends Controller
     }
 
     /**
-    * Creates a form to edit a Options_compte entity.
+    * Creates a form to edit a OptionsCompte entity.
     *
-    * @param Options_compte $entity The entity
+    * @param OptionsCompte $entity The entity
     *
     * @return \Symfony\Component\Form\Form The form
     */
-    private function createEditForm(Options_compte $entity)
+    private function createEditForm(OptionsCompte $entity)
     {
         $form = $this->createForm(new Options_compteType(), $entity, array(
             'action' => $this->generateUrl('options_compte_update', array('id' => $entity->getId())),
@@ -170,20 +170,20 @@ class OptionscompteController extends Controller
         return $form;
     }
     /**
-     * Edits an existing Options_compte entity.
+     * Edits an existing OptionsCompte entity.
      *
      * @Route("/{id}", name="options_compte_update")
      * @Method("PUT")
-     * @Template("GAlterGestionBundle:Options_compte:edit.html.twig")
+     * @Template("GAlterGestionBundle:OptionsCompte:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('GAlterGestionBundle:Options_compte')->find($id);
+        $entity = $em->getRepository('GAlterGestionBundle:OptionsCompte')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Options_compte entity.');
+            throw $this->createNotFoundException('Unable to find OptionsCompte entity.');
         }
 
         $deleteForm = $this->createDeleteForm($id);
@@ -203,7 +203,7 @@ class OptionscompteController extends Controller
         );
     }
     /**
-     * Deletes a Options_compte entity.
+     * Deletes a OptionsCompte entity.
      *
      * @Route("/{id}", name="options_compte_delete")
      * @Method("DELETE")
@@ -215,21 +215,21 @@ class OptionscompteController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('GAlterGestionBundle:Options_compte')->find($id);
+            $entity = $em->getRepository('GAlterGestionBundle:OptionsCompte')->find($id);
 
             if (!$entity) {
-                throw $this->createNotFoundException('Unable to find Options_compte entity.');
+                throw $this->createNotFoundException('Unable to find OptionsCompte entity.');
             }
 
             $em->remove($entity);
             $em->flush();
         }
 
-        return $this->redirect($this->generateUrl('options_compte'));
+        return $this->redirect($this->generateUrl('OptionsCompte'));
     }
 
     /**
-     * Creates a form to delete a Options_compte entity by id.
+     * Creates a form to delete a OptionsCompte entity by id.
      *
      * @param mixed $id The entity id
      *

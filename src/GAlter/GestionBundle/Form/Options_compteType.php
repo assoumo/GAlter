@@ -28,7 +28,7 @@ class Options_compteType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'GAlter\GestionBundle\Entity\Options_compte'
+            'data_class' => 'GAlter\GestionBundle\Entity\OptionsCompte'
         ));
     }
 

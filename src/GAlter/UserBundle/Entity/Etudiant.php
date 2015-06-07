@@ -27,9 +27,9 @@ class Etudiant  extends User
     private $agendas;
 
     /**
-     * @ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\Options_compte", cascade={"persist"}, inversedBy="etudiant")
+     * @ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\OptionsCompte", cascade={"persist"}, inversedBy="etudiant")
      */
-    private $options_compte;
+    private $optionsCompte;
 
     /**
      * @ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Rapport", mappedBy="etudiant")
@@ -37,9 +37,9 @@ class Etudiant  extends User
     private $rapports;
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Annee_Formation_Etudiant", cascade={"persist"}, mappedBy="etudiants")
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\AnneeFormationEtudiant", cascade={"persist"}, mappedBy="etudiants")
      */
-    private $annee_formation_etudiant;
+    private $anneeFormationEtudiant;
 
 
     /**
@@ -126,15 +126,17 @@ class Etudiant  extends User
     }
 
     /**
+     *
+     *
      * Set optionsCompte
      *
-     * @param \GAlter\GestionBundle\Entity\Options_compte $optionsCompte
+     * @param \GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte
      *
      * @return Etudiant
      */
-    public function setOptionsCompte(\Galter\GestionBundle\Entity\Options_compte $optionsCompte = null)
+    public function setOptionsCompte(\GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte = null)
     {
-        $this->options_compte = $optionsCompte;
+        $this->OptionsCompte = $optionsCompte;
 
         return $this;
     }
@@ -142,23 +144,23 @@ class Etudiant  extends User
     /**
      * Get optionsCompte
      *
-     * @return \GAlter\GestionBundle\Entity\Options_compte
+     * @return \GAlter\GestionBundle\Entity\OptionsCompte
      */
     public function getOptionsCompte()
     {
-        return $this->options_compte;
+        return $this->OptionsCompte;
     }
 
     /**
      * Add anneeFormationEtudiant
      *
-     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
      *
      * @return Etudiant
      */
-    public function addAnneeFormationEtudiant(\Galter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
     {
-        $this->annee_formation_etudiant[] = $anneeFormationEtudiant;
+        $this->anneeFormationEtudiant[] = $anneeFormationEtudiant;
 
         return $this;
     }
@@ -166,11 +168,11 @@ class Etudiant  extends User
     /**
      * Remove anneeFormationEtudiant
      *
-     * @param \GAlter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
      */
-    public function removeAnneeFormationEtudiant(\Galter\GestionBundle\Entity\Annee_Formation_Etudiant $anneeFormationEtudiant)
+    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
     {
-        $this->annee_formation_etudiant->removeElement($anneeFormationEtudiant);
+        $this->anneeFormationEtudiant->removeElement($anneeFormationEtudiant);
     }
 
     /**
@@ -180,7 +182,7 @@ class Etudiant  extends User
      */
     public function getAnneeFormationEtudiant()
     {
-        return $this->annee_formation_etudiant;
+        return $this->anneeFormationEtudiant;
     }
 
     /**
@@ -215,5 +217,179 @@ class Etudiant  extends User
     public function getAgenda()
     {
         return $this->agenda;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return Etudiant
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     *
+     * @return Etudiant
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set informationContrat
+     *
+     * @param string $informationContrat
+     *
+     * @return Etudiant
+     */
+    public function setInformationContrat($informationContrat)
+    {
+        $this->information_contrat = $informationContrat;
+
+        return $this;
+    }
+
+    /**
+     * Get informationContrat
+     *
+     * @return string
+     */
+    public function getInformationContrat()
+    {
+        return $this->information_contrat;
+    }
+
+    /**
+     * Set typecontrat
+     *
+     * @param integer $typecontrat
+     *
+     * @return Etudiant
+     */
+    public function setTypecontrat($typecontrat)
+    {
+        $this->typecontrat = $typecontrat;
+
+        return $this;
+    }
+
+    /**
+     * Get typecontrat
+     *
+     * @return integer
+     */
+    public function getTypecontrat()
+    {
+        return $this->typecontrat;
+    }
+
+    /**
+     * Get agendas
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAgendas()
+    {
+        return $this->agendas;
+    }
+
+    /**
+     * Add rapport
+     *
+     * @param \GAlter\GestionBundle\Entity\Rapport $rapport
+     *
+     * @return Etudiant
+     */
+    public function addRapport(\GAlter\GestionBundle\Entity\Rapport $rapport)
+    {
+        $this->rapports[] = $rapport;
+
+        return $this;
+    }
+
+    /**
+     * Remove rapport
+     *
+     * @param \GAlter\GestionBundle\Entity\Rapport $rapport
+     */
+    public function removeRapport(\GAlter\GestionBundle\Entity\Rapport $rapport)
+    {
+        $this->rapports->removeElement($rapport);
+    }
+
+    /**
+     * Get rapports
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRapports()
+    {
+        return $this->rapports;
+    }
+
+    /**
+     * Add projet
+     *
+     * @param \GAlter\GestionBundle\Entity\Projet $projet
+     *
+     * @return Etudiant
+     */
+    public function addProjet(\GAlter\GestionBundle\Entity\Projet $projet)
+    {
+        $this->projet[] = $projet;
+
+        return $this;
+    }
+
+    /**
+     * Remove projet
+     *
+     * @param \GAlter\GestionBundle\Entity\Projet $projet
+     */
+    public function removeProjet(\GAlter\GestionBundle\Entity\Projet $projet)
+    {
+        $this->projet->removeElement($projet);
+    }
+
+    /**
+     * Get projet
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProjet()
+    {
+        return $this->projet;
     }
 }

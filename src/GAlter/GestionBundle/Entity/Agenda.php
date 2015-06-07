@@ -5,7 +5,7 @@ namespace GAlter\GestionBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * agenda
+ * Agenda
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\AgendaRepository")
@@ -71,28 +71,7 @@ class Agenda
         return $this->id;
     }
 
-    /**
-     * Set idAgenda
-     *
-     * @param string $idAgenda
-     * @return agenda
-     */
-    public function setIdAgenda($idAgenda)
-    {
-        $this->idAgenda = $idAgenda;
 
-        return $this;
-    }
-
-    /**
-     * Get idAgenda
-     *
-     * @return string 
-     */
-    public function getIdAgenda()
-    {
-        return $this->idAgenda;
-    }
 
     /**
      * Set libelle

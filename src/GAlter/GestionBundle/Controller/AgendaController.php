@@ -112,6 +112,7 @@ class AgendaController extends Controller
 
         $entity = $em->getRepository('GAlterGestionBundle:Agenda')->find($id);
 
+
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Agenda entity.');
         }

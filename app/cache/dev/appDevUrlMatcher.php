@@ -300,24 +300,24 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
-        if (0 === strpos($pathinfo, '/options_compte')) {
-            // options_compte
-            if (rtrim($pathinfo, '/') === '/options_compte') {
+        if (0 === strpos($pathinfo, '/OptionsCompte')) {
+            // OptionsCompte
+            if (rtrim($pathinfo, '/') === '/OptionsCompte') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_options_compte;
+                    goto not_OptionsCompte;
                 }
 
                 if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'options_compte');
+                    return $this->redirect($pathinfo.'/', 'OptionsCompte');
                 }
 
-                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\OptionscompteController::indexAction',  '_route' => 'options_compte',);
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\OptionscompteController::indexAction',  '_route' => 'OptionsCompte',);
             }
-            not_options_compte:
+            not_OptionsCompte:
 
             // options_compte_create
-            if ($pathinfo === '/options_compte/') {
+            if ($pathinfo === '/OptionsCompte/') {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
                     goto not_options_compte_create;
@@ -328,7 +328,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_options_compte_create:
 
             // options_compte_new
-            if ($pathinfo === '/options_compte/new') {
+            if ($pathinfo === '/OptionsCompte/new') {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_options_compte_new;
@@ -339,7 +339,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_options_compte_new:
 
             // options_compte_show
-            if (preg_match('#^/options_compte/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/OptionsCompte/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_options_compte_show;
@@ -350,7 +350,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_options_compte_show:
 
             // options_compte_edit
-            if (preg_match('#^/options_compte/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/OptionsCompte/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                 if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                     $allow = array_merge($allow, array('GET', 'HEAD'));
                     goto not_options_compte_edit;
@@ -361,7 +361,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_options_compte_edit:
 
             // options_compte_update
-            if (preg_match('#^/options_compte/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/OptionsCompte/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'PUT') {
                     $allow[] = 'PUT';
                     goto not_options_compte_update;
@@ -372,7 +372,7 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_options_compte_update:
 
             // options_compte_delete
-            if (preg_match('#^/options_compte/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+            if (preg_match('#^/OptionsCompte/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'DELETE') {
                     $allow[] = 'DELETE';
                     goto not_options_compte_delete;

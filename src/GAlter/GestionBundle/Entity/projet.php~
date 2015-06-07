@@ -5,12 +5,12 @@ namespace GAlter\GestionBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * projet
+ * Projet
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\ProjetRepository")
  */
-class projet
+class Projet
 {
     /**
      * @var integer

@@ -15,7 +15,7 @@ class FormationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('idFormation')
+            //->add('idFormation')
             ->add('libelle')
             ->add('description')
             ->add('departement')
