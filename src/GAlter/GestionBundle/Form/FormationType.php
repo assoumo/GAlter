@@ -19,7 +19,7 @@ class FormationType extends AbstractType
             ->add('libelle')
             ->add('description')
             ->add('departement')
-            ->add('responsable')
+            ->add('tuteur')
         ;
     }
     

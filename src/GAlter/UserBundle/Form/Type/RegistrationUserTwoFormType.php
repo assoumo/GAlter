@@ -10,8 +10,28 @@ class RegistrationUserTwoFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         // add your custom field
-//        $builder->add('nom')
-//            ->add('prenom');
+
+
+        $builder->add('telephone')
+            ->add('adresse')
+            ->add('nom')
+            ->add('prenom')
+            ->add('organisation')
+            ->add('roles', 'collection', array(
+                    'type' => 'choice',
+                    'options' => array(
+                        'label' => false, /* Ajoutez cette ligne */
+                        'choices' => array(
+                            'ROLE_TUTEUR' => 'Tuteur',
+                            'ROLE_RESPONSABLE' => 'Responsable',
+
+
+
+
+                        )
+                    )
+                )
+            );
     }
 
     public function getParent()

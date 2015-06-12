@@ -20,7 +20,7 @@ class Responsable extends User
      */
     protected $id;
 
-    
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,110 +33,170 @@ class Responsable extends User
     /**
      *@ORM\Column(type="string", length=255)
      */
-    protected $adresse; 
-    
+    protected $adresse;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
-    protected $telephone; 
-    
+    protected $telephone;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
-    protected $organisation; 
 
+    protected $RespContrat;
 
-    /**
-     * @ORM\OneToMany(targetEntity="GAlter\UserBundle\Entity\Etudiant", mappedBy="Responsable", cascade={"persist"})
-     */
-    protected $Etudiant;
 
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueResponsableRapport", mappedBy="responsableId")
-     */
-    private $remarqueResponsableRapport;
-
-    /**
-     *@ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\Formation", cascade={"persist"}, inversedBy="responsable")
-     *@ORM\JoinColumn(name="formation_id", referencedColumnName="id")
-     */
-    private  $formations;
-
-    public  function __construct(){
-
-       $this->Etudiant= new \Doctrine\Common\Collections\ArrayCollection();
-
-
-        parent::__construct();
-    }
-
-
-    /**
-     * Add etudiant
+     * @var integer
      *
-     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
+     * @ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Formation", inversedBy="responsable")
+     * @ORM\JoinColumn(name="formation_id", referencedColumnName="id")
+     */
+    private $formation;
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
      *
      * @return Responsable
      */
-    public function addEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant)
+    public function setNom($nom)
     {
-        $this->Etudiant[] = $etudiant;
+        $this->nom = $nom;
 
         return $this;
     }
 
     /**
-     * Remove etudiant
+     * Get nom
      *
-     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
+     * @return string
      */
-    public function removeEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant)
+    public function getNom()
     {
-        $this->Etudiant->removeElement($etudiant);
+        return $this->nom;
     }
 
     /**
-     * Get etudiant
+     * Set prenom
      *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEtudiant()
-    {
-        return $this->Etudiant;
-    }
-
-    /**
-     * Add formation
-     *
-     * @param \GAlter\GestionBundle\Entity\Formation $formation
+     * @param string $prenom
      *
      * @return Responsable
      */
-    public function addFormation(\GAlter\GestionBundle\Entity\Formation $formation)
+    public function setPrenom($prenom)
     {
-        $this->Formations[] = $formation;
+        $this->prenom = $prenom;
 
         return $this;
     }
 
     /**
-     * Remove formation
+     * Get prenom
      *
-     * @param \GAlter\GestionBundle\Entity\Formation $formation
+     * @return string
      */
-    public function removeFormation(\GAlter\GestionBundle\Entity\Formation $formation)
+    public function getPrenom()
     {
-        $this->Formations->removeElement($formation);
+        return $this->prenom;
     }
 
     /**
-     * Get formations
+     * Set adresse
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @param string $adresse
+     *
+     * @return Responsable
      */
-    public function getFormations()
+    public function setAdresse($adresse)
     {
-        return $this->Formations;
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * Set telephone
+     *
+     * @param string $telephone
+     *
+     * @return Responsable
+     */
+    public function setTelephone($telephone)
+    {
+        $this->telephone = $telephone;
+
+        return $this;
+    }
+
+    /**
+     * Get telephone
+     *
+     * @return string
+     */
+    public function getTelephone()
+    {
+        return $this->telephone;
+    }
+
+    /**
+     * Set respContrat
+     *
+     * @param string $respContrat
+     *
+     * @return Responsable
+     */
+    public function setRespContrat($respContrat)
+    {
+        $this->RespContrat = $respContrat;
+
+        return $this;
+    }
+
+    /**
+     * Get respContrat
+     *
+     * @return string
+     */
+    public function getRespContrat()
+    {
+        return $this->RespContrat;
+    }
+
+    /**
+     * Set formation
+     *
+     * @param \GAlter\UserBundle\Entity\Fomation $formation
+     *
+     * @return Responsable
+     */
+    public function setFormation(\GAlter\UserBundle\Entity\Fomation $formation = null)
+    {
+        $this->formation = $formation;
+
+        return $this;
+    }
+
+    /**
+     * Get formation
+     *
+     * @return \GAlter\UserBundle\Entity\Fomation
+     */
+    public function getFormation()
+    {
+        return $this->formation;
     }
 }

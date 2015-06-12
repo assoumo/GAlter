@@ -72,10 +72,12 @@ class Etudiant  extends User
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", inversedBy="Etudiant")
-     * @ORM\JoinColumn(name="Responsable", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Tuteur", inversedBy="Etudiant")
+     * @ORM\JoinColumn(name="Tuteur", referencedColumnName="id")
      */
-    private $Responsable;
+    private $Tuteur;
+
+
 
     /**
      * Set prenom
@@ -99,124 +101,6 @@ class Etudiant  extends User
     public function getPrenom()
     {
         return $this->prenom;
-    }
-
-    /**
-     * Set responsable
-     *
-     * @param \GAlter\UserBundle\Entity\Responsable $responsable
-     *
-     * @return Etudiant
-     */
-    public function setResponsable(\GAlter\UserBundle\Entity\Responsable $responsable = null)
-    {
-        $this->Responsable = $responsable;
-
-        return $this;
-    }
-
-    /**
-     * Get responsable
-     *
-     * @return \GAlter\UserBundle\Entity\Responsable
-     */
-    public function getResponsable()
-    {
-        return $this->Responsable;
-    }
-
-    /**
-     *
-     *
-     * Set optionsCompte
-     *
-     * @param \GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte
-     *
-     * @return Etudiant
-     */
-    public function setOptionsCompte(\GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte = null)
-    {
-        $this->OptionsCompte = $optionsCompte;
-
-        return $this;
-    }
-
-    /**
-     * Get optionsCompte
-     *
-     * @return \GAlter\GestionBundle\Entity\OptionsCompte
-     */
-    public function getOptionsCompte()
-    {
-        return $this->OptionsCompte;
-    }
-
-    /**
-     * Add anneeFormationEtudiant
-     *
-     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
-     *
-     * @return Etudiant
-     */
-    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
-    {
-        $this->anneeFormationEtudiant[] = $anneeFormationEtudiant;
-
-        return $this;
-    }
-
-    /**
-     * Remove anneeFormationEtudiant
-     *
-     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
-     */
-    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
-    {
-        $this->anneeFormationEtudiant->removeElement($anneeFormationEtudiant);
-    }
-
-    /**
-     * Get anneeFormationEtudiant
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAnneeFormationEtudiant()
-    {
-        return $this->anneeFormationEtudiant;
-    }
-
-    /**
-     * Add agenda
-     *
-     * @param \GAlter\GestionBundle\Entity\Agenda $agenda
-     *
-     * @return Etudiant
-     */
-    public function addAgenda(\GAlter\GestionBundle\Entity\Agenda $agenda)
-    {
-        $this->agenda[] = $agenda;
-
-        return $this;
-    }
-
-    /**
-     * Remove agenda
-     *
-     * @param \GAlter\GestionBundle\Entity\Agenda $agenda
-     */
-    public function removeAgenda(\GAlter\GestionBundle\Entity\Agenda $agenda)
-    {
-        $this->agenda->removeElement($agenda);
-    }
-
-    /**
-     * Get agenda
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAgenda()
-    {
-        return $this->agenda;
     }
 
     /**
@@ -316,6 +200,30 @@ class Etudiant  extends User
     }
 
     /**
+     * Add agenda
+     *
+     * @param \GAlter\GestionBundle\Entity\Agenda $agenda
+     *
+     * @return Etudiant
+     */
+    public function addAgenda(\GAlter\GestionBundle\Entity\Agenda $agenda)
+    {
+        $this->agendas[] = $agenda;
+
+        return $this;
+    }
+
+    /**
+     * Remove agenda
+     *
+     * @param \GAlter\GestionBundle\Entity\Agenda $agenda
+     */
+    public function removeAgenda(\GAlter\GestionBundle\Entity\Agenda $agenda)
+    {
+        $this->agendas->removeElement($agenda);
+    }
+
+    /**
      * Get agendas
      *
      * @return \Doctrine\Common\Collections\Collection
@@ -323,6 +231,30 @@ class Etudiant  extends User
     public function getAgendas()
     {
         return $this->agendas;
+    }
+
+    /**
+     * Set optionsCompte
+     *
+     * @param \GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte
+     *
+     * @return Etudiant
+     */
+    public function setOptionsCompte(\GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte = null)
+    {
+        $this->optionsCompte = $optionsCompte;
+
+        return $this;
+    }
+
+    /**
+     * Get optionsCompte
+     *
+     * @return \GAlter\GestionBundle\Entity\OptionsCompte
+     */
+    public function getOptionsCompte()
+    {
+        return $this->optionsCompte;
     }
 
     /**
@@ -360,6 +292,40 @@ class Etudiant  extends User
     }
 
     /**
+     * Add anneeFormationEtudiant
+     *
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
+     *
+     * @return Etudiant
+     */
+    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
+    {
+        $this->anneeFormationEtudiant[] = $anneeFormationEtudiant;
+
+        return $this;
+    }
+
+    /**
+     * Remove anneeFormationEtudiant
+     *
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
+     */
+    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
+    {
+        $this->anneeFormationEtudiant->removeElement($anneeFormationEtudiant);
+    }
+
+    /**
+     * Get anneeFormationEtudiant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnneeFormationEtudiant()
+    {
+        return $this->anneeFormationEtudiant;
+    }
+
+    /**
      * Add projet
      *
      * @param \GAlter\GestionBundle\Entity\Projet $projet
@@ -391,5 +357,29 @@ class Etudiant  extends User
     public function getProjet()
     {
         return $this->projet;
+    }
+
+    /**
+     * Set tuteur
+     *
+     * @param \GAlter\UserBundle\Entity\Tuteur $tuteur
+     *
+     * @return Etudiant
+     */
+    public function setTuteur(\GAlter\UserBundle\Entity\Tuteur $tuteur = null)
+    {
+        $this->Tuteur = $tuteur;
+
+        return $this;
+    }
+
+    /**
+     * Get tuteur
+     *
+     * @return \GAlter\UserBundle\Entity\Tuteur
+     */
+    public function getTuteur()
+    {
+        return $this->Tuteur;
     }
 }

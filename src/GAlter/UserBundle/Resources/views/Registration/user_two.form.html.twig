@@ -1,14 +1,72 @@
 {% extends "GAlterUserBundle::layout.html.twig" %}
 
-{% block fos_user_content %}
+{% block content %}
     {% trans_default_domain 'FOSUserBundle' %}
-    formulaire reponsable
-    <form action="{{ path('user_two_registration') }}" {{ form_enctype(form) }} method="POST">
+   <h1>   formulaire tuteur</h1>
 
-        {#{{ form_widget(form.username,{'attr':{'class':'form-control','placeholder':'Votre nom / prenom'}}) }}#}
-        {{ form_widget(form) }}
+
+    <form action="{{ path('user_two_registration') }}" method="post" {{form_enctype(form)}}>
+
+        {{ form_errors(form) }}
+
+   <div>
+
+
+       {{ form_label(form.username) }}
+       {{ form_widget(form.username) }}
+       {{ form_errors(form.username) }}
+
+
+
+       {{ form_label(form.nom) }}
+       {{ form_widget(form.nom) }}
+       {{ form_errors(form.nom) }}
+
+
+       {{ form_label(form.prenom) }}
+       {{ form_widget(form.prenom) }}
+       {{ form_errors(form.prenom) }}
+   </div>
+
+
+
+  <div>
+
+      {{ form_row(form.plainPassword) }}
+      {{ form_row(form.organisation) }}
+      {{ form_row(form.email) }}
+
+      {{ form_row(form.telephone) }}
+
+      {{ form_row(form.adresse) }}
+
+  </div>
+
         <div>
-            <input type="submit" value="{{ 'registration.submit'|trans }}" />
+
+
+
+
         </div>
+
+
+
+        {% if is_granted ('ROLE_ADMIN') %}
+            {{ form_label(form.roles) }}
+            {{ form_widget(form.roles) }}
+            {{ form_errors(form.roles) }}
+
+
+        {% else %}
+            {{ form_widget(form.roles, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(form.roles, { 'attr' : { 'style':'display:none'} }) }}
+        {% endif %}
+        <input type="submit" value="Ok"/>
+
+        {{form_rest(form)}}
     </form>
-{% endblock fos_user_content %}
+
+
+
+
+{% endblock content %}

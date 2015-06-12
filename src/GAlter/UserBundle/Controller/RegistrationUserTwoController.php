@@ -9,6 +9,6 @@ class RegistrationUserTwoController extends Controller
     {
         return $this->container
             ->get('pugx_multi_user.registration_manager')
-            ->register('GAlter\UserBundle\Entity\Responsable');
+            ->register('GAlter\UserBundle\Entity\Tuteur');
     }
 }

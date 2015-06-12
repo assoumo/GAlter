@@ -15,15 +15,21 @@ class RegistrationUserOneFormType extends AbstractType
     {
         $builder
             ->add('prenom')
-            ->add('Responsable')
+            ->add('Tuteur')
+            ->add('telephone')
+            ->add('adresse')
+            ->add('typecontrat')
+            ->add('information_contrat')
             //->add('groups')
             ->add('roles', 'collection', array(
                     'type' => 'choice',
                     'options' => array(
                         'label' => false, /* Ajoutez cette ligne */
                         'choices' => array(
-                            'ROLE_RESPONSABLE' => 'Admin',
-                            'ROLE_ETUDIANT' => 'Etudiant'
+                            'ROLE_ETUDIANT' => 'Etudiant',
+                            'ROLE_RESPONSABLE' => 'Admin'
+
+
                         )
                     )
                 )

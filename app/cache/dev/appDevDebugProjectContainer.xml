@@ -296,6 +296,9 @@
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
     <parameter key="security.role_hierarchy.roles" type="collection">
+      <parameter key="ROLE_ETUDIANT" type="collection">
+        <parameter>ROLE_ETUDIANT</parameter>
+      </parameter>
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
       </parameter>
@@ -617,7 +620,7 @@
       </parameter>
       <parameter key="user_two" type="collection">
         <parameter key="entity" type="collection">
-          <parameter key="class">GAlter\UserBundle\Entity\Responsable</parameter>
+          <parameter key="class">GAlter\UserBundle\Entity\Tuteur</parameter>
           <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
         </parameter>
         <parameter key="registration" type="collection">
@@ -634,6 +637,34 @@
         <parameter key="profile" type="collection">
           <parameter key="form" type="collection">
             <parameter key="type">GAlter\UserBundle\Form\Type\ProfileUserTwoFormType</parameter>
+            <parameter key="name">fos_user_profile_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Profile</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">null</parameter>
+        </parameter>
+      </parameter>
+      <parameter key="user_three" type="collection">
+        <parameter key="entity" type="collection">
+          <parameter key="class">GAlter\UserBundle\Entity\Responsable</parameter>
+          <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
+        </parameter>
+        <parameter key="registration" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">GAlter\UserBundle\Form\Type\RegistrationUserThreeFormType</parameter>
+            <parameter key="name">fos_user_registration_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Registration</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">GAlterUserBundle:Registration:user_three.form.html.twig</parameter>
+        </parameter>
+        <parameter key="profile" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">GAlter\UserBundle\Form\Type\ProfileUserThreeFormType</parameter>
             <parameter key="name">fos_user_profile_form</parameter>
             <parameter key="validation_groups" type="collection">
               <parameter>Profile</parameter>
@@ -3135,7 +3166,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>55747ad34e154</argument>
+            <argument>557b4cdb403c2</argument>
           </service>
         </argument>
       </argument>
@@ -3186,6 +3217,9 @@
     </service>
     <service id="security.role_hierarchy" class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
       <argument type="collection">
+        <argument key="ROLE_ETUDIANT" type="collection">
+          <argument>ROLE_ETUDIANT</argument>
+        </argument>
         <argument key="ROLE_ADMIN" type="collection">
           <argument>ROLE_USER</argument>
         </argument>
@@ -3251,7 +3285,41 @@
           <service class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
             <tag name="monolog.logger" channel="security"/>
             <argument type="service">
-              <service class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/login$</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/resetting</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/admin/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+              </service>
             </argument>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint" public="false">
@@ -3453,7 +3521,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>55747ad34e154</argument>
+            <argument>557b4cdb403c2</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -3464,7 +3532,41 @@
             <argument type="service" id="security.context"/>
             <argument type="service" id="security.access.decision_manager"/>
             <argument type="service">
-              <service class="Symfony\Component\Security\Http\AccessMap" public="false"/>
+              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/login$</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/resetting</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+                <call method="add">
+                  <argument type="service">
+                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+                      <argument>^/admin/</argument>
+                    </service>
+                  </argument>
+                  <argument type="collection">
+                    <argument>ROLE_ADMIN</argument>
+                  </argument>
+                  <argument>null</argument>
+                </call>
+              </service>
             </argument>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -4105,7 +4207,7 @@
         </argument>
         <argument key="user_two" type="collection">
           <argument key="entity" type="collection">
-            <argument key="class">GAlter\UserBundle\Entity\Responsable</argument>
+            <argument key="class">GAlter\UserBundle\Entity\Tuteur</argument>
             <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
           </argument>
           <argument key="registration" type="collection">
@@ -4122,6 +4224,34 @@
           <argument key="profile" type="collection">
             <argument key="form" type="collection">
               <argument key="type">GAlter\UserBundle\Form\Type\ProfileUserTwoFormType</argument>
+              <argument key="name">fos_user_profile_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Profile</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">null</argument>
+          </argument>
+        </argument>
+        <argument key="user_three" type="collection">
+          <argument key="entity" type="collection">
+            <argument key="class">GAlter\UserBundle\Entity\Responsable</argument>
+            <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
+          </argument>
+          <argument key="registration" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">GAlter\UserBundle\Form\Type\RegistrationUserThreeFormType</argument>
+              <argument key="name">fos_user_registration_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Registration</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">GAlterUserBundle:Registration:user_three.form.html.twig</argument>
+          </argument>
+          <argument key="profile" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">GAlter\UserBundle\Form\Type\ProfileUserThreeFormType</argument>
               <argument key="name">fos_user_profile_form</argument>
               <argument key="validation_groups" type="collection">
                 <argument>Profile</argument>

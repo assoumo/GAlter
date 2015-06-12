@@ -28,8 +28,12 @@ user_one_registration:
     defaults: { _controller: GAlterUserBundle:RegistrationUserOne:register }
 
 user_two_registration:
-    pattern:  /enregistrement/responsable
+    pattern:  /enregistrement/tuteur
     defaults: { _controller: GAlterUserBundle:RegistrationUserTwo:register }
+
+user_three_registration:
+    pattern:  /enregistrement/responsable
+    defaults: { _controller: GAlterUserBundle:RegistrationUserThree:register }
 
 fos_user_registration_confirmed:
     pattern:  /register/confirmed

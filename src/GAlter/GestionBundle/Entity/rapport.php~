@@ -29,7 +29,7 @@ class Rapport
     private $etudiant;
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueResponsableRapport", cascade={"persist"}, mappedBy="responsableIdRapport")
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueTuteurRapport", cascade={"persist"}, mappedBy="tuteurIdRapport")
      */
     private $remarque;
 
@@ -62,9 +62,19 @@ class Rapport
     private $contenu;
 
 
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->remarque = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
-     * @return integer 
+     *
+     * @return integer
      */
     public function getId()
     {
@@ -72,33 +82,11 @@ class Rapport
     }
 
     /**
-     * Set idRapport
-     *
-     * @param integer $idRapport
-     * @return rapport
-     */
-    public function setIdRapport($idRapport)
-    {
-        $this->idRapport = $idRapport;
-
-        return $this;
-    }
-
-    /**
-     * Get idRapport
-     *
-     * @return integer 
-     */
-    public function getIdRapport()
-    {
-        return $this->idRapport;
-    }
-
-    /**
      * Set periode
      *
      * @param string $periode
-     * @return rapport
+     *
+     * @return Rapport
      */
     public function setPeriode($periode)
     {
@@ -110,7 +98,7 @@ class Rapport
     /**
      * Get periode
      *
-     * @return string 
+     * @return string
      */
     public function getPeriode()
     {
@@ -121,7 +109,8 @@ class Rapport
      * Set date
      *
      * @param string $date
-     * @return rapport
+     *
+     * @return Rapport
      */
     public function setDate($date)
     {
@@ -133,7 +122,7 @@ class Rapport
     /**
      * Get date
      *
-     * @return string 
+     * @return string
      */
     public function getDate()
     {
@@ -144,7 +133,8 @@ class Rapport
      * Set contenu
      *
      * @param string $contenu
-     * @return rapport
+     *
+     * @return Rapport
      */
     public function setContenu($contenu)
     {
@@ -156,7 +146,7 @@ class Rapport
     /**
      * Get contenu
      *
-     * @return string 
+     * @return string
      */
     public function getContenu()
     {
@@ -167,7 +157,8 @@ class Rapport
      * Set etudiant
      *
      * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
-     * @return rapport
+     *
+     * @return Rapport
      */
     public function setEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant = null)
     {
@@ -179,27 +170,21 @@ class Rapport
     /**
      * Get etudiant
      *
-     * @return \GAlter\UserBundle\Entity\Etudiant 
+     * @return \GAlter\UserBundle\Entity\Etudiant
      */
     public function getEtudiant()
     {
         return $this->etudiant;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->remarque = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add remarque
      *
-     * @param \GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque
-     * @return rapport
+     * @param \GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarque
+     *
+     * @return Rapport
      */
-    public function addRemarque(\GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque)
+    public function addRemarque(\GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarque)
     {
         $this->remarque[] = $remarque;
 
@@ -209,9 +194,9 @@ class Rapport
     /**
      * Remove remarque
      *
-     * @param \GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque
+     * @param \GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarque
      */
-    public function removeRemarque(\GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarque)
+    public function removeRemarque(\GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarque)
     {
         $this->remarque->removeElement($remarque);
     }
@@ -219,7 +204,7 @@ class Rapport
     /**
      * Get remarque
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRemarque()
     {
@@ -229,8 +214,9 @@ class Rapport
     /**
      * Set audit
      *
-     * @param GAlter\GestionBundle\Entity\Audit $audit
-     * @return rapport
+     * @param \GAlter\GestionBundle\Entity\Audit $audit
+     *
+     * @return Rapport
      */
     public function setAudit(\GAlter\GestionBundle\Entity\Audit $audit = null)
     {

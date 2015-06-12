@@ -114,7 +114,7 @@ pugx_multi_user:
 
         user_two:
             entity:
-                class: GAlter\UserBundle\Entity\Responsable
+                class: GAlter\UserBundle\Entity\Tuteur
             registration:
                 form:
                     type: GAlter\UserBundle\Form\Type\RegistrationUserTwoFormType
@@ -122,5 +122,16 @@ pugx_multi_user:
             profile:
                 form:
                     type: GAlter\UserBundle\Form\Type\ProfileUserTwoFormType
+
+        user_three:
+                    entity:
+                        class: GAlter\UserBundle\Entity\Responsable
+                    registration:
+                        form:
+                            type: GAlter\UserBundle\Form\Type\RegistrationUserThreeFormType
+                        template: GAlterUserBundle:Registration:user_three.form.html.twig
+                    profile:
+                        form:
+                            type: GAlter\UserBundle\Form\Type\ProfileUserThreeFormType
 
 

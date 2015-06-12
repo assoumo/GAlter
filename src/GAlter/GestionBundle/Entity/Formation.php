@@ -22,11 +22,7 @@ class Formation
     private $id;
 
 
-    /**
-     *@ORM\OneToOne(targetEntity="GAlter\UserBundle\Entity\Responsable", cascade={"persist"}, mappedBy="formations")
-     *
-     */
-    private $responsable;
+
 
   
     /**
@@ -56,23 +52,36 @@ class Formation
 
 
     /**
+     *@ORM\OneToMany(targetEntity="GAlter\UserBundle\Entity\Responsable", mappedBy="formation")
+     */
+    private $responsable;
+
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->anneeFormationEtudiant = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
         return $this->id;
     }
 
-
-
-
     /**
      * Set libelle
      *
      * @param string $libelle
-     * @return formation
+     *
+     * @return Formation
      */
     public function setLibelle($libelle)
     {
@@ -84,165 +93,11 @@ class Formation
     /**
      * Get libelle
      *
-     * @return string 
+     * @return string
      */
     public function getLibelle()
     {
         return $this->libelle;
-    }
-
-    /**
-     * Set departement
-     *
-     * @param string $departement
-     * @return formation
-     */
-    public function setDepartement($departement)
-    {
-        $this->departement = $departement;
-
-        return $this;
-    }
-
-    /**
-     * Get departement
-     *
-     * @return string 
-     */
-    public function getDepartement()
-    {
-        return $this->departement;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->responsables = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add responsables
-     *
-     * @param \GAlter\GestionBundle\Entity\Responsable $responsables
-     * @return formation
-     */
-    public function addResponsable(\GAlter\UserBundle\Entity\Responsable $responsables)
-    {
-        $this->responsables[] = $responsables;
-
-        return $this;
-    }
-
-    /**
-     * Remove responsables
-     *
-     * @param \GAlter\UserBundle\Entity\Responsable $responsables
-     */
-    public function removeResponsable(\GAlter\UserBundle\Entity\Responsable $responsables)
-    {
-        $this->responsables->removeElement($responsables);
-    }
-
-    /**
-     * Get responsables
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getResponsables()
-    {
-        return $this->responsables;
-    }
-
-    /**
-     * Add annee_formation
-     *
-     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormation
-     * @return formation
-     */
-    public function addAnneeFormation(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormation)
-    {
-        $this->annee_formation[] = $anneeFormation;
-
-        return $this;
-    }
-
-    /**
-     * Remove annee_formation
-     *
-     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormation
-     */
-    public function removeAnneeFormation(\GAlter\GestionBundle\Entity\Demo\AnneeFormationEtudiant $anneeFormation)
-    {
-        $this->annee_formation->removeElement($anneeFormation);
-    }
-
-    /**
-     * Get annee_formation
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getAnneeFormation()
-    {
-        return $this->annee_formation;
-    }
-
-    /**
-     * Set responsable
-     *
-     * @param \GAlter\UserBundle\Entity\Responsable $responsable
-     *
-     * @return Formation
-     */
-    public function setResponsable(\GAlter\UserBundle\Entity\Responsable $responsable = null)
-    {
-        $this->responsable = $responsable;
-
-        return $this;
-    }
-
-    /**
-     * Get responsable
-     *
-     * @return \GAlter\UserBundle\Entity\Responsable
-     */
-    public function getResponsable()
-    {
-        return $this->responsable;
-    }
-
-    /**
-     * Add anneeFormationEtudiant
-     *
-     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
-     *
-     * @return Formation
-     */
-    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
-    {
-        $this->AnneeFormationEtudiant[] = $anneeFormationEtudiant;
-
-        return $this;
-    }
-
-    /**
-     * Remove anneeFormationEtudiant
-     *
-     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
-     */
-    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
-    {
-        $this->AnneeFormationEtudiant->removeElement($anneeFormationEtudiant);
-    }
-
-    /**
-     * Get anneeFormationEtudiant
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAnneeFormationEtudiant()
-    {
-        return $this->AnneeFormationEtudiant;
     }
 
     /**
@@ -267,5 +122,97 @@ class Formation
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set departement
+     *
+     * @param string $departement
+     *
+     * @return Formation
+     */
+    public function setDepartement($departement)
+    {
+        $this->departement = $departement;
+
+        return $this;
+    }
+
+    /**
+     * Get departement
+     *
+     * @return string
+     */
+    public function getDepartement()
+    {
+        return $this->departement;
+    }
+
+    /**
+     * Add anneeFormationEtudiant
+     *
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
+     *
+     * @return Formation
+     */
+    public function addAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
+    {
+        $this->anneeFormationEtudiant[] = $anneeFormationEtudiant;
+
+        return $this;
+    }
+
+    /**
+     * Remove anneeFormationEtudiant
+     *
+     * @param \GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant
+     */
+    public function removeAnneeFormationEtudiant(\GAlter\GestionBundle\Entity\AnneeFormationEtudiant $anneeFormationEtudiant)
+    {
+        $this->anneeFormationEtudiant->removeElement($anneeFormationEtudiant);
+    }
+
+    /**
+     * Get anneeFormationEtudiant
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAnneeFormationEtudiant()
+    {
+        return $this->anneeFormationEtudiant;
+    }
+
+    /**
+     * Add responsable
+     *
+     * @param \GAlter\GestionBundle\Entity\Responsable $responsable
+     *
+     * @return Formation
+     */
+    public function addResponsable(\GAlter\GestionBundle\Entity\Responsable $responsable)
+    {
+        $this->responsable[] = $responsable;
+
+        return $this;
+    }
+
+    /**
+     * Remove responsable
+     *
+     * @param \GAlter\GestionBundle\Entity\Responsable $responsable
+     */
+    public function removeResponsable(\GAlter\GestionBundle\Entity\Responsable $responsable)
+    {
+        $this->responsable->removeElement($responsable);
+    }
+
+    /**
+     * Get responsable
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getResponsable()
+    {
+        return $this->responsable;
     }
 }

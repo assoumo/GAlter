@@ -20,7 +20,7 @@ class Responsable extends User
      */
     protected $id;
 
-    
+
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,112 +33,28 @@ class Responsable extends User
     /**
      *@ORM\Column(type="string", length=255)
      */
-    protected $adresse; 
-    
+    protected $adresse;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
-    protected $telephone; 
-    
+    protected $telephone;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
-    protected $organisation; 
 
+    protected $RespContrat;
 
-    /**
-     * @ORM\OneToMany(targetEntity="GAlter\UserBundle\Entity\Etudiant", mappedBy="Responsable", cascade={"persist"})
-     */
-    protected $Etudiant;
 
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueResponsableRapport", mappedBy="responsableId")
-     */
-    private $remarqueResponsableRapport;
-
-    /**
-     *@ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\Formation", cascade={"persist"}, inversedBy="responsable")
-     *@ORM\JoinColumn(name="formation_id", referencedColumnName="id")
-     */
-    private  $formations;
-
-    public  function __construct(){
-
-       $this->Etudiant= new \Doctrine\Common\Collections\ArrayCollection();
-
-
-        parent::__construct();
-    }
-
-
-    /**
-     * Add etudiant
+     * @var integer
      *
-     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
-     *
-     * @return Responsable
+     * @ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Formation", inversedBy="responsable")
+     * @ORM\JoinColumn(name="formation_id", referencedColumnName="id")
      */
-    public function addEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant)
-    {
-        $this->Etudiant[] = $etudiant;
-
-        return $this;
-    }
-
-    /**
-     * Remove etudiant
-     *
-     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
-     */
-    public function removeEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant)
-    {
-        $this->Etudiant->removeElement($etudiant);
-    }
-
-    /**
-     * Get etudiant
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getEtudiant()
-    {
-        return $this->Etudiant;
-    }
-
-    /**
-     * Add formation
-     *
-     * @param \GAlter\GestionBundle\Entity\Formation $formation
-     *
-     * @return Responsable
-     */
-    public function addFormation(\GAlter\GestionBundle\Entity\Formation $formation)
-    {
-        $this->Formations[] = $formation;
-
-        return $this;
-    }
-
-    /**
-     * Remove formation
-     *
-     * @param \GAlter\GestionBundle\Entity\Formation $formation
-     */
-    public function removeFormation(\GAlter\GestionBundle\Entity\Formation $formation)
-    {
-        $this->Formations->removeElement($formation);
-    }
-
-    /**
-     * Get formations
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getFormations()
-    {
-        return $this->Formations;
-    }
+    private $formation;
 
     /**
      * Set nom
@@ -237,74 +153,50 @@ class Responsable extends User
     }
 
     /**
-     * Set organisation
+     * Set respContrat
      *
-     * @param string $organisation
+     * @param string $respContrat
      *
      * @return Responsable
      */
-    public function setOrganisation($organisation)
+    public function setRespContrat($respContrat)
     {
-        $this->organisation = $organisation;
+        $this->RespContrat = $respContrat;
 
         return $this;
     }
 
     /**
-     * Get organisation
+     * Get respContrat
      *
      * @return string
      */
-    public function getOrganisation()
+    public function getRespContrat()
     {
-        return $this->organisation;
+        return $this->RespContrat;
     }
 
     /**
-     * Add remarqueResponsableRapport
+     * Set formation
      *
-     * @param \GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarqueResponsableRapport
+     * @param \GAlter\UserBundle\Entity\Fomation $formation
      *
      * @return Responsable
      */
-    public function addRemarqueResponsableRapport(\GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarqueResponsableRapport)
+    public function setFormation(\GAlter\UserBundle\Entity\Fomation $formation = null)
     {
-        $this->remarqueResponsableRapport[] = $remarqueResponsableRapport;
+        $this->formation = $formation;
 
         return $this;
     }
 
     /**
-     * Remove remarqueResponsableRapport
+     * Get formation
      *
-     * @param \GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarqueResponsableRapport
+     * @return \GAlter\UserBundle\Entity\Fomation
      */
-    public function removeRemarqueResponsableRapport(\GAlter\GestionBundle\Entity\RemarqueResponsableRapport $remarqueResponsableRapport)
+    public function getFormation()
     {
-        $this->remarqueResponsableRapport->removeElement($remarqueResponsableRapport);
-    }
-
-    /**
-     * Get remarqueResponsableRapport
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getRemarqueResponsableRapport()
-    {
-        return $this->remarqueResponsableRapport;
-    }
-
-    /**
-     * Set formations
-     *
-     * @param \GAlter\GestionBundle\Entity\Formation $formations
-     *
-     * @return Responsable
-     */
-    public function setFormations(\GAlter\GestionBundle\Entity\Formation $formations = null)
-    {
-        $this->formations = $formations;
-
-        return $this;
+        return $this->formation;
     }
 }
