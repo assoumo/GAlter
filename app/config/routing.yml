@@ -18,6 +18,9 @@ g_alter_gestion:
 #     type:     annotation
 #     prefix:   /
 
+
+
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation

@@ -1,15 +1,47 @@
 {% extends 'GAlterUserBundle::layout.html.twig' %}
 
-{% block content %}
-    <h1>Rapport creation</h1>
+{% block corp %}
+    <h1>Soummetre un rapport</h1>
+    <div class="well" style="height: 700px">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(form) }}
 
-    {{ form(form) }}
+        <div class="form-group">
+            {{ form_label(form.periodedebut, "Debut", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.periodedebut) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.periodedebut, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('rapport') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+        </div>
+        <div class="form-group">
+            {{ form_label(form.periodefin, "Fin", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.periodefin) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.periodefin, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(form.contenu, "Rapport",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.contenu)}}
+            <div class="col-sm-4">
+                {{ form_widget(form.contenu, {'attr': {'class' : 'col-sm-7 form-control', 'type': 'textarea','id': "editor" }}) }}
+
+            </div>
+        </div>
+
+        {{ form_widget(form.submit, {'attr': {'class' : ' col-sm-offset-5  col-sm-3 btn btn-primary'}}) }}
+
+        {{ form_end(form) }}
+    </div>
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('rapport') }}">
+                Back to the list
+            </a>
+        </li>
+    </ul>
 {% endblock %}
+
+

@@ -23,10 +23,7 @@ class Audit
 
  
 
-    /**
-     * @ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\Rapport", cascade={"persist"})
-     */
-    private $rapport;
+
     /**
      * @var \DateTime
      *

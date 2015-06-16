@@ -2,13 +2,16 @@
 
 namespace GAlter\GestionBundle\Controller;
 
+use GAlter\UserBundle\Entity\Etudiant;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use GAlter\GestionBundle\Entity\Rapport;
+use GAlter\GestionBundle\Entity\Audit;
 use GAlter\GestionBundle\Form\RapportType;
+use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Rapport controller.
@@ -28,11 +31,14 @@ class RapportController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $session=new session();
+        $user=$session->get('user');
 
         $entities = $em->getRepository('GAlterGestionBundle:Rapport')->findAll();
 
         return array(
             'entities' => $entities,
+            'user'=>$user
         );
     }
     /**
@@ -45,21 +51,68 @@ class RapportController extends Controller
     public function createAction(Request $request)
     {
         $entity = new Rapport();
+
+        $session= new session();
         $form = $this->createCreateForm($entity);
+        $session= new session();
+        $user=$session->get('user');
+
+        $em = $this->getDoctrine()->getManager();
+        $repository=$em->getRepository('GAlterUserBundle:Etudiant');
+        $etudiant= $repository->find($user->getId());
+
+
+
+
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($entity);
-            $em->flush();
 
-            return $this->redirect($this->generateUrl('rapport_show', array('id' => $entity->getId())));
+        if ($form->isValid()) {
+           // $date = date("Y-m-d");
+            $date="-----";
+            $entity->setDate($date);
+            $entity->setEtudiant($etudiant);
+            $em = $this->getDoctrine()->getManager();
+            try {
+
+                $em->persist($entity);
+                $em->flush();
+            }catch(Exception $exc){
+                print($exc);
+            }
+            return $this->redirect($this->generateUrl('rapport'));
         }
 
         return array(
             'entity' => $entity,
             'form'   => $form->createView(),
+            'user'   => $session->get('user')
         );
+    }
+
+    /**
+     * send email to tuteur student
+     * @param $etudiant
+     */
+    private function sendpublicemail( $etudiant, $message=null){
+
+      $tuteurs= $etudiant->getTuteurs();
+        foreach($tuteurs as $tuteur){
+            // envoie des messages aus tuteurs
+            $email=$tuteur->getEmail();
+            $nom=$tuteur->getNom();
+
+            $swiftmessage=\Swift_Message::newInstance();
+            $swiftmessage->setSubject("Vous avez un nouveau message");
+            $swiftmessage->setFrom("Platform@gmal.com")
+                ->setTo($email)
+                ->setBody("test mail");
+            $this->get('mailer')->sed($swiftmessage);
+        }
+    }
+
+    private function sendsecureemail($etudiant){
+
     }
 
     /**
@@ -92,9 +145,12 @@ class RapportController extends Controller
     {
         $entity = new Rapport();
         $form   = $this->createCreateForm($entity);
+        $session=new session();
+        $user=$session->get('user');
 
         return array(
             'entity' => $entity,
+            'user'=>$user,
             'form'   => $form->createView(),
         );
     }
@@ -152,12 +208,12 @@ class RapportController extends Controller
     }
 
     /**
-    * Creates a form to edit a Rapport entity.
-    *
-    * @param Rapport $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Rapport entity.
+     *
+     * @param Rapport $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Rapport $entity)
     {
         $form = $this->createForm(new RapportType(), $entity, array(
@@ -242,6 +298,6 @@ class RapportController extends Controller
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
-        ;
+            ;
     }
 }

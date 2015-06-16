@@ -15,11 +15,10 @@ class RapportType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('periode')
-            ->add('date')
-            ->add('contenu')
-            ->add('etudiant')
-            ->add('audit')
+            ->add('periodefin', 'date')
+            ->add('periodedebut', 'date')
+            ->add('contenu', 'textarea', array('attr' => array('rows' => '10','cols' => '10')))
+
         ;
     }
     

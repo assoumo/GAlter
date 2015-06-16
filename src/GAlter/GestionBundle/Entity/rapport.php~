@@ -23,7 +23,7 @@ class Rapport
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="rapports")
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Etudiant", inversedBy="rapports", cascade={"persist"})
      * @ORM\JoinColumn(name="id_etudiant", referencedColumnName="id")
      */
     private $etudiant;
@@ -34,18 +34,21 @@ class Rapport
     private $remarque;
 
 
-    /**
-     * @ORM\OneToOne(targetEntity="Audit", cascade={"persist"})
-     */
-    private $audit;
 
 
     /**
-     * @var string
+     * @var datetime
      *
-     * @ORM\Column(name="periode", type="string", length=255)
+     * @ORM\Column(name="periodedebut" , type="datetime")
      */
-    private $periode;
+    private $periodedebut;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="periodfin", type="datetime")
+     */
+    private $periodefin;
 
     /**
      * @var string
@@ -81,29 +84,9 @@ class Rapport
         return $this->id;
     }
 
-    /**
-     * Set periode
-     *
-     * @param string $periode
-     *
-     * @return Rapport
-     */
-    public function setPeriode($periode)
-    {
-        $this->periode = $periode;
 
-        return $this;
-    }
 
-    /**
-     * Get periode
-     *
-     * @return string
-     */
-    public function getPeriode()
-    {
-        return $this->periode;
-    }
+
 
     /**
      * Set date
@@ -233,5 +216,53 @@ class Rapport
     public function getAudit()
     {
         return $this->audit;
+    }
+
+    /**
+     * Set periodedebut
+     *
+     * @param string $periodedebut
+     *
+     * @return Rapport
+     */
+    public function setPeriodedebut($periodedebut)
+    {
+        $this->periodedebut = $periodedebut;
+
+        return $this;
+    }
+
+    /**
+     * Get periodedebut
+     *
+     * @return string
+     */
+    public function getPeriodedebut()
+    {
+        return $this->periodedebut;
+    }
+
+    /**
+     * Set periodefin
+     *
+     * @param string $periodefin
+     *
+     * @return Rapport
+     */
+    public function setPeriodefin($periodefin)
+    {
+        $this->periodefin = $periodefin;
+
+        return $this;
+    }
+
+    /**
+     * Get periodefin
+     *
+     * @return string
+     */
+    public function getPeriodefin()
+    {
+        return $this->periodefin;
     }
 }

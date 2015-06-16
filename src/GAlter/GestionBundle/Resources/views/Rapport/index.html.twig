@@ -1,45 +1,56 @@
-{% extends 'GAlterUserBundle::layout.html.twig' %}
+{% extends "GAlterUserBundle::layout.html.twig"%}
 
-{% block content %}
-    <h1>Rapport list</h1>
+{% block corp %}
+    <div class="container">
+        <div class="page-header">
+            <h1 id="timeline">Rapports</h1>
+        </div>
+        <ul class="timeline">
+            {% for entity in entities %}
+                <li>
+                    <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">{{ entity.etudiant.prenom }}
+                            </h4>
+                            <p>
+                                <small class="text-muted"><i class="glyphicon glyphicon-time"></i>
+                                    du {{ entity.periodedebut | date('Y-d-m')}} à {{ entity.periodefin | date('Y-d-m') }}
+                                </small>
+                            </p>
+                        </div>
+                        <div class="timeline-body">
+                            {{ entity.contenu | raw}}
+                           {% for ent in entity.remarque   %}
+                              {{ ent.id}}
+                           {% endfor %}
+                        </div>
 
-    <table class="records_list">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Periode</th>
-                <th>Date</th>
-                <th>Contenu</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('rapport_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.periode }}</td>
-                <td>{{ entity.date }}</td>
-                <td>{{ entity.contenu }}</td>
-                <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('rapport_show', { 'id': entity.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('rapport_edit', { 'id': entity.id }) }}">edit</a>
-                    </li>
-                </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                        <a class="btn btn-primary" href="">ADD</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
+                        </div>
+                    </div>
+                </li>
 
-        <ul>
+
+            {% endfor %}
+        </ul>
+    </div>
+
+    <ul class="record_actions">
         <li>
-            <a href="{{ path('rapport_new') }}">
-                Create a new entry
+            <a href="{{ path('rapport') }}">
+                Back to the list
             </a>
         </li>
     </ul>
-    {% endblock %}
+{% endblock %}

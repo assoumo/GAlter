@@ -9,6 +9,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use GAlter\GestionBundle\Entity\Agenda;
 use GAlter\GestionBundle\Form\AgendaType;
+use Symfony\Component\HttpFoundation\Session\Session;
+
 
 /**
  * Agenda controller.
@@ -28,11 +30,14 @@ class AgendaController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $session=new session();
+        $user=$session->get('user');
 
         $entities = $em->getRepository('GAlterGestionBundle:Agenda')->findAll();
 
         return array(
             'entities' => $entities,
+            'user'=>$user
         );
     }
     /**
@@ -111,7 +116,6 @@ class AgendaController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entity = $em->getRepository('GAlterGestionBundle:Agenda')->find($id);
-
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Agenda entity.');
