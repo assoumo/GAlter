@@ -563,9 +563,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserOneController::registerAction',  '_route' => 'user_one_registration',);
             }
 
-            // user_two_registration
-            if ($pathinfo === '/enregistrement/tuteur') {
-                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserTwoController::registerAction',  '_route' => 'user_two_registration',);
+            if (0 === strpos($pathinfo, '/enregistrement/tuteur')) {
+                // user_two_registration
+                if ($pathinfo === '/enregistrement/tuteur') {
+                    return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserTwoController::registerAction',  '_route' => 'user_two_registration',);
+                }
+
+                // user_four_registration
+                if ($pathinfo === '/enregistrement/tuteur_entreprise') {
+                    return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserFourController::registerAction',  '_route' => 'user_four_registration',);
+                }
+
             }
 
             // user_three_registration

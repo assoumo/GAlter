@@ -11,7 +11,7 @@ use FOS\UserBundle\Model\User as BaseUser;
  * @ORM\Table(name="user")
  * @ORM\InheritanceType("JOINED")
  * @ORM\DiscriminatorColumn(name="type", type="string")
- * @ORM\DiscriminatorMap({"etudiant" = "Etudiant", "tuteur" = "Tuteur", "responsable"="Responsable"})
+ * @ORM\DiscriminatorMap({"etudiant" = "Etudiant", "tuteur" = "Tuteur", "responsable"="Responsable", "tuteurEntreprise"="TuteurEntreprise"})
  *
  */
 

@@ -135,6 +135,18 @@ pugx_multi_user:
                             type: GAlter\UserBundle\Form\Type\ProfileUserThreeFormType
 
 
+        user_four:
+                    entity:
+                        class: GAlter\UserBundle\Entity\TuteurEntreprise
+                    registration:
+                        form:
+                            type: GAlter\UserBundle\Form\Type\RegistrationUserFourFormType
+                        template: GAlterUserBundle:Registration:user_four.form.html.twig
+                    profile:
+                        form:
+                            type: GAlter\UserBundle\Form\Type\ProfileUserFourFormType
+
+
 
 
 fos_message:

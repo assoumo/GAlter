@@ -68,7 +68,29 @@ class Etudiant  extends User
     /**
      *@ORM\Column(type="integer")
      */
-    protected $typecontrat; 
+    protected $typecontrat;
+
+
+    /**
+     * @ORM\Column(type="string", length=250)
+     */
+    protected $etat;
+
+    /**
+     * @param mixed $etat
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
 
 
     /**
@@ -76,6 +98,15 @@ class Etudiant  extends User
      * @ORM\JoinColumn(name="Tuteur", referencedColumnName="id")
      */
     private $Tuteur;
+
+
+
+
+    /**
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\TuteurEntreprise", inversedBy="Etudiant")
+     * @ORM\JoinColumn(name="TuteurEntreprise", referencedColumnName="id")
+     */
+    private $TuteurEntreprise;
 
 
 

@@ -675,6 +675,34 @@
           <parameter key="template">null</parameter>
         </parameter>
       </parameter>
+      <parameter key="user_four" type="collection">
+        <parameter key="entity" type="collection">
+          <parameter key="class">GAlter\UserBundle\Entity\TuteurEntreprise</parameter>
+          <parameter key="factory">PUGX\MultiUserBundle\Model\UserFactory</parameter>
+        </parameter>
+        <parameter key="registration" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">GAlter\UserBundle\Form\Type\RegistrationUserFourFormType</parameter>
+            <parameter key="name">fos_user_registration_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Registration</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">GAlterUserBundle:Registration:user_four.form.html.twig</parameter>
+        </parameter>
+        <parameter key="profile" type="collection">
+          <parameter key="form" type="collection">
+            <parameter key="type">GAlter\UserBundle\Form\Type\ProfileUserFourFormType</parameter>
+            <parameter key="name">fos_user_profile_form</parameter>
+            <parameter key="validation_groups" type="collection">
+              <parameter>Profile</parameter>
+              <parameter>Default</parameter>
+            </parameter>
+          </parameter>
+          <parameter key="template">null</parameter>
+        </parameter>
+      </parameter>
     </parameter>
     <parameter key="fos_user.backend_type_orm">true</parameter>
     <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\EventListener\LastLoginListener</parameter>
@@ -3235,7 +3263,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>5586dfe8aaa7d</argument>
+            <argument>5586fad337a92</argument>
           </service>
         </argument>
       </argument>
@@ -3590,7 +3618,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>5586dfe8aaa7d</argument>
+            <argument>5586fad337a92</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -4338,6 +4366,34 @@
           <argument key="profile" type="collection">
             <argument key="form" type="collection">
               <argument key="type">GAlter\UserBundle\Form\Type\ProfileUserThreeFormType</argument>
+              <argument key="name">fos_user_profile_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Profile</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">null</argument>
+          </argument>
+        </argument>
+        <argument key="user_four" type="collection">
+          <argument key="entity" type="collection">
+            <argument key="class">GAlter\UserBundle\Entity\TuteurEntreprise</argument>
+            <argument key="factory">PUGX\MultiUserBundle\Model\UserFactory</argument>
+          </argument>
+          <argument key="registration" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">GAlter\UserBundle\Form\Type\RegistrationUserFourFormType</argument>
+              <argument key="name">fos_user_registration_form</argument>
+              <argument key="validation_groups" type="collection">
+                <argument>Registration</argument>
+                <argument>Default</argument>
+              </argument>
+            </argument>
+            <argument key="template">GAlterUserBundle:Registration:user_four.form.html.twig</argument>
+          </argument>
+          <argument key="profile" type="collection">
+            <argument key="form" type="collection">
+              <argument key="type">GAlter\UserBundle\Form\Type\ProfileUserFourFormType</argument>
               <argument key="name">fos_user_profile_form</argument>
               <argument key="validation_groups" type="collection">
                 <argument>Profile</argument>

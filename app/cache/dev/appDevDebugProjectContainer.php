@@ -2693,7 +2693,7 @@ class appDevDebugProjectContainer extends Container
      */
     protected function getPugxUser_Manager_UserDiscriminatorService()
     {
-        return $this->services['pugx_user.manager.user_discriminator'] = new \PUGX\MultiUserBundle\Model\UserDiscriminator($this->get('session'), array('user_one' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\Etudiant', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserOneFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_one.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserOneFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL)), 'user_two' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\Tuteur', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserTwoFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_two.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserTwoFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL)), 'user_three' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\Responsable', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserThreeFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_three.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserThreeFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL))));
+        return $this->services['pugx_user.manager.user_discriminator'] = new \PUGX\MultiUserBundle\Model\UserDiscriminator($this->get('session'), array('user_one' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\Etudiant', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserOneFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_one.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserOneFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL)), 'user_two' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\Tuteur', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserTwoFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_two.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserTwoFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL)), 'user_three' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\Responsable', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserThreeFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_three.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserThreeFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL)), 'user_four' => array('entity' => array('class' => 'GAlter\\UserBundle\\Entity\\TuteurEntreprise', 'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory'), 'registration' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserFourFormType', 'name' => 'fos_user_registration_form', 'validation_groups' => array(0 => 'Registration', 1 => 'Default')), 'template' => 'GAlterUserBundle:Registration:user_four.form.html.twig'), 'profile' => array('form' => array('type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserFourFormType', 'name' => 'fos_user_profile_form', 'validation_groups' => array(0 => 'Profile', 1 => 'Default')), 'template' => NULL))));
     }
 
     /**
@@ -2931,7 +2931,7 @@ class appDevDebugProjectContainer extends Container
         $q = new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $g, $this->get('security.authentication.session_strategy'), $l, 'main', $o, $p, array('check_path' => 'fos_user_security_check', 'use_forward' => false, 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $a, $d, NULL);
         $q->setRememberMeServices($m);
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($k, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $n, 3 => $q, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $m, $g, $a, $d, true), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5586dfe8aaa7d', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $k, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $l, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $l, 'fos_user_security_login', false), NULL, NULL, $a));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => new \Symfony\Component\Security\Http\Firewall\ChannelListener($k, new \Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint(80, 443), $a), 1 => new \Symfony\Component\Security\Http\Firewall\ContextListener($b, array(0 => $c), 'main', $a, $d), 2 => $n, 3 => $q, 4 => new \Symfony\Component\Security\Http\Firewall\RememberMeListener($b, $m, $g, $a, $d, true), 5 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '5586fad337a92', $a, $g), 6 => new \Symfony\Component\Security\Http\Firewall\AccessListener($b, $this->get('security.access.decision_manager'), $k, $g)), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $l, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($f, $l, 'fos_user_security_login', false), NULL, NULL, $a));
     }
 
     /**
@@ -4671,7 +4671,7 @@ class appDevDebugProjectContainer extends Container
     {
         $a = $this->get('security.user_checker');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username_email'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'ThisTokenIsNotSoSecretChangeIt', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5586dfe8aaa7d')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($this->get('fos_user.user_provider.username_email'), $a, 'main', $this->get('security.encoder_factory'), true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\RememberMeAuthenticationProvider($a, 'ThisTokenIsNotSoSecretChangeIt', 'main'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('5586fad337a92')), true);
 
         $instance->setEventDispatcher($this->get('debug.event_dispatcher'));
 
@@ -5549,6 +5549,34 @@ class appDevDebugProjectContainer extends Container
                     'profile' => array(
                         'form' => array(
                             'type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserThreeFormType',
+                            'name' => 'fos_user_profile_form',
+                            'validation_groups' => array(
+                                0 => 'Profile',
+                                1 => 'Default',
+                            ),
+                        ),
+                        'template' => NULL,
+                    ),
+                ),
+                'user_four' => array(
+                    'entity' => array(
+                        'class' => 'GAlter\\UserBundle\\Entity\\TuteurEntreprise',
+                        'factory' => 'PUGX\\MultiUserBundle\\Model\\UserFactory',
+                    ),
+                    'registration' => array(
+                        'form' => array(
+                            'type' => 'GAlter\\UserBundle\\Form\\Type\\RegistrationUserFourFormType',
+                            'name' => 'fos_user_registration_form',
+                            'validation_groups' => array(
+                                0 => 'Registration',
+                                1 => 'Default',
+                            ),
+                        ),
+                        'template' => 'GAlterUserBundle:Registration:user_four.form.html.twig',
+                    ),
+                    'profile' => array(
+                        'form' => array(
+                            'type' => 'GAlter\\UserBundle\\Form\\Type\\ProfileUserFourFormType',
                             'name' => 'fos_user_profile_form',
                             'validation_groups' => array(
                                 0 => 'Profile',

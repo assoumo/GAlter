@@ -101,6 +101,15 @@ class Etudiant  extends User
 
 
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\TuteurEntreprise", inversedBy="Etudiant")
+     * @ORM\JoinColumn(name="TuteurEntreprise", referencedColumnName="id")
+     */
+    private $TuteurEntreprise;
+
+
+
     /**
      * Set prenom
      *
@@ -403,5 +412,29 @@ class Etudiant  extends User
     public function getTuteur()
     {
         return $this->Tuteur;
+    }
+
+    /**
+     * Set tuteurEntreprise
+     *
+     * @param \GAlter\UserBundle\Entity\TuteurEntreprise $tuteurEntreprise
+     *
+     * @return Etudiant
+     */
+    public function setTuteurEntreprise(\GAlter\UserBundle\Entity\TuteurEntreprise $tuteurEntreprise = null)
+    {
+        $this->TuteurEntreprise = $tuteurEntreprise;
+
+        return $this;
+    }
+
+    /**
+     * Get tuteurEntreprise
+     *
+     * @return \GAlter\UserBundle\Entity\TuteurEntreprise
+     */
+    public function getTuteurEntreprise()
+    {
+        return $this->TuteurEntreprise;
     }
 }

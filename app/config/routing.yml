@@ -34,6 +34,10 @@ user_two_registration:
     pattern:  /enregistrement/tuteur
     defaults: { _controller: GAlterUserBundle:RegistrationUserTwo:register }
 
+user_four_registration:
+    pattern:  /enregistrement/tuteur_entreprise
+    defaults: { _controller: GAlterUserBundle:RegistrationUserFour:register }
+
 user_three_registration:
     pattern:  /enregistrement/responsable
     defaults: { _controller: GAlterUserBundle:RegistrationUserThree:register }
