@@ -34,6 +34,12 @@ class RegistrationUserOneFormType extends AbstractType
                     )
                 )
             )
+
+
+            ->add('etat', 'choice', array(
+                'choices'   => array('Activer' => 'Actif', 'desactiver' => 'innacif'),
+                'preferred_choices' => array('Actif'),
+            ))
         ;
     }
 

@@ -68,7 +68,29 @@ class Etudiant  extends User
     /**
      *@ORM\Column(type="integer")
      */
-    protected $typecontrat; 
+    protected $typecontrat;
+
+
+    /**
+     * @ORM\Column(type="string", length=250)
+     */
+    protected $etat;
+
+    /**
+     * @param mixed $etat
+     */
+    public function setEtat($etat)
+    {
+        $this->etat = $etat;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEtat()
+    {
+        return $this->etat;
+    }
 
 
     /**

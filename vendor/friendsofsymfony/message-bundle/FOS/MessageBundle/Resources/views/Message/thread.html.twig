@@ -1,0 +1,104 @@
+{% extends 'GAlterUserBundle::layout.html.twig' %}
+
+{% block corps %}
+
+
+<h3>{% trans from 'FOSMessageBundle' %}reply{% endtrans %}</h3>
+
+<form action="{{ url('fos_message_thread_view', {'threadId': thread.id}) }}" method="post">
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+
+
+    <div class="chat-panel panel panel-default">
+        <div class="panel-heading">
+            <i class="fa fa-comments fa-fw"></i>
+            SUJET:{{ thread.subject }}
+
+            <div class="btn-group pull-right">
+                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                    <i class="fa fa-chevron-down"></i>
+                </button>
+                <ul class="dropdown-menu slidedown">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-refresh fa-fw"></i> Refresh
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-check-circle fa-fw"></i> Available
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-times fa-fw"></i> Busy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-clock-o fa-fw"></i> Away
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-sign-out fa-fw"></i> Sign Out
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+
+            {% set id_first_sender=thread.messages.first().id %}
+            {% for message in thread.messages %}
+
+
+            <ul class="chat">
+
+                {% if id_first_sender !=  message.id %}
+                <li class="left clearfix">
+                                    <span class="chat-img pull-left">
+                                        <img src="http://placehold.it/50/55C1E7/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                    <div class="chat-body clearfix">
+                        <div class="header">
+                            <strong class="primary-font">{{  message.sender}}</strong>
+                            <small class="pull-right text-muted">
+                                <i class="fa fa-clock-o fa-fw"></i> {{  message.createdAt|date}}
+                            </small>
+                        </div>
+                        <p>
+                            {{  message.body}}
+                        </p>
+                    </div>
+                </li>
+                {% else %}
+                <li class="right clearfix">
+                                    <span class="chat-img pull-right">
+                                        <img src="http://placehold.it/50/FA6F57/fff" alt="User Avatar" class="img-circle" />
+                                    </span>
+                    <div class="chat-body clearfix">
+                        <div class="header">
+                            <small class=" text-muted">
+                                <i class="fa fa-clock-o fa-fw"></i> {{  message.createdAt|date}}</small>
+                            <strong class="pull-right primary-font">{{  message.sender}}</strong>
+                        </div>
+                        <p>
+                            {{  message.body}}
+                        </p>
+                    </div>
+                </li>
+              {% endif %}
+            </ul>
+            {% endfor %}
+        </div>
+        <!-- /.panel-body -->
+
+    </div>
+
+{% endblock %}

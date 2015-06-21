@@ -10,7 +10,7 @@ class __TwigTemplate_df1fd3d3d129ce97495c34103f8c8eed936bd21c218281a47504ded59c0
         // line 1
         $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "GAlterUserBundle:Registration:user_two.form.html.twig", 1);
         $this->blocks = array(
-            'content' => array($this, 'block_content'),
+            'test' => array($this, 'block_test'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_df1fd3d3d129ce97495c34103f8c8eed936bd21c218281a47504ded59c0
     }
 
     // line 3
-    public function block_content($context, array $blocks = array())
+    public function block_test($context, array $blocks = array())
     {
         // line 4
         echo "    ";

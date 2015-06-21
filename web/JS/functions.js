@@ -4,6 +4,11 @@
  */
 
 $(document).ready(function(){
-   // alert('OK');
+
     CKEDITOR.replace("galter_gestionbundle_rapport_contenu");
+
+
+
 });
+
+

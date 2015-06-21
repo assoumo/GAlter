@@ -1,6 +1,6 @@
 {% extends "GAlterUserBundle::layout.html.twig" %}
 
-{% block content %}
+{% block corps%}
     {% trans_default_domain 'FOSUserBundle' %}
 
 
@@ -33,18 +33,35 @@
         {{ form_widget(form.information_contrat) }}
 
 
+
+
+
         {% if is_granted ('ROLE_ADMIN') %}
             {{ form_label(form.roles) }}
             {{ form_widget(form.roles) }}
             {{ form_errors(form.roles) }}
 
 
+            {{ form_label(form.etat) }}
+            {{ form_widget(form.etat) }}
+            {{ form_errors(form.etat) }}
+
+
+
+
         {% else %}
             {{ form_widget(form.roles, { 'attr' : { 'style':'display:none'} }) }}
             {{ form_errors(form.roles, { 'attr' : { 'style':'display:none'} }) }}
+
+
+            {{ form_widget(form.etat, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(form.etat, { 'attr' : { 'style':'display:none'} }) }}
         {% endif %}
         <input type="submit" value="Ok"/>
 
         {{form_rest(form)}}
     </form>
-{% endblock content %}
+
+
+
+{% endblock corps%}

@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new GAlter\UserBundle\GAlterUserBundle(),
             new GAlter\GestionBundle\GAlterGestionBundle(),
+            new FOS\MessageBundle\FOSMessageBundle(),
             //new GAlterGestionBundle\GAlterGestionBundle(),
         );
 

@@ -42,6 +42,28 @@ class AnneeFormationEtudiant
     private $anneeFormation;
 
 
+
+    /**
+     * @ORM\Column(type="string", length=250)
+     */
+    protected $EstValide;
+
+    /**
+     * @param mixed $EstValide
+     */
+    public function setEstValide($EstValide)
+    {
+        $this->EstValide = $EstValide;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEstValide()
+    {
+        return $this->EstValide;
+    }
+
     /**
      * Get id
      *

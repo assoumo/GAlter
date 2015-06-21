@@ -10,7 +10,7 @@ class __TwigTemplate_8537faae509d3a269fe40144b926747de56412cb2316dec0602d8c4cce4
         // line 1
         $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "GAlterUserBundle:Registration:user_one.form.html.twig", 1);
         $this->blocks = array(
-            'content' => array($this, 'block_content'),
+            'corps' => array($this, 'block_corps'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_8537faae509d3a269fe40144b926747de56412cb2316dec0602d8c4cce4
     }
 
     // line 3
-    public function block_content($context, array $blocks = array())
+    public function block_corps($context, array $blocks = array())
     {
         // line 4
         echo "    ";
@@ -114,43 +114,75 @@ class __TwigTemplate_8537faae509d3a269fe40144b926747de56412cb2316dec0602d8c4cce4
         echo "
 
 
+
+
+
         ";
-        // line 36
+        // line 39
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-            // line 37
+            // line 40
             echo "            ";
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "roles", array()), 'label');
             echo "
             ";
-            // line 38
+            // line 41
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "roles", array()), 'widget');
             echo "
             ";
-            // line 39
+            // line 42
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "roles", array()), 'errors');
             echo "
 
 
+            ";
+            // line 45
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat", array()), 'label');
+            echo "
+            ";
+            // line 46
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat", array()), 'widget');
+            echo "
+            ";
+            // line 47
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat", array()), 'errors');
+            echo "
+
+
+
+
         ";
         } else {
-            // line 43
+            // line 53
             echo "            ";
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "roles", array()), 'widget', array("attr" => array("style" => "display:none")));
             echo "
             ";
-            // line 44
+            // line 54
             echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "roles", array()), 'errors', array("attr" => array("style" => "display:none")));
+            echo "
+
+
+            ";
+            // line 57
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat", array()), 'widget', array("attr" => array("style" => "display:none")));
+            echo "
+            ";
+            // line 58
+            echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "etat", array()), 'errors', array("attr" => array("style" => "display:none")));
             echo "
         ";
         }
-        // line 46
+        // line 60
         echo "        <input type=\"submit\" value=\"Ok\"/>
 
         ";
-        // line 48
+        // line 62
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'rest');
         echo "
     </form>
+
+
+
 ";
     }
 
@@ -166,6 +198,6 @@ class __TwigTemplate_8537faae509d3a269fe40144b926747de56412cb2316dec0602d8c4cce4
 
     public function getDebugInfo()
     {
-        return array (  151 => 48,  147 => 46,  142 => 44,  137 => 43,  130 => 39,  126 => 38,  121 => 37,  119 => 36,  113 => 33,  109 => 32,  104 => 30,  100 => 29,  95 => 27,  91 => 26,  86 => 24,  82 => 23,  77 => 21,  71 => 18,  67 => 17,  62 => 15,  58 => 14,  53 => 12,  49 => 11,  44 => 9,  37 => 7,  33 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  180 => 62,  176 => 60,  171 => 58,  167 => 57,  161 => 54,  156 => 53,  147 => 47,  143 => 46,  139 => 45,  133 => 42,  129 => 41,  124 => 40,  122 => 39,  113 => 33,  109 => 32,  104 => 30,  100 => 29,  95 => 27,  91 => 26,  86 => 24,  82 => 23,  77 => 21,  71 => 18,  67 => 17,  62 => 15,  58 => 14,  53 => 12,  49 => 11,  44 => 9,  37 => 7,  33 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

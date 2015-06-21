@@ -3,6 +3,7 @@
 namespace GAlter\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use FOS\MessageBundle\Model\ParticipantInterface;
 use FOS\UserBundle\Model\User as BaseUser;
 
 /**
@@ -14,7 +15,7 @@ use FOS\UserBundle\Model\User as BaseUser;
  *
  */
 
-abstract class User extends BaseUser
+abstract class User extends BaseUser implements ParticipantInterface
 {
     /**
      * @var integer

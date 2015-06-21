@@ -688,6 +688,65 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
         }
 
+        if (0 === strpos($pathinfo, '/optional_routing_prefix')) {
+            // fos_message_inbox
+            if (rtrim($pathinfo, '/') === '/optional_routing_prefix') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'fos_message_inbox');
+                }
+
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::inboxAction',  '_route' => 'fos_message_inbox',);
+            }
+
+            // fos_message_sent
+            if ($pathinfo === '/optional_routing_prefix/sent') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::sentAction',  '_route' => 'fos_message_sent',);
+            }
+
+            // fos_message_deleted
+            if ($pathinfo === '/optional_routing_prefix/deleted') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::deletedAction',  '_route' => 'fos_message_deleted',);
+            }
+
+            // fos_message_search
+            if ($pathinfo === '/optional_routing_prefix/search') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::searchAction',  '_route' => 'fos_message_search',);
+            }
+
+            // fos_message_thread_new
+            if ($pathinfo === '/optional_routing_prefix/new') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::newThreadAction',  '_route' => 'fos_message_thread_new',);
+            }
+
+            // fos_message_thread_delete
+            if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_fos_message_thread_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_delete')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::deleteAction',));
+            }
+            not_fos_message_thread_delete:
+
+            // fos_message_thread_undelete
+            if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)/undelete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_fos_message_thread_undelete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_undelete')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::undeleteAction',));
+            }
+            not_fos_message_thread_undelete:
+
+            // fos_message_thread_view
+            if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_view')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::threadAction',));
+            }
+
+        }
+
         // _welcome
         if (rtrim($pathinfo, '/') === '') {
             if (substr($pathinfo, -1) !== '/') {

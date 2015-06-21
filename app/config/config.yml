@@ -135,3 +135,9 @@ pugx_multi_user:
                             type: GAlter\UserBundle\Form\Type\ProfileUserThreeFormType
 
 
+
+
+fos_message:
+    db_driver: orm
+    thread_class: GAlter\UserBundle\Entity\Thread
+    message_class: GAlter\UserBundle\Entity\Message
