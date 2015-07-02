@@ -26,10 +26,7 @@ class Etudiant  extends User
      */
     private $agendas;
 
-    /**
-     * @ORM\OneToOne(targetEntity="GAlter\GestionBundle\Entity\OptionsCompte", cascade={"persist"}, inversedBy="etudiant")
-     */
-    private $optionsCompte;
+
 
     /**
      * @ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Rapport", mappedBy="etudiant")
@@ -42,10 +39,11 @@ class Etudiant  extends User
     private $anneeFormationEtudiant;
 
 
+
     /**
-     * @ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\Projet", mappedBy="etudiant")
+     * @ORM\Column(type="string", length=250)
      */
-    private $projet;
+    protected $numeroetudiant;
 
 
     /**
@@ -264,30 +262,9 @@ class Etudiant  extends User
         return $this->agendas;
     }
 
-    /**
-     * Set optionsCompte
-     *
-     * @param \GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte
-     *
-     * @return Etudiant
-     */
-    public function setOptionsCompte(\GAlter\GestionBundle\Entity\OptionsCompte $optionsCompte = null)
-    {
-        $this->optionsCompte = $optionsCompte;
+    
 
-        return $this;
-    }
-
-    /**
-     * Get optionsCompte
-     *
-     * @return \GAlter\GestionBundle\Entity\OptionsCompte
-     */
-    public function getOptionsCompte()
-    {
-        return $this->optionsCompte;
-    }
-
+    
     /**
      * Add rapport
      *
@@ -356,40 +333,7 @@ class Etudiant  extends User
         return $this->anneeFormationEtudiant;
     }
 
-    /**
-     * Add projet
-     *
-     * @param \GAlter\GestionBundle\Entity\Projet $projet
-     *
-     * @return Etudiant
-     */
-    public function addProjet(\GAlter\GestionBundle\Entity\Projet $projet)
-    {
-        $this->projet[] = $projet;
-
-        return $this;
-    }
-
-    /**
-     * Remove projet
-     *
-     * @param \GAlter\GestionBundle\Entity\Projet $projet
-     */
-    public function removeProjet(\GAlter\GestionBundle\Entity\Projet $projet)
-    {
-        $this->projet->removeElement($projet);
-    }
-
-    /**
-     * Get projet
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getProjet()
-    {
-        return $this->projet;
-    }
-
+  
     /**
      * Set tuteur
      *
@@ -436,5 +380,53 @@ class Etudiant  extends User
     public function getTuteurEntreprise()
     {
         return $this->TuteurEntreprise;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     *
+     * @return Etudiant
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set numeroetudiant
+     *
+     * @param string $numeroetudiant
+     *
+     * @return Etudiant
+     */
+    public function setNumeroetudiant($numeroetudiant)
+    {
+        $this->numeroetudiant = $numeroetudiant;
+
+        return $this;
+    }
+
+    /**
+     * Get numeroetudiant
+     *
+     * @return string
+     */
+    public function getNumeroetudiant()
+    {
+        return $this->numeroetudiant;
     }
 }

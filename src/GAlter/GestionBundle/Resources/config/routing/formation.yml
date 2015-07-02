@@ -1,0 +1,30 @@
+formation:
+    path:     /
+    defaults: { _controller: "GAlterGestionBundle:Formation:index" }
+
+formation_show:
+    path:     /{id}/show
+    defaults: { _controller: "GAlterGestionBundle:Formation:show" }
+
+formation_new:
+    path:     /new
+    defaults: { _controller: "GAlterGestionBundle:Formation:new" }
+
+formation_create:
+    path:     /create
+    defaults: { _controller: "GAlterGestionBundle:Formation:create" }
+    methods:  POST
+
+formation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GAlterGestionBundle:Formation:edit" }
+
+formation_update:
+    path:     /{id}/update
+    defaults: { _controller: "GAlterGestionBundle:Formation:update" }
+    methods:  [POST, PUT]
+
+formation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GAlterGestionBundle:Formation:delete" }
+    methods:  [POST, DELETE]

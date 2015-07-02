@@ -44,6 +44,16 @@ class Rapport
     private $periodedebut;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="textaudit", type="string", length=255)
+     */
+    private $textaudit;
+
+
+
+
+    /**
      * @var datetime
      *
      * @ORM\Column(name="periodfin", type="datetime")
@@ -51,9 +61,9 @@ class Rapport
     private $periodefin;
 
     /**
-     * @var string
+     * @var datetime
      *
-     * @ORM\Column(name="date", type="string", length=255)
+     * @ORM\Column(name="date", type="datetime")
      */
     private $date;
 
@@ -72,6 +82,8 @@ class Rapport
     public function __construct()
     {
         $this->remarque = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->date=new \Datetime();
+        $this->textaudit="Ajouté le ";
     }
 
     /**
@@ -194,29 +206,7 @@ class Rapport
         return $this->remarque;
     }
 
-    /**
-     * Set audit
-     *
-     * @param \GAlter\GestionBundle\Entity\Audit $audit
-     *
-     * @return Rapport
-     */
-    public function setAudit(\GAlter\GestionBundle\Entity\Audit $audit = null)
-    {
-        $this->audit = $audit;
-
-        return $this;
-    }
-
-    /**
-     * Get audit
-     *
-     * @return \GAlter\GestionBundle\Entity\Audit
-     */
-    public function getAudit()
-    {
-        return $this->audit;
-    }
+   
 
     /**
      * Set periodedebut
@@ -264,5 +254,58 @@ class Rapport
     public function getPeriodefin()
     {
         return $this->periodefin;
+    }
+
+    public  function settoCurrentdate(){
+        $this->date=new \Datetime();
+    }
+
+    public function setvisibilite(){
+        $this->textaudit="Modifié le ";
+    }
+
+    /**
+     * Set textaudit
+     *
+     * @param string $textaudit
+     *
+     * @return Rapport
+     */
+    public function setTextaudit($textaudit)
+    {
+        $this->textaudit = $textaudit;
+
+        return $this;
+    }
+
+    /**
+     * Get textaudit
+     *
+     * @return string
+     */
+    public function getTextaudit()
+    {
+        return $this->textaudit;
+    }
+
+
+    /**
+     * retourne les rapports d'un etudiant par rapport a une annee
+     * @param $annee
+     * @param Etudiant $etudiant
+     * @return array
+     */
+    public function rapportParAnnee($annee, $etudiant){
+        $rapports=$etudiant->getRapports();
+
+        $rapport_selected[]=array();
+        foreach($rapports as $rapport){
+            $date=$rapport->getDate();
+            if($date->format('Y')==$annee)
+                $rapport_selected[]=$rapport;
+        }
+
+        return $rapport_selected;
+
     }
 }

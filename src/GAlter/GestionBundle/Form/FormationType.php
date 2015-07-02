@@ -4,6 +4,8 @@ namespace GAlter\GestionBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Doctrine\ORM\EntityRepository;
+
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class FormationType extends AbstractType
@@ -19,8 +21,22 @@ class FormationType extends AbstractType
             ->add('libelle')
             ->add('description')
             ->add('departement')
-            ->add('tuteur')
-        ;
+//            ->add('responsable');
+//          ->add('responsable',
+//              'entity',
+//              array(
+//                  'class'=>'GAlter\UserBundle\Entity\Responsable',
+//                  'property'=>'nom',
+//                  'query_builder' =>function (\Doctrine\ORM\EntityRepository $repository)
+//                      {
+//                          return $repository->createQueryBuilder('s')
+//                              ->where('s.RespContrat = ?1')
+//                              ->setParameter(1, 'Alternance')
+//                              ;
+//                      }
+//              )
+//          );
+;
     }
     
     /**

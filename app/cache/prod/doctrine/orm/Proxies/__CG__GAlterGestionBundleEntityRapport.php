@@ -64,10 +64,10 @@ class Rapport extends \GAlter\GestionBundle\Entity\Rapport implements \Doctrine\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'etudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'remarque', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'audit', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'periode', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'date', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'contenu');
+            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'etudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'remarque', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'periodedebut', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'textaudit', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'periodefin', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'date', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'contenu');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'etudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'remarque', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'audit', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'periode', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'date', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'contenu');
+        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'etudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'remarque', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'periodedebut', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'textaudit', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'periodefin', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'date', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Rapport' . "\0" . 'contenu');
     }
 
     /**
@@ -191,28 +191,6 @@ class Rapport extends \GAlter\GestionBundle\Entity\Rapport implements \Doctrine\
     /**
      * {@inheritDoc}
      */
-    public function setPeriode($periode)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPeriode', array($periode));
-
-        return parent::setPeriode($periode);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getPeriode()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPeriode', array());
-
-        return parent::getPeriode();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function setDate($date)
     {
 
@@ -329,6 +307,105 @@ class Rapport extends \GAlter\GestionBundle\Entity\Rapport implements \Doctrine\
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAudit', array());
 
         return parent::getAudit();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPeriodedebut($periodedebut)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPeriodedebut', array($periodedebut));
+
+        return parent::setPeriodedebut($periodedebut);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPeriodedebut()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPeriodedebut', array());
+
+        return parent::getPeriodedebut();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setPeriodefin($periodefin)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setPeriodefin', array($periodefin));
+
+        return parent::setPeriodefin($periodefin);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPeriodefin()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPeriodefin', array());
+
+        return parent::getPeriodefin();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function settoCurrentdate()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'settoCurrentdate', array());
+
+        return parent::settoCurrentdate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setvisibilite()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setvisibilite', array());
+
+        return parent::setvisibilite();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTextaudit($textaudit)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTextaudit', array($textaudit));
+
+        return parent::setTextaudit($textaudit);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTextaudit()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTextaudit', array());
+
+        return parent::getTextaudit();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function rapportParAnnee($annee, $etudiant)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'rapportParAnnee', array($annee, $etudiant));
+
+        return parent::rapportParAnnee($annee, $etudiant);
     }
 
 }

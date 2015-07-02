@@ -116,6 +116,25 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'galter_gestion_default_index')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DefaultController::indexAction',));
         }
 
+        if (0 === strpos($pathinfo, '/export')) {
+            // formulaire
+            if ($pathinfo === '/export/formexport') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::formulaireAction',  '_route' => 'formulaire',);
+            }
+
+            // exporter_tout
+            if (0 === strpos($pathinfo, '/export/toutrapport') && preg_match('#^/export/toutrapport/(?P<rapports>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_exporter_tout;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'exporter_tout')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::exportertousAction',));
+            }
+            not_exporter_tout:
+
+        }
+
         if (0 === strpos($pathinfo, '/formation')) {
             // formation
             if (rtrim($pathinfo, '/') === '/formation') {
@@ -452,6 +471,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
+        // galter_gestion_test_testannee
+        if ($pathinfo === '/testannee') {
+            return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\TestController::testanneeAction',  '_route' => 'galter_gestion_test_testannee',);
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
@@ -463,9 +487,17 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserOneController::registerAction',  '_route' => 'user_one_registration',);
             }
 
-            // user_two_registration
-            if ($pathinfo === '/enregistrement/tuteur') {
-                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserTwoController::registerAction',  '_route' => 'user_two_registration',);
+            if (0 === strpos($pathinfo, '/enregistrement/tuteur')) {
+                // user_two_registration
+                if ($pathinfo === '/enregistrement/tuteur') {
+                    return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserTwoController::registerAction',  '_route' => 'user_two_registration',);
+                }
+
+                // user_four_registration
+                if ($pathinfo === '/enregistrement/tuteur_entreprise') {
+                    return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\RegistrationUserFourController::registerAction',  '_route' => 'user_four_registration',);
+                }
+
             }
 
             // user_three_registration
@@ -586,6 +618,65 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         // fos_user_change_password
         if ($pathinfo === '/profile/change-password') {
             return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
+        }
+
+        if (0 === strpos($pathinfo, '/optional_routing_prefix')) {
+            // fos_message_inbox
+            if (rtrim($pathinfo, '/') === '/optional_routing_prefix') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'fos_message_inbox');
+                }
+
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::inboxAction',  '_route' => 'fos_message_inbox',);
+            }
+
+            // fos_message_sent
+            if ($pathinfo === '/optional_routing_prefix/sent') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::sentAction',  '_route' => 'fos_message_sent',);
+            }
+
+            // fos_message_deleted
+            if ($pathinfo === '/optional_routing_prefix/deleted') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::deletedAction',  '_route' => 'fos_message_deleted',);
+            }
+
+            // fos_message_search
+            if ($pathinfo === '/optional_routing_prefix/search') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::searchAction',  '_route' => 'fos_message_search',);
+            }
+
+            // fos_message_thread_new
+            if ($pathinfo === '/optional_routing_prefix/new') {
+                return array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::newThreadAction',  '_route' => 'fos_message_thread_new',);
+            }
+
+            // fos_message_thread_delete
+            if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_fos_message_thread_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_delete')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::deleteAction',));
+            }
+            not_fos_message_thread_delete:
+
+            // fos_message_thread_undelete
+            if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)/undelete$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_fos_message_thread_undelete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_undelete')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::undeleteAction',));
+            }
+            not_fos_message_thread_undelete:
+
+            // fos_message_thread_view
+            if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_view')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::threadAction',));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

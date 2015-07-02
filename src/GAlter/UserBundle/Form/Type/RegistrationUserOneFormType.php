@@ -16,7 +16,7 @@ class RegistrationUserOneFormType extends AbstractType
         $builder
             ->add('prenom')
             ->add('Tuteur')
-           ->add('TuteurEntreprise')
+            ->add('TuteurEntreprise')
             ->add('telephone')
             ->add('adresse')
             ->add('typecontrat')

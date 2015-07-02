@@ -49,94 +49,7 @@ class AnneeFormationEtudiant
     protected $EstValide;
 
     /**
-     * @param mixed $EstValide
-     */
-    public function setEstValide($EstValide)
-    {
-        $this->EstValide = $EstValide;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getEstValide()
-    {
-        return $this->EstValide;
-    }
-
-    /**
-     * Get id
-     *
-     * @return integer 
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * Set etudiantIdetudiant
-     *
-     * @param integer $etudiantIdetudiant
-     * @return AnneeFormationEtudiant
-     */
-    public function setEtudiantIdetudiant($etudiantIdetudiant)
-    {
-        $this->etudiantIdetudiant = $etudiantIdetudiant;
-
-        return $this;
-    }
-
-    /**
-     * Get etudiantIdetudiant
-     *
-     * @return integer 
-     */
-    public function getEtudiantIdetudiant()
-    {
-        return $this->etudiantIdetudiant;
-    }
-
-    /**
-     * Set formationIdFormation
-     *
-     * @param integer $formationIdFormation
-     * @return AnneeFormationEtudiant
-     */
-    public function setFormationIdFormation($formationIdFormation)
-    {
-        $this->formationIdFormation = $formationIdFormation;
-
-        return $this;
-    }
-
-    /**
-     * Get formationIdFormation
-     *
-     * @return integer 
-     */
-    public function getFormationIdFormation()
-    {
-        return $this->formationIdFormation;
-    }
-
-    /**
-     * Set anneeFormation
-     *
-     * @param integer $anneeFormation
-     * @return AnneeFormationEtudiant
-     */
-    public function setAnneeFormation($anneeFormation)
-    {
-        $this->anneeFormation = $anneeFormation;
-
-        return $this;
-    }
-
-    /**
-     * Get anneeFormation
-     *
-     * @return integer 
+     * @return int
      */
     public function getAnneeFormation()
     {
@@ -144,74 +57,29 @@ class AnneeFormationEtudiant
     }
 
     /**
-     * Set etudiant
-     *
-     * @param \GAlter\UserBundle\Entity\Etudiant $etudiant
-     *
-     * @return AnneeFormationEtudiant
+     * @param int $anneeFormation
      */
-    public function setEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant = null)
+    public function setAnneeFormation($anneeFormation)
     {
-        $this->etudiant = $etudiant;
-
-        return $this;
+        $this->anneeFormation = $anneeFormation;
     }
 
+
     /**
-     * Get etudiant
-     *
-     * @return \GAlter\UserBundle\Entity\Etudiant
+     * @return mixed
      */
     public function getEtudiant()
-    {
-        return $this->etudiant;
-    }
-
-    /**
-     * Set etudiants
-     *
-     * @param \GAlter\UserBundle\Entity\Etudiant $etudiants
-     *
-     * @return AnneeFormationEtudiant
-     */
-    public function setEtudiants(\GAlter\UserBundle\Entity\Etudiant $etudiants = null)
-    {
-        $this->etudiants = $etudiants;
-
-        return $this;
-    }
-
-    /**
-     * Get etudiants
-     *
-     * @return \GAlter\UserBundle\Entity\Etudiant
-     */
-    public function getEtudiants()
     {
         return $this->etudiants;
     }
 
     /**
-     * Set formations
-     *
-     * @param \GAlter\GestionBundle\Entity\Formation $formations
-     *
-     * @return AnneeFormationEtudiant
+     * @return mixed
      */
-    public function setFormations(\GAlter\GestionBundle\Entity\Formation $formations = null)
-    {
-        $this->Formations = $formations;
-
-        return $this;
-    }
-
-    /**
-     * Get formations
-     *
-     * @return \GAlter\GestionBundle\Entity\Formation
-     */
-    public function getFormations()
+    public function getFormation()
     {
         return $this->Formations;
     }
+
+
 }

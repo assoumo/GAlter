@@ -64,10 +64,10 @@ class Formation extends \GAlter\GestionBundle\Entity\Formation implements \Doctr
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'libelle', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'description', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'departement');
+            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'libelle', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'description', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'departement', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'responsable');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'libelle', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'description', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'departement');
+        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'libelle', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'description', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'departement', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Formation' . "\0" . 'responsable');
     }
 
     /**
@@ -285,6 +285,39 @@ class Formation extends \GAlter\GestionBundle\Entity\Formation implements \Doctr
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnneeFormationEtudiant', array());
 
         return parent::getAnneeFormationEtudiant();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addResponsable(\GAlter\UserBundle\Entity\Responsable $responsable)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addResponsable', array($responsable));
+
+        return parent::addResponsable($responsable);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeResponsable(\GAlter\UserBundle\Entity\Responsable $responsable)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeResponsable', array($responsable));
+
+        return parent::removeResponsable($responsable);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getResponsable()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getResponsable', array());
+
+        return parent::getResponsable();
     }
 
 }

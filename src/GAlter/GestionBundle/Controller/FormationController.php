@@ -4,16 +4,13 @@ namespace GAlter\GestionBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+
 use GAlter\GestionBundle\Entity\Formation;
 use GAlter\GestionBundle\Form\FormationType;
 
 /**
  * Formation controller.
  *
- * @Route("/formation")
  */
 class FormationController extends Controller
 {
@@ -21,9 +18,6 @@ class FormationController extends Controller
     /**
      * Lists all Formation entities.
      *
-     * @Route("/", name="formation")
-     * @Method("GET")
-     * @Template()
      */
     public function indexAction()
     {
@@ -31,16 +25,13 @@ class FormationController extends Controller
 
         $entities = $em->getRepository('GAlterGestionBundle:Formation')->findAll();
 
-        return array(
+        return $this->render('GAlterGestionBundle:Formation:index.html.twig', array(
             'entities' => $entities,
-        );
+        ));
     }
     /**
      * Creates a new Formation entity.
      *
-     * @Route("/", name="formation_create")
-     * @Method("POST")
-     * @Template("GAlterGestionBundle:Formation:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -56,10 +47,10 @@ class FormationController extends Controller
             return $this->redirect($this->generateUrl('formation_show', array('id' => $entity->getId())));
         }
 
-        return array(
+        return $this->render('GAlterGestionBundle:Formation:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ));
     }
 
     /**
@@ -84,27 +75,21 @@ class FormationController extends Controller
     /**
      * Displays a form to create a new Formation entity.
      *
-     * @Route("/new", name="formation_new")
-     * @Method("GET")
-     * @Template()
      */
     public function newAction()
     {
         $entity = new Formation();
         $form   = $this->createCreateForm($entity);
 
-        return array(
+        return $this->render('GAlterGestionBundle:Formation:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ));
     }
 
     /**
      * Finds and displays a Formation entity.
      *
-     * @Route("/{id}", name="formation_show")
-     * @Method("GET")
-     * @Template()
      */
     public function showAction($id)
     {
@@ -118,18 +103,15 @@ class FormationController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return $this->render('GAlterGestionBundle:Formation:show.html.twig', array(
             'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
 
     /**
      * Displays a form to edit an existing Formation entity.
      *
-     * @Route("/{id}/edit", name="formation_edit")
-     * @Method("GET")
-     * @Template()
      */
     public function editAction($id)
     {
@@ -144,11 +126,11 @@ class FormationController extends Controller
         $editForm = $this->createEditForm($entity);
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
+        return $this->render('GAlterGestionBundle:Formation:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
 
     /**
@@ -172,9 +154,6 @@ class FormationController extends Controller
     /**
      * Edits an existing Formation entity.
      *
-     * @Route("/{id}", name="formation_update")
-     * @Method("PUT")
-     * @Template("GAlterGestionBundle:Formation:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
@@ -196,17 +175,15 @@ class FormationController extends Controller
             return $this->redirect($this->generateUrl('formation_edit', array('id' => $id)));
         }
 
-        return array(
+        return $this->render('GAlterGestionBundle:Formation:edit.html.twig', array(
             'entity'      => $entity,
             'edit_form'   => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
     /**
      * Deletes a Formation entity.
      *
-     * @Route("/{id}", name="formation_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, $id)
     {

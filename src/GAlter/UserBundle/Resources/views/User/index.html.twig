@@ -1,0 +1,41 @@
+{% extends "GAlterUserBundle::layout.html.twig" %}
+
+{% block titre %}  Liste des responsables  {% endblock %}
+{% block corps%}
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr class="success">
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Action</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+            <tr class="warning">
+                <td>{{ entity.username }}</td>
+
+                <td>{{ entity.prenom }}</td>
+                <td>{{ entity.email }}</td>
+                <td>
+                    {#{% for role in entity.roles %}#}
+
+                    {#{{ role }}#}
+
+                    {{ entity.roles[0] }}
+                {#{% endfor %}#}
+                </td>
+                <td><a href="{{ path('user_edit',{'id':entity.id}) }}">  <button type="button" class="btn btn-primary">Changer le rôle</button> </a> </td>
+
+            </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+    {% endblock %}

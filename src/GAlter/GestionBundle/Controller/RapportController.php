@@ -31,16 +31,17 @@ class RapportController extends Controller
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
-        $session=new session();
-        $user=$session->get('user');
+        $session = new session();
+        $user = $session->get('user');
 
         $entities = $em->getRepository('GAlterGestionBundle:Rapport')->findAll();
 
         return array(
             'entities' => $entities,
-            'user'=>$user
+            'user' => $user
         );
     }
+
     /**
      * Creates a new Rapport entity.
      *
@@ -52,66 +53,71 @@ class RapportController extends Controller
     {
         $entity = new Rapport();
 
-        $session= new session();
         $form = $this->createCreateForm($entity);
-        $session= new session();
-        $user=$session->get('user');
+        $session = new session();
+        $user = $session->get('user');
+
 
         $em = $this->getDoctrine()->getManager();
-        $repository=$em->getRepository('GAlterUserBundle:Etudiant');
-        $etudiant= $repository->find($user->getId());
+        $repository = $em->getRepository('GAlterUserBundle:Etudiant');
 
-
+        $etudiant = $repository->find($user->getId());
 
 
         $form->handleRequest($request);
 
 
         if ($form->isValid()) {
-           // $date = date("Y-m-d");
-            $date="-----";
-            $entity->setDate($date);
             $entity->setEtudiant($etudiant);
             $em = $this->getDoctrine()->getManager();
-            try {
 
+            try {
                 $em->persist($entity);
                 $em->flush();
-            }catch(Exception $exc){
+            } catch (Exception $exc) {
                 print($exc);
             }
+            $this->sendpublicemail($etudiant);
             return $this->redirect($this->generateUrl('rapport'));
+
+
         }
 
         return array(
             'entity' => $entity,
-            'form'   => $form->createView(),
-            'user'   => $session->get('user')
+            'form' => $form->createView(),
+            'user' => $session->get('user')
         );
     }
 
+
+
     /**
-     * send email to tuteur student
+     * send email to tuteur
      * @param $etudiant
      */
-    private function sendpublicemail( $etudiant, $message=null){
+    private function sendpublicemail($etudiant, $message = null)
+    {
 
-      $tuteurs= $etudiant->getTuteurs();
-        foreach($tuteurs as $tuteur){
-            // envoie des messages aus tuteurs
-            $email=$tuteur->getEmail();
-            $nom=$tuteur->getNom();
 
-            $swiftmessage=\Swift_Message::newInstance();
-            $swiftmessage->setSubject("Vous avez un nouveau message");
-            $swiftmessage->setFrom("Platform@gmal.com")
-                ->setTo($email)
-                ->setBody("test mail");
-            $this->get('mailer')->sed($swiftmessage);
-        }
+        $tuteur = $etudiant->getTuteur();
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('id' => $tuteur->getId()));
+        $email = $user->getEmail();
+        $nom_tuteur = $tuteur->getNom();
+        $nom_apprenti = $etudiant->getPrenom();
+
+        $swiftmessage = \Swift_Message::newInstance();
+        $swiftmessage->setSubject("Vous avez un nouveau message");
+        $message = "Bonjour M./Mme " + $nom_tuteur + " \n Votre apprenti " + $nom_apprenti + " a soumis un nouveau rapport";
+        $swiftmessage->setFrom("assoumourad@gmail.com")
+            ->setTo($email)
+            ->setBody($message);
+        $this->get('mailer')->send($swiftmessage);
     }
 
-    private function sendsecureemail($etudiant){
+    private function sendsecureemail($etudiant)
+    {
 
     }
 
@@ -144,14 +150,14 @@ class RapportController extends Controller
     public function newAction()
     {
         $entity = new Rapport();
-        $form   = $this->createCreateForm($entity);
-        $session=new session();
-        $user=$session->get('user');
+        $form = $this->createCreateForm($entity);
+        $session = new session();
+        $user = $session->get('user');
 
         return array(
             'entity' => $entity,
-            'user'=>$user,
-            'form'   => $form->createView(),
+            'user' => $user,
+            'form' => $form->createView(),
         );
     }
 
@@ -175,7 +181,7 @@ class RapportController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -201,8 +207,8 @@ class RapportController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
@@ -225,6 +231,7 @@ class RapportController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Rapport entity.
      *
@@ -247,17 +254,20 @@ class RapportController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $entity->setvisibilite();
+            $entity->settoCurrentdate();
             $em->flush();
 
             return $this->redirect($this->generateUrl('rapport_edit', array('id' => $id)));
         }
 
         return array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         );
     }
+
     /**
      * Deletes a Rapport entity.
      *
@@ -297,7 +307,6 @@ class RapportController extends Controller
             ->setAction($this->generateUrl('rapport_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-            ;
+            ->getForm();
     }
 }

@@ -37,6 +37,13 @@ class RemarqueTuteurRapport
      */
     private $tuteurIdRapport;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenu", type="string", length=255)
+     */
+    private $contenu;
+
 
 
     /**
@@ -95,5 +102,29 @@ class RemarqueTuteurRapport
     public function getTuteurIdRapport()
     {
         return $this->tuteurIdRapport;
+    }
+
+    /**
+     * Set contenu
+     *
+     * @param string $contenu
+     *
+     * @return RemarqueTuteurRapport
+     */
+    public function setContenu($contenu)
+    {
+        $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    /**
+     * Get contenu
+     *
+     * @return string
+     */
+    public function getContenu()
+    {
+        return $this->contenu;
     }
 }

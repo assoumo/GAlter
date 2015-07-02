@@ -12,4 +12,28 @@ use Doctrine\ORM\EntityRepository;
  */
 class AnneeFormationEtudiantRepository extends EntityRepository
 {
+
+    /**
+     * retourne les annees associée a un etudiant via l'entité etudiant
+     * @param $etudiant
+     * @return array
+     */
+    public function getAnnee($etudiant){
+        $queryBuilder=$this->createQueryBuilder('annee');
+              $queryBuilder->where('annee.etudiants =:etudiant')
+                  ->setParameter('etudiant', $etudiant);
+        return $queryBuilder->getQuery()->getResult();
+
+    }
+
+
+    public function getAnneeByFormation($formation){
+        $queryBuilder=$this->createQueryBuilder(array('annee.anneeFormation'));
+        $queryBuilder->from('GAlterGestionBundle:AnneeFormationEtudiant','annee')
+                     ->where('annee.Formations =:formation')
+                     ->setParameter('formation', $formation);
+        return $queryBuilder->getQuery()->getResult();
+    }
+
+
 }

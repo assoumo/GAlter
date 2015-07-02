@@ -10,4 +10,30 @@ namespace GAlter\UserBundle\Entity;
  */
 class EtudiantRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    /**
+     * retourne les etudiantassocié a une formation
+     *
+     */
+
+    public function getStudentByIdFormation($formation){
+        $query_builder=$this->createQueryBuilder('e');
+        $query_builder->join('e.anneeFormationEtudiant', 'a')
+            ->where('a.formation = :formation')
+            ->setParameter('formation', $formation);
+        return $query_builder;
+
+    }
+
+
+    public function getAnneeFormation($formation){
+        $query_builder=$this->createQueryBuilder('e');
+        $query_builder->join('e.anneeFormationEtudiant', 'a')
+            ->where('a.formation = :formation')
+            ->setParameter('formation', $formation);
+        return $query_builder;
+
+    }
+
+
 }

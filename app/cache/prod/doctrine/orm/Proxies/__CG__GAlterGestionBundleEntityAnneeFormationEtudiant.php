@@ -64,10 +64,10 @@ class AnneeFormationEtudiant extends \GAlter\GestionBundle\Entity\AnneeFormation
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'etudiants', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'Formations', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'anneeFormation');
+            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'etudiants', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'Formations', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'anneeFormation', 'EstValide');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'etudiants', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'Formations', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'anneeFormation');
+        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'etudiants', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'Formations', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\AnneeFormationEtudiant' . "\0" . 'anneeFormation', 'EstValide');
     }
 
     /**
@@ -176,60 +176,12 @@ class AnneeFormationEtudiant extends \GAlter\GestionBundle\Entity\AnneeFormation
     /**
      * {@inheritDoc}
      */
-    public function getId()
-    {
-        if ($this->__isInitialized__ === false) {
-            return (int)  parent::getId();
-        }
-
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getId', array());
-
-        return parent::getId();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setEtudiantIdetudiant($etudiantIdetudiant)
+    public function getAnneeFormation()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEtudiantIdetudiant', array($etudiantIdetudiant));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnneeFormation', array());
 
-        return parent::setEtudiantIdetudiant($etudiantIdetudiant);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getEtudiantIdetudiant()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEtudiantIdetudiant', array());
-
-        return parent::getEtudiantIdetudiant();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setFormationIdFormation($formationIdFormation)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFormationIdFormation', array($formationIdFormation));
-
-        return parent::setFormationIdFormation($formationIdFormation);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getFormationIdFormation()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFormationIdFormation', array());
-
-        return parent::getFormationIdFormation();
+        return parent::getAnneeFormation();
     }
 
     /**
@@ -246,28 +198,6 @@ class AnneeFormationEtudiant extends \GAlter\GestionBundle\Entity\AnneeFormation
     /**
      * {@inheritDoc}
      */
-    public function getAnneeFormation()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getAnneeFormation', array());
-
-        return parent::getAnneeFormation();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setEtudiant(\GAlter\UserBundle\Entity\Etudiant $etudiant = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEtudiant', array($etudiant));
-
-        return parent::setEtudiant($etudiant);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function getEtudiant()
     {
 
@@ -279,45 +209,12 @@ class AnneeFormationEtudiant extends \GAlter\GestionBundle\Entity\AnneeFormation
     /**
      * {@inheritDoc}
      */
-    public function setEtudiants(\GAlter\UserBundle\Entity\Etudiant $etudiants = NULL)
+    public function getFormation()
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEtudiants', array($etudiants));
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFormation', array());
 
-        return parent::setEtudiants($etudiants);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getEtudiants()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEtudiants', array());
-
-        return parent::getEtudiants();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function setFormations(\GAlter\GestionBundle\Entity\Formation $formations = NULL)
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setFormations', array($formations));
-
-        return parent::setFormations($formations);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getFormations()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getFormations', array());
-
-        return parent::getFormations();
+        return parent::getFormation();
     }
 
 }

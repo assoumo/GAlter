@@ -64,10 +64,10 @@ class Etudiant extends \GAlter\UserBundle\Entity\Etudiant implements \Doctrine\O
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'agendas', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'optionsCompte', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'rapports', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'projet', 'prenom', 'telephone', 'adresse', 'information_contrat', 'typecontrat', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Tuteur', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+            return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'agendas', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'optionsCompte', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'rapports', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'projet', 'prenom', 'telephone', 'adresse', 'information_contrat', 'typecontrat', 'etat', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Tuteur', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'TuteurEntreprise', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
         }
 
-        return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'agendas', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'optionsCompte', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'rapports', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'projet', 'prenom', 'telephone', 'adresse', 'information_contrat', 'typecontrat', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Tuteur', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
+        return array('__isInitialized__', 'id', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'agendas', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'optionsCompte', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'rapports', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'anneeFormationEtudiant', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'projet', 'prenom', 'telephone', 'adresse', 'information_contrat', 'typecontrat', 'etat', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'Tuteur', '' . "\0" . 'GAlter\\UserBundle\\Entity\\Etudiant' . "\0" . 'TuteurEntreprise', 'username', 'usernameCanonical', 'email', 'emailCanonical', 'enabled', 'salt', 'password', 'plainPassword', 'lastLogin', 'confirmationToken', 'passwordRequestedAt', 'groups', 'locked', 'expired', 'expiresAt', 'roles', 'credentialsExpired', 'credentialsExpireAt');
     }
 
     /**
@@ -173,6 +173,28 @@ class Etudiant extends \GAlter\UserBundle\Entity\Etudiant implements \Doctrine\O
     }
 
     
+    /**
+     * {@inheritDoc}
+     */
+    public function setEtat($etat)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setEtat', array($etat));
+
+        return parent::setEtat($etat);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getEtat()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEtat', array());
+
+        return parent::getEtat();
+    }
+
     /**
      * {@inheritDoc}
      */
@@ -457,6 +479,28 @@ class Etudiant extends \GAlter\UserBundle\Entity\Etudiant implements \Doctrine\O
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTuteur', array());
 
         return parent::getTuteur();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setTuteurEntreprise(\GAlter\UserBundle\Entity\TuteurEntreprise $tuteurEntreprise = NULL)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setTuteurEntreprise', array($tuteurEntreprise));
+
+        return parent::setTuteurEntreprise($tuteurEntreprise);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getTuteurEntreprise()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTuteurEntreprise', array());
+
+        return parent::getTuteurEntreprise();
     }
 
     /**

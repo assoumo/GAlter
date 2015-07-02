@@ -352,6 +352,17 @@ class Tuteur extends \GAlter\UserBundle\Entity\Tuteur implements \Doctrine\ORM\P
     /**
      * {@inheritDoc}
      */
+    public function getEmail()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', array());
+
+        return parent::getEmail();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function addRole($role)
     {
 
@@ -439,17 +450,6 @@ class Tuteur extends \GAlter\UserBundle\Entity\Tuteur implements \Doctrine\ORM\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getSalt', array());
 
         return parent::getSalt();
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getEmail()
-    {
-
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getEmail', array());
-
-        return parent::getEmail();
     }
 
     /**

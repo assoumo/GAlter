@@ -6,8 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * formation
- *
- * @ORM\Table()
+ * @ORM\Entity
+ * @ORM\Table(name="Formation")
  * @ORM\Entity(repositoryClass="GAlter\GestionBundle\Entity\FormationRepository")
  */
 class Formation
@@ -64,6 +64,8 @@ class Formation
     public function __construct()
     {
         $this->anneeFormationEtudiant = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->responsable=new \Doctrine\Common\Collections\ArrayCollection();
+
     }
 
     /**
@@ -185,11 +187,11 @@ class Formation
     /**
      * Add responsable
      *
-     * @param \GAlter\GestionBundle\Entity\Responsable $responsable
+     * @param \GAlter\UserBundle\Entity\Responsable $responsable
      *
      * @return Formation
      */
-    public function addResponsable(\GAlter\GestionBundle\Entity\Responsable $responsable)
+    public function addResponsable(\GAlter\UserBundle\Entity\Responsable $responsable)
     {
         $this->responsable[] = $responsable;
 
@@ -199,9 +201,9 @@ class Formation
     /**
      * Remove responsable
      *
-     * @param \GAlter\GestionBundle\Entity\Responsable $responsable
+     * @param \GAlter\UserBundle\Entity\Responsable $responsable
      */
-    public function removeResponsable(\GAlter\GestionBundle\Entity\Responsable $responsable)
+    public function removeResponsable(\GAlter\UserBundle\Entity\Responsable $responsable)
     {
         $this->responsable->removeElement($responsable);
     }

@@ -1,10 +1,14 @@
 {% extends "GAlterUserBundle::layout.html.twig"%}
 
-{% block corp %}
+{% block corps %}
     <div class="container">
         <div class="page-header">
             <h1 id="timeline">Rapports</h1>
         </div>
+
+        <form action="{{ path('exporter_tout', {"rapports": "rapp"}) }}"  method="POST" >
+            <button type="submit">exporter</button>
+        </form>
         <ul class="timeline">
             {% for entity in entities %}
                 <li>
@@ -15,31 +19,47 @@
                             <h4 class="timeline-title">{{ entity.etudiant.prenom }}
                             </h4>
                             <p>
-                                <small class="text-muted"><i class="glyphicon glyphicon-time"></i>
+                                <small class="text-muted"><i class="glyphicon glyphicon-briefcase"></i>
                                     du {{ entity.periodedebut | date('Y-d-m')}} à {{ entity.periodefin | date('Y-d-m') }}
+                                </small>
+                            </p>
+                            <p>
+                                <small class="text-muted"><i class="glyphicon glyphicon-time"></i>
+                                    {{ entity.textaudit }} le {{ entity.date | date('Y-d-m')}}
                                 </small>
                             </p>
                         </div>
                         <div class="timeline-body">
                             {{ entity.contenu | raw}}
-                           {% for ent in entity.remarque   %}
-                              {{ ent.id}}
-                           {% endfor %}
-                        </div>
 
-                        <a class="btn btn-primary" href="">ADD</a>
+                        </div>
+                        <div class="btn-groupe" role="toolbar">
+                            {% if is_granted("ROLE_ETUDIANT") %}
+                                <a class="btn btn-success glyphicon glyphicon-pencil" href="{{ path('rapport_edit',{'id': entity.id}) }}"></a>
+                                <a class="btn btn-danger glyphicon  glyphicon-trash" href="{{ path('rapport_delete',{'id':entity.id}) }}"></a>
+
+                            {% endif %}
+                          {# visible  uniquemen t#}
+                            {% if is_granted("ROLE_TUTEUR")%}
+                            <a class="btn btn-primary glyphicon glyphicon-comment" href=""></a>
+                            <a class="btn btn-danger" href=""><span class=" glyphicon glyphicon-envelope"></span></a>
+                            {% endif %}
+
+                        </div>
                     </div>
                 </li>
-                <li>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <h4 class="timeline-title">Mussum ipsum cacilds</h4>
+                {% for remarque in entity.remarque %}
+                    <li>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="timeline-title">remarque.tuteurId.nom</h4>
+                            </div>
+                            <div class="timeline-body">
+                                {{ remarque.contenu }}
+                            </div>
                         </div>
-                        <div class="timeline-body">
-                            <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-                        </div>
-                    </div>
-                </li>
+                    </li>
+                    {% endfor %}
 
 
             {% endfor %}

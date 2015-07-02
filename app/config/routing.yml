@@ -3,24 +3,6 @@ g_alter_gestion:
     type:     annotation
     prefix:   /
 
-# g_alter_gestion:
-#     resource: "@GAlterGestionBundle/Controller/"
-#     type:     annotation
-#     prefix:   /
-
-# galter_gestion:
-#     resource: "@GalterGestionBundle/Controller/"
-#     type:     annotation
-#     prefix:   /
-
-# g_alter_user:
-#     resource: "@GAlterUserBundle/Controller/"
-#     type:     annotation
-#     prefix:   /
-
-
-
-
 app:
     resource: @AppBundle/Controller/
     type:     annotation
@@ -123,3 +105,20 @@ fos_user_change_password:
 fos_message:
     resource: "@FOSMessageBundle/Resources/config/routing.xml"
     prefix: /optional_routing_prefix
+
+
+
+
+g_alter_user_user:
+    resource: "@GAlterUserBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+
+
+g_alter_gestion_formation:
+    resource: "@GAlterGestionBundle/Resources/config/routing/formation.yml"
+    prefix:   /formation
+
+g_alter_user_etudiant:
+    resource: "@GAlterUserBundle/Resources/config/routing/etudiant.yml"
+    prefix:   /etudiant

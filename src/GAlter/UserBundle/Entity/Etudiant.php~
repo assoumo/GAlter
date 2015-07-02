@@ -51,6 +51,18 @@ class Etudiant  extends User
     /**
      * @ORM\Column(type="string", length=250)
      */
+    protected $nom;
+
+
+    /**
+     * @ORM\Column(type="string", length=250)
+     */
+    protected $numeroetudiant;
+
+
+    /**
+     * @ORM\Column(type="string", length=250)
+     */
     protected $prenom;
 
     /**
@@ -412,5 +424,29 @@ class Etudiant  extends User
     public function getTuteur()
     {
         return $this->Tuteur;
+    }
+
+    /**
+     * Set tuteurEntreprise
+     *
+     * @param \GAlter\UserBundle\Entity\TuteurEntreprise $tuteurEntreprise
+     *
+     * @return Etudiant
+     */
+    public function setTuteurEntreprise(\GAlter\UserBundle\Entity\TuteurEntreprise $tuteurEntreprise = null)
+    {
+        $this->TuteurEntreprise = $tuteurEntreprise;
+
+        return $this;
+    }
+
+    /**
+     * Get tuteurEntreprise
+     *
+     * @return \GAlter\UserBundle\Entity\TuteurEntreprise
+     */
+    public function getTuteurEntreprise()
+    {
+        return $this->TuteurEntreprise;
     }
 }

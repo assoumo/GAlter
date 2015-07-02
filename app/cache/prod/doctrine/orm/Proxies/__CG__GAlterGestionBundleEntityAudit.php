@@ -64,10 +64,10 @@ class Audit extends \GAlter\GestionBundle\Entity\Audit implements \Doctrine\ORM\
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'rapport', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'dateModification', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'contenuVu');
+            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'dateModification', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'contenuVu');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'rapport', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'dateModification', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'contenuVu');
+        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'dateModification', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\Audit' . "\0" . 'contenuVu');
     }
 
     /**

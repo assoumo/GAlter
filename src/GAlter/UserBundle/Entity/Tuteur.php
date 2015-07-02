@@ -248,4 +248,10 @@ class Tuteur extends User
     {
         return $this->remarqueTuteurRapport;
     }
+
+
+
+    public function getEmail(){
+        return $this->email;
+    }
 }

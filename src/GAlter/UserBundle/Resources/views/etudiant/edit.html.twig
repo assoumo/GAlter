@@ -1,0 +1,55 @@
+{% extends "GAlterUserBundle::layout.html.twig" %}
+
+{% block titre %}
+     {% if is_granted ('ROLE_ADMIN') %}
+         Changement d'état de l'étudiant
+
+     {% else %}
+
+         Changement des informations de l'etudiant
+
+     {% endif %}
+{% endblock %}
+
+{% block corps%}
+
+<form action="{{ path('etudiant_update',{'id':entity.id  }) }}" method="post" {{form_enctype(edit_form)}}>
+
+    {% if is_granted ('ROLE_RESPONSABLE') %}
+    {{ form_label(edit_form.adresse) }}
+    {{ form_widget(edit_form.adresse) }}
+    {{ form_errors(edit_form.adresse) }}
+
+    {{ form_label(edit_form.telephone) }}
+    {{ form_widget(edit_form.telephone) }}
+    {{ form_errors(edit_form.telephone) }}
+
+       {% else %}
+        {{ form_widget(edit_form.adresse, { 'attr' : { 'style':'display:none'} }) }}
+        {{ form_errors(edit_form.adresse, { 'attr' : { 'style':'display:none'} }) }}
+
+           {{ form_widget(edit_form.telephone, { 'attr' : { 'style':'display:none'} }) }}
+           {{ form_errors(edit_form.telephone, { 'attr' : { 'style':'display:none'} }) }}
+    {% endif %}
+
+    {% if is_granted ('ROLE_ADMIN') %}
+        {{ form_label(edit_form.etat) }}
+        {{ form_widget(edit_form.etat) }}
+        {{ form_errors(edit_form.etat) }}
+
+   {% else %}
+        {{ form_widget(edit_form.etat, { 'attr' : { 'style':'display:none'} }) }}
+        {{ form_errors(edit_form.etat, { 'attr' : { 'style':'display:none'} }) }}
+    {% endif %}
+
+    {#<input type="submit" value="Ok"/>#}
+
+    {#{{form_rest(edit_form)}}#}
+
+    {{ form(edit_form) }}
+</form>
+
+{#{{ form(edit_form) }}#}
+
+
+{% endblock %}

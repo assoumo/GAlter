@@ -301,17 +301,62 @@
                 </div>
                 <!-- /input-group -->
             </li>
+
+
+            {% if is_granted("ROLE_ADMIN") %}
             <li>
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Rediger mon rapport</a>
+                <a href="{{ path('etudiant') }}"><i class="fa fa-dashboard fa-fw"></i> Gestion des étudiants</a>
             </li>
 
             <li>
-                <a href="tables.html"><i class="fa fa-table fa-fw"></i> menu 2 </a>
+                <a href="{{ path('user') }}"><i class="fa fa-table fa-fw"></i> Gestion des responsables</a>
             </li>
             <li>
-                <a href="forms.html"><i class="fa fa-edit fa-fw"></i> menu 3</a>
+                <a href="{{ path('formation') }}"><i class="fa fa-edit fa-fw"></i> Gestion des formations</a>
             </li>
+            {% endif %}
 
+
+            {% if is_granted("ROLE_RESPONSABLE") %}
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> Menu responsable</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> Menu responsable</a>                </li>
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> Menu responsable</a>                </li>
+            {% endif %}
+
+
+
+            {% if is_granted("ROLE_TUTEUR") %}
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> menu tuteur</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> menu tuteur</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> menu tuteur</a>
+                </li>
+            {% endif %}
+
+
+
+            {% if is_granted("ROLE_ETUDIANT") %}
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> menu etudiant</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> menu etudiant</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-dashboard fa-fw"></i> menu etudiant</a>
+                </li>
+            {% endif %}
 
         </ul>
     </div>
@@ -325,7 +370,7 @@
 
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Dashboard</h1>
+       <div class="text-center">  <h1 class="page-header" >  {% block titre %}  {% endblock %}</h1> </div>
     </div>
 
     <!-- /.col-lg-12 -->

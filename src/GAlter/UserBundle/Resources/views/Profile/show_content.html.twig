@@ -1,1 +1,34 @@
 {% extends "GAlterUserBundle::layout.html.twig"%}
+
+{% block titre%} BIENVENUE ! {% endblock %}
+{% block corps %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 col-md-2">
+
+                {% if is_granted ('ROLE_ADMIN') %}
+                <img src="{{asset("JS/admin 2.jpg")  }}"
+                     alt="" class="img-rounded img-responsive" />
+                
+                {% elseif is_granted ('ROLE_RESPONSABLE') %}
+                    <img src="{{asset("JS/responsable 2.jpg")  }}"
+                         alt="" class="img-rounded img-responsive" />
+
+                {% endif %}
+
+
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <blockquote>
+                    <p>  <strong>{{ app.user.username }} </strong> {{ app.user.prenom }}  </p> <small><cite title="Source Title"> {{ app.user.adresse }} <i class="glyphicon glyphicon-map-marker"></i></cite></small>
+                </blockquote>
+                <p> <i class="glyphicon glyphicon-envelope"></i> {{ app.user.email }}
+                    <br
+                            /> <i class="glyphicon glyphicon-globe"></i> {{ app.user.telephone }}
+                    <br /> <i class="glyphicon glyphicon-gift"></i> {{ app.user.lastLogin|date }}</p>
+            </div>
+
+    </div>
+
+{% endblock %}

@@ -64,10 +64,10 @@ class RemarqueTuteurRapport extends \GAlter\GestionBundle\Entity\RemarqueTuteurR
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurId', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurIdRapport');
+            return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurId', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurIdRapport', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'contenu');
         }
 
-        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurId', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurIdRapport');
+        return array('__isInitialized__', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'id', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurId', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'tuteurIdRapport', '' . "\0" . 'GAlter\\GestionBundle\\Entity\\RemarqueTuteurRapport' . "\0" . 'contenu');
     }
 
     /**
@@ -230,6 +230,28 @@ class RemarqueTuteurRapport extends \GAlter\GestionBundle\Entity\RemarqueTuteurR
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getTuteurIdRapport', array());
 
         return parent::getTuteurIdRapport();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function setContenu($contenu)
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setContenu', array($contenu));
+
+        return parent::setContenu($contenu);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getContenu()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getContenu', array());
+
+        return parent::getContenu();
     }
 
 }

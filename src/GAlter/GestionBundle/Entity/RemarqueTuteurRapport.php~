@@ -37,6 +37,13 @@ class RemarqueTuteurRapport
      */
     private $tuteurIdRapport;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenu", type="string", length=255)
+     */
+    private $contenu;
+
 
 
     /**

@@ -216,87 +216,27 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'galter_gestion_default_index')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DefaultController::indexAction',));
         }
 
-        if (0 === strpos($pathinfo, '/formation')) {
-            // formation
-            if (rtrim($pathinfo, '/') === '/formation') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_formation;
-                }
-
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'formation');
-                }
-
-                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::indexAction',  '_route' => 'formation',);
+        if (0 === strpos($pathinfo, '/export')) {
+            // formulaire
+            if ($pathinfo === '/export/formexport') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::formulaireAction',  '_route' => 'formulaire',);
             }
-            not_formation:
 
-            // formation_create
-            if ($pathinfo === '/formation/') {
+            // rapportpromot
+            if ($pathinfo === '/export/rapportpromot') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::rapportpromotAction',  '_route' => 'rapportpromot',);
+            }
+
+            // exporter_tout
+            if (0 === strpos($pathinfo, '/export/toutrapport') && preg_match('#^/export/toutrapport/(?P<rapports>[^/]++)$#s', $pathinfo, $matches)) {
                 if ($this->context->getMethod() != 'POST') {
                     $allow[] = 'POST';
-                    goto not_formation_create;
+                    goto not_exporter_tout;
                 }
 
-                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::createAction',  '_route' => 'formation_create',);
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'exporter_tout')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::exportertousAction',));
             }
-            not_formation_create:
-
-            // formation_new
-            if ($pathinfo === '/formation/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_formation_new;
-                }
-
-                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::newAction',  '_route' => 'formation_new',);
-            }
-            not_formation_new:
-
-            // formation_show
-            if (preg_match('#^/formation/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_formation_show;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_show')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::showAction',));
-            }
-            not_formation_show:
-
-            // formation_edit
-            if (preg_match('#^/formation/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_formation_edit;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_edit')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::editAction',));
-            }
-            not_formation_edit:
-
-            // formation_update
-            if (preg_match('#^/formation/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'PUT') {
-                    $allow[] = 'PUT';
-                    goto not_formation_update;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_update')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::updateAction',));
-            }
-            not_formation_update:
-
-            // formation_delete
-            if (preg_match('#^/formation/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_formation_delete;
-                }
-
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_delete')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::deleteAction',));
-            }
-            not_formation_delete:
+            not_exporter_tout:
 
         }
 
@@ -552,6 +492,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        // galter_gestion_test_testannee
+        if ($pathinfo === '/testannee') {
+            return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\TestController::testanneeAction',  '_route' => 'galter_gestion_test_testannee',);
+        }
+
         // homepage
         if ($pathinfo === '/app/example') {
             return array (  '_controller' => 'AppBundle\\Controller\\DefaultController::indexAction',  '_route' => 'homepage',);
@@ -752,6 +697,186 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (preg_match('#^/optional_routing_prefix/(?P<threadId>[^/]++)$#s', $pathinfo, $matches)) {
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_message_thread_view')), array (  '_controller' => 'FOS\\MessageBundle\\Controller\\MessageController::threadAction',));
             }
+
+        }
+
+        if (0 === strpos($pathinfo, '/user')) {
+            // user
+            if (rtrim($pathinfo, '/') === '/user') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'user');
+                }
+
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::indexAction',  '_route' => 'user',);
+            }
+
+            // user_show
+            if (preg_match('#^/user/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_show')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::showAction',));
+            }
+
+            // user_new
+            if ($pathinfo === '/user/new') {
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::newAction',  '_route' => 'user_new',);
+            }
+
+            // user_create
+            if ($pathinfo === '/user/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_user_create;
+                }
+
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::createAction',  '_route' => 'user_create',);
+            }
+            not_user_create:
+
+            // user_edit
+            if (preg_match('#^/user/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_edit')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::editAction',));
+            }
+
+            // user_update
+            if (preg_match('#^/user/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_user_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_update')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::updateAction',));
+            }
+            not_user_update:
+
+            // user_delete
+            if (preg_match('#^/user/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_user_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\UserController::deleteAction',));
+            }
+            not_user_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/formation')) {
+            // formation
+            if (rtrim($pathinfo, '/') === '/formation') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'formation');
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::indexAction',  '_route' => 'formation',);
+            }
+
+            // formation_show
+            if (preg_match('#^/formation/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_show')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::showAction',));
+            }
+
+            // formation_new
+            if ($pathinfo === '/formation/new') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::newAction',  '_route' => 'formation_new',);
+            }
+
+            // formation_create
+            if ($pathinfo === '/formation/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_formation_create;
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::createAction',  '_route' => 'formation_create',);
+            }
+            not_formation_create:
+
+            // formation_edit
+            if (preg_match('#^/formation/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_edit')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::editAction',));
+            }
+
+            // formation_update
+            if (preg_match('#^/formation/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_formation_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_update')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::updateAction',));
+            }
+            not_formation_update:
+
+            // formation_delete
+            if (preg_match('#^/formation/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_formation_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'formation_delete')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\FormationController::deleteAction',));
+            }
+            not_formation_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/etudiant')) {
+            // etudiant
+            if (rtrim($pathinfo, '/') === '/etudiant') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'etudiant');
+                }
+
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::indexAction',  '_route' => 'etudiant',);
+            }
+
+            // etudiant_show
+            if (preg_match('#^/etudiant/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etudiant_show')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::showAction',));
+            }
+
+            // etudiant_new
+            if ($pathinfo === '/etudiant/new') {
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::newAction',  '_route' => 'etudiant_new',);
+            }
+
+            // etudiant_create
+            if ($pathinfo === '/etudiant/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_etudiant_create;
+                }
+
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::createAction',  '_route' => 'etudiant_create',);
+            }
+            not_etudiant_create:
+
+            // etudiant_edit
+            if (preg_match('#^/etudiant/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etudiant_edit')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::editAction',));
+            }
+
+            // etudiant_update
+            if (preg_match('#^/etudiant/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_etudiant_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etudiant_update')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::updateAction',));
+            }
+            not_etudiant_update:
+
+            // etudiant_delete
+            if (preg_match('#^/etudiant/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_etudiant_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'etudiant_delete')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::deleteAction',));
+            }
+            not_etudiant_delete:
 
         }
 

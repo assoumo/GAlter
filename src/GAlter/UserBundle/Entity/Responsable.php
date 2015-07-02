@@ -20,8 +20,6 @@ class Responsable extends User
      */
     protected $id;
 
-
-
     /**
      * @ORM\Column(type="string", length=255)
      */
@@ -49,12 +47,12 @@ class Responsable extends User
 
 
     /**
-     * @var integer
-     *
      * @ORM\ManyToOne(targetEntity="GAlter\GestionBundle\Entity\Formation", inversedBy="responsable")
      * @ORM\JoinColumn(name="formation_id", referencedColumnName="id")
      */
     private $formation;
+
+
 
     /**
      * Set nom
@@ -179,11 +177,11 @@ class Responsable extends User
     /**
      * Set formation
      *
-     * @param \GAlter\UserBundle\Entity\Fomation $formation
+     * @param \GAlter\GestionBundle\Entity\Formation $formation
      *
      * @return Responsable
      */
-    public function setFormation(\GAlter\UserBundle\Entity\Fomation $formation = null)
+    public function setFormation(\GAlter\GestionBundle\Entity\Formation $formation = null)
     {
         $this->formation = $formation;
 
@@ -193,7 +191,7 @@ class Responsable extends User
     /**
      * Get formation
      *
-     * @return \GAlter\UserBundle\Entity\Fomation
+     * @return \GAlter\GestionBundle\Entity\Formation
      */
     public function getFormation()
     {

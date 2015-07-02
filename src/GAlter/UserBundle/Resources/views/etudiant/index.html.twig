@@ -1,0 +1,47 @@
+{% extends "GAlterUserBundle::layout.html.twig" %}
+
+{% block titre %}  Liste des étudiants  {% endblock %}
+
+
+{% block corps%}
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr class="success">
+                <th class="text-center">Nom</th>
+                <th class="text-center">Prenom</th>
+                <th class="text-center">Etat</th>
+                <th class="text-center">Actions</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr class="warning">
+                    <td class="text-center">{{ entity.username }}</td>
+                    <td class="text-center">{{ entity.prenom }}</td>
+                    <td class="text-center">
+                        {% if entity.etat=='actif' %}
+
+                        <button type="button" class="btn btn-success btn-sm disabled">{{ entity.etat }}</button>
+
+                            {% else %}
+
+                                <button type="button" class="btn btn-danger btn-sm disabled">{{ entity.etat }}</button>
+
+                       {% endif %}</td>
+                    <td class="text-center"><a href="{{ path('etudiant_edit',{'id':entity.id}) }}">  <button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-wrench"></span> Editer
+                            </button> </a> </td>
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends "GAlterUserBundle::layout.html.twig" %}
+
+{% block corps%}
+    {% trans_default_domain 'FOSUserBundle' %}
+
+
+    {#<form action="{{ path('user_update',{'id':entity.id}) }}" method="post" {{form_enctype(edit_form)}}>#}
+
+        {#{{ form_errors(edit_form) }}#}
+            {#{{ form_label(edit_form.roles) }}#}
+        {#<div class="list-group">#}
+            {#{{ form_widget(edit_form.roles) }}#}
+            {#</div>#}
+            {#{{ form_errors(edit_form.roles) }}#}
+
+
+        {#{{form_rest(edit_form)}}#}
+    {#</form>#}
+
+    {{ form(edit_form) }}
+
+{% endblock corps%}
