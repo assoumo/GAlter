@@ -25,9 +25,37 @@ class RemarqueTuteurRapport
      * @var integer
      *
      * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\Tuteur", inversedBy="remarqueTuteurRapport")
-     * @ORM\JoinColumn(name="tuteur_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="tuteurPedagogique", referencedColumnName="id")
      */
     private $tuteurId;
+
+
+
+    /**
+     * @var integer
+     *
+     * @ORM\ManyToOne(targetEntity="GAlter\UserBundle\Entity\TuteurEntreprise", inversedBy="remarqueTuteurEntrepriseRapport")
+     * @ORM\JoinColumn(name="tuteurEntreprise", referencedColumnName="id")
+     */
+    private $tuteurEntrepriseId;
+
+    /**
+     * @param int $tuteurEntrepriseId
+     */
+    public function setTuteurEntrepriseId($tuteurEntrepriseId)
+    {
+        $this->tuteurEntrepriseId = $tuteurEntrepriseId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getTuteurEntrepriseId()
+    {
+        return $this->tuteurEntrepriseId;
+    }
+
+
 
     /**
      * @var integer

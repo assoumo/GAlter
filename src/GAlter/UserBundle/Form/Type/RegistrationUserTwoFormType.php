@@ -14,7 +14,6 @@ class RegistrationUserTwoFormType extends AbstractType
 
         $builder->add('telephone')
             ->add('adresse')
-            ->add('nom')
             ->add('prenom')
             ->add('organisation')
             ->add('roles', 'collection', array(

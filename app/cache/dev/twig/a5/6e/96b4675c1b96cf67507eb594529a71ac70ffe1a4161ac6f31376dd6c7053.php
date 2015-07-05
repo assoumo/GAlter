@@ -10,7 +10,7 @@ class __TwigTemplate_a56e96b4675c1b96cf67507eb594529a71ac70ffe1a4161ac6f31376dd6
         // line 1
         $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "FOSUserBundle:Registration:register.html.twig", 1);
         $this->blocks = array(
-            'content' => array($this, 'block_content'),
+            'corps' => array($this, 'block_corps'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_a56e96b4675c1b96cf67507eb594529a71ac70ffe1a4161ac6f31376dd6
     }
 
     // line 3
-    public function block_content($context, array $blocks = array())
+    public function block_corps($context, array $blocks = array())
     {
         // line 4
         $this->loadTemplate("FOSUserBundle:Registration:register_content.html.twig", "FOSUserBundle:Registration:register.html.twig", 4)->display($context);

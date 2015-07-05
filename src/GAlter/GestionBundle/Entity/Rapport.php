@@ -308,4 +308,7 @@ class Rapport
         return $rapport_selected;
 
     }
+
+
+
 }

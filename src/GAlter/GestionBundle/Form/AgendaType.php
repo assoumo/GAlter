@@ -17,9 +17,10 @@ class AgendaType extends AbstractType
         $builder
             ->add('libelle')
             ->add('date')
+            ->add('type')
             ->add('lieu')
             ->add('heure')
-            ->add('etudiant')
+//            ->add('etudiant')
         ;
     }
     

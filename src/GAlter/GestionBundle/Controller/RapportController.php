@@ -42,6 +42,8 @@ class RapportController extends Controller
         );
     }
 
+
+
     /**
      * Creates a new Rapport entity.
      *
@@ -54,8 +56,10 @@ class RapportController extends Controller
         $entity = new Rapport();
 
         $form = $this->createCreateForm($entity);
-        $session = new session();
-        $user = $session->get('user');
+//        $session = new session();
+//        $user = $session->get('user');
+
+        $user= $this->getUser();
 
 
         $em = $this->getDoctrine()->getManager();
@@ -86,7 +90,7 @@ class RapportController extends Controller
         return array(
             'entity' => $entity,
             'form' => $form->createView(),
-            'user' => $session->get('user')
+            'user' => $user
         );
     }
 
@@ -104,7 +108,7 @@ class RapportController extends Controller
         $userManager = $this->get('fos_user.user_manager');
         $user = $userManager->findUserBy(array('id' => $tuteur->getId()));
         $email = $user->getEmail();
-        $nom_tuteur = $tuteur->getNom();
+        $nom_tuteur = $tuteur->getUsername();
         $nom_apprenti = $etudiant->getPrenom();
 
         $swiftmessage = \Swift_Message::newInstance();
@@ -168,6 +172,8 @@ class RapportController extends Controller
      * @Method("GET")
      * @Template()
      */
+
+
     public function showAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -180,10 +186,10 @@ class RapportController extends Controller
 
         $deleteForm = $this->createDeleteForm($id);
 
-        return array(
-            'entity' => $entity,
+        return $this->render('GAlterGestionBundle:Rapport:show.html.twig', array(
+            'entity'      => $entity,
             'delete_form' => $deleteForm->createView(),
-        );
+        ));
     }
 
     /**

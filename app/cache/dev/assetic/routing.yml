@@ -2,4 +2,4 @@ _assetic:
     resource: .
     type: assetic
 _app:
-    resource: 'C:\wamp\www\GAlter\app/config/routing_dev.yml'
+    resource: /Users/user/Sites/GAlter/app/config/routing_dev.yml

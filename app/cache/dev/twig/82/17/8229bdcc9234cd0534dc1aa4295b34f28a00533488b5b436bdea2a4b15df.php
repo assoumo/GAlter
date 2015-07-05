@@ -17,24 +17,65 @@ class __TwigTemplate_82178229bdcc9234cd0534dc1aa4295b34f28a00533488b5b436bdea2a4
     {
         // line 2
         echo "
-<form action=\"";
-        // line 3
-        echo $this->env->getExtension('routing')->getPath("user_one_registration");
-        echo "\" ";
-        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-        echo " method=\"POST\" class=\"fos_user_registration_register\">
+<form action=\"
     ";
         // line 4
+        if (($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "attributes", array()), "get", array(0 => "_route"), "method") == "user_one_registration")) {
+            // line 5
+            echo "    ";
+            echo $this->env->getExtension('routing')->getPath("user_one_registration");
+            echo "
+    ";
+        }
+        // line 7
+        echo "
+    ";
+        // line 8
+        if (($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "attributes", array()), "get", array(0 => "_route"), "method") == "user_two_registration")) {
+            // line 9
+            echo "    ";
+            echo $this->env->getExtension('routing')->getPath("user_two_registration");
+            echo "
+    ";
+        }
+        // line 11
+        echo "
+     ";
+        // line 12
+        if (($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "attributes", array()), "get", array(0 => "_route"), "method") == "user_three_registration")) {
+            // line 13
+            echo "    ";
+            echo $this->env->getExtension('routing')->getPath("user_three_registration");
+            echo "
+    ";
+        }
+        // line 15
+        echo "
+
+    ";
+        // line 17
+        if (($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "request", array()), "attributes", array()), "get", array(0 => "_route"), "method") == "user_four_registration")) {
+            // line 18
+            echo "    ";
+            echo $this->env->getExtension('routing')->getPath("user_four_registration");
+            echo "
+    ";
+        }
+        // line 19
+        echo "\"  ";
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+        echo " method=\"POST\"  class=\"fos_user_registration_register\">
+    ";
+        // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
     <div>
         <input type=\"submit\" value=\"";
-        // line 6
+        // line 22
         echo twig_escape_filter($this->env, $this->env->getExtension('translator')->trans("registration.submit", array(), "FOSUserBundle"), "html", null, true);
         echo "\" />
     </div>
-</form>
-";
+</form>";
     }
 
     public function getTemplateName()
@@ -49,6 +90,6 @@ class __TwigTemplate_82178229bdcc9234cd0534dc1aa4295b34f28a00533488b5b436bdea2a4
 
     public function getDebugInfo()
     {
-        return array (  33 => 6,  28 => 4,  22 => 3,  19 => 2,);
+        return array (  75 => 22,  70 => 20,  65 => 19,  59 => 18,  57 => 17,  53 => 15,  47 => 13,  45 => 12,  42 => 11,  36 => 9,  34 => 8,  31 => 7,  25 => 5,  23 => 4,  19 => 2,);
     }
 }

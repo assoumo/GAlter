@@ -22,10 +22,7 @@ class Tuteur extends User
 
 
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $nom;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
@@ -59,31 +56,6 @@ class Tuteur extends User
 
 
 
-
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Tuteur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
     /**
      * Set prenom

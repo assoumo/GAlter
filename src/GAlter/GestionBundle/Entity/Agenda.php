@@ -28,9 +28,14 @@ class Agenda
      */
     private $etudiant;
 
-    
 
-  
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=255)
+     */
+    private $type;
 
     /**
      * @var string
@@ -186,5 +191,29 @@ class Agenda
     public function getEtudiant()
     {
         return $this->etudiant;
+    }
+
+    /**
+     * Set type
+     *
+     * @param string $type
+     *
+     * @return Agenda
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+
+        return $this;
+    }
+
+    /**
+     * Get type
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }

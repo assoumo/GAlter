@@ -21,7 +21,7 @@ class __TwigTemplate_978fe07bd208356b894f33a798223072474deea274e929f071678503829
 ";
         // line 3
         $this->displayBlock('test', $context, $blocks);
-        // line 6
+        // line 8
         echo "
 
 ";
@@ -31,8 +31,13 @@ class __TwigTemplate_978fe07bd208356b894f33a798223072474deea274e929f071678503829
     public function block_test($context, array $blocks = array())
     {
         // line 4
-        echo "    ";
-        $this->loadTemplate("FOSUserBundle:Profile:show_content.html.twig", "FOSUserBundle:Profile:show.html.twig", 4)->display($context);
+        echo "
+    ";
+        // line 5
+        $this->loadTemplate("FOSUserBundle:Profile:show_content.html.twig", "FOSUserBundle:Profile:show.html.twig", 5)->display($context);
+        // line 6
+        echo "
+";
     }
 
     public function getTemplateName()
@@ -42,6 +47,6 @@ class __TwigTemplate_978fe07bd208356b894f33a798223072474deea274e929f071678503829
 
     public function getDebugInfo()
     {
-        return array (  34 => 4,  31 => 3,  25 => 6,  23 => 3,  20 => 2,);
+        return array (  39 => 6,  37 => 5,  34 => 4,  31 => 3,  25 => 8,  23 => 3,  20 => 2,);
     }
 }

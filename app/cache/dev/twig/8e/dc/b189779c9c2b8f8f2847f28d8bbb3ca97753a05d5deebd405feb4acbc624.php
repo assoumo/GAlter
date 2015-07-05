@@ -10,7 +10,7 @@ class __TwigTemplate_8edcb189779c9c2b8f8f2847f28d8bbb3ca97753a05d5deebd405feb4ac
         // line 1
         $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "FOSUserBundle:Registration:confirmed.html.twig", 1);
         $this->blocks = array(
-            'content' => array($this, 'block_content'),
+            'corps' => array($this, 'block_corps'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_8edcb189779c9c2b8f8f2847f28d8bbb3ca97753a05d5deebd405feb4ac
     }
 
     // line 5
-    public function block_content($context, array $blocks = array())
+    public function block_corps($context, array $blocks = array())
     {
         // line 6
         echo "    <p>";

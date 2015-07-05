@@ -155,15 +155,9 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             not_agenda_create:
 
             // agenda_new
-            if ($pathinfo === '/agenda/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_agenda_new;
-                }
-
-                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AgendaController::newAction',  '_route' => 'agenda_new',);
+            if (preg_match('#^/agenda/(?P<id>[^/]++)/new$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'agenda_new')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AgendaController::newAction',));
             }
-            not_agenda_new:
 
             // agenda_show
             if (preg_match('#^/agenda/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
@@ -877,6 +871,191 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'etudiant_delete')), array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::deleteAction',));
             }
             not_etudiant_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/remarquetuteurrapport')) {
+            // remarquetuteurrapport
+            if (rtrim($pathinfo, '/') === '/remarquetuteurrapport') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'remarquetuteurrapport');
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::indexAction',  '_route' => 'remarquetuteurrapport',);
+            }
+
+            // remarquetuteurrapport_show
+            if (preg_match('#^/remarquetuteurrapport/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'remarquetuteurrapport_show')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::showAction',));
+            }
+
+            // remarquetuteurrapport_new
+            if (preg_match('#^/remarquetuteurrapport/(?P<id>[^/]++)/new$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'remarquetuteurrapport_new')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::newAction',));
+            }
+
+            // remarquetuteurrapport_create
+            if ($pathinfo === '/remarquetuteurrapport/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_remarquetuteurrapport_create;
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::createAction',  '_route' => 'remarquetuteurrapport_create',);
+            }
+            not_remarquetuteurrapport_create:
+
+            // remarquetuteurrapport_edit
+            if (preg_match('#^/remarquetuteurrapport/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'remarquetuteurrapport_edit')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::editAction',));
+            }
+
+            // remarquetuteurrapport_update
+            if (preg_match('#^/remarquetuteurrapport/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_remarquetuteurrapport_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'remarquetuteurrapport_update')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::updateAction',));
+            }
+            not_remarquetuteurrapport_update:
+
+            // remarquetuteurrapport_delete
+            if (preg_match('#^/remarquetuteurrapport/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_remarquetuteurrapport_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'remarquetuteurrapport_delete')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RemarqueTuteurRapportController::deleteAction',));
+            }
+            not_remarquetuteurrapport_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/anneeformationetudiant')) {
+            // anneeformationetudiant
+            if (rtrim($pathinfo, '/') === '/anneeformationetudiant') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'anneeformationetudiant');
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::indexAction',  '_route' => 'anneeformationetudiant',);
+            }
+
+            // anneeformationetudiant_show
+            if (preg_match('#^/anneeformationetudiant/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anneeformationetudiant_show')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::showAction',));
+            }
+
+            // anneeformationetudiant_new
+            if ($pathinfo === '/anneeformationetudiant/new') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::newAction',  '_route' => 'anneeformationetudiant_new',);
+            }
+
+            // anneeformationetudiant_create
+            if ($pathinfo === '/anneeformationetudiant/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_anneeformationetudiant_create;
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::createAction',  '_route' => 'anneeformationetudiant_create',);
+            }
+            not_anneeformationetudiant_create:
+
+            // anneeformationetudiant_edit
+            if (preg_match('#^/anneeformationetudiant/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anneeformationetudiant_edit')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::editAction',));
+            }
+
+            // anneeformationetudiant_update
+            if (preg_match('#^/anneeformationetudiant/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_anneeformationetudiant_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anneeformationetudiant_update')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::updateAction',));
+            }
+            not_anneeformationetudiant_update:
+
+            // anneeformationetudiant_delete
+            if (preg_match('#^/anneeformationetudiant/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_anneeformationetudiant_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'anneeformationetudiant_delete')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AnneeFormationEtudiantController::deleteAction',));
+            }
+            not_anneeformationetudiant_delete:
+
+        }
+
+        if (0 === strpos($pathinfo, '/document')) {
+            // document
+            if (rtrim($pathinfo, '/') === '/document') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'document');
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::indexAction',  '_route' => 'document',);
+            }
+
+            // document_show
+            if (preg_match('#^/document/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'document_show')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::showAction',));
+            }
+
+            // document_new
+            if ($pathinfo === '/document/new') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::newAction',  '_route' => 'document_new',);
+            }
+
+            // document_create
+            if ($pathinfo === '/document/create') {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_document_create;
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::createAction',  '_route' => 'document_create',);
+            }
+            not_document_create:
+
+            // document_edit
+            if (preg_match('#^/document/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'document_edit')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::editAction',));
+            }
+
+            // document_update
+            if (preg_match('#^/document/(?P<id>[^/]++)/update$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'PUT'))) {
+                    $allow = array_merge($allow, array('POST', 'PUT'));
+                    goto not_document_update;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'document_update')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::updateAction',));
+            }
+            not_document_update:
+
+            // document_delete
+            if (preg_match('#^/document/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('POST', 'DELETE'))) {
+                    $allow = array_merge($allow, array('POST', 'DELETE'));
+                    goto not_document_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'document_delete')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::deleteAction',));
+            }
+            not_document_delete:
+
+            // document_upload
+            if ($pathinfo === '/document/etudiantuplaod') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::etudiantAction',  '_route' => 'document_upload',);
+            }
 
         }
 

@@ -1,71 +1,162 @@
 {% extends "GAlterUserBundle::layout.html.twig" %}
 
-{% block corps%}
+{% block titre %}  formulaire etudiant {% endblock %}
+{% block corps %}
     {% trans_default_domain 'FOSUserBundle' %}
 
 
-    <form action="{{ path('user_one_registration') }}" method="post" {{form_enctype(form)}}>
 
-        {{ form_errors(form) }}
+    <div class="container">
 
-        {{ form_label(form.username) }}
-        {{ form_widget(form.username) }}
+        <div class="stepwizard col-md-offset-3">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step">
+                    <a href="#step-1" type="button" class="btn btn-primary btn-circle">1</a>
+                    <p>Etape 1</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p>Etape 2</p>
+                </div>
+                <div class="stepwizard-step">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p>Etape 3</p>
+                </div>
+            </div>
+        </div>
 
-        {{ form_label(form.email) }}
-        {{ form_widget(form.email) }}
+        <form action="{{ path('user_one_registration') }}" method="post" {{form_enctype(form)}}>
+            <div class="row setup-content" id="step-1">
+                <div class="col-xs-6 col-md-offset-3">
+                    <div class="col-md-12">
+                        {#<h3> Step 1</h3>#}
 
-        {{ form_label(form.Tuteur) }}
-        {{ form_widget(form.Tuteur) }}
-
-
-        {{ form_label(form.TuteurEntreprise) }}
-        {{ form_widget(form.TuteurEntreprise) }}
-
-
-        {{ form_widget(form.plainPassword) }}
-
-        {{ form_label(form.telephone) }}
-        {{ form_widget(form.telephone) }}
-
-        {{ form_label(form.adresse) }}
-        {{ form_widget(form.adresse) }}
-
-        {{ form_label(form.typecontrat) }}
-        {{ form_widget(form.typecontrat) }}
-
-        {{ form_label(form.information_contrat) }}
-        {{ form_widget(form.information_contrat) }}
+                        <div class="form-group">
+                            <label class="control-label">Nom</label>
 
 
+                            {{ form_widget(form.username, { 'attr' : { 'class':'form-control'} }) }}
+                            {{ form_errors(form.username) }}
+
+
+                            {#{{ form_widget(form.username) }}#}
+                            {#<input  maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name"  />#}
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label"> Prenom</label>
+
+                            {{ form_widget(form.prenom, { 'attr' : { 'class':'form-control'}}) }}
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Numero etudiant</label>
+
+                            {{ form_widget(form.numeroetudiant, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+                        </div>
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Suivant</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content" id="step-2">
+                <div class="col-xs-6 col-md-offset-3">
+                    <div class="col-md-12">
+
+                        <div class="form-group">
+                            <label class="control-label">Email</label>
+                            {{ form_widget(form.email, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Mot de passe</label>
+                            {{ form_widget(form.plainPassword.first, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label class="control-label">Confirmation mot de passe</label>
+                            {{ form_widget(form.plainPassword.second, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
 
 
 
-        {% if is_granted ('ROLE_ADMIN') %}
-            {{ form_label(form.roles) }}
-            {{ form_widget(form.roles) }}
-            {{ form_errors(form.roles) }}
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Adresse</label>
+
+                            {{ form_widget(form.adresse, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+                        </div>
 
 
-            {{ form_label(form.etat) }}
-            {{ form_widget(form.etat) }}
-            {{ form_errors(form.etat) }}
+                        <div class="form-group">
+                            <label class="control-label">Telephone</label>
+
+                            {{ form_widget(form.telephone, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+                        </div>
+                        <button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Suivant</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row setup-content" id="step-3">
+                <div class="col-xs-6 col-md-offset-3">
+                    <div class="col-md-12">
+                        {#<h3> Step 3</h3>#}
+
+                        <div class="form-group">
+                            <label class="control-label">Type de contrat</label>
+
+                            {{ form_widget(form.typecontrat, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label">Infos supplementaire du contrat</label>
+
+                            {{ form_widget(form.information_contrat, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="control-label">Tuteur pedagogique</label>
+
+                            {{ form_widget(form.Tuteur, { 'attr' : { 'class':'form-control', 'required':'required'}}) }}
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label">Tuteur entreprise</label>
+                            {{ form_widget(form.TuteurEntreprise, { 'attr' : { 'class':'form-control',}}) }}
+
+                        </div>
+                        <button class="btn btn-success btn-lg pull-right" type="submit">Envoyer</button>
+                    </div>
+                </div>
+            </div>
 
 
 
 
-        {% else %}
             {{ form_widget(form.roles, { 'attr' : { 'style':'display:none'} }) }}
             {{ form_errors(form.roles, { 'attr' : { 'style':'display:none'} }) }}
 
 
             {{ form_widget(form.etat, { 'attr' : { 'style':'display:none'} }) }}
             {{ form_errors(form.etat, { 'attr' : { 'style':'display:none'} }) }}
-        {% endif %}
-        <input type="submit" value="Ok"/>
-
-        {{form_rest(form)}}
-    </form>
 
 
 
-{% endblock corps%}
+
+            {{form_rest(form)}}
+        </form>
+
+    </div>
+
+{% endblock %}

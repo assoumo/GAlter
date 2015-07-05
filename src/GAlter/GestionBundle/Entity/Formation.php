@@ -217,4 +217,9 @@ class Formation
     {
         return $this->responsable;
     }
+
+    public function __toString()
+    {
+        return $this->getLibelle().'_'.$this->getDescription();
+    }
 }

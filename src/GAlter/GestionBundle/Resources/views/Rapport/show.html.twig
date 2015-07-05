@@ -1,29 +1,20 @@
 {% extends '::base.html.twig' %}
 
-{% block corps%}
-    <h1>Rapport</h1>
+{% block body -%}
+    <h1>RemarqueTuteurRapport</h1>
 
-
-    <div class="container">
-    <div class="page-header">
-        <h1 id="timeline">Rapports</h1>
-    </div>
-    <ul class="timeline">
-        <li>
-            {%  for entity in entities %}
-                <div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
-                <div class="timeline-panel">
-                    <div class="timeline-heading">
-                        <h4 class="timeline-title">Mussum ipsum cacilds</h4>
-                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
-                    </div>
-                    <div class="timeline-body">
-                        {{ entity.contenu  }}
-                    </div>
-                </div>
-            {% endfor %}
-        </li>
-    </ul>
+    <table class="record_properties">
+        <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Contenu</th>
+            <td>{{ entity.contenu }}</td>
+        </tr>
+        </tbody>
+    </table>
 
     <ul class="record_actions">
         <li>
@@ -38,4 +29,8 @@
         </li>
         <li>{{ form(delete_form) }}</li>
     </ul>
+
+
+    {{ render(controller('GAlterGestionBundle:RemarqueTuteurRapport:new', { 'id':entity.id } )) }}
+
 {% endblock %}

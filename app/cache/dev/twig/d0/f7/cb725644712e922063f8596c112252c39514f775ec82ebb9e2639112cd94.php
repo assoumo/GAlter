@@ -35,7 +35,7 @@ class __TwigTemplate_d0f7cb725644712e922063f8596c112252c39514f775ec82ebb9e263911
 
     <form action=\"";
         // line 8
-        echo $this->env->getExtension('routing')->getPath("user_two_registration");
+        echo $this->env->getExtension('routing')->getPath("user_four_registration");
         echo "\" method=\"post\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
         echo ">

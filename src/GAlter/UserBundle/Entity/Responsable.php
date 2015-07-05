@@ -20,10 +20,7 @@ class Responsable extends User
      */
     protected $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $nom;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
@@ -54,29 +51,7 @@ class Responsable extends User
 
 
 
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Responsable
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
 
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
     /**
      * Set prenom

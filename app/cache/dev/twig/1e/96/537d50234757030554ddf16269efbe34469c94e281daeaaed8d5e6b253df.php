@@ -10,7 +10,7 @@ class __TwigTemplate_1e96537d50234757030554ddf16269efbe34469c94e281daeaaed8d5e6b
         // line 1
         $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "FOSUserBundle:Registration:checkEmail.html.twig", 1);
         $this->blocks = array(
-            'content' => array($this, 'block_content'),
+            'corps' => array($this, 'block_corps'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_1e96537d50234757030554ddf16269efbe34469c94e281daeaaed8d5e6b
     }
 
     // line 5
-    public function block_content($context, array $blocks = array())
+    public function block_corps($context, array $blocks = array())
     {
         // line 6
         echo "    <p>";

@@ -1,0 +1,12 @@
+g_alter_gestion_document:
+    resource: "@GAlterGestionBundle/Resources/config/routing/document.yml"
+    prefix:   /document
+
+g_alter_gestion_anneeformationetudiant:
+    resource: "@GAlterGestionBundle/Resources/config/routing/anneeformationetudiant.yml"
+    prefix:   /anneeformationetudiant
+
+g_alter_gestion_remarquetuteurrapport:
+    resource: "@GAlterGestionBundle/Resources/config/routing/remarquetuteurrapport.yml"
+    prefix:   /remarquetuteurrapport
+

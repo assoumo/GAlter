@@ -1,0 +1,30 @@
+remarquetuteurrapport:
+    path:     /
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:index" }
+
+remarquetuteurrapport_show:
+    path:     /{id}/show
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:show" }
+
+remarquetuteurrapport_new:
+    path:     /{id}/new
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:new" }
+
+remarquetuteurrapport_create:
+    path:     /create
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:create" }
+    methods:  POST
+
+remarquetuteurrapport_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:edit" }
+
+remarquetuteurrapport_update:
+    path:     /{id}/update
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:update" }
+    methods:  [POST, PUT]
+
+remarquetuteurrapport_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GAlterGestionBundle:RemarqueTuteurRapport:delete" }
+    methods:  [POST, DELETE]

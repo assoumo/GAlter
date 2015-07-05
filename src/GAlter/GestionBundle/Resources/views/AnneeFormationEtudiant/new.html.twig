@@ -1,0 +1,57 @@
+
+{% extends 'GAlterUserBundle::layout.html.twig' %}
+
+{% block titre  %} Affecter un étudiant à une formation {% endblock %}
+
+{% block corps %}
+
+
+
+
+    <div class="well" style="height: 700px">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.etudiants, "Etudiant", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.etudiants) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.etudiants, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(form.anneeFormation, "Annee de formation", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.anneeFormation) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.anneeFormation, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            {#{{ form_label(form.EstValide, "Fin", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}#}
+            {#{{ form_errors(form.EstValide) }}#}
+            <div class="col-sm-4">
+                {{ form_widget(form.EstValide, {'attr': {'class': ' hidden'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(form.Formations, "Formation",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.Formations)}}
+            <div class="col-sm-4">
+                {{ form_widget(form.Formations, {'attr': {'class' : 'form-control'}}) }}
+
+            </div>
+        </div>
+
+        {{ form_widget(form.submit, {'attr': {'class' : ' col-sm-offset-4  col-sm-4 btn btn-primary'}}) }}
+
+        {{ form_end(form) }}
+    </div>
+
+
+    {% endblock %}
+
+

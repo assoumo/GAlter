@@ -10,7 +10,7 @@ class __TwigTemplate_028eb04ad148b0c386d35bd1bfdfb5a7c9c5d156a9e3b51d105747e97dd
         // line 1
         $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "FOSMessageBundle:Message:newThread.html.twig", 1);
         $this->blocks = array(
-            'test' => array($this, 'block_test'),
+            'corps' => array($this, 'block_corps'),
         );
     }
 
@@ -25,7 +25,7 @@ class __TwigTemplate_028eb04ad148b0c386d35bd1bfdfb5a7c9c5d156a9e3b51d105747e97dd
     }
 
     // line 3
-    public function block_test($context, array $blocks = array())
+    public function block_corps($context, array $blocks = array())
     {
         // line 4
         echo "

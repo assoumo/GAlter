@@ -44,7 +44,7 @@ class FormationController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('formation_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('formation'));
         }
 
         return $this->render('GAlterGestionBundle:Formation:new.html.twig', array(
@@ -67,7 +67,7 @@ class FormationController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+//        $form->add('submit', 'submit', array('label' => 'Create'));
 
         return $form;
     }
@@ -147,7 +147,7 @@ class FormationController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+//        $form->add('submit', 'submit', array('label' => 'Update'));
 
         return $form;
     }
@@ -172,7 +172,7 @@ class FormationController extends Controller
         if ($editForm->isValid()) {
             $em->flush();
 
-            return $this->redirect($this->generateUrl('formation_edit', array('id' => $id)));
+            return $this->redirect($this->generateUrl('formation'));
         }
 
         return $this->render('GAlterGestionBundle:Formation:edit.html.twig', array(

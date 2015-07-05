@@ -10,7 +10,7 @@ class __TwigTemplate_a7cab48da9fb92940ec58f66f35b0694db2f6d65056c58a5058baae9601
         // line 1
         $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "FOSMessageBundle:Message:sent.html.twig", 1);
         $this->blocks = array(
-            'test' => array($this, 'block_test'),
+            'corps' => array($this, 'block_corps'),
         );
     }
 
@@ -25,21 +25,19 @@ class __TwigTemplate_a7cab48da9fb92940ec58f66f35b0694db2f6d65056c58a5058baae9601
     }
 
     // line 3
-    public function block_test($context, array $blocks = array())
+    public function block_corps($context, array $blocks = array())
     {
         // line 4
         echo "
-
-
 <h2>";
-        // line 7
+        // line 5
         echo $this->env->getExtension('translator')->getTranslator()->trans("sent", array(), "FOSMessageBundle");
         echo "</h2>
 
 ";
-        // line 9
-        $this->loadTemplate("FOSMessageBundle:Message:threads_list.html.twig", "FOSMessageBundle:Message:sent.html.twig", 9)->display(array_merge($context, array("threads" => (isset($context["threads"]) ? $context["threads"] : $this->getContext($context, "threads")))));
-        // line 10
+        // line 7
+        $this->loadTemplate("FOSMessageBundle:Message:threads_list.html.twig", "FOSMessageBundle:Message:sent.html.twig", 7)->display(array_merge($context, array("threads" => (isset($context["threads"]) ? $context["threads"] : $this->getContext($context, "threads")))));
+        // line 8
         echo "
 ";
     }
@@ -56,6 +54,6 @@ class __TwigTemplate_a7cab48da9fb92940ec58f66f35b0694db2f6d65056c58a5058baae9601
 
     public function getDebugInfo()
     {
-        return array (  43 => 10,  41 => 9,  36 => 7,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  41 => 8,  39 => 7,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

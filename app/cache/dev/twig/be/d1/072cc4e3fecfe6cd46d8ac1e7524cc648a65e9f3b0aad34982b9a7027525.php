@@ -34,10 +34,17 @@ class __TwigTemplate_bed1072cc4e3fecfe6cd46d8ac1e7524cc648a65e9f3b0aad34982b9a70
         echo $this->env->getExtension('translator')->getTranslator()->trans("inbox", array(), "FOSMessageBundle");
         echo "</h2>
 
-";
+<a href=\"";
         // line 7
-        $this->loadTemplate("FOSMessageBundle:Message:threads_list.html.twig", "FOSMessageBundle:Message:inbox.html.twig", 7)->display(array_merge($context, array("threads" => (isset($context["threads"]) ? $context["threads"] : $this->getContext($context, "threads")))));
-        // line 8
+        echo $this->env->getExtension('routing')->getUrl("fos_message_thread_new");
+        echo "\">";
+        echo $this->env->getExtension('translator')->getTranslator()->trans("send_new", array(), "FOSMessageBundle");
+        echo "</a>
+
+";
+        // line 9
+        $this->loadTemplate("FOSMessageBundle:Message:threads_list.html.twig", "FOSMessageBundle:Message:inbox.html.twig", 9)->display(array_merge($context, array("threads" => (isset($context["threads"]) ? $context["threads"] : $this->getContext($context, "threads")))));
+        // line 10
         echo "
 ";
     }
@@ -54,6 +61,6 @@ class __TwigTemplate_bed1072cc4e3fecfe6cd46d8ac1e7524cc648a65e9f3b0aad34982b9a70
 
     public function getDebugInfo()
     {
-        return array (  41 => 8,  39 => 7,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  48 => 10,  46 => 9,  39 => 7,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

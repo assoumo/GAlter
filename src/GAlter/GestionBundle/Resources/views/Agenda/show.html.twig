@@ -1,6 +1,5 @@
-{% extends "GAlterUserBundle::layout.html.twig" %}
-
-{% block body -%}
+{%  extends "GAlterUserBundle::layout.html.twig" %}
+{% block corps%}
     <h1>Agenda</h1>
 
     <table class="record_properties">
@@ -23,22 +22,10 @@
             </tr>
             <tr>
                 <th>Heure</th>
-                <td>{{ entity.heure }}</td>
+                <td>{{ entity.heure|date('H:i:s') }}</td>
             </tr>
         </tbody>
     </table>
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('agenda') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>
-        <a href="{{ path('agenda_edit', { 'id': entity.id }) }}">
-            Edit
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+
 {% endblock %}

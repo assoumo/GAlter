@@ -1,45 +1,23 @@
 {%  extends "GAlterUserBundle::layout.html.twig" %}
-{% block corp %}
+{% block corps%}
     <h1>Agenda list</h1>
-    <table class="records_list">
-        <thead>
-        <tr>
-            <th>Id</th>
-            <th>Libelle</th>
-            <th>Date</th>
-            <th>Lieu</th>
-            <th>Heure</th>
-            <th>Actions</th>
-        </tr>
-        </thead>
-        <tbody>
-        {% for entity in entities %}
-            <tr>
-                <td><a href="{{ path('agenda_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
-                <td>{{ entity.libelle }}</td>
-                <td>{% if entity.date %}{{ entity.date|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ entity.lieu }}</td>
-                <td>{{ entity.heure }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('agenda_show', { 'id': entity.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('agenda_edit', { 'id': entity.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <ul>
-        <li> aaaa
-            <a href="{{ path('agenda_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
+
+   <table>
+       <thead class="table table-stripted">
+        <th>Etudiant</th>
+        <th>Prendre RDV</th>
+       </thead>
+       <tbody>
+       {% for entity in entities %}
+           <tr>
+              <td>{{ entity }}</td>
+              <td><a class="btn btn-success" href="{{ path('agenda_new', {'id': entity.id}) }}">RDV</a></td>
+           </tr>
+       {% endfor %}
+       </tbody>
+
+   </table>
+
+
 {% endblock %}

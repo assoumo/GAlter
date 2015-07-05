@@ -22,10 +22,7 @@ class TuteurEntreprise extends User
 
 
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $nom;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
@@ -53,37 +50,11 @@ class TuteurEntreprise extends User
 
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueTuteurRapport", mappedBy="tuteurId")
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueTuteurRapport", mappedBy="tuteurEntrepriseId")
      */
-    private $remarqueTuteurRapport;
+    private $remarqueTuteurEntrepriseRapport;
 
 
-
-
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Tuteur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
     /**
      * Set prenom

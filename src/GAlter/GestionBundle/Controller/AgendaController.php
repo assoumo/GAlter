@@ -29,17 +29,19 @@ class AgendaController extends Controller
      */
     public function indexAction()
     {
+
+        $tuteur= $this->getUser();
+
+       $etudiant= $tuteur->getEtudiant();
         $em = $this->getDoctrine()->getManager();
-        $session=new session();
-        $user=$session->get('user');
 
         $entities = $em->getRepository('GAlterGestionBundle:Agenda')->findAll();
 
-        return array(
-            'entities' => $entities,
-            'user'=>$user
-        );
+        return $this->render('GAlterGestionBundle:Agenda:index.html.twig', array(
+            'entities' => $etudiant,
+        ));
     }
+
     /**
      * Creates a new Agenda entity.
      *
@@ -49,7 +51,15 @@ class AgendaController extends Controller
      */
     public function createAction(Request $request)
     {
+
+        $em = $this->getDoctrine()->getManager();
+
+
+        $etudiant = $em->getRepository('GAlterUserBundle:Etudiant')->find($request->get('id'));
+
         $entity = new Agenda();
+        $entity->setEtudiant($etudiant);
+
         $form = $this->createCreateForm($entity);
         $form->handleRequest($request);
 
@@ -74,10 +84,15 @@ class AgendaController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createCreateForm(Agenda $entity)
+    private function createCreateForm(Agenda $entity, $id=false)
     {
+
+        if($id)
+            $url= $this->generateUrl('agenda_create',array('id'=>$id));
+        else
+            $url= $this->generateUrl('agenda_create');
         $form = $this->createForm(new AgendaType(), $entity, array(
-            'action' => $this->generateUrl('agenda_create'),
+            'action' =>$url,
             'method' => 'POST',
         ));
 
@@ -86,22 +101,24 @@ class AgendaController extends Controller
         return $form;
     }
 
+
+
+
     /**
      * Displays a form to create a new Agenda entity.
      *
-     * @Route("/new", name="agenda_new")
-     * @Method("GET")
+     * @Route("/{id}/new", name="agenda_new")
      * @Template()
      */
-    public function newAction()
+    public function newAction($id)
     {
         $entity = new Agenda();
-        $form   = $this->createCreateForm($entity);
+        $form   = $this->createCreateForm($entity,$id);
 
-        return array(
+        return $this->render('GAlterGestionBundle:Agenda:new.html.twig', array(
             'entity' => $entity,
             'form'   => $form->createView(),
-        );
+        ));
     }
 
     /**

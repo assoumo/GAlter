@@ -22,10 +22,7 @@ class TuteurEntreprise extends User
 
 
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    protected $nom;
+
     /**
      *@ORM\Column(type="string", length=255)
      */
@@ -53,37 +50,11 @@ class TuteurEntreprise extends User
 
 
     /**
-     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueTuteurRapport", mappedBy="tuteurId")
+     *@ORM\OneToMany(targetEntity="GAlter\GestionBundle\Entity\RemarqueTuteurRapport", mappedBy="tuteurEntrepriseId")
      */
-    private $remarqueTuteurRapport;
+    private $remarqueTuteurEntrepriseRapport;
 
 
-
-
-
-    /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Tuteur
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
-     * @return string
-     */
-    public function getNom()
-    {
-        return $this->nom;
-    }
 
     /**
      * Set prenom
@@ -222,30 +193,38 @@ class TuteurEntreprise extends User
      *
      * @return Tuteur
      */
-    public function addRemarqueTuteurRapport(\GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurRapport)
+
+    /**
+     * Add remarqueTuteurEntrepriseRapport
+     *
+     * @param \GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurEntrepriseRapport
+     *
+     * @return TuteurEntreprise
+     */
+    public function addRemarqueTuteurEntrepriseRapport(\GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurEntrepriseRapport)
     {
-        $this->remarqueTuteurRapport[] = $remarqueTuteurRapport;
+        $this->remarqueTuteurEntrepriseRapport[] = $remarqueTuteurEntrepriseRapport;
 
         return $this;
     }
 
     /**
-     * Remove remarqueTuteurRapport
+     * Remove remarqueTuteurEntrepriseRapport
      *
-     * @param \GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurRapport
+     * @param \GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurEntrepriseRapport
      */
-    public function removeRemarqueTuteurRapport(\GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurRapport)
+    public function removeRemarqueTuteurEntrepriseRapport(\GAlter\GestionBundle\Entity\RemarqueTuteurRapport $remarqueTuteurEntrepriseRapport)
     {
-        $this->remarqueTuteurRapport->removeElement($remarqueTuteurRapport);
+        $this->remarqueTuteurEntrepriseRapport->removeElement($remarqueTuteurEntrepriseRapport);
     }
 
     /**
-     * Get remarqueTuteurRapport
+     * Get remarqueTuteurEntrepriseRapport
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getRemarqueTuteurRapport()
+    public function getRemarqueTuteurEntrepriseRapport()
     {
-        return $this->remarqueTuteurRapport;
+        return $this->remarqueTuteurEntrepriseRapport;
     }
 }

@@ -16,11 +16,15 @@ class RegistrationUserThreeFormType extends AbstractType
 
         $builder->add('telephone')
             ->add('adresse')
-            ->add('nom')
             ->add('prenom')
             ->add('formation','entity', array('class'=>'GAlterGestionBundle:Formation',
-                'property'=>'id'))
-            ->add('RespContrat')
+                'property'=>'libelle'))
+
+
+            ->add('RespContrat', 'choice', array(
+                'choices'   => array('Contrat_Pro' => 'Contrat_Pro', 'App_Stage' => 'Contrat_App/Stage'),
+                'preferred_choices' => array('Actif'),
+            ))
             ->add('roles', 'collection', array(
                     'type' => 'choice',
                     'options' => array(
