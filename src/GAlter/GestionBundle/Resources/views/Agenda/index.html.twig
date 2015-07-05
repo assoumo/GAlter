@@ -3,21 +3,39 @@
     <h1>Agenda list</h1>
 
 
-   <table>
-       <thead class="table table-stripted">
-        <th>Etudiant</th>
-        <th>Prendre RDV</th>
-       </thead>
-       <tbody>
-       {% for entity in entities %}
-           <tr>
-              <td>{{ entity }}</td>
-              <td><a class="btn btn-success" href="{{ path('agenda_new', {'id': entity.id}) }}">RDV</a></td>
-           </tr>
-       {% endfor %}
-       </tbody>
 
-   </table>
 
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr class="success">
+                <th>Date</th>
+                <th>Type</th>
+                <th>Entreprise</th>
+                <th> Tuteur </th>
+                <th> Etudiant(e) concerné(e)</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+
+
+                {% set agendas=entity.agendas %}
+                 {% for agenda in agendas %}
+                 <td> {{ agenda.date|date}}</td>
+                     <td> {{ agenda.Type }}</td>
+                 {% endfor %}
+
+                {#<td> {{ entity.tuteurentreprise.organisation }}</td>#}
+                <td>{{ entity.tuteur }}</td>
+
+                   <td> {{ entity.tuteurentreprise }}</td>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
 
 {% endblock %}

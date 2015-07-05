@@ -143,6 +143,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
             not_agenda:
 
+            // agendaetudiant
+            if ($pathinfo === '/agenda/agendaetudiant') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_agendaetudiant;
+                }
+
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\AgendaController::agendaAction',  '_route' => 'agendaetudiant',);
+            }
+            not_agendaetudiant:
+
             // agenda_create
             if ($pathinfo === '/agenda/') {
                 if ($this->context->getMethod() != 'POST') {
@@ -822,6 +833,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 }
 
                 return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::indexAction',  '_route' => 'etudiant',);
+            }
+
+            // mes_etudiant
+            if ($pathinfo === '/etudiant/mesetudiants') {
+                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::mesetudiantsAction',  '_route' => 'mes_etudiant',);
             }
 
             // etudiant_show

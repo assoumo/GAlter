@@ -1,7 +1,9 @@
 {% extends 'GAlterUserBundle::layout.html.twig' %}
 
+
+{% block titre %} <div class="well"> Prendre un RDV </div>  {% endblock %}
 {% block corps %}
-<div class="well" style="height: 700px">
+<div class="well" style="height: 400px">
 
 {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
     {{ form_errors(form) }}
@@ -23,7 +25,7 @@
 
     </div>
     <div class="form-group">
-        {{ form_label(form.heure, "Heur",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+        {{ form_label(form.heure, "Horaire",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
         {{ form_errors(form.heure)}}
         <div class="col-sm-4">
             {{ form_widget(form.heure, {'attr': {'class' : 'col-sm-7 form-control', 'type': 'textarea','id': "editor" }}) }}
@@ -31,6 +33,26 @@
         </div>
     </div>
 
+
+
+    <div class="form-group">
+        {{ form_label(form.libelle, "Libelle",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+        {{ form_errors(form.libelle)}}
+        <div class="col-sm-4">
+            {{ form_widget(form.libelle, {'attr': {'class' : 'col-sm-7 form-control', 'type': 'textarea','id': "editor" }}) }}
+
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        {{ form_label(form.lieu, "Lieu",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+        {{ form_errors(form.lieu)}}
+        <div class="col-sm-4">
+            {{ form_widget(form.lieu, {'attr': {'class' : 'col-sm-7 form-control', 'type': 'textarea','id': "editor" }}) }}
+
+        </div>
+    </div>
     {{ form_widget(form.submit, {'attr': {'class' : ' col-sm-offset-5  col-sm-3 btn btn-primary'}}) }}
 
     {{ form_end(form) }}

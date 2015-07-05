@@ -1,55 +1,160 @@
-{% extends "GAlterUserBundle::layout.html.twig" %}
 
-{% block titre %}
-     {% if is_granted ('ROLE_ADMIN') %}
-         Changement d'état de l'étudiant
+{% extends 'GAlterUserBundle::layout.html.twig' %}
 
-     {% else %}
 
-         Changement des informations de l'etudiant
 
-     {% endif %}
+{% block titre  %}
+
+        {% if is_granted ('ROLE_RESPONSABLE') %}
+
+    <div class="well" style="height: 60px"> Modifier les informations d'un étudiant </div>
+
+    {% else %}
+
+<div class="well" style="height: 60px"> Modifier l'état d'un étudiant </div>
+
+{% endif %}
+
 {% endblock %}
 
-{% block corps%}
 
-<form action="{{ path('etudiant_update',{'id':entity.id  }) }}" method="post" {{form_enctype(edit_form)}}>
+{% block corps %}
 
-    {% if is_granted ('ROLE_RESPONSABLE') %}
-    {{ form_label(edit_form.adresse) }}
-    {{ form_widget(edit_form.adresse) }}
-    {{ form_errors(edit_form.adresse) }}
 
-    {{ form_label(edit_form.telephone) }}
-    {{ form_widget(edit_form.telephone) }}
-    {{ form_errors(edit_form.telephone) }}
 
-       {% else %}
+
+    <div class="well" style="height: 500px">
+
+        {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(edit_form) }}
+
+        {#Vue du responsable#}
+
+        {% if is_granted ('ROLE_RESPONSABLE') %}
+
+
+        <div class="form-group">
+            {{ form_label(edit_form.username, "Nom", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.username) }}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.username, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.prenom, "Prenom", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.prenom) }}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.prenom, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+
+
+            <div class="form-group">
+                {{ form_label(edit_form.numeroetudiant, "Numero etudiant", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+                {{ form_errors(edit_form.numeroetudiant) }}
+                <div class="col-sm-4">
+                    {{ form_widget(edit_form.numeroetudiant, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+                </div>
+
+            </div>
+
+
+        <div class="form-group">
+            {{ form_label(edit_form.Tuteur, "Tuteur pedagogique",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.Tuteur)}}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.Tuteur, {'attr': {'class' : 'form-control'}}) }}
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            {{ form_label(edit_form.TuteurEntreprise, "Tuteur entreprise",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.TuteurEntreprise)}}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.TuteurEntreprise, {'attr': {'class' : 'form-control'}}) }}
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            {{ form_label(edit_form.adresse, "Adresse",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.adresse)}}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.adresse, {'attr': {'class' : 'form-control'}}) }}
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            {{ form_label(edit_form.telephone, "Telephone",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.telephone)}}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.telephone, {'attr': {'class' : 'form-control'}}) }}
+
+            </div>
+        </div>
+
+
+        {% else %}
         {{ form_widget(edit_form.adresse, { 'attr' : { 'style':'display:none'} }) }}
         {{ form_errors(edit_form.adresse, { 'attr' : { 'style':'display:none'} }) }}
 
-           {{ form_widget(edit_form.telephone, { 'attr' : { 'style':'display:none'} }) }}
-           {{ form_errors(edit_form.telephone, { 'attr' : { 'style':'display:none'} }) }}
-    {% endif %}
+        {{ form_widget(edit_form.telephone, { 'attr' : { 'style':'display:none'} }) }}
+        {{ form_errors(edit_form.telephone, { 'attr' : { 'style':'display:none'} }) }}
 
-    {% if is_granted ('ROLE_ADMIN') %}
-        {{ form_label(edit_form.etat) }}
-        {{ form_widget(edit_form.etat) }}
-        {{ form_errors(edit_form.etat) }}
 
-   {% else %}
+            {{ form_widget(edit_form.username, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(edit_form.username, { 'attr' : { 'style':'display:none'} }) }}
+
+            {{ form_widget(edit_form.prenom, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(edit_form.prenom, { 'attr' : { 'style':'display:none'} }) }}
+
+            {{ form_widget(edit_form.Tuteur, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(edit_form.Tuteur, { 'attr' : { 'style':'display:none'} }) }}
+
+
+            {{ form_widget(edit_form.TuteurEntreprise, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(edit_form.TuteurEntreprise, { 'attr' : { 'style':'display:none'} }) }}
+
+            {{ form_widget(edit_form.numeroetudiant, { 'attr' : { 'style':'display:none'} }) }}
+            {{ form_errors(edit_form.numeroetudiant, { 'attr' : { 'style':'display:none'} }) }}
+        {% endif %}
+
+        {#Fin vue responsable#}
+
+
+
+        {#Affichage de l'etat pour le L'admin#}
+        {% if is_granted ('ROLE_ADMIN') %}
+
+        <div class="form-group">
+            {{ form_label(edit_form.etat, "Etat",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.etat)}}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.etat, {'attr': {'class' : 'form-control'}}) }}
+
+            </div>
+        </div>
+
+
+        {% else %}
         {{ form_widget(edit_form.etat, { 'attr' : { 'style':'display:none'} }) }}
         {{ form_errors(edit_form.etat, { 'attr' : { 'style':'display:none'} }) }}
-    {% endif %}
+        {% endif %}
 
-    {#<input type="submit" value="Ok"/>#}
+        {#{{ form_widget(edit_form.submit, {'attr': {'class' : ' col-sm-offset-5  col-sm-3 btn btn-primary'} }) }}#}
 
-    {#{{form_rest(edit_form)}}#}
+        {{ form_end(edit_form) }}
 
-    {{ form(edit_form) }}
-</form>
-
-{#{{ form(edit_form) }}#}
+    </div>
 
 
 {% endblock %}
+
+
+

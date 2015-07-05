@@ -29,6 +29,26 @@ class etudiantController extends Controller
             'entities' => $entities,
         ));
     }
+
+
+
+
+    /**
+     * Lister mes etudiants .
+     *
+     */
+    public function mesetudiantsAction()
+    {
+
+        $tuteur= $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('GAlterUserBundle:etudiant')->findBy(array('Tuteur'=>$tuteur));
+
+        return $this->render('GAlterUserBundle:etudiant:mesetudiants.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
     /**
      * Creates a new etudiant entity.
      *
@@ -147,7 +167,7 @@ class etudiantController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Valider', 'attr' => array('class' => 'btn btn-success ; glyphicon glyphicon-ok-sign')));
+        $form->add('submit', 'submit', array('label' => 'Valider', 'attr' => array('class' => ' col-sm-offset-4  col-sm-4 btn btn-primary')));
 
         return $form;
     }

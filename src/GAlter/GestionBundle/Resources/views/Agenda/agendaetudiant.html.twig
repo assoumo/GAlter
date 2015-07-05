@@ -1,0 +1,28 @@
+{%  extends "GAlterUserBundle::layout.html.twig" %}
+{% block corps%}
+    <h1>Agenda etudiant </h1>
+
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr class="success">
+                <th>Libelle</th>
+                <th>Date</th>
+                <th>lieu</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+
+                    <h4>{{ entity.libelle }}</h4>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

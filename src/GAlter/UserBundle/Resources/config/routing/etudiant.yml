@@ -2,6 +2,14 @@ etudiant:
     path:     /
     defaults: { _controller: "GAlterUserBundle:etudiant:index" }
 
+
+
+mes_etudiant:
+    path:     /mesetudiants
+    defaults: { _controller: "GAlterUserBundle:etudiant:mesetudiants" }
+
+
+
 etudiant_show:
     path:     /{id}/show
     defaults: { _controller: "GAlterUserBundle:etudiant:show" }

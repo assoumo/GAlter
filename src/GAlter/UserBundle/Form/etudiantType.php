@@ -15,21 +15,23 @@ class etudiantType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('adresse')
+                ->add('username','text',array('read_only' => true))
             ->add('telephone')
             ->add('etat', 'choice', array(
             'choices'   => array('actif' => 'Activer', 'inactif' => 'Desactiver'),
             'expanded'  => true,
             'multiple'=>false,
-        ));
-//            ->add('prenom')
+        ))
+            ->add('prenom','text',array('read_only' => true))
 //            ->add('telephone')
 //            ->add('adresse')
 //            ->add('information_contrat')
 //            ->add('typecontrat')
 //            ->add('etat','choice')
 //            ->add('optionsCompte')
-//            ->add('Tuteur')
-//            ->add('TuteurEntreprise')
+            ->add('numeroetudiant', 'text',array('read_only' => true))
+            ->add('Tuteur')
+            ->add('TuteurEntreprise');
 
     }
     

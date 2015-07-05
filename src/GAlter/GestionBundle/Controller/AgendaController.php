@@ -33,12 +33,39 @@ class AgendaController extends Controller
         $tuteur= $this->getUser();
 
        $etudiant= $tuteur->getEtudiant();
-        $em = $this->getDoctrine()->getManager();
-
-        $entities = $em->getRepository('GAlterGestionBundle:Agenda')->findAll();
 
         return $this->render('GAlterGestionBundle:Agenda:index.html.twig', array(
             'entities' => $etudiant,
+        ));
+    }
+
+
+
+    /**
+     * Lists all Agenda entities.
+     *
+     * @Route("/agendaetudiant", name="agendaetudiant")
+     * @Method("GET")
+     * @Template()
+     */
+    public function agendaAction()
+    {
+
+        $etudiant= $this->getUser();
+
+
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('GAlterGestionBundle:Agenda')->findBy(array('etudiant'=>$etudiant));
+
+        if($entities== null)
+
+            throw $this->createNotFoundException('aucune visite programmée pour le moment ');
+
+        ;
+
+        return $this->render('GAlterGestionBundle:Agenda:agendaetudiant.html.twig', array(
+            'entities' => $entities,
         ));
     }
 
