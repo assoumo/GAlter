@@ -368,6 +368,28 @@ public class ImportEtudiant implements TalendJob {
 		tMysqlInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tMysqlInput_4_error(java.lang.Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tMysqlInput_4_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tMysqlInput_5_error(java.lang.Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tMysqlInput_5_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tMysqlInput_2_error(java.lang.Exception exception,
 			String errorComponent, final java.util.Map<String, Object> globalMap)
 			throws TalendException {
@@ -388,17 +410,6 @@ public class ImportEtudiant implements TalendJob {
 		status = "failure";
 
 		tMysqlInput_3_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tMysqlInput_4_error(java.lang.Exception exception,
-			String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tMysqlInput_4_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tStatCatcher_1_error(java.lang.Exception exception,
@@ -434,6 +445,28 @@ public class ImportEtudiant implements TalendJob {
 		tMysqlInput_1_onSubJobError(exception, errorComponent, globalMap);
 	}
 
+	public void tAdvancedHash_row8_error(java.lang.Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tMysqlInput_4_onSubJobError(exception, errorComponent, globalMap);
+	}
+
+	public void tAdvancedHash_row9_error(java.lang.Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		end_Hash.put(errorComponent, System.currentTimeMillis());
+
+		status = "failure";
+
+		tMysqlInput_5_onSubJobError(exception, errorComponent, globalMap);
+	}
+
 	public void tAdvancedHash_row5_error(java.lang.Exception exception,
 			String errorComponent, final java.util.Map<String, Object> globalMap)
 			throws TalendException {
@@ -454,17 +487,6 @@ public class ImportEtudiant implements TalendJob {
 		status = "failure";
 
 		tMysqlInput_3_onSubJobError(exception, errorComponent, globalMap);
-	}
-
-	public void tAdvancedHash_row8_error(java.lang.Exception exception,
-			String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		end_Hash.put(errorComponent, System.currentTimeMillis());
-
-		status = "failure";
-
-		tMysqlInput_4_onSubJobError(exception, errorComponent, globalMap);
 	}
 
 	public void tFileInputExcel_1_onSubJobError(java.lang.Exception exception,
@@ -511,6 +533,28 @@ public class ImportEtudiant implements TalendJob {
 
 	}
 
+	public void tMysqlInput_4_onSubJobError(java.lang.Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread
+				.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(),
+				ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
+	public void tMysqlInput_5_onSubJobError(java.lang.Exception exception,
+			String errorComponent, final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+
+		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread
+				.currentThread().getId() + "", "FATAL", "",
+				exception.getMessage(),
+				ResumeUtil.getExceptionStackTrace(exception), "");
+
+	}
+
 	public void tMysqlInput_2_onSubJobError(java.lang.Exception exception,
 			String errorComponent, final java.util.Map<String, Object> globalMap)
 			throws TalendException {
@@ -523,17 +567,6 @@ public class ImportEtudiant implements TalendJob {
 	}
 
 	public void tMysqlInput_3_onSubJobError(java.lang.Exception exception,
-			String errorComponent, final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-
-		resumeUtil.addLog("SYSTEM_LOG", "NODE:" + errorComponent, "", Thread
-				.currentThread().getId() + "", "FATAL", "",
-				exception.getMessage(),
-				ResumeUtil.getExceptionStackTrace(exception), "");
-
-	}
-
-	public void tMysqlInput_4_onSubJobError(java.lang.Exception exception,
 			String errorComponent, final java.util.Map<String, Object> globalMap)
 			throws TalendException {
 
@@ -1054,6 +1087,18 @@ public class ImportEtudiant implements TalendJob {
 			return this.information;
 		}
 
+		public String tuteur;
+
+		public String getTuteur() {
+			return this.tuteur;
+		}
+
+		public String tuteurentreprise;
+
+		public String getTuteurentreprise() {
+			return this.tuteurentreprise;
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -1115,6 +1160,10 @@ public class ImportEtudiant implements TalendJob {
 
 					this.information = readString(dis);
 
+					this.tuteur = readString(dis);
+
+					this.tuteurentreprise = readString(dis);
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -1163,6 +1212,14 @@ public class ImportEtudiant implements TalendJob {
 
 				writeString(this.information, dos);
 
+				// String
+
+				writeString(this.tuteur, dos);
+
+				// String
+
+				writeString(this.tuteurentreprise, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -1183,6 +1240,8 @@ public class ImportEtudiant implements TalendJob {
 			sb.append(",adresse=" + adresse);
 			sb.append(",contrat=" + contrat);
 			sb.append(",information=" + information);
+			sb.append(",tuteur=" + tuteur);
+			sb.append(",tuteurentreprise=" + tuteurentreprise);
 			sb.append("]");
 
 			return sb.toString();
@@ -1486,7 +1545,7 @@ public class ImportEtudiant implements TalendJob {
 					if (sheetList_tFileInputExcel_1.size() > 0) {
 						int nb_line_tFileInputExcel_1 = 0;
 
-						int begin_line_tFileInputExcel_1 = 0;
+						int begin_line_tFileInputExcel_1 = 1;
 
 						int footer_input_tFileInputExcel_1 = 0;
 
@@ -1540,7 +1599,7 @@ public class ImportEtudiant implements TalendJob {
 												- rowCount_tFileInputExcel_1);
 							}
 							row1 = null;
-							String[] temp_row_tFileInputExcel_1 = new String[9];
+							String[] temp_row_tFileInputExcel_1 = new String[11];
 							int excel_end_column_tFileInputExcel_1;
 							if (row_tFileInputExcel_1 == null) {
 								excel_end_column_tFileInputExcel_1 = 0;
@@ -1556,7 +1615,7 @@ public class ImportEtudiant implements TalendJob {
 										: end_column_tFileInputExcel_1;
 							}
 							org.apache.poi.ss.formula.eval.NumberEval ne_tFileInputExcel_1 = null;
-							for (int i = 0; i < 9; i++) {
+							for (int i = 0; i < 11; i++) {
 								if (i + start_column_tFileInputExcel_1 < actual_end_column_tFileInputExcel_1) {
 									org.apache.poi.ss.usermodel.Cell cell_tFileInputExcel_1 = row_tFileInputExcel_1
 											.getCell(i
@@ -1723,6 +1782,26 @@ public class ImportEtudiant implements TalendJob {
 									emptyColumnCount_tFileInputExcel_1++;
 								}
 
+								if (temp_row_tFileInputExcel_1[9].length() > 0) {
+									curColNum_tFileInputExcel_1 = 9 + start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "tuteur";
+
+									row1.tuteur = temp_row_tFileInputExcel_1[9];
+								} else {
+									row1.tuteur = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+
+								if (temp_row_tFileInputExcel_1[10].length() > 0) {
+									curColNum_tFileInputExcel_1 = 10 + start_column_tFileInputExcel_1 + 1;
+									curColName_tFileInputExcel_1 = "tuteurentreprise";
+
+									row1.tuteurentreprise = temp_row_tFileInputExcel_1[10];
+								} else {
+									row1.tuteurentreprise = null;
+									emptyColumnCount_tFileInputExcel_1++;
+								}
+
 								nb_line_tFileInputExcel_1++;
 
 							} catch (java.lang.Exception e) {
@@ -1782,15 +1861,15 @@ public class ImportEtudiant implements TalendJob {
 									user_tmp.email = row1.email;
 									user_tmp.email_canonical = row1.email;
 									user_tmp.enabled = 1;
-									user_tmp.salt = "5kdd8w09fykockokc0s8c4cswooc004";
-									user_tmp.password = "ZGvf_VuQSjIkRCY80Q0ydrIj98w4qU8APxR9m8W2pME";
+									user_tmp.salt = "ryxtxmqxseo84cwws4gwoskkwcggc80";
+									user_tmp.password = "pqQHJBOc/BWc/djigLxevyCva0hcKKpb33xQDhC8Hz0B3mW2KQv6II25F+G3O2ok7zmXdxcrIewpAmAyeEzqsg==";
 									user_tmp.last_login = null;
 									user_tmp.locked = false;
 									user_tmp.expired = false;
 									user_tmp.expires_at = null;
 									user_tmp.confirmation_token = null;
 									user_tmp.password_requested_at = null;
-									user_tmp.roles = "a:1:{i:0;s:11:\"ROLE_TUTEUR\";}";
+									user_tmp.roles = "a:1:{i:0;s:13:\"ROLE_ETUDIANT\";}";
 									user_tmp.credentials_expired = false;
 									user_tmp.credentials_expire_at = null;
 									user_tmp.type = "etudiant";
@@ -2775,6 +2854,18 @@ public class ImportEtudiant implements TalendJob {
 			return this.information;
 		}
 
+		public String tuteur;
+
+		public String getTuteur() {
+			return this.tuteur;
+		}
+
+		public String tuteurentreprise;
+
+		public String getTuteurentreprise() {
+			return this.tuteurentreprise;
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -2836,6 +2927,10 @@ public class ImportEtudiant implements TalendJob {
 
 					this.information = readString(dis);
 
+					this.tuteur = readString(dis);
+
+					this.tuteurentreprise = readString(dis);
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -2884,6 +2979,14 @@ public class ImportEtudiant implements TalendJob {
 
 				writeString(this.information, dos);
 
+				// String
+
+				writeString(this.tuteur, dos);
+
+				// String
+
+				writeString(this.tuteurentreprise, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -2904,6 +3007,8 @@ public class ImportEtudiant implements TalendJob {
 			sb.append(",adresse=" + adresse);
 			sb.append(",contrat=" + contrat);
 			sb.append(",information=" + information);
+			sb.append(",tuteur=" + tuteur);
+			sb.append(",tuteurentreprise=" + tuteurentreprise);
 			sb.append("]");
 
 			return sb.toString();
@@ -3002,6 +3107,18 @@ public class ImportEtudiant implements TalendJob {
 			return this.information;
 		}
 
+		public String tuteur;
+
+		public String getTuteur() {
+			return this.tuteur;
+		}
+
+		public String tuteurentreprise;
+
+		public String getTuteurentreprise() {
+			return this.tuteurentreprise;
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -3063,6 +3180,10 @@ public class ImportEtudiant implements TalendJob {
 
 					this.information = readString(dis);
 
+					this.tuteur = readString(dis);
+
+					this.tuteurentreprise = readString(dis);
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -3111,6 +3232,14 @@ public class ImportEtudiant implements TalendJob {
 
 				writeString(this.information, dos);
 
+				// String
+
+				writeString(this.tuteur, dos);
+
+				// String
+
+				writeString(this.tuteurentreprise, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -3131,6 +3260,8 @@ public class ImportEtudiant implements TalendJob {
 			sb.append(",adresse=" + adresse);
 			sb.append(",contrat=" + contrat);
 			sb.append(",information=" + information);
+			sb.append(",tuteur=" + tuteur);
+			sb.append(",tuteurentreprise=" + tuteurentreprise);
 			sb.append("]");
 
 			return sb.toString();
@@ -3193,6 +3324,8 @@ public class ImportEtudiant implements TalendJob {
 				globalResumeTicket = true;
 
 				tMysqlInput_1Process(globalMap);
+				tMysqlInput_4Process(globalMap);
+				tMysqlInput_5Process(globalMap);
 
 				row4Struct row4 = new row4Struct();
 				importetudiantStruct importetudiant = new importetudiantStruct();
@@ -3318,6 +3451,18 @@ public class ImportEtudiant implements TalendJob {
 
 				row3Struct row3HashKey = new row3Struct();
 				row3Struct row3Default = new row3Struct();
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) globalMap
+						.get("tHash_Lookup_row8"));
+
+				row8Struct row8HashKey = new row8Struct();
+				row8Struct row8Default = new row8Struct();
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct> tHash_Lookup_row9 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct>) globalMap
+						.get("tHash_Lookup_row9"));
+
+				row9Struct row9HashKey = new row9Struct();
+				row9Struct row9Default = new row9Struct();
 				// ###############################
 
 				// ###############################
@@ -3442,7 +3587,7 @@ public class ImportEtudiant implements TalendJob {
 					if (sheetList_tFileInputExcel_2.size() > 0) {
 						int nb_line_tFileInputExcel_2 = 0;
 
-						int begin_line_tFileInputExcel_2 = 0;
+						int begin_line_tFileInputExcel_2 = 1;
 
 						int footer_input_tFileInputExcel_2 = 0;
 
@@ -3496,7 +3641,7 @@ public class ImportEtudiant implements TalendJob {
 												- rowCount_tFileInputExcel_2);
 							}
 							row4 = null;
-							String[] temp_row_tFileInputExcel_2 = new String[9];
+							String[] temp_row_tFileInputExcel_2 = new String[11];
 							int excel_end_column_tFileInputExcel_2;
 							if (row_tFileInputExcel_2 == null) {
 								excel_end_column_tFileInputExcel_2 = 0;
@@ -3512,7 +3657,7 @@ public class ImportEtudiant implements TalendJob {
 										: end_column_tFileInputExcel_2;
 							}
 							org.apache.poi.ss.formula.eval.NumberEval ne_tFileInputExcel_2 = null;
-							for (int i = 0; i < 9; i++) {
+							for (int i = 0; i < 11; i++) {
 								if (i + start_column_tFileInputExcel_2 < actual_end_column_tFileInputExcel_2) {
 									org.apache.poi.ss.usermodel.Cell cell_tFileInputExcel_2 = row_tFileInputExcel_2
 											.getCell(i
@@ -3679,6 +3824,26 @@ public class ImportEtudiant implements TalendJob {
 									emptyColumnCount_tFileInputExcel_2++;
 								}
 
+								if (temp_row_tFileInputExcel_2[9].length() > 0) {
+									curColNum_tFileInputExcel_2 = 9 + start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "tuteur";
+
+									row4.tuteur = temp_row_tFileInputExcel_2[9];
+								} else {
+									row4.tuteur = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+
+								if (temp_row_tFileInputExcel_2[10].length() > 0) {
+									curColNum_tFileInputExcel_2 = 10 + start_column_tFileInputExcel_2 + 1;
+									curColName_tFileInputExcel_2 = "tuteurentreprise";
+
+									row4.tuteurentreprise = temp_row_tFileInputExcel_2[10];
+								} else {
+									row4.tuteurentreprise = null;
+									emptyColumnCount_tFileInputExcel_2++;
+								}
+
 								nb_line_tFileInputExcel_2++;
 
 							} catch (java.lang.Exception e) {
@@ -3765,6 +3930,98 @@ public class ImportEtudiant implements TalendJob {
 									row3 = fromLookup_row3;
 								}
 
+								// /////////////////////////////////////////////
+								// Starting Lookup Table "row8"
+								// /////////////////////////////////////////////
+
+								boolean forceLooprow8 = false;
+
+								row8Struct row8ObjectFromLookup = null;
+
+								if (!rejectedInnerJoin_tMap_2) { // G_TM_M_020
+
+									hasCasePrimitiveKeyWithNull_tMap_2 = false;
+
+									row8HashKey.username = row4.tuteur;
+
+									row8HashKey.hashCodeDirty = true;
+
+									tHash_Lookup_row8.lookup(row8HashKey);
+
+								} // G_TM_M_020
+
+								if (tHash_Lookup_row8 != null
+										&& tHash_Lookup_row8
+												.getCount(row8HashKey) > 1) { // G
+																				// 071
+
+									// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row8' and it contains more one result from keys :  row8.username = '"
+									// + row8HashKey.username + "'");
+								} // G 071
+
+								row8Struct row8 = null;
+
+								row8Struct fromLookup_row8 = null;
+								row8 = row8Default;
+
+								if (tHash_Lookup_row8 != null
+										&& tHash_Lookup_row8.hasNext()) { // G
+																			// 099
+
+									fromLookup_row8 = tHash_Lookup_row8.next();
+
+								} // G 099
+
+								if (fromLookup_row8 != null) {
+									row8 = fromLookup_row8;
+								}
+
+								// /////////////////////////////////////////////
+								// Starting Lookup Table "row9"
+								// /////////////////////////////////////////////
+
+								boolean forceLooprow9 = false;
+
+								row9Struct row9ObjectFromLookup = null;
+
+								if (!rejectedInnerJoin_tMap_2) { // G_TM_M_020
+
+									hasCasePrimitiveKeyWithNull_tMap_2 = false;
+
+									row9HashKey.username = row4.tuteurentreprise;
+
+									row9HashKey.hashCodeDirty = true;
+
+									tHash_Lookup_row9.lookup(row9HashKey);
+
+								} // G_TM_M_020
+
+								if (tHash_Lookup_row9 != null
+										&& tHash_Lookup_row9
+												.getCount(row9HashKey) > 1) { // G
+																				// 071
+
+									// System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row9' and it contains more one result from keys :  row9.username = '"
+									// + row9HashKey.username + "'");
+								} // G 071
+
+								row9Struct row9 = null;
+
+								row9Struct fromLookup_row9 = null;
+								row9 = row9Default;
+
+								if (tHash_Lookup_row9 != null
+										&& tHash_Lookup_row9.hasNext()) { // G
+																			// 099
+
+									fromLookup_row9 = tHash_Lookup_row9.next();
+
+								} // G 099
+
+								if (fromLookup_row9 != null) {
+									row9 = fromLookup_row9;
+								}
+
 								// ###############################
 								{ // start of Var scope
 
@@ -3787,8 +4044,8 @@ public class ImportEtudiant implements TalendJob {
 									importetudiant_tmp.typecontrat = routines.convertcontrat
 											.convertcontrat(row4.contrat);
 									importetudiant_tmp.etat = "actif";
-									importetudiant_tmp.Tuteur = null;
-									importetudiant_tmp.TuteurEntreprise = null;
+									importetudiant_tmp.Tuteur = row8.id;
+									importetudiant_tmp.TuteurEntreprise = row9.id;
 									importetudiant = importetudiant_tmp;
 									// ###############################
 
@@ -4072,6 +4329,16 @@ public class ImportEtudiant implements TalendJob {
 				}
 				globalMap.remove("tHash_Lookup_row3");
 
+				if (tHash_Lookup_row8 != null) {
+					tHash_Lookup_row8.endGet();
+				}
+				globalMap.remove("tHash_Lookup_row8");
+
+				if (tHash_Lookup_row9 != null) {
+					tHash_Lookup_row9.endGet();
+				}
+				globalMap.remove("tHash_Lookup_row9");
+
 				// ###############################
 
 				ok_Hash.put("tMap_2", true);
@@ -4157,6 +4424,12 @@ public class ImportEtudiant implements TalendJob {
 
 			// free memory for "tMap_2"
 			globalMap.remove("tHash_Lookup_row3");
+
+			// free memory for "tMap_2"
+			globalMap.remove("tHash_Lookup_row8");
+
+			// free memory for "tMap_2"
+			globalMap.remove("tHash_Lookup_row9");
 
 			try {
 
@@ -4527,6 +4800,18 @@ public class ImportEtudiant implements TalendJob {
 			return this.information;
 		}
 
+		public String tuteur;
+
+		public String getTuteur() {
+			return this.tuteur;
+		}
+
+		public String newColumn1;
+
+		public String getNewColumn1() {
+			return this.newColumn1;
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -4588,6 +4873,10 @@ public class ImportEtudiant implements TalendJob {
 
 					this.information = readString(dis);
 
+					this.tuteur = readString(dis);
+
+					this.newColumn1 = readString(dis);
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -4636,6 +4925,14 @@ public class ImportEtudiant implements TalendJob {
 
 				writeString(this.information, dos);
 
+				// String
+
+				writeString(this.tuteur, dos);
+
+				// String
+
+				writeString(this.newColumn1, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -4656,6 +4953,8 @@ public class ImportEtudiant implements TalendJob {
 			sb.append(",adresse=" + adresse);
 			sb.append(",contrat=" + contrat);
 			sb.append(",information=" + information);
+			sb.append(",tuteur=" + tuteur);
+			sb.append(",newColumn1=" + newColumn1);
 			sb.append("]");
 
 			return sb.toString();
@@ -4754,6 +5053,18 @@ public class ImportEtudiant implements TalendJob {
 			return this.information;
 		}
 
+		public String tuteur;
+
+		public String getTuteur() {
+			return this.tuteur;
+		}
+
+		public String newColumn1;
+
+		public String getNewColumn1() {
+			return this.newColumn1;
+		}
+
 		private String readString(ObjectInputStream dis) throws IOException {
 			String strReturn = null;
 			int length = 0;
@@ -4815,6 +5126,10 @@ public class ImportEtudiant implements TalendJob {
 
 					this.information = readString(dis);
 
+					this.tuteur = readString(dis);
+
+					this.newColumn1 = readString(dis);
+
 				} catch (IOException e) {
 					throw new RuntimeException(e);
 
@@ -4863,6 +5178,14 @@ public class ImportEtudiant implements TalendJob {
 
 				writeString(this.information, dos);
 
+				// String
+
+				writeString(this.tuteur, dos);
+
+				// String
+
+				writeString(this.newColumn1, dos);
+
 			} catch (IOException e) {
 				throw new RuntimeException(e);
 			}
@@ -4883,6 +5206,8 @@ public class ImportEtudiant implements TalendJob {
 			sb.append(",adresse=" + adresse);
 			sb.append(",contrat=" + contrat);
 			sb.append(",information=" + information);
+			sb.append(",tuteur=" + tuteur);
+			sb.append(",newColumn1=" + newColumn1);
 			sb.append("]");
 
 			return sb.toString();
@@ -4946,7 +5271,6 @@ public class ImportEtudiant implements TalendJob {
 
 				tMysqlInput_2Process(globalMap);
 				tMysqlInput_3Process(globalMap);
-				tMysqlInput_4Process(globalMap);
 
 				row2Struct row2 = new row2Struct();
 				anneeStruct annee = new anneeStruct();
@@ -5078,14 +5402,6 @@ public class ImportEtudiant implements TalendJob {
 
 				row5Struct row5HashKey = new row5Struct();
 				row5Struct row5Default = new row5Struct();
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) ((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) globalMap
-						.get("tHash_Lookup_row8"));
-
-				tHash_Lookup_row8.initGet();
-
-				row8Struct row8HashKey = new row8Struct();
-				row8Struct row8Default = new row8Struct();
 				// ###############################
 
 				// ###############################
@@ -5210,7 +5526,7 @@ public class ImportEtudiant implements TalendJob {
 					if (sheetList_tFileInputExcel_4.size() > 0) {
 						int nb_line_tFileInputExcel_4 = 0;
 
-						int begin_line_tFileInputExcel_4 = 0;
+						int begin_line_tFileInputExcel_4 = 1;
 
 						int footer_input_tFileInputExcel_4 = 0;
 
@@ -5264,7 +5580,7 @@ public class ImportEtudiant implements TalendJob {
 												- rowCount_tFileInputExcel_4);
 							}
 							row2 = null;
-							String[] temp_row_tFileInputExcel_4 = new String[9];
+							String[] temp_row_tFileInputExcel_4 = new String[11];
 							int excel_end_column_tFileInputExcel_4;
 							if (row_tFileInputExcel_4 == null) {
 								excel_end_column_tFileInputExcel_4 = 0;
@@ -5280,7 +5596,7 @@ public class ImportEtudiant implements TalendJob {
 										: end_column_tFileInputExcel_4;
 							}
 							org.apache.poi.ss.formula.eval.NumberEval ne_tFileInputExcel_4 = null;
-							for (int i = 0; i < 9; i++) {
+							for (int i = 0; i < 11; i++) {
 								if (i + start_column_tFileInputExcel_4 < actual_end_column_tFileInputExcel_4) {
 									org.apache.poi.ss.usermodel.Cell cell_tFileInputExcel_4 = row_tFileInputExcel_4
 											.getCell(i
@@ -5447,6 +5763,26 @@ public class ImportEtudiant implements TalendJob {
 									emptyColumnCount_tFileInputExcel_4++;
 								}
 
+								if (temp_row_tFileInputExcel_4[9].length() > 0) {
+									curColNum_tFileInputExcel_4 = 9 + start_column_tFileInputExcel_4 + 1;
+									curColName_tFileInputExcel_4 = "tuteur";
+
+									row2.tuteur = temp_row_tFileInputExcel_4[9];
+								} else {
+									row2.tuteur = null;
+									emptyColumnCount_tFileInputExcel_4++;
+								}
+
+								if (temp_row_tFileInputExcel_4[10].length() > 0) {
+									curColNum_tFileInputExcel_4 = 10 + start_column_tFileInputExcel_4 + 1;
+									curColName_tFileInputExcel_4 = "newColumn1";
+
+									row2.newColumn1 = temp_row_tFileInputExcel_4[10];
+								} else {
+									row2.newColumn1 = null;
+									emptyColumnCount_tFileInputExcel_4++;
+								}
+
 								nb_line_tFileInputExcel_4++;
 
 							} catch (java.lang.Exception e) {
@@ -5579,234 +5915,165 @@ public class ImportEtudiant implements TalendJob {
 									row5 = fromLookup_row5;
 								}
 
-								// /////////////////////////////////////////////
-								// Starting Lookup Table "row8"
-								// /////////////////////////////////////////////
-
-								boolean forceLooprow8 = false;
-
-								row8Struct row8ObjectFromLookup = null;
-
-								if (!rejectedInnerJoin_tMap_3) { // G_TM_M_020
-
-									tHash_Lookup_row8.lookup(row8HashKey);
-
-									if (!tHash_Lookup_row8.hasNext()) { // G_TM_M_090
-
-										forceLooprow8 = true;
-
-									} // G_TM_M_090
-
-								} // G_TM_M_020
-
-								else { // G 20 - G 21
-									forceLooprow8 = true;
-								} // G 21
-
-								row8Struct row8 = null;
-
-								while ((tHash_Lookup_row8 != null && tHash_Lookup_row8
-										.hasNext()) || forceLooprow8) { // G_TM_M_043
-
-									// CALL close loop of lookup 'row8'
-
-									row8Struct fromLookup_row8 = null;
-									row8 = row8Default;
-
-									if (!forceLooprow8) { // G 46
-
-										fromLookup_row8 = tHash_Lookup_row8
-												.next();
-
-										if (fromLookup_row8 != null) {
-											row8 = fromLookup_row8;
-										}
-
-									} // G 46
-
-									forceLooprow8 = false;
+								// ###############################
+								{ // start of Var scope
 
 									// ###############################
-									{ // start of Var scope
+									// # Vars tables
 
-										// ###############################
-										// # Vars tables
+									Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
+									// ###############################
+									// # Output tables
 
-										Var__tMap_3__Struct Var = Var__tMap_3;// ###############################
-										// ###############################
-										// # Output tables
+									annee = null;
 
-										annee = null;
+									// # Output table : 'annee'
+									annee_tmp.id = 0;
+									annee_tmp.etudiant_id = row6.id;
+									annee_tmp.formation_id = row5.id;
+									annee_tmp.annee_formation = routines.convertirdate
+											.convert(""
+													+ TalendDate.parseDate(
+															"yyyy",
+															TalendDate
+																	.getDate("CCYY/MM/DD")));
+									annee_tmp.EstValide = "en cours";
+									annee = annee_tmp;
+									// ###############################
 
-										// # Output table : 'annee'
-										annee_tmp.id = 0;
-										annee_tmp.etudiant_id = row6.id;
-										annee_tmp.formation_id = row5.id;
-										annee_tmp.annee_formation = routines.convertirdate
-												.convert(""
-														+ TalendDate
-																.parseDate(
-																		"yyyy",
-																		TalendDate
-																				.getDate("CCYY/MM/DD")));
-										annee_tmp.EstValide = "en cours";
-										annee = annee_tmp;
-										// ###############################
+								} // end of Var scope
 
-									} // end of Var scope
+								rejectedInnerJoin_tMap_3 = false;
 
-									rejectedInnerJoin_tMap_3 = false;
+								tos_count_tMap_3++;
 
-									tos_count_tMap_3++;
+								/**
+								 * [tMap_3 main ] stop
+								 */
+
+								// Start of branch "annee"
+								if (annee != null) {
 
 									/**
-									 * [tMap_3 main ] stop
+									 * [tMysqlOutput_3 main ] start
 									 */
 
-									// Start of branch "annee"
-									if (annee != null) {
+									currentComponent = "tMysqlOutput_3";
 
-										/**
-										 * [tMysqlOutput_3 main ] start
-										 */
+									whetherReject_tMysqlOutput_3 = false;
 
-										currentComponent = "tMysqlOutput_3";
+									pstmt_tMysqlOutput_3.setInt(1, annee.id);
 
-										whetherReject_tMysqlOutput_3 = false;
+									java.sql.ResultSet rs_tMysqlOutput_3 = pstmt_tMysqlOutput_3
+											.executeQuery();
+									int checkCount_tMysqlOutput_3 = -1;
+									while (rs_tMysqlOutput_3.next()) {
+										checkCount_tMysqlOutput_3 = rs_tMysqlOutput_3
+												.getInt(1);
+									}
+									if (checkCount_tMysqlOutput_3 > 0) {
 
-										pstmt_tMysqlOutput_3
-												.setInt(1, annee.id);
-
-										java.sql.ResultSet rs_tMysqlOutput_3 = pstmt_tMysqlOutput_3
-												.executeQuery();
-										int checkCount_tMysqlOutput_3 = -1;
-										while (rs_tMysqlOutput_3.next()) {
-											checkCount_tMysqlOutput_3 = rs_tMysqlOutput_3
-													.getInt(1);
-										}
-										if (checkCount_tMysqlOutput_3 > 0) {
-
-											if (annee.etudiant_id == null) {
-												pstmtUpdate_tMysqlOutput_3
-														.setNull(
-																1,
-																java.sql.Types.INTEGER);
-											} else {
-												pstmtUpdate_tMysqlOutput_3
-														.setInt(1,
-																annee.etudiant_id);
-											}
-
-											if (annee.formation_id == null) {
-												pstmtUpdate_tMysqlOutput_3
-														.setNull(
-																2,
-																java.sql.Types.INTEGER);
-											} else {
-												pstmtUpdate_tMysqlOutput_3
-														.setInt(2,
-																annee.formation_id);
-											}
-
-											pstmtUpdate_tMysqlOutput_3.setInt(
-													3, annee.annee_formation);
-
-											if (annee.EstValide == null) {
-												pstmtUpdate_tMysqlOutput_3
-														.setNull(
-																4,
-																java.sql.Types.VARCHAR);
-											} else {
-												pstmtUpdate_tMysqlOutput_3
-														.setString(4,
-																annee.EstValide);
-											}
-
-											pstmtUpdate_tMysqlOutput_3.setInt(
-													5 + count_tMysqlOutput_3,
-													annee.id);
-
-											try {
-												updatedCount_tMysqlOutput_3 = updatedCount_tMysqlOutput_3
-														+ pstmtUpdate_tMysqlOutput_3
-																.executeUpdate();
-											} catch (java.lang.Exception e) {
-												whetherReject_tMysqlOutput_3 = true;
-												System.err
-														.print(e.getMessage());
-											}
+										if (annee.etudiant_id == null) {
+											pstmtUpdate_tMysqlOutput_3.setNull(
+													1, java.sql.Types.INTEGER);
 										} else {
-
-											pstmtInsert_tMysqlOutput_3.setInt(
-													1, annee.id);
-
-											if (annee.etudiant_id == null) {
-												pstmtInsert_tMysqlOutput_3
-														.setNull(
-																2,
-																java.sql.Types.INTEGER);
-											} else {
-												pstmtInsert_tMysqlOutput_3
-														.setInt(2,
-																annee.etudiant_id);
-											}
-
-											if (annee.formation_id == null) {
-												pstmtInsert_tMysqlOutput_3
-														.setNull(
-																3,
-																java.sql.Types.INTEGER);
-											} else {
-												pstmtInsert_tMysqlOutput_3
-														.setInt(3,
-																annee.formation_id);
-											}
-
-											pstmtInsert_tMysqlOutput_3.setInt(
-													4, annee.annee_formation);
-
-											if (annee.EstValide == null) {
-												pstmtInsert_tMysqlOutput_3
-														.setNull(
-																5,
-																java.sql.Types.VARCHAR);
-											} else {
-												pstmtInsert_tMysqlOutput_3
-														.setString(5,
-																annee.EstValide);
-											}
-
-											try {
-												insertedCount_tMysqlOutput_3 = insertedCount_tMysqlOutput_3
-														+ pstmtInsert_tMysqlOutput_3
-																.executeUpdate();
-											} catch (java.lang.Exception e) {
-												whetherReject_tMysqlOutput_3 = true;
-												System.err
-														.print(e.getMessage());
-											}
-										}
-										nb_line_tMysqlOutput_3++;
-
-										commitCounter_tMysqlOutput_3++;
-
-										if (commitEvery_tMysqlOutput_3 <= commitCounter_tMysqlOutput_3) {
-
-											conn_tMysqlOutput_3.commit();
-
-											commitCounter_tMysqlOutput_3 = 0;
-
+											pstmtUpdate_tMysqlOutput_3.setInt(
+													1, annee.etudiant_id);
 										}
 
-										tos_count_tMysqlOutput_3++;
+										if (annee.formation_id == null) {
+											pstmtUpdate_tMysqlOutput_3.setNull(
+													2, java.sql.Types.INTEGER);
+										} else {
+											pstmtUpdate_tMysqlOutput_3.setInt(
+													2, annee.formation_id);
+										}
 
-										/**
-										 * [tMysqlOutput_3 main ] stop
-										 */
+										pstmtUpdate_tMysqlOutput_3.setInt(3,
+												annee.annee_formation);
 
-									} // End of branch "annee"
+										if (annee.EstValide == null) {
+											pstmtUpdate_tMysqlOutput_3.setNull(
+													4, java.sql.Types.VARCHAR);
+										} else {
+											pstmtUpdate_tMysqlOutput_3
+													.setString(4,
+															annee.EstValide);
+										}
 
-								} // close loop of lookup 'row8' // G_TM_M_043
+										pstmtUpdate_tMysqlOutput_3.setInt(
+												5 + count_tMysqlOutput_3,
+												annee.id);
+
+										try {
+											updatedCount_tMysqlOutput_3 = updatedCount_tMysqlOutput_3
+													+ pstmtUpdate_tMysqlOutput_3
+															.executeUpdate();
+										} catch (java.lang.Exception e) {
+											whetherReject_tMysqlOutput_3 = true;
+											System.err.print(e.getMessage());
+										}
+									} else {
+
+										pstmtInsert_tMysqlOutput_3.setInt(1,
+												annee.id);
+
+										if (annee.etudiant_id == null) {
+											pstmtInsert_tMysqlOutput_3.setNull(
+													2, java.sql.Types.INTEGER);
+										} else {
+											pstmtInsert_tMysqlOutput_3.setInt(
+													2, annee.etudiant_id);
+										}
+
+										if (annee.formation_id == null) {
+											pstmtInsert_tMysqlOutput_3.setNull(
+													3, java.sql.Types.INTEGER);
+										} else {
+											pstmtInsert_tMysqlOutput_3.setInt(
+													3, annee.formation_id);
+										}
+
+										pstmtInsert_tMysqlOutput_3.setInt(4,
+												annee.annee_formation);
+
+										if (annee.EstValide == null) {
+											pstmtInsert_tMysqlOutput_3.setNull(
+													5, java.sql.Types.VARCHAR);
+										} else {
+											pstmtInsert_tMysqlOutput_3
+													.setString(5,
+															annee.EstValide);
+										}
+
+										try {
+											insertedCount_tMysqlOutput_3 = insertedCount_tMysqlOutput_3
+													+ pstmtInsert_tMysqlOutput_3
+															.executeUpdate();
+										} catch (java.lang.Exception e) {
+											whetherReject_tMysqlOutput_3 = true;
+											System.err.print(e.getMessage());
+										}
+									}
+									nb_line_tMysqlOutput_3++;
+
+									commitCounter_tMysqlOutput_3++;
+
+									if (commitEvery_tMysqlOutput_3 <= commitCounter_tMysqlOutput_3) {
+
+										conn_tMysqlOutput_3.commit();
+
+										commitCounter_tMysqlOutput_3 = 0;
+
+									}
+
+									tos_count_tMysqlOutput_3++;
+
+									/**
+									 * [tMysqlOutput_3 main ] stop
+									 */
+
+								} // End of branch "annee"
 
 							} // End of branch "row2"
 
@@ -5855,11 +6122,6 @@ public class ImportEtudiant implements TalendJob {
 					tHash_Lookup_row5.endGet();
 				}
 				globalMap.remove("tHash_Lookup_row5");
-
-				if (tHash_Lookup_row8 != null) {
-					tHash_Lookup_row8.endGet();
-				}
-				globalMap.remove("tHash_Lookup_row8");
 
 				// ###############################
 
@@ -5940,9 +6202,6 @@ public class ImportEtudiant implements TalendJob {
 
 			// free memory for "tMap_3"
 			globalMap.remove("tHash_Lookup_row6");
-
-			// free memory for "tMap_3"
-			globalMap.remove("tHash_Lookup_row8");
 
 			try {
 
@@ -6505,7 +6764,7 @@ public class ImportEtudiant implements TalendJob {
 				// source node:tMysqlInput_1 - inputs:(after_tFileInputExcel_2)
 				// outputs:(row3,row3) | target node:tAdvancedHash_row3 -
 				// inputs:(row3) outputs:()
-				// linked node: tMap_2 - inputs:(row4,row3)
+				// linked node: tMap_2 - inputs:(row4,row3,row8,row9)
 				// outputs:(importetudiant)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row3 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -7000,6 +7259,2010 @@ public class ImportEtudiant implements TalendJob {
 		globalMap.put("tMysqlInput_1_SUBPROCESS_STATE", 1);
 	}
 
+	public static class row8Struct implements
+			routines.system.IPersistableComparableLookupRow<row8Struct> {
+		final static byte[] commonByteArrayLock_PROJETDEMO_ImportEtudiant = new byte[0];
+		static byte[] commonByteArray_PROJETDEMO_ImportEtudiant = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public int id;
+
+		public int getId() {
+			return this.id;
+		}
+
+		public String username;
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public String username_canonical;
+
+		public String getUsername_canonical() {
+			return this.username_canonical;
+		}
+
+		public String email;
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public String email_canonical;
+
+		public String getEmail_canonical() {
+			return this.email_canonical;
+		}
+
+		public boolean enabled;
+
+		public boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public String salt;
+
+		public String getSalt() {
+			return this.salt;
+		}
+
+		public String password;
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public java.util.Date last_login;
+
+		public java.util.Date getLast_login() {
+			return this.last_login;
+		}
+
+		public boolean locked;
+
+		public boolean getLocked() {
+			return this.locked;
+		}
+
+		public boolean expired;
+
+		public boolean getExpired() {
+			return this.expired;
+		}
+
+		public java.util.Date expires_at;
+
+		public java.util.Date getExpires_at() {
+			return this.expires_at;
+		}
+
+		public String confirmation_token;
+
+		public String getConfirmation_token() {
+			return this.confirmation_token;
+		}
+
+		public java.util.Date password_requested_at;
+
+		public java.util.Date getPassword_requested_at() {
+			return this.password_requested_at;
+		}
+
+		public String roles;
+
+		public String getRoles() {
+			return this.roles;
+		}
+
+		public boolean credentials_expired;
+
+		public boolean getCredentials_expired() {
+			return this.credentials_expired;
+		}
+
+		public java.util.Date credentials_expire_at;
+
+		public java.util.Date getCredentials_expire_at() {
+			return this.credentials_expire_at;
+		}
+
+		public String type;
+
+		public String getType() {
+			return this.type;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime
+						* result
+						+ ((this.username == null) ? 0 : this.username
+								.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row8Struct other = (row8Struct) obj;
+
+			if (this.username == null) {
+				if (other.username != null)
+					return false;
+
+			} else if (!this.username.equals(other.username))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row8Struct other) {
+
+			other.id = this.id;
+			other.username = this.username;
+			other.username_canonical = this.username_canonical;
+			other.email = this.email;
+			other.email_canonical = this.email_canonical;
+			other.enabled = this.enabled;
+			other.salt = this.salt;
+			other.password = this.password;
+			other.last_login = this.last_login;
+			other.locked = this.locked;
+			other.expired = this.expired;
+			other.expires_at = this.expires_at;
+			other.confirmation_token = this.confirmation_token;
+			other.password_requested_at = this.password_requested_at;
+			other.roles = this.roles;
+			other.credentials_expired = this.credentials_expired;
+			other.credentials_expire_at = this.credentials_expire_at;
+			other.type = this.type;
+
+		}
+
+		public void copyKeysDataTo(row8Struct other) {
+
+			other.username = this.username;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_PROJETDEMO_ImportEtudiant.length) {
+					if (length < 1024
+							&& commonByteArray_PROJETDEMO_ImportEtudiant.length == 0) {
+						commonByteArray_PROJETDEMO_ImportEtudiant = new byte[1024];
+					} else {
+						commonByteArray_PROJETDEMO_ImportEtudiant = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_PROJETDEMO_ImportEtudiant, 0,
+						length);
+				strReturn = new String(
+						commonByteArray_PROJETDEMO_ImportEtudiant, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos)
+				throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois)
+				throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos,
+				ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(DataInputStream dis,
+				ObjectInputStream ois) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, DataOutputStream dos,
+				ObjectOutputStream oos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_PROJETDEMO_ImportEtudiant) {
+
+				try {
+
+					int length = 0;
+
+					this.username = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.username, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.id = dis.readInt();
+
+				this.username_canonical = readString(dis, ois);
+
+				this.email = readString(dis, ois);
+
+				this.email_canonical = readString(dis, ois);
+
+				this.enabled = dis.readBoolean();
+
+				this.salt = readString(dis, ois);
+
+				this.password = readString(dis, ois);
+
+				this.last_login = readDate(dis, ois);
+
+				this.locked = dis.readBoolean();
+
+				this.expired = dis.readBoolean();
+
+				this.expires_at = readDate(dis, ois);
+
+				this.confirmation_token = readString(dis, ois);
+
+				this.password_requested_at = readDate(dis, ois);
+
+				this.roles = readString(dis, ois);
+
+				this.credentials_expired = dis.readBoolean();
+
+				this.credentials_expire_at = readDate(dis, ois);
+
+				this.type = readString(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				dos.writeInt(this.id);
+
+				writeString(this.username_canonical, dos, oos);
+
+				writeString(this.email, dos, oos);
+
+				writeString(this.email_canonical, dos, oos);
+
+				dos.writeBoolean(this.enabled);
+
+				writeString(this.salt, dos, oos);
+
+				writeString(this.password, dos, oos);
+
+				writeDate(this.last_login, dos, oos);
+
+				dos.writeBoolean(this.locked);
+
+				dos.writeBoolean(this.expired);
+
+				writeDate(this.expires_at, dos, oos);
+
+				writeString(this.confirmation_token, dos, oos);
+
+				writeDate(this.password_requested_at, dos, oos);
+
+				writeString(this.roles, dos, oos);
+
+				dos.writeBoolean(this.credentials_expired);
+
+				writeDate(this.credentials_expire_at, dos, oos);
+
+				writeString(this.type, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + String.valueOf(id));
+			sb.append(",username=" + username);
+			sb.append(",username_canonical=" + username_canonical);
+			sb.append(",email=" + email);
+			sb.append(",email_canonical=" + email_canonical);
+			sb.append(",enabled=" + String.valueOf(enabled));
+			sb.append(",salt=" + salt);
+			sb.append(",password=" + password);
+			sb.append(",last_login=" + String.valueOf(last_login));
+			sb.append(",locked=" + String.valueOf(locked));
+			sb.append(",expired=" + String.valueOf(expired));
+			sb.append(",expires_at=" + String.valueOf(expires_at));
+			sb.append(",confirmation_token=" + confirmation_token);
+			sb.append(",password_requested_at="
+					+ String.valueOf(password_requested_at));
+			sb.append(",roles=" + roles);
+			sb.append(",credentials_expired="
+					+ String.valueOf(credentials_expired));
+			sb.append(",credentials_expire_at="
+					+ String.valueOf(credentials_expire_at));
+			sb.append(",type=" + type);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row8Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.username, other.username);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(),
+						object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tMysqlInput_4Process(
+			final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+		globalMap.put("tMysqlInput_4_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+
+			String currentMethodName = new java.lang.Exception()
+					.getStackTrace()[0].getMethodName();
+			boolean resumeIt = currentMethodName.equals(resumeEntryMethodName);
+			if (resumeEntryMethodName == null || resumeIt || globalResumeTicket) {// start
+																					// the
+																					// resume
+				globalResumeTicket = true;
+
+				row8Struct row8 = new row8Struct();
+
+				/**
+				 * [tAdvancedHash_row8 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row8", false);
+				start_Hash
+						.put("tAdvancedHash_row8", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row8";
+
+				int tos_count_tAdvancedHash_row8 = 0;
+
+				// connection name:row8
+				// source node:tMysqlInput_4 - inputs:(after_tFileInputExcel_2)
+				// outputs:(row8,row8) | target node:tAdvancedHash_row8 -
+				// inputs:(row8) outputs:()
+				// linked node: tMap_2 - inputs:(row4,row3,row8,row9)
+				// outputs:(importetudiant)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row8 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row8Struct> getLookup(matchingModeEnum_row8);
+
+				globalMap.put("tHash_Lookup_row8", tHash_Lookup_row8);
+
+				/**
+				 * [tAdvancedHash_row8 begin ] stop
+				 */
+
+				/**
+				 * [tMysqlInput_4 begin ] start
+				 */
+
+				ok_Hash.put("tMysqlInput_4", false);
+				start_Hash.put("tMysqlInput_4", System.currentTimeMillis());
+
+				currentComponent = "tMysqlInput_4";
+
+				int tos_count_tMysqlInput_4 = 0;
+
+				java.util.Calendar calendar_tMysqlInput_4 = java.util.Calendar
+						.getInstance();
+				calendar_tMysqlInput_4.set(0, 0, 0, 0, 0, 0);
+				java.util.Date year0_tMysqlInput_4 = calendar_tMysqlInput_4
+						.getTime();
+				int nb_line_tMysqlInput_4 = 0;
+				java.sql.Connection conn_tMysqlInput_4 = null;
+				java.lang.Class.forName("org.gjt.mm.mysql.Driver");
+				String dbUser_tMysqlInput_4 = "root";
+
+				final String decryptedPassword_tMysqlInput_4 = routines.system.PasswordEncryptUtil
+						.decryptPassword("7a440551249af37a");
+				String dbPwd_tMysqlInput_4 = decryptedPassword_tMysqlInput_4;
+
+				String url_tMysqlInput_4 = "jdbc:mysql://" + "localhost" + ":"
+						+ "8889" + "/" + "galter" + "?"
+						+ "noDatetimeStringSync=true";
+
+				conn_tMysqlInput_4 = java.sql.DriverManager.getConnection(
+						url_tMysqlInput_4, dbUser_tMysqlInput_4,
+						dbPwd_tMysqlInput_4);
+
+				java.sql.Statement stmt_tMysqlInput_4 = conn_tMysqlInput_4
+						.createStatement();
+
+				String dbquery_tMysqlInput_4 = "SELECT \n  `user`.`id`, \n  `user`.`username`, \n  `user`.`username_canonical`, \n  `user`.`email`, \n  `user`.`email_canonical`, \n  `user`.`enabled`, \n  `user`.`salt`, \n  `user`.`password`, \n  `user`.`last_login`, \n  `user`.`locked`, \n  `user`.`expired`, \n  `user`.`expires_at`, \n  `user`.`confirmation_token`, \n  `user`.`password_requested_at`, \n  `user`.`roles`, \n  `user`.`credentials_expired`, \n  `user`.`credentials_expire_at`, \n  `user`.`type`\nFROM `user`";
+
+				globalMap.put("tMysqlInput_4_QUERY", dbquery_tMysqlInput_4);
+				java.sql.ResultSet rs_tMysqlInput_4 = null;
+				try {
+					rs_tMysqlInput_4 = stmt_tMysqlInput_4
+							.executeQuery(dbquery_tMysqlInput_4);
+					java.sql.ResultSetMetaData rsmd_tMysqlInput_4 = rs_tMysqlInput_4
+							.getMetaData();
+					int colQtyInRs_tMysqlInput_4 = rsmd_tMysqlInput_4
+							.getColumnCount();
+
+					String tmpContent_tMysqlInput_4 = null;
+
+					while (rs_tMysqlInput_4.next()) {
+						nb_line_tMysqlInput_4++;
+
+						if (colQtyInRs_tMysqlInput_4 < 1) {
+							row8.id = 0;
+						} else {
+
+							if (rs_tMysqlInput_4.getObject(1) != null) {
+								row8.id = rs_tMysqlInput_4.getInt(1);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 2) {
+							row8.username = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(2);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.username = tmpContent_tMysqlInput_4;
+							} else {
+								row8.username = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 3) {
+							row8.username_canonical = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(3);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.username_canonical = tmpContent_tMysqlInput_4;
+							} else {
+								row8.username_canonical = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 4) {
+							row8.email = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(4);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.email = tmpContent_tMysqlInput_4;
+							} else {
+								row8.email = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 5) {
+							row8.email_canonical = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(5);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.email_canonical = tmpContent_tMysqlInput_4;
+							} else {
+								row8.email_canonical = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 6) {
+							row8.enabled = false;
+						} else {
+
+							if (rs_tMysqlInput_4.getObject(6) != null) {
+								row8.enabled = rs_tMysqlInput_4.getBoolean(6);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 7) {
+							row8.salt = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(7);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.salt = tmpContent_tMysqlInput_4;
+							} else {
+								row8.salt = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 8) {
+							row8.password = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(8);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.password = tmpContent_tMysqlInput_4;
+							} else {
+								row8.password = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 9) {
+							row8.last_login = null;
+						} else {
+
+							if (rs_tMysqlInput_4.getString(9) != null) {
+								String dateString_tMysqlInput_4 = rs_tMysqlInput_4
+										.getString(9);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_4)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_4)) {
+									row8.last_login = rs_tMysqlInput_4
+											.getTimestamp(9);
+								} else {
+									row8.last_login = (java.util.Date) year0_tMysqlInput_4
+											.clone();
+								}
+							} else {
+								row8.last_login = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 10) {
+							row8.locked = false;
+						} else {
+
+							if (rs_tMysqlInput_4.getObject(10) != null) {
+								row8.locked = rs_tMysqlInput_4.getBoolean(10);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 11) {
+							row8.expired = false;
+						} else {
+
+							if (rs_tMysqlInput_4.getObject(11) != null) {
+								row8.expired = rs_tMysqlInput_4.getBoolean(11);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 12) {
+							row8.expires_at = null;
+						} else {
+
+							if (rs_tMysqlInput_4.getString(12) != null) {
+								String dateString_tMysqlInput_4 = rs_tMysqlInput_4
+										.getString(12);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_4)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_4)) {
+									row8.expires_at = rs_tMysqlInput_4
+											.getTimestamp(12);
+								} else {
+									row8.expires_at = (java.util.Date) year0_tMysqlInput_4
+											.clone();
+								}
+							} else {
+								row8.expires_at = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 13) {
+							row8.confirmation_token = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(13);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.confirmation_token = tmpContent_tMysqlInput_4;
+							} else {
+								row8.confirmation_token = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 14) {
+							row8.password_requested_at = null;
+						} else {
+
+							if (rs_tMysqlInput_4.getString(14) != null) {
+								String dateString_tMysqlInput_4 = rs_tMysqlInput_4
+										.getString(14);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_4)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_4)) {
+									row8.password_requested_at = rs_tMysqlInput_4
+											.getTimestamp(14);
+								} else {
+									row8.password_requested_at = (java.util.Date) year0_tMysqlInput_4
+											.clone();
+								}
+							} else {
+								row8.password_requested_at = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 15) {
+							row8.roles = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(15);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.roles = tmpContent_tMysqlInput_4;
+							} else {
+								row8.roles = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 16) {
+							row8.credentials_expired = false;
+						} else {
+
+							if (rs_tMysqlInput_4.getObject(16) != null) {
+								row8.credentials_expired = rs_tMysqlInput_4
+										.getBoolean(16);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 17) {
+							row8.credentials_expire_at = null;
+						} else {
+
+							if (rs_tMysqlInput_4.getString(17) != null) {
+								String dateString_tMysqlInput_4 = rs_tMysqlInput_4
+										.getString(17);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_4)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_4)) {
+									row8.credentials_expire_at = rs_tMysqlInput_4
+											.getTimestamp(17);
+								} else {
+									row8.credentials_expire_at = (java.util.Date) year0_tMysqlInput_4
+											.clone();
+								}
+							} else {
+								row8.credentials_expire_at = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_4 < 18) {
+							row8.type = null;
+						} else {
+
+							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
+									.getString(18);
+							if (tmpContent_tMysqlInput_4 != null) {
+								row8.type = tmpContent_tMysqlInput_4;
+							} else {
+								row8.type = null;
+							}
+						}
+
+						/**
+						 * [tMysqlInput_4 begin ] stop
+						 */
+
+						/**
+						 * [tMysqlInput_4 main ] start
+						 */
+
+						currentComponent = "tMysqlInput_4";
+
+						tos_count_tMysqlInput_4++;
+
+						/**
+						 * [tMysqlInput_4 main ] stop
+						 */
+
+						/**
+						 * [tAdvancedHash_row8 main ] start
+						 */
+
+						currentComponent = "tAdvancedHash_row8";
+
+						row8Struct row8_HashRow = new row8Struct();
+
+						row8_HashRow.id = row8.id;
+
+						row8_HashRow.username = row8.username;
+
+						row8_HashRow.username_canonical = row8.username_canonical;
+
+						row8_HashRow.email = row8.email;
+
+						row8_HashRow.email_canonical = row8.email_canonical;
+
+						row8_HashRow.enabled = row8.enabled;
+
+						row8_HashRow.salt = row8.salt;
+
+						row8_HashRow.password = row8.password;
+
+						row8_HashRow.last_login = row8.last_login;
+
+						row8_HashRow.locked = row8.locked;
+
+						row8_HashRow.expired = row8.expired;
+
+						row8_HashRow.expires_at = row8.expires_at;
+
+						row8_HashRow.confirmation_token = row8.confirmation_token;
+
+						row8_HashRow.password_requested_at = row8.password_requested_at;
+
+						row8_HashRow.roles = row8.roles;
+
+						row8_HashRow.credentials_expired = row8.credentials_expired;
+
+						row8_HashRow.credentials_expire_at = row8.credentials_expire_at;
+
+						row8_HashRow.type = row8.type;
+
+						tHash_Lookup_row8.put(row8_HashRow);
+
+						tos_count_tAdvancedHash_row8++;
+
+						/**
+						 * [tAdvancedHash_row8 main ] stop
+						 */
+
+						/**
+						 * [tMysqlInput_4 end ] start
+						 */
+
+						currentComponent = "tMysqlInput_4";
+
+					}
+				} finally {
+					if (rs_tMysqlInput_4 != null) {
+						rs_tMysqlInput_4.close();
+					}
+					stmt_tMysqlInput_4.close();
+
+					if (conn_tMysqlInput_4 != null
+							&& !conn_tMysqlInput_4.isClosed()) {
+						conn_tMysqlInput_4.close();
+					}
+
+				}
+				globalMap.put("tMysqlInput_4_NB_LINE", nb_line_tMysqlInput_4);
+
+				ok_Hash.put("tMysqlInput_4", true);
+				end_Hash.put("tMysqlInput_4", System.currentTimeMillis());
+
+				/**
+				 * [tMysqlInput_4 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row8 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row8";
+
+				tHash_Lookup_row8.endPut();
+
+				ok_Hash.put("tAdvancedHash_row8", true);
+				end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row8 end ] stop
+				 */
+
+			}// end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent,
+					globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tMysqlInput_4 finally ] start
+				 */
+
+				currentComponent = "tMysqlInput_4";
+
+				/**
+				 * [tMysqlInput_4 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row8 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row8";
+
+				/**
+				 * [tAdvancedHash_row8 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tMysqlInput_4_SUBPROCESS_STATE", 1);
+	}
+
+	public static class row9Struct implements
+			routines.system.IPersistableComparableLookupRow<row9Struct> {
+		final static byte[] commonByteArrayLock_PROJETDEMO_ImportEtudiant = new byte[0];
+		static byte[] commonByteArray_PROJETDEMO_ImportEtudiant = new byte[0];
+		protected static final int DEFAULT_HASHCODE = 1;
+		protected static final int PRIME = 31;
+		protected int hashCode = DEFAULT_HASHCODE;
+		public boolean hashCodeDirty = true;
+
+		public String loopKey;
+
+		public int id;
+
+		public int getId() {
+			return this.id;
+		}
+
+		public String username;
+
+		public String getUsername() {
+			return this.username;
+		}
+
+		public String username_canonical;
+
+		public String getUsername_canonical() {
+			return this.username_canonical;
+		}
+
+		public String email;
+
+		public String getEmail() {
+			return this.email;
+		}
+
+		public String email_canonical;
+
+		public String getEmail_canonical() {
+			return this.email_canonical;
+		}
+
+		public boolean enabled;
+
+		public boolean getEnabled() {
+			return this.enabled;
+		}
+
+		public String salt;
+
+		public String getSalt() {
+			return this.salt;
+		}
+
+		public String password;
+
+		public String getPassword() {
+			return this.password;
+		}
+
+		public java.util.Date last_login;
+
+		public java.util.Date getLast_login() {
+			return this.last_login;
+		}
+
+		public boolean locked;
+
+		public boolean getLocked() {
+			return this.locked;
+		}
+
+		public boolean expired;
+
+		public boolean getExpired() {
+			return this.expired;
+		}
+
+		public java.util.Date expires_at;
+
+		public java.util.Date getExpires_at() {
+			return this.expires_at;
+		}
+
+		public String confirmation_token;
+
+		public String getConfirmation_token() {
+			return this.confirmation_token;
+		}
+
+		public java.util.Date password_requested_at;
+
+		public java.util.Date getPassword_requested_at() {
+			return this.password_requested_at;
+		}
+
+		public String roles;
+
+		public String getRoles() {
+			return this.roles;
+		}
+
+		public boolean credentials_expired;
+
+		public boolean getCredentials_expired() {
+			return this.credentials_expired;
+		}
+
+		public java.util.Date credentials_expire_at;
+
+		public java.util.Date getCredentials_expire_at() {
+			return this.credentials_expire_at;
+		}
+
+		public String type;
+
+		public String getType() {
+			return this.type;
+		}
+
+		@Override
+		public int hashCode() {
+			if (this.hashCodeDirty) {
+				final int prime = PRIME;
+				int result = DEFAULT_HASHCODE;
+
+				result = prime
+						* result
+						+ ((this.username == null) ? 0 : this.username
+								.hashCode());
+
+				this.hashCode = result;
+				this.hashCodeDirty = false;
+			}
+			return this.hashCode;
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			final row9Struct other = (row9Struct) obj;
+
+			if (this.username == null) {
+				if (other.username != null)
+					return false;
+
+			} else if (!this.username.equals(other.username))
+
+				return false;
+
+			return true;
+		}
+
+		public void copyDataTo(row9Struct other) {
+
+			other.id = this.id;
+			other.username = this.username;
+			other.username_canonical = this.username_canonical;
+			other.email = this.email;
+			other.email_canonical = this.email_canonical;
+			other.enabled = this.enabled;
+			other.salt = this.salt;
+			other.password = this.password;
+			other.last_login = this.last_login;
+			other.locked = this.locked;
+			other.expired = this.expired;
+			other.expires_at = this.expires_at;
+			other.confirmation_token = this.confirmation_token;
+			other.password_requested_at = this.password_requested_at;
+			other.roles = this.roles;
+			other.credentials_expired = this.credentials_expired;
+			other.credentials_expire_at = this.credentials_expire_at;
+			other.type = this.type;
+
+		}
+
+		public void copyKeysDataTo(row9Struct other) {
+
+			other.username = this.username;
+
+		}
+
+		private String readString(ObjectInputStream dis) throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				if (length > commonByteArray_PROJETDEMO_ImportEtudiant.length) {
+					if (length < 1024
+							&& commonByteArray_PROJETDEMO_ImportEtudiant.length == 0) {
+						commonByteArray_PROJETDEMO_ImportEtudiant = new byte[1024];
+					} else {
+						commonByteArray_PROJETDEMO_ImportEtudiant = new byte[2 * length];
+					}
+				}
+				dis.readFully(commonByteArray_PROJETDEMO_ImportEtudiant, 0,
+						length);
+				strReturn = new String(
+						commonByteArray_PROJETDEMO_ImportEtudiant, 0, length,
+						utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, ObjectOutputStream dos)
+				throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private String readString(DataInputStream dis, ObjectInputStream ois)
+				throws IOException {
+			String strReturn = null;
+			int length = 0;
+			length = dis.readInt();
+			if (length == -1) {
+				strReturn = null;
+			} else {
+				byte[] byteArray = new byte[length];
+				dis.read(byteArray);
+				strReturn = new String(byteArray, utf8Charset);
+			}
+			return strReturn;
+		}
+
+		private void writeString(String str, DataOutputStream dos,
+				ObjectOutputStream oos) throws IOException {
+			if (str == null) {
+				dos.writeInt(-1);
+			} else {
+				byte[] byteArray = str.getBytes(utf8Charset);
+				dos.writeInt(byteArray.length);
+				dos.write(byteArray);
+			}
+		}
+
+		private java.util.Date readDate(DataInputStream dis,
+				ObjectInputStream ois) throws IOException {
+			java.util.Date dateReturn = null;
+			int length = 0;
+			length = dis.readByte();
+			if (length == -1) {
+				dateReturn = null;
+			} else {
+				dateReturn = new Date(dis.readLong());
+			}
+			return dateReturn;
+		}
+
+		private void writeDate(java.util.Date date1, DataOutputStream dos,
+				ObjectOutputStream oos) throws IOException {
+			if (date1 == null) {
+				dos.writeByte(-1);
+			} else {
+				dos.writeByte(0);
+				dos.writeLong(date1.getTime());
+			}
+		}
+
+		public void readKeysData(ObjectInputStream dis) {
+
+			synchronized (commonByteArrayLock_PROJETDEMO_ImportEtudiant) {
+
+				try {
+
+					int length = 0;
+
+					this.username = readString(dis);
+
+				} catch (IOException e) {
+					throw new RuntimeException(e);
+
+				}
+
+			}
+
+		}
+
+		public void writeKeysData(ObjectOutputStream dos) {
+			try {
+
+				// String
+
+				writeString(this.username, dos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		/**
+		 * Fill Values data by reading ObjectInputStream.
+		 */
+		public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
+			try {
+
+				int length = 0;
+
+				this.id = dis.readInt();
+
+				this.username_canonical = readString(dis, ois);
+
+				this.email = readString(dis, ois);
+
+				this.email_canonical = readString(dis, ois);
+
+				this.enabled = dis.readBoolean();
+
+				this.salt = readString(dis, ois);
+
+				this.password = readString(dis, ois);
+
+				this.last_login = readDate(dis, ois);
+
+				this.locked = dis.readBoolean();
+
+				this.expired = dis.readBoolean();
+
+				this.expires_at = readDate(dis, ois);
+
+				this.confirmation_token = readString(dis, ois);
+
+				this.password_requested_at = readDate(dis, ois);
+
+				this.roles = readString(dis, ois);
+
+				this.credentials_expired = dis.readBoolean();
+
+				this.credentials_expire_at = readDate(dis, ois);
+
+				this.type = readString(dis, ois);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+
+			}
+
+		}
+
+		/**
+		 * Return a byte array which represents Values data.
+		 */
+		public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+			try {
+
+				dos.writeInt(this.id);
+
+				writeString(this.username_canonical, dos, oos);
+
+				writeString(this.email, dos, oos);
+
+				writeString(this.email_canonical, dos, oos);
+
+				dos.writeBoolean(this.enabled);
+
+				writeString(this.salt, dos, oos);
+
+				writeString(this.password, dos, oos);
+
+				writeDate(this.last_login, dos, oos);
+
+				dos.writeBoolean(this.locked);
+
+				dos.writeBoolean(this.expired);
+
+				writeDate(this.expires_at, dos, oos);
+
+				writeString(this.confirmation_token, dos, oos);
+
+				writeDate(this.password_requested_at, dos, oos);
+
+				writeString(this.roles, dos, oos);
+
+				dos.writeBoolean(this.credentials_expired);
+
+				writeDate(this.credentials_expire_at, dos, oos);
+
+				writeString(this.type, dos, oos);
+
+			} catch (IOException e) {
+				throw new RuntimeException(e);
+			}
+
+		}
+
+		public String toString() {
+
+			StringBuilder sb = new StringBuilder();
+			sb.append(super.toString());
+			sb.append("[");
+			sb.append("id=" + String.valueOf(id));
+			sb.append(",username=" + username);
+			sb.append(",username_canonical=" + username_canonical);
+			sb.append(",email=" + email);
+			sb.append(",email_canonical=" + email_canonical);
+			sb.append(",enabled=" + String.valueOf(enabled));
+			sb.append(",salt=" + salt);
+			sb.append(",password=" + password);
+			sb.append(",last_login=" + String.valueOf(last_login));
+			sb.append(",locked=" + String.valueOf(locked));
+			sb.append(",expired=" + String.valueOf(expired));
+			sb.append(",expires_at=" + String.valueOf(expires_at));
+			sb.append(",confirmation_token=" + confirmation_token);
+			sb.append(",password_requested_at="
+					+ String.valueOf(password_requested_at));
+			sb.append(",roles=" + roles);
+			sb.append(",credentials_expired="
+					+ String.valueOf(credentials_expired));
+			sb.append(",credentials_expire_at="
+					+ String.valueOf(credentials_expire_at));
+			sb.append(",type=" + type);
+			sb.append("]");
+
+			return sb.toString();
+		}
+
+		/**
+		 * Compare keys
+		 */
+		public int compareTo(row9Struct other) {
+
+			int returnValue = -1;
+
+			returnValue = checkNullsAndCompare(this.username, other.username);
+			if (returnValue != 0) {
+				return returnValue;
+			}
+
+			return returnValue;
+		}
+
+		private int checkNullsAndCompare(Object object1, Object object2) {
+			int returnValue = 0;
+			if (object1 instanceof Comparable && object2 instanceof Comparable) {
+				returnValue = ((Comparable) object1).compareTo(object2);
+			} else if (object1 != null && object2 != null) {
+				returnValue = compareStrings(object1.toString(),
+						object2.toString());
+			} else if (object1 == null && object2 != null) {
+				returnValue = 1;
+			} else if (object1 != null && object2 == null) {
+				returnValue = -1;
+			} else {
+				returnValue = 0;
+			}
+
+			return returnValue;
+		}
+
+		private int compareStrings(String string1, String string2) {
+			return string1.compareTo(string2);
+		}
+
+	}
+
+	public void tMysqlInput_5Process(
+			final java.util.Map<String, Object> globalMap)
+			throws TalendException {
+		globalMap.put("tMysqlInput_5_SUBPROCESS_STATE", 0);
+
+		final boolean execStat = this.execStat;
+
+		String iterateId = "";
+
+		String currentComponent = "";
+		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
+
+		try {
+
+			String currentMethodName = new java.lang.Exception()
+					.getStackTrace()[0].getMethodName();
+			boolean resumeIt = currentMethodName.equals(resumeEntryMethodName);
+			if (resumeEntryMethodName == null || resumeIt || globalResumeTicket) {// start
+																					// the
+																					// resume
+				globalResumeTicket = true;
+
+				row9Struct row9 = new row9Struct();
+
+				/**
+				 * [tAdvancedHash_row9 begin ] start
+				 */
+
+				ok_Hash.put("tAdvancedHash_row9", false);
+				start_Hash
+						.put("tAdvancedHash_row9", System.currentTimeMillis());
+
+				currentComponent = "tAdvancedHash_row9";
+
+				int tos_count_tAdvancedHash_row9 = 0;
+
+				// connection name:row9
+				// source node:tMysqlInput_5 - inputs:(after_tFileInputExcel_2)
+				// outputs:(row9,row9) | target node:tAdvancedHash_row9 -
+				// inputs:(row9) outputs:()
+				// linked node: tMap_2 - inputs:(row4,row3,row8,row9)
+				// outputs:(importetudiant)
+
+				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row9 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
+
+				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct> tHash_Lookup_row9 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
+						.<row9Struct> getLookup(matchingModeEnum_row9);
+
+				globalMap.put("tHash_Lookup_row9", tHash_Lookup_row9);
+
+				/**
+				 * [tAdvancedHash_row9 begin ] stop
+				 */
+
+				/**
+				 * [tMysqlInput_5 begin ] start
+				 */
+
+				ok_Hash.put("tMysqlInput_5", false);
+				start_Hash.put("tMysqlInput_5", System.currentTimeMillis());
+
+				currentComponent = "tMysqlInput_5";
+
+				int tos_count_tMysqlInput_5 = 0;
+
+				java.util.Calendar calendar_tMysqlInput_5 = java.util.Calendar
+						.getInstance();
+				calendar_tMysqlInput_5.set(0, 0, 0, 0, 0, 0);
+				java.util.Date year0_tMysqlInput_5 = calendar_tMysqlInput_5
+						.getTime();
+				int nb_line_tMysqlInput_5 = 0;
+				java.sql.Connection conn_tMysqlInput_5 = null;
+				java.lang.Class.forName("org.gjt.mm.mysql.Driver");
+				String dbUser_tMysqlInput_5 = "root";
+
+				final String decryptedPassword_tMysqlInput_5 = routines.system.PasswordEncryptUtil
+						.decryptPassword("7a440551249af37a");
+				String dbPwd_tMysqlInput_5 = decryptedPassword_tMysqlInput_5;
+
+				String url_tMysqlInput_5 = "jdbc:mysql://" + "localhost" + ":"
+						+ "8889" + "/" + "galter" + "?"
+						+ "noDatetimeStringSync=true";
+
+				conn_tMysqlInput_5 = java.sql.DriverManager.getConnection(
+						url_tMysqlInput_5, dbUser_tMysqlInput_5,
+						dbPwd_tMysqlInput_5);
+
+				java.sql.Statement stmt_tMysqlInput_5 = conn_tMysqlInput_5
+						.createStatement();
+
+				String dbquery_tMysqlInput_5 = "SELECT \n  `user`.`id`, \n  `user`.`username`, \n  `user`.`username_canonical`, \n  `user`.`email`, \n  `user`.`email_canonical`, \n  `user`.`enabled`, \n  `user`.`salt`, \n  `user`.`password`, \n  `user`.`last_login`, \n  `user`.`locked`, \n  `user`.`expired`, \n  `user`.`expires_at`, \n  `user`.`confirmation_token`, \n  `user`.`password_requested_at`, \n  `user`.`roles`, \n  `user`.`credentials_expired`, \n  `user`.`credentials_expire_at`, \n  `user`.`type`\nFROM `user`";
+
+				globalMap.put("tMysqlInput_5_QUERY", dbquery_tMysqlInput_5);
+				java.sql.ResultSet rs_tMysqlInput_5 = null;
+				try {
+					rs_tMysqlInput_5 = stmt_tMysqlInput_5
+							.executeQuery(dbquery_tMysqlInput_5);
+					java.sql.ResultSetMetaData rsmd_tMysqlInput_5 = rs_tMysqlInput_5
+							.getMetaData();
+					int colQtyInRs_tMysqlInput_5 = rsmd_tMysqlInput_5
+							.getColumnCount();
+
+					String tmpContent_tMysqlInput_5 = null;
+
+					while (rs_tMysqlInput_5.next()) {
+						nb_line_tMysqlInput_5++;
+
+						if (colQtyInRs_tMysqlInput_5 < 1) {
+							row9.id = 0;
+						} else {
+
+							if (rs_tMysqlInput_5.getObject(1) != null) {
+								row9.id = rs_tMysqlInput_5.getInt(1);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 2) {
+							row9.username = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(2);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.username = tmpContent_tMysqlInput_5;
+							} else {
+								row9.username = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 3) {
+							row9.username_canonical = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(3);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.username_canonical = tmpContent_tMysqlInput_5;
+							} else {
+								row9.username_canonical = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 4) {
+							row9.email = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(4);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.email = tmpContent_tMysqlInput_5;
+							} else {
+								row9.email = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 5) {
+							row9.email_canonical = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(5);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.email_canonical = tmpContent_tMysqlInput_5;
+							} else {
+								row9.email_canonical = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 6) {
+							row9.enabled = false;
+						} else {
+
+							if (rs_tMysqlInput_5.getObject(6) != null) {
+								row9.enabled = rs_tMysqlInput_5.getBoolean(6);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 7) {
+							row9.salt = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(7);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.salt = tmpContent_tMysqlInput_5;
+							} else {
+								row9.salt = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 8) {
+							row9.password = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(8);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.password = tmpContent_tMysqlInput_5;
+							} else {
+								row9.password = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 9) {
+							row9.last_login = null;
+						} else {
+
+							if (rs_tMysqlInput_5.getString(9) != null) {
+								String dateString_tMysqlInput_5 = rs_tMysqlInput_5
+										.getString(9);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_5)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_5)) {
+									row9.last_login = rs_tMysqlInput_5
+											.getTimestamp(9);
+								} else {
+									row9.last_login = (java.util.Date) year0_tMysqlInput_5
+											.clone();
+								}
+							} else {
+								row9.last_login = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 10) {
+							row9.locked = false;
+						} else {
+
+							if (rs_tMysqlInput_5.getObject(10) != null) {
+								row9.locked = rs_tMysqlInput_5.getBoolean(10);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 11) {
+							row9.expired = false;
+						} else {
+
+							if (rs_tMysqlInput_5.getObject(11) != null) {
+								row9.expired = rs_tMysqlInput_5.getBoolean(11);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 12) {
+							row9.expires_at = null;
+						} else {
+
+							if (rs_tMysqlInput_5.getString(12) != null) {
+								String dateString_tMysqlInput_5 = rs_tMysqlInput_5
+										.getString(12);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_5)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_5)) {
+									row9.expires_at = rs_tMysqlInput_5
+											.getTimestamp(12);
+								} else {
+									row9.expires_at = (java.util.Date) year0_tMysqlInput_5
+											.clone();
+								}
+							} else {
+								row9.expires_at = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 13) {
+							row9.confirmation_token = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(13);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.confirmation_token = tmpContent_tMysqlInput_5;
+							} else {
+								row9.confirmation_token = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 14) {
+							row9.password_requested_at = null;
+						} else {
+
+							if (rs_tMysqlInput_5.getString(14) != null) {
+								String dateString_tMysqlInput_5 = rs_tMysqlInput_5
+										.getString(14);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_5)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_5)) {
+									row9.password_requested_at = rs_tMysqlInput_5
+											.getTimestamp(14);
+								} else {
+									row9.password_requested_at = (java.util.Date) year0_tMysqlInput_5
+											.clone();
+								}
+							} else {
+								row9.password_requested_at = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 15) {
+							row9.roles = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(15);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.roles = tmpContent_tMysqlInput_5;
+							} else {
+								row9.roles = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 16) {
+							row9.credentials_expired = false;
+						} else {
+
+							if (rs_tMysqlInput_5.getObject(16) != null) {
+								row9.credentials_expired = rs_tMysqlInput_5
+										.getBoolean(16);
+							} else {
+
+								throw new RuntimeException(
+										"Null value in non-Nullable column");
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 17) {
+							row9.credentials_expire_at = null;
+						} else {
+
+							if (rs_tMysqlInput_5.getString(17) != null) {
+								String dateString_tMysqlInput_5 = rs_tMysqlInput_5
+										.getString(17);
+								if (!("0000-00-00")
+										.equals(dateString_tMysqlInput_5)
+										&& !("0000-00-00 00:00:00")
+												.equals(dateString_tMysqlInput_5)) {
+									row9.credentials_expire_at = rs_tMysqlInput_5
+											.getTimestamp(17);
+								} else {
+									row9.credentials_expire_at = (java.util.Date) year0_tMysqlInput_5
+											.clone();
+								}
+							} else {
+								row9.credentials_expire_at = null;
+							}
+						}
+
+						if (colQtyInRs_tMysqlInput_5 < 18) {
+							row9.type = null;
+						} else {
+
+							tmpContent_tMysqlInput_5 = rs_tMysqlInput_5
+									.getString(18);
+							if (tmpContent_tMysqlInput_5 != null) {
+								row9.type = tmpContent_tMysqlInput_5;
+							} else {
+								row9.type = null;
+							}
+						}
+
+						/**
+						 * [tMysqlInput_5 begin ] stop
+						 */
+
+						/**
+						 * [tMysqlInput_5 main ] start
+						 */
+
+						currentComponent = "tMysqlInput_5";
+
+						tos_count_tMysqlInput_5++;
+
+						/**
+						 * [tMysqlInput_5 main ] stop
+						 */
+
+						/**
+						 * [tAdvancedHash_row9 main ] start
+						 */
+
+						currentComponent = "tAdvancedHash_row9";
+
+						row9Struct row9_HashRow = new row9Struct();
+
+						row9_HashRow.id = row9.id;
+
+						row9_HashRow.username = row9.username;
+
+						row9_HashRow.username_canonical = row9.username_canonical;
+
+						row9_HashRow.email = row9.email;
+
+						row9_HashRow.email_canonical = row9.email_canonical;
+
+						row9_HashRow.enabled = row9.enabled;
+
+						row9_HashRow.salt = row9.salt;
+
+						row9_HashRow.password = row9.password;
+
+						row9_HashRow.last_login = row9.last_login;
+
+						row9_HashRow.locked = row9.locked;
+
+						row9_HashRow.expired = row9.expired;
+
+						row9_HashRow.expires_at = row9.expires_at;
+
+						row9_HashRow.confirmation_token = row9.confirmation_token;
+
+						row9_HashRow.password_requested_at = row9.password_requested_at;
+
+						row9_HashRow.roles = row9.roles;
+
+						row9_HashRow.credentials_expired = row9.credentials_expired;
+
+						row9_HashRow.credentials_expire_at = row9.credentials_expire_at;
+
+						row9_HashRow.type = row9.type;
+
+						tHash_Lookup_row9.put(row9_HashRow);
+
+						tos_count_tAdvancedHash_row9++;
+
+						/**
+						 * [tAdvancedHash_row9 main ] stop
+						 */
+
+						/**
+						 * [tMysqlInput_5 end ] start
+						 */
+
+						currentComponent = "tMysqlInput_5";
+
+					}
+				} finally {
+					if (rs_tMysqlInput_5 != null) {
+						rs_tMysqlInput_5.close();
+					}
+					stmt_tMysqlInput_5.close();
+
+					if (conn_tMysqlInput_5 != null
+							&& !conn_tMysqlInput_5.isClosed()) {
+						conn_tMysqlInput_5.close();
+					}
+
+				}
+				globalMap.put("tMysqlInput_5_NB_LINE", nb_line_tMysqlInput_5);
+
+				ok_Hash.put("tMysqlInput_5", true);
+				end_Hash.put("tMysqlInput_5", System.currentTimeMillis());
+
+				/**
+				 * [tMysqlInput_5 end ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row9 end ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row9";
+
+				tHash_Lookup_row9.endPut();
+
+				ok_Hash.put("tAdvancedHash_row9", true);
+				end_Hash.put("tAdvancedHash_row9", System.currentTimeMillis());
+
+				/**
+				 * [tAdvancedHash_row9 end ] stop
+				 */
+
+			}// end the resume
+
+		} catch (java.lang.Exception e) {
+
+			TalendException te = new TalendException(e, currentComponent,
+					globalMap);
+
+			throw te;
+		} catch (java.lang.Error error) {
+
+			throw error;
+		} finally {
+
+			try {
+
+				/**
+				 * [tMysqlInput_5 finally ] start
+				 */
+
+				currentComponent = "tMysqlInput_5";
+
+				/**
+				 * [tMysqlInput_5 finally ] stop
+				 */
+
+				/**
+				 * [tAdvancedHash_row9 finally ] start
+				 */
+
+				currentComponent = "tAdvancedHash_row9";
+
+				/**
+				 * [tAdvancedHash_row9 finally ] stop
+				 */
+
+			} catch (java.lang.Exception e) {
+				// ignore
+			} catch (java.lang.Error error) {
+				// ignore
+			}
+			resourceMap = null;
+		}
+
+		globalMap.put("tMysqlInput_5_SUBPROCESS_STATE", 1);
+	}
+
 	public static class row5Struct implements
 			routines.system.IPersistableComparableLookupRow<row5Struct> {
 		final static byte[] commonByteArrayLock_PROJETDEMO_ImportEtudiant = new byte[0];
@@ -7312,8 +9575,7 @@ public class ImportEtudiant implements TalendJob {
 				// source node:tMysqlInput_2 - inputs:(after_tFileInputExcel_4)
 				// outputs:(row5,row5) | target node:tAdvancedHash_row5 -
 				// inputs:(row5) outputs:()
-				// linked node: tMap_3 - inputs:(row2,row5,row6,row8)
-				// outputs:(annee)
+				// linked node: tMap_3 - inputs:(row2,row5,row6) outputs:(annee)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
@@ -7969,8 +10231,7 @@ public class ImportEtudiant implements TalendJob {
 				// source node:tMysqlInput_3 - inputs:(after_tFileInputExcel_4)
 				// outputs:(row6,row6) | target node:tAdvancedHash_row6 -
 				// inputs:(row6) outputs:()
-				// linked node: tMap_3 - inputs:(row2,row5,row6,row8)
-				// outputs:(annee)
+				// linked node: tMap_3 - inputs:(row2,row5,row6) outputs:(annee)
 
 				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row6 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 
@@ -8302,503 +10563,6 @@ public class ImportEtudiant implements TalendJob {
 		}
 
 		globalMap.put("tMysqlInput_3_SUBPROCESS_STATE", 1);
-	}
-
-	public static class row8Struct implements
-			routines.system.IPersistableRow<row8Struct> {
-		final static byte[] commonByteArrayLock_PROJETDEMO_ImportEtudiant = new byte[0];
-		static byte[] commonByteArray_PROJETDEMO_ImportEtudiant = new byte[0];
-
-		public int id;
-
-		public int getId() {
-			return this.id;
-		}
-
-		public Integer etudiant_id;
-
-		public Integer getEtudiant_id() {
-			return this.etudiant_id;
-		}
-
-		public Integer formation_id;
-
-		public Integer getFormation_id() {
-			return this.formation_id;
-		}
-
-		public int annee_formation;
-
-		public int getAnnee_formation() {
-			return this.annee_formation;
-		}
-
-		public String EstValide;
-
-		public String getEstValide() {
-			return this.EstValide;
-		}
-
-		private Integer readInteger(ObjectInputStream dis) throws IOException {
-			Integer intReturn;
-			int length = 0;
-			length = dis.readByte();
-			if (length == -1) {
-				intReturn = null;
-			} else {
-				intReturn = dis.readInt();
-			}
-			return intReturn;
-		}
-
-		private void writeInteger(Integer intNum, ObjectOutputStream dos)
-				throws IOException {
-			if (intNum == null) {
-				dos.writeByte(-1);
-			} else {
-				dos.writeByte(0);
-				dos.writeInt(intNum);
-			}
-		}
-
-		private String readString(ObjectInputStream dis) throws IOException {
-			String strReturn = null;
-			int length = 0;
-			length = dis.readInt();
-			if (length == -1) {
-				strReturn = null;
-			} else {
-				if (length > commonByteArray_PROJETDEMO_ImportEtudiant.length) {
-					if (length < 1024
-							&& commonByteArray_PROJETDEMO_ImportEtudiant.length == 0) {
-						commonByteArray_PROJETDEMO_ImportEtudiant = new byte[1024];
-					} else {
-						commonByteArray_PROJETDEMO_ImportEtudiant = new byte[2 * length];
-					}
-				}
-				dis.readFully(commonByteArray_PROJETDEMO_ImportEtudiant, 0,
-						length);
-				strReturn = new String(
-						commonByteArray_PROJETDEMO_ImportEtudiant, 0, length,
-						utf8Charset);
-			}
-			return strReturn;
-		}
-
-		private void writeString(String str, ObjectOutputStream dos)
-				throws IOException {
-			if (str == null) {
-				dos.writeInt(-1);
-			} else {
-				byte[] byteArray = str.getBytes(utf8Charset);
-				dos.writeInt(byteArray.length);
-				dos.write(byteArray);
-			}
-		}
-
-		public void readData(ObjectInputStream dis) {
-
-			synchronized (commonByteArrayLock_PROJETDEMO_ImportEtudiant) {
-
-				try {
-
-					int length = 0;
-
-					this.id = dis.readInt();
-
-					this.etudiant_id = readInteger(dis);
-
-					this.formation_id = readInteger(dis);
-
-					this.annee_formation = dis.readInt();
-
-					this.EstValide = readString(dis);
-
-				} catch (IOException e) {
-					throw new RuntimeException(e);
-
-				}
-
-			}
-
-		}
-
-		public void writeData(ObjectOutputStream dos) {
-			try {
-
-				// int
-
-				dos.writeInt(this.id);
-
-				// Integer
-
-				writeInteger(this.etudiant_id, dos);
-
-				// Integer
-
-				writeInteger(this.formation_id, dos);
-
-				// int
-
-				dos.writeInt(this.annee_formation);
-
-				// String
-
-				writeString(this.EstValide, dos);
-
-			} catch (IOException e) {
-				throw new RuntimeException(e);
-			}
-
-		}
-
-		public String toString() {
-
-			StringBuilder sb = new StringBuilder();
-			sb.append(super.toString());
-			sb.append("[");
-			sb.append("id=" + String.valueOf(id));
-			sb.append(",etudiant_id=" + String.valueOf(etudiant_id));
-			sb.append(",formation_id=" + String.valueOf(formation_id));
-			sb.append(",annee_formation=" + String.valueOf(annee_formation));
-			sb.append(",EstValide=" + EstValide);
-			sb.append("]");
-
-			return sb.toString();
-		}
-
-		/**
-		 * Compare keys
-		 */
-		public int compareTo(row8Struct other) {
-
-			int returnValue = -1;
-
-			return returnValue;
-		}
-
-		private int checkNullsAndCompare(Object object1, Object object2) {
-			int returnValue = 0;
-			if (object1 instanceof Comparable && object2 instanceof Comparable) {
-				returnValue = ((Comparable) object1).compareTo(object2);
-			} else if (object1 != null && object2 != null) {
-				returnValue = compareStrings(object1.toString(),
-						object2.toString());
-			} else if (object1 == null && object2 != null) {
-				returnValue = 1;
-			} else if (object1 != null && object2 == null) {
-				returnValue = -1;
-			} else {
-				returnValue = 0;
-			}
-
-			return returnValue;
-		}
-
-		private int compareStrings(String string1, String string2) {
-			return string1.compareTo(string2);
-		}
-
-	}
-
-	public void tMysqlInput_4Process(
-			final java.util.Map<String, Object> globalMap)
-			throws TalendException {
-		globalMap.put("tMysqlInput_4_SUBPROCESS_STATE", 0);
-
-		final boolean execStat = this.execStat;
-
-		String iterateId = "";
-
-		String currentComponent = "";
-		java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-		try {
-
-			String currentMethodName = new java.lang.Exception()
-					.getStackTrace()[0].getMethodName();
-			boolean resumeIt = currentMethodName.equals(resumeEntryMethodName);
-			if (resumeEntryMethodName == null || resumeIt || globalResumeTicket) {// start
-																					// the
-																					// resume
-				globalResumeTicket = true;
-
-				row8Struct row8 = new row8Struct();
-
-				/**
-				 * [tAdvancedHash_row8 begin ] start
-				 */
-
-				ok_Hash.put("tAdvancedHash_row8", false);
-				start_Hash
-						.put("tAdvancedHash_row8", System.currentTimeMillis());
-
-				currentComponent = "tAdvancedHash_row8";
-
-				int tos_count_tAdvancedHash_row8 = 0;
-
-				// connection name:row8
-				// source node:tMysqlInput_4 - inputs:(after_tFileInputExcel_4)
-				// outputs:(row8,row8) | target node:tAdvancedHash_row8 -
-				// inputs:(row8) outputs:()
-				// linked node: tMap_3 - inputs:(row2,row5,row6,row8)
-				// outputs:(annee)
-
-				org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row8 = org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_ROWS;
-
-				org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = org.talend.designer.components.lookup.memory.AdvancedMemoryLookup
-						.<row8Struct> getLookup(matchingModeEnum_row8);
-
-				globalMap.put("tHash_Lookup_row8", tHash_Lookup_row8);
-
-				/**
-				 * [tAdvancedHash_row8 begin ] stop
-				 */
-
-				/**
-				 * [tMysqlInput_4 begin ] start
-				 */
-
-				ok_Hash.put("tMysqlInput_4", false);
-				start_Hash.put("tMysqlInput_4", System.currentTimeMillis());
-
-				currentComponent = "tMysqlInput_4";
-
-				int tos_count_tMysqlInput_4 = 0;
-
-				java.util.Calendar calendar_tMysqlInput_4 = java.util.Calendar
-						.getInstance();
-				calendar_tMysqlInput_4.set(0, 0, 0, 0, 0, 0);
-				java.util.Date year0_tMysqlInput_4 = calendar_tMysqlInput_4
-						.getTime();
-				int nb_line_tMysqlInput_4 = 0;
-				java.sql.Connection conn_tMysqlInput_4 = null;
-				java.lang.Class.forName("org.gjt.mm.mysql.Driver");
-				String dbUser_tMysqlInput_4 = "root";
-
-				final String decryptedPassword_tMysqlInput_4 = routines.system.PasswordEncryptUtil
-						.decryptPassword("7a440551249af37a");
-				String dbPwd_tMysqlInput_4 = decryptedPassword_tMysqlInput_4;
-
-				String url_tMysqlInput_4 = "jdbc:mysql://" + "localhost" + ":"
-						+ "8889" + "/" + "galter" + "?"
-						+ "noDatetimeStringSync=true";
-
-				conn_tMysqlInput_4 = java.sql.DriverManager.getConnection(
-						url_tMysqlInput_4, dbUser_tMysqlInput_4,
-						dbPwd_tMysqlInput_4);
-
-				java.sql.Statement stmt_tMysqlInput_4 = conn_tMysqlInput_4
-						.createStatement();
-
-				String dbquery_tMysqlInput_4 = "SELECT \n  `AnneeFormationEtudiant`.`id`, \n  `AnneeFormationEtudiant`.`etudiant_id`, \n  `AnneeFormationEtudiant`.`formation_id`, \n  `AnneeFormationEtudiant`.`annee_formation`, \n  `AnneeFormationEtudiant`.`EstValide`\nFROM `AnneeFormationEtudiant`";
-
-				globalMap.put("tMysqlInput_4_QUERY", dbquery_tMysqlInput_4);
-				java.sql.ResultSet rs_tMysqlInput_4 = null;
-				try {
-					rs_tMysqlInput_4 = stmt_tMysqlInput_4
-							.executeQuery(dbquery_tMysqlInput_4);
-					java.sql.ResultSetMetaData rsmd_tMysqlInput_4 = rs_tMysqlInput_4
-							.getMetaData();
-					int colQtyInRs_tMysqlInput_4 = rsmd_tMysqlInput_4
-							.getColumnCount();
-
-					String tmpContent_tMysqlInput_4 = null;
-
-					while (rs_tMysqlInput_4.next()) {
-						nb_line_tMysqlInput_4++;
-
-						if (colQtyInRs_tMysqlInput_4 < 1) {
-							row8.id = 0;
-						} else {
-
-							if (rs_tMysqlInput_4.getObject(1) != null) {
-								row8.id = rs_tMysqlInput_4.getInt(1);
-							} else {
-
-								throw new RuntimeException(
-										"Null value in non-Nullable column");
-							}
-						}
-
-						if (colQtyInRs_tMysqlInput_4 < 2) {
-							row8.etudiant_id = null;
-						} else {
-
-							if (rs_tMysqlInput_4.getObject(2) != null) {
-								row8.etudiant_id = rs_tMysqlInput_4.getInt(2);
-							} else {
-								row8.etudiant_id = null;
-							}
-						}
-
-						if (colQtyInRs_tMysqlInput_4 < 3) {
-							row8.formation_id = null;
-						} else {
-
-							if (rs_tMysqlInput_4.getObject(3) != null) {
-								row8.formation_id = rs_tMysqlInput_4.getInt(3);
-							} else {
-								row8.formation_id = null;
-							}
-						}
-
-						if (colQtyInRs_tMysqlInput_4 < 4) {
-							row8.annee_formation = 0;
-						} else {
-
-							if (rs_tMysqlInput_4.getObject(4) != null) {
-								row8.annee_formation = rs_tMysqlInput_4
-										.getInt(4);
-							} else {
-
-								throw new RuntimeException(
-										"Null value in non-Nullable column");
-							}
-						}
-
-						if (colQtyInRs_tMysqlInput_4 < 5) {
-							row8.EstValide = null;
-						} else {
-
-							tmpContent_tMysqlInput_4 = rs_tMysqlInput_4
-									.getString(5);
-							if (tmpContent_tMysqlInput_4 != null) {
-								row8.EstValide = tmpContent_tMysqlInput_4;
-							} else {
-								row8.EstValide = null;
-							}
-						}
-
-						/**
-						 * [tMysqlInput_4 begin ] stop
-						 */
-
-						/**
-						 * [tMysqlInput_4 main ] start
-						 */
-
-						currentComponent = "tMysqlInput_4";
-
-						tos_count_tMysqlInput_4++;
-
-						/**
-						 * [tMysqlInput_4 main ] stop
-						 */
-
-						/**
-						 * [tAdvancedHash_row8 main ] start
-						 */
-
-						currentComponent = "tAdvancedHash_row8";
-
-						row8Struct row8_HashRow = new row8Struct();
-
-						row8_HashRow.id = row8.id;
-
-						row8_HashRow.etudiant_id = row8.etudiant_id;
-
-						row8_HashRow.formation_id = row8.formation_id;
-
-						row8_HashRow.annee_formation = row8.annee_formation;
-
-						row8_HashRow.EstValide = row8.EstValide;
-
-						tHash_Lookup_row8.put(row8_HashRow);
-
-						tos_count_tAdvancedHash_row8++;
-
-						/**
-						 * [tAdvancedHash_row8 main ] stop
-						 */
-
-						/**
-						 * [tMysqlInput_4 end ] start
-						 */
-
-						currentComponent = "tMysqlInput_4";
-
-					}
-				} finally {
-					if (rs_tMysqlInput_4 != null) {
-						rs_tMysqlInput_4.close();
-					}
-					stmt_tMysqlInput_4.close();
-
-					if (conn_tMysqlInput_4 != null
-							&& !conn_tMysqlInput_4.isClosed()) {
-						conn_tMysqlInput_4.close();
-					}
-
-				}
-				globalMap.put("tMysqlInput_4_NB_LINE", nb_line_tMysqlInput_4);
-
-				ok_Hash.put("tMysqlInput_4", true);
-				end_Hash.put("tMysqlInput_4", System.currentTimeMillis());
-
-				/**
-				 * [tMysqlInput_4 end ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row8 end ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row8";
-
-				tHash_Lookup_row8.endPut();
-
-				ok_Hash.put("tAdvancedHash_row8", true);
-				end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
-
-				/**
-				 * [tAdvancedHash_row8 end ] stop
-				 */
-
-			}// end the resume
-
-		} catch (java.lang.Exception e) {
-
-			TalendException te = new TalendException(e, currentComponent,
-					globalMap);
-
-			throw te;
-		} catch (java.lang.Error error) {
-
-			throw error;
-		} finally {
-
-			try {
-
-				/**
-				 * [tMysqlInput_4 finally ] start
-				 */
-
-				currentComponent = "tMysqlInput_4";
-
-				/**
-				 * [tMysqlInput_4 finally ] stop
-				 */
-
-				/**
-				 * [tAdvancedHash_row8 finally ] start
-				 */
-
-				currentComponent = "tAdvancedHash_row8";
-
-				/**
-				 * [tAdvancedHash_row8 finally ] stop
-				 */
-
-			} catch (java.lang.Exception e) {
-				// ignore
-			} catch (java.lang.Error error) {
-				// ignore
-			}
-			resourceMap = null;
-		}
-
-		globalMap.put("tMysqlInput_4_SUBPROCESS_STATE", 1);
 	}
 
 	public static class row7Struct implements
@@ -9786,6 +11550,6 @@ public class ImportEtudiant implements TalendJob {
 	ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- * 269615 characters generated by Talend Open Studio for Data Integration on the
- * 5 juillet 2015 04:50:45 CEST
+ * 319745 characters generated by Talend Open Studio for Data Integration on the
+ * 6 juillet 2015 22:56:30 CEST
  ************************************************************************************************/

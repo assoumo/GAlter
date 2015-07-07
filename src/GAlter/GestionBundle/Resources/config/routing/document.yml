@@ -33,3 +33,7 @@ document_delete:
 document_upload:
     path:     /etudiantuplaod
     defaults: { _controller: "GAlterGestionBundle:Document:etudiant" }
+
+passageannee_test:
+    path:   /passageannee
+    defaults: {_controller: "GAlterGestionBundle:Document:passage" }

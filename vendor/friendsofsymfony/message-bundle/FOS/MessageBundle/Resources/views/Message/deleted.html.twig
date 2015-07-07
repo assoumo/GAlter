@@ -1,7 +1,6 @@
-{% extends "GAlterUserBundle::layout.html.twig"%}
+{% extends 'GAlterUserBundle::layout.html.twig' %}
 
 {% block corps%}
-
 <h2>{% trans from 'FOSMessageBundle' %}deleted{% endtrans %}</h2>
 
 {% include 'FOSMessageBundle:Message:threads_list.html.twig' with {'threads': threads} %}

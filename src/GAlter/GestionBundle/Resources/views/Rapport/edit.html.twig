@@ -1,16 +1,52 @@
-{% extends '::base.html.twig' %}
+{#{% extends '::base.html.twig' %}#}
 
-{% block body -%}
-    <h1>Rapport edit</h1>
+{#{% block body -%}#}
+    {#<h1>Rapport edit</h1>#}
 
-    {{ form(edit_form) }}
+    {#{{ form(edit_form) }}#}
 
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('rapport') }}">
-            Back to the list
-        </a>
-    </li>
-    <li>{{ form(delete_form) }}</li>
-</ul>
+{#{% endblock %}#}
+
+
+{% extends 'GAlterUserBundle::layout.html.twig' %}
+
+
+{% block titre %}  Editer mon rapport {% endblock %}
+{% block corps %}
+    <div class="well" style="height: 700px">
+        {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(edit_form) }}
+
+        <div class="form-group">
+            {{ form_label(edit_form.periodedebut, "Debut", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.periodedebut) }}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.periodedebut, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.periodefin, "Fin", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.periodefin) }}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.periodefin, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(edit_form.contenu, "Rapport",{'label_attr': {'class':'col-sm-4 control-label'}}) }}
+            {{ form_errors(edit_form.contenu)}}
+            <div class="col-sm-4">
+                {{ form_widget(edit_form.contenu, {'attr': {'class' : 'col-sm-7 form-control', 'type': 'textarea','id': "editor" }}) }}
+
+            </div>
+        </div>
+
+        {{ form_widget(edit_form.submit, {'attr': {'class' : ' col-sm-offset-5  col-sm-3 btn btn-primary'}}) }}
+
+        {{ form_end(edit_form) }}
+    </div>
+
 {% endblock %}
+
+

@@ -1,7 +1,8 @@
 {% extends 'GAlterUserBundle::layout.html.twig' %}
 
+
+{% block titre %}  Soummetre un rapport {% endblock %}
 {% block corps %}
-    <h1>Soummetre un rapport</h1>
     <div class="well" style="height: 700px">
         {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
         {{ form_errors(form) }}
@@ -35,13 +36,7 @@
 
         {{ form_end(form) }}
     </div>
-    <ul class="record_actions">
-        <li>
-            <a href="{{ path('rapport') }}">
-                Back to the list
-            </a>
-        </li>
-    </ul>
+
 {% endblock %}
 
 

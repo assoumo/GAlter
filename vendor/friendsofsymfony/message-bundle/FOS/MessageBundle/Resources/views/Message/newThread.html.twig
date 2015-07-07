@@ -1,8 +1,10 @@
-{% extends "GAlterUserBundle::layout.html.twig"%}
+{% extends 'GAlterUserBundle::layout.html.twig' %}
+
+{% block titre %}   {% trans from 'FOSMessageBundle' %}send_new{% endtrans %}   {% endblock %}
 
 {% block corps%}
 
-<h2>{% trans from 'FOSMessageBundle' %}send_new{% endtrans %}</h2>
+
 
 <form action="{{ url('fos_message_thread_new') }}" method="post">
     {{ form_widget(form) }}

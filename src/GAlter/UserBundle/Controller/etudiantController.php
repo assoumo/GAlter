@@ -34,7 +34,7 @@ class etudiantController extends Controller
 
 
     /**
-     * Lister mes etudiants .
+     * Lister mes etudiants pour un tuteur .
      *
      */
     public function mesetudiantsAction()
@@ -46,6 +46,24 @@ class etudiantController extends Controller
         $entities = $em->getRepository('GAlterUserBundle:etudiant')->findBy(array('Tuteur'=>$tuteur));
 
         return $this->render('GAlterUserBundle:etudiant:mesetudiants.html.twig', array(
+            'entities' => $entities,
+        ));
+    }
+
+
+    /**
+     * Lister mes etudiants pour un tuteur .
+     *
+     */
+    public function mesapprentisAction()
+    {
+
+        $tuteur= $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+
+        $entities = $em->getRepository('GAlterUserBundle:etudiant')->findBy(array('TuteurEntreprise'=>$tuteur));
+
+        return $this->render('GAlterUserBundle:etudiant:mesapprentis.html.twig', array(
             'entities' => $entities,
         ));
     }

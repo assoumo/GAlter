@@ -15,7 +15,10 @@ class RemarqueTuteurRapportType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('contenu')
+            ->add('contenu','textarea')
+
+
+
 //            ->add('tuteurId')
 //            ->add('tuteurIdRapport')
         ;

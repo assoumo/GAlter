@@ -9,7 +9,7 @@
 
     <div class="well" style="height: 60px"> Modifier les informations d'un étudiant </div>
 
-    {% else %}
+    {% elseif is_granted ('ROLE_ADMIN') %}
 
 <div class="well" style="height: 60px"> Modifier l'état d'un étudiant </div>
 

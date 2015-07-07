@@ -28,16 +28,14 @@ class __TwigTemplate_4958a11088d3dfe2acc713e5f8240e85168c480c8622153f6b3cd798353
     public function block_corps($context, array $blocks = array())
     {
         // line 4
-        echo "
-<h2>";
-        // line 5
+        echo "<h2>";
         echo $this->env->getExtension('translator')->getTranslator()->trans("deleted", array(), "FOSMessageBundle");
         echo "</h2>
 
 ";
+        // line 6
+        $this->loadTemplate("FOSMessageBundle:Message:threads_list.html.twig", "FOSMessageBundle:Message:deleted.html.twig", 6)->display(array_merge($context, array("threads" => (isset($context["threads"]) ? $context["threads"] : $this->getContext($context, "threads")))));
         // line 7
-        $this->loadTemplate("FOSMessageBundle:Message:threads_list.html.twig", "FOSMessageBundle:Message:deleted.html.twig", 7)->display(array_merge($context, array("threads" => (isset($context["threads"]) ? $context["threads"] : $this->getContext($context, "threads")))));
-        // line 8
         echo "
 ";
     }
@@ -54,6 +52,6 @@ class __TwigTemplate_4958a11088d3dfe2acc713e5f8240e85168c480c8622153f6b3cd798353
 
     public function getDebugInfo()
     {
-        return array (  41 => 8,  39 => 7,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  39 => 7,  37 => 6,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

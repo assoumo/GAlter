@@ -7,32 +7,87 @@
 
 
     <div class="table-responsive">
-        <table class="table table-bordered table-hover table-striped">
+        <table class="table table-striped">
             <thead>
-            <tr class="success">
-                <th>Date</th>
+            <tr class="info">
+                <th>
+
+                    <span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-calendar  fa-stack-1x"></i>
+</span>Date</th>
                 <th>Type</th>
-                <th>Entreprise</th>
-                <th> Tuteur </th>
-                <th> Etudiant(e) concerné(e)</th>
+                {% if is_granted ('ROLE_TUTEUR') %}
+
+                    <th><span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-university  fa-stack-1x"></i>
+</span>Entreprise</th>
+
+                {% elseif is_granted ('ROLE_TUTEUR_ENTREPRISE') %}
+
+                    <th>
+                    <span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-university  fa-stack-1x"></i>
+</span>Etablissement</th>
+                {% endif %}
+
+                <th>
+                    <span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-user  fa-stack-1x"></i>
+</span>Tuteur </th>
+                <th>
+                    <span class="fa-stack fa-lg">
+  <i class="fa fa-square-o fa-stack-2x"></i>
+  <i class="fa fa-graduation-cap  fa-stack-1x"></i>
+</span>Etudiant(e) concerné(e)</th>
 
             </tr>
             </thead>
             <tbody>
-            {% for entity in entities %}
+
+                {% for agendass in agendas %}
+
+                    {% for agenda in agendass %}
+                    <tr>
+                    <td class="danger"> {{ agenda.date|date}}</td>
+                    <td class="danger">
+
+                    {% if agenda.type== 'telephonique' %}
+
+                        <i class="fa fa-phone"></i> {{ agenda.Type }}</td>
 
 
-                {% set agendas=entity.agendas %}
-                 {% for agenda in agendas %}
-                 <td> {{ agenda.date|date}}</td>
-                     <td> {{ agenda.Type }}</td>
-                 {% endfor %}
+                    {% else %}
 
-                {#<td> {{ entity.tuteurentreprise.organisation }}</td>#}
-                <td>{{ entity.tuteur }}</td>
 
-                   <td> {{ entity.tuteurentreprise }}</td>
-            {% endfor %}
+                        {{ agenda.Type }}
+                        </td>
+                    {% endif %}
+
+
+                    {% if is_granted ('ROLE_TUTEUR') %}
+                        <td class="danger"> {{ agenda.etudiant.tuteurentreprise.organisation }}</td>
+                        <td class="danger"> {{ agenda.etudiant.tuteurentreprise }}</td>
+
+
+                    {% elseif is_granted ('ROLE_TUTEUR_ENTREPRISE') %}
+                        <td class="danger"> {{ agenda.etudiant.tuteur.organisation }}</td>
+                        <td class="danger">{{ agenda.etudiant.tuteur }}</td>
+
+
+                    {% endif %}
+
+                    <td class="danger">{{ agenda.etudiant.username }}  {{ agenda.etudiant.prenom }} </td>
+
+
+                    </tr>
+                   {% endfor %}
+                {% endfor %}
+
+
 
             </tbody>
         </table>

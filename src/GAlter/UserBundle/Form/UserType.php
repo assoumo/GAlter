@@ -28,6 +28,7 @@ class UserType extends AbstractType
                 'ROLE_ETUDIANT'   => 'ROLE_ETUDIANT',
                 'ROLE_RESPONSABLE' => 'ROLE_RESPONSABLE',
                 'ROLE_TUTEUR'   => 'ROLE_TUTEUR',
+                'ROLE_TUTEUR_ENTREPRISE'   => 'ROLE_TUTEUR_ENTREPRISE',
                 'ROLE_ADMIN' =>
                     'ROLE_ADMIN '           ),
             'multiple'  => true,

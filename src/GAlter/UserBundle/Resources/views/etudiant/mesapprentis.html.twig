@@ -1,0 +1,40 @@
+{% extends "GAlterUserBundle::layout.html.twig" %}
+
+{% block titre %}  Liste de mes  apprentis  {% endblock %}
+
+
+{% block corps%}
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr class="success">
+                <th class="text-center">Nom</th>
+                <th class="text-center">Prenom</th>
+
+                <th class="text-center">Actions</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for entity in entities %}
+                <tr class="warning">
+                    <td class="text-center">{{ entity.username }}</td>
+                    <td class="text-center">{{ entity.prenom }}</td>
+
+                    <td class="text-center">
+
+                        <a href="{{ path('rapportpourtuteur',{'id':entity.id}) }}">  <button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-off"></span> Lire compte rendu
+                            </button> </a></td>
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+    </div>
+
+
+{% endblock %}
+

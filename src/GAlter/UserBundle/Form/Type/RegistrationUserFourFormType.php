@@ -21,7 +21,7 @@ class RegistrationUserFourFormType extends AbstractType
                     'options' => array(
                         'label' => false, /* Ajoutez cette ligne */
                         'choices' => array(
-                            'ROLE_TUTEUR' => 'Tuteur',
+                            'ROLE_TUTEUR_ENTREPRISE' => 'Tuteur_Entreprise',
                             'ROLE_RESPONSABLE' => 'Responsable',
 
 

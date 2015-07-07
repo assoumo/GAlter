@@ -232,16 +232,30 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::rapportpromotAction',  '_route' => 'rapportpromot',);
             }
 
-            // exporter_tout
-            if (0 === strpos($pathinfo, '/export/toutrapport') && preg_match('#^/export/toutrapport/(?P<rapports>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_exporter_tout;
-                }
+            if (0 === strpos($pathinfo, '/export/toutrap')) {
+                // exporter_tout
+                if (0 === strpos($pathinfo, '/export/toutrapport') && preg_match('#^/export/toutrapport/(?P<rapports>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
+                        goto not_exporter_tout;
+                    }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'exporter_tout')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::exportertousAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'exporter_tout')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::exportertousAction',));
+                }
+                not_exporter_tout:
+
+                // exportertout
+                if (preg_match('#^/export/toutrap/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_exportertout;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'exportertout')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\ExportController::exportertoutAction',));
+                }
+                not_exportertout:
+
             }
-            not_exporter_tout:
 
         }
 
@@ -428,6 +442,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RapportController::indexAction',  '_route' => 'rapport',);
             }
             not_rapport:
+
+            // rapportpourtuteur
+            if (0 === strpos($pathinfo, '/rapport/voir') && preg_match('#^/rapport/voir/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_rapportpourtuteur;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'rapportpourtuteur')), array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\RapportController::indextuteurAction',));
+            }
+            not_rapportpourtuteur:
 
             // rapport_create
             if ($pathinfo === '/rapport/') {
@@ -835,9 +860,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::indexAction',  '_route' => 'etudiant',);
             }
 
-            // mes_etudiant
-            if ($pathinfo === '/etudiant/mesetudiants') {
-                return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::mesetudiantsAction',  '_route' => 'mes_etudiant',);
+            if (0 === strpos($pathinfo, '/etudiant/mes')) {
+                // mes_etudiant
+                if ($pathinfo === '/etudiant/mesetudiants') {
+                    return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::mesetudiantsAction',  '_route' => 'mes_etudiant',);
+                }
+
+                // mes_apprentis
+                if ($pathinfo === '/etudiant/mesapprentis') {
+                    return array (  '_controller' => 'GAlter\\UserBundle\\Controller\\etudiantController::mesapprentisAction',  '_route' => 'mes_apprentis',);
+                }
+
             }
 
             // etudiant_show
@@ -1071,6 +1104,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             // document_upload
             if ($pathinfo === '/document/etudiantuplaod') {
                 return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::etudiantAction',  '_route' => 'document_upload',);
+            }
+
+            // passageannee_test
+            if ($pathinfo === '/document/passageannee') {
+                return array (  '_controller' => 'GAlter\\GestionBundle\\Controller\\DocumentController::passageAction',  '_route' => 'passageannee_test',);
             }
 
         }

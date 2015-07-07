@@ -1,18 +1,23 @@
 <html>
 <body>
+
+   <h1>   compte-rendus de: {{ rapports.first.etudiant.username }} {{ rapports.first.etudiant.prenom }}</h1>
 {% for rap in rapports %}
     <div class="row">
         <div class="col-sm-2">
-            <div class="glyphicon glyphicon-user"> par {{ rap.etudiant.prenom }} a {{ rap.date | date('Y-d-m')}}</div>
+
+
+
+            <div style="color: #ff0000">  Date : {{ rap.date | date('d-m-Y')}}</div>
         </div>
         <div class="col-sm-8">
-            <div class="glyphicon glyphicon-time"> Periode de {{ rap.periodedebut | date('Y-d-m')}} a {{ rap.periodefin | date('Y-d-m') }}</div>
+            <div class="glyphicon glyphicon-time" style="color: #ff0000"> Periode de {{ rap.periodedebut | date('m-d-Y')}} a {{ rap.periodefin | date('Y-d-m') }}</div>
         </div>
     </div>
     <hr/>
 
-<div  class="well" style="border: solid">
-        <h3>{{ rap.contenu | raw}}</h3>
+<div  class="well" style="border: solid,#ff0000">
+        <h5>{{ rap.contenu | raw}}</h5>
 </div>
     <br/>
     <br/>

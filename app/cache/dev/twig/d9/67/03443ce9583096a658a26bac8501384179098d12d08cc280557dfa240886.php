@@ -16,7 +16,8 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
     protected function doDisplay(array $context, array $blocks = array())
     {
         // line 1
-        echo "<html>
+        echo "
+<html>
 
 
   <head>
@@ -25,7 +26,7 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
 
 
     <link rel=\"stylesheet\" href=\"";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("CSS/style.css"), "html", null, true);
         echo "\">
 
@@ -34,28 +35,28 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
   </head>
 
 ";
-        // line 16
+        // line 17
         echo "
 <body>
 
     <h1>BIENVENUE!<span>Connectez-vous!</span>
         ";
-        // line 20
+        // line 21
         if ((isset($context["error"]) ? $context["error"] : $this->getContext($context, "error"))) {
-            // line 21
+            // line 22
             echo "        <div class=\"alert alert-danger\">mot de passe et/ou mail incorrect</div>
         ";
         }
-        // line 23
+        // line 24
         echo "
     </h1>
     <div class=\"login-box\">
         <form id=\"loginform\" class=\"form-horizontal\" role=\"form\" action=\"";
-        // line 26
+        // line 27
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
         <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 27
+        // line 28
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
 
@@ -67,7 +68,7 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
             <h4><input id=\"login-remember\" type=\"checkbox\" name=\"remember\" value=\"1\"> Remember me</h4>
             <div class=\"clear\"> </div>
             <h4>Mot de passe oublié?<a href=\"";
-        // line 36
+        // line 37
         echo $this->env->getExtension('routing')->getPath("fos_user_resetting_request");
         echo "\">Cliquer ici.</a></h4>
         </div>
@@ -87,7 +88,10 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
 
     </body>
 
-</html>";
+</html>
+
+
+";
     }
 
     public function getTemplateName()
@@ -102,6 +106,6 @@ class __TwigTemplate_d96703443ce9583096a658a26bac8501384179098d12d08cc280557dfa2
 
     public function getDebugInfo()
     {
-        return array (  71 => 36,  59 => 27,  55 => 26,  50 => 23,  46 => 21,  44 => 20,  38 => 16,  29 => 9,  19 => 1,);
+        return array (  72 => 37,  60 => 28,  56 => 27,  51 => 24,  47 => 22,  45 => 21,  39 => 17,  30 => 10,  19 => 1,);
     }
 }

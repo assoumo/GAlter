@@ -2,21 +2,150 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9254dd91-1864-4f74-a306-fbce9c8a66e9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/005431b9a034f78ef0dd3ba955d401109706e66b.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/031078500c43bfeef457d9feada2805ac70d5659.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/084653b3dfcc712a3fba658bd4b5a8438e3c6552#registerAction.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/084653b3dfcc712a3fba658bd4b5a8438e3c6552.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/20ca8d40d96a4f1708255a95e7e3f165c831c418$id.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/20ca8d40d96a4f1708255a95e7e3f165c831c418$nom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/32e73830836a6ce9e599dbb1ec3571267e4ae9e6.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/377aeed842712babfddf54e32bcc7bcc91f4a839#checkEmailAction.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/377aeed842712babfddf54e32bcc7bcc91f4a839#confirmAction.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/377aeed842712babfddf54e32bcc7bcc91f4a839#confirmedAction.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/377aeed842712babfddf54e32bcc7bcc91f4a839.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#__construct.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#addAnneeFormationEtudiant.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#addResponsable.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#getAnneeFormationEtudiant.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#getDepartement.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#getDescription.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#getId.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#getLibelle.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#getResponsable.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#removeAnneeFormationEtudiant.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#removeResponsable.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#setDepartement.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#setDescription.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/4dbec98e50b2f6bb4543c98c2423d220e1cfec8f#setLibelle.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#addEtudiant.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#addRemarqueTuteurRapport.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getAdresse.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getEtudiant.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getNom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getOrganisation.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getPrenom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getRemarqueTuteurRapport.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#getTelephone.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#removeEtudiant.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#removeRemarqueTuteurRapport.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#setAdresse.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#setNom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#setOrganisation.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#setPrenom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12#setTelephone.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12$id.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/523a469ccbe0341b992d04d64e096d5784985d12$nom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681#getRecipient.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681#getSubject.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681#setRecipient.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681#setSubject.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681$recipient.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681$subject.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/66f5780b506903064443c0b8f6d860e83b552681.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/6f1223dc0192733cbe0890cf08c85b0bf98bbf3c.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/9b16931bde229e1bd777ee0e77108bcb7fb3c389.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/9e42e0017d06265bccb038bdd7d84f2f0faf62b2$id.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/9e42e0017d06265bccb038bdd7d84f2f0faf62b2$nom.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/9e42e0017d06265bccb038bdd7d84f2f0faf62b2$remarqueTuteurRapport.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/a2d15e71e9fa377b5a9f793ff9e1f21ff3b9b809.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/aa3b17a06c54069051111edd177f4b93a6b0ac40#panelAction.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/aa3b17a06c54069051111edd177f4b93a6b0ac40#searchBarAction.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/baa747c6ca6892141b511a9139343c1d80bb19e5.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/e2a929f078b59c5b3e57ac6b75780117142614f4.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/ebfbc8e59946cfda571052f5748da97c84d283d1.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/f2d82e230749a5ec9a551953efad482656f1507c.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/annotations/f795e1844990400229150e78c7a5727b8cfc1e41.cache.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/templates.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/02/75/8d61c130daf40a209318b4147d46abc488ad6d726e5dd182819fc5d2d2ec.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/1e/96/537d50234757030554ddf16269efbe34469c94e281daeaaed8d5e6b253df.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/40/25/501a4376d06014ed6c5a6fd6954e1e8a5bdd01e0d5064e37ee8e00270855.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/54/33/318e3a0b4106a46ca2792e4bda87ad0f991b9e8b90edb407d42faa659742.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/59/8d/ced10b3a5d94167fd9147d720e3d6373c4af5997c1479aac2619b56df1a5.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/82/17/8229bdcc9234cd0534dc1aa4295b34f28a00533488b5b436bdea2a4b15df.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/85/37/faae509d3a269fe40144b926747de56412cb2316dec0602d8c4cce49413b.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/8e/dc/b189779c9c2b8f8f2847f28d8bbb3ca97753a05d5deebd405feb4acbc624.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/b6/77/bb12b09ddf9be4f134c7368c882c359aaaf46d9088aa0303a5d1a2ff5436.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/c0/ec/540f5c2ff39ceeaa4d3e08ff0ecf65571fd32107b31e185cf32bb9642bb0.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d0/f7/cb725644712e922063f8596c112252c39514f775ec82ebb9e2639112cd94.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/cache/dev/twig/df/1f/d3d3d129ce97495c34103f8c8eed936bd21c218281a47504ded59c053fe7.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/importetudiant_0_1.jar" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/importetudiant_0_1.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/lib/systemRoutines.jar" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/lib/systemRoutines.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/lib/userRoutines.jar" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/lib/userRoutines.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/d9/67/03443ce9583096a658a26bac8501384179098d12d08cc280557dfa240886.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/d9/67/03443ce9583096a658a26bac8501384179098d12d08cc280557dfa240886.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/be/d1/072cc4e3fecfe6cd46d8ac1e7524cc648a65e9f3b0aad34982b9a7027525.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/be/d1/072cc4e3fecfe6cd46d8ac1e7524cc648a65e9f3b0aad34982b9a7027525.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/3f/7a/123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf1132f37f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/3f/7a/123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf1132f37f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/67/aa/452e6ec64f17fb8d66400118a24f27b192ec17e47c4d9682b50adb6b32d9.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/67/aa/452e6ec64f17fb8d66400118a24f27b192ec17e47c4d9682b50adb6b32d9.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/86/67/6dff0d1c7ea2df8f0705348d9fcf93f61397f63da69c0a9c129a1f41eee0.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/86/67/6dff0d1c7ea2df8f0705348d9fcf93f61397f63da69c0a9c129a1f41eee0.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/13/ad/7cc08922189e705f69c3e9f975b0460dfe47b19059bf6454f1603ce852af.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/13/ad/7cc08922189e705f69c3e9f975b0460dfe47b19059bf6454f1603ce852af.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/fa/05/874124fe61a41709717003a37b9fb21b298a14c04a14c5efad12679f6064.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/fa/05/874124fe61a41709717003a37b9fb21b298a14c04a14c5efad12679f6064.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AgendaController.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AgendaController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AnneeFormationEtudiantController.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AnneeFormationEtudiantController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/projetdemo/importetudiant_0_1/contexts/Default.properties" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/projetdemo/importetudiant_0_1/contexts/Default.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DocumentController.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DocumentController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/ExportController.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/ExportController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/src/projetdemo/importetudiant_0_1/ImportEtudiant.java" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/src/projetdemo/importetudiant_0_1/ImportEtudiant.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/process/ImportEtudiant_0.1.item" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/process/ImportEtudiant_0.1.item" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/process/ImportEtudiant_0.1.properties" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/process/ImportEtudiant_0.1.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/process/ImportEtudiant_0.1.screenshot" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/process/ImportEtudiant_0.1.screenshot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RapportController.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RapportController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Form/Type/RegistrationUserFourFormType.php" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Form/Type/RegistrationUserFourFormType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Form/RemarqueTuteurRapportType.php" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Form/RemarqueTuteurRapportType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Form/UserType.php" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Form/UserType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/49/58/a11088d3dfe2acc713e5f8240e85168c480c8622153f6b3cd79835319291.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/49/58/a11088d3dfe2acc713e5f8240e85168c480c8622153f6b3cd79835319291.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" afterPath="$PROJECT_DIR$/app/cache/dev/appDevDebugProjectContainer.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php.meta" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" afterPath="$PROJECT_DIR$/app/cache/dev/appDevUrlMatcher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/twig/02/8e/b04ad148b0c386d35bd1bfdfb5a7c9c5d156a9e3b51d105747e97dd15c5f.php" afterPath="$PROJECT_DIR$/app/cache/dev/twig/02/8e/b04ad148b0c386d35bd1bfdfb5a7c9c5d156a9e3b51d105747e97dd15c5f.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/checkEmail.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/checkEmail.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php.meta" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php.meta" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/classes.php" afterPath="$PROJECT_DIR$/app/cache/dev/classes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/code/routines/convertcontrat_0.1.properties" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/code/routines/convertcontrat_0.1.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/code/routines/convertirdate_0.1.properties" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/ImportEtudiant/items/projetdemo/code/routines/convertirdate_0.1.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/deleted.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/deleted.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/logs/dev.log" afterPath="$PROJECT_DIR$/app/logs/dev.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/document.yml" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/document.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/edit.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/edit.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/edit.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/config/routing/etudiant.yml" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/config/routing/etudiant.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Controller/etudiantController.php" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Controller/etudiantController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Form/etudiantType.php" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Form/etudiantType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/JS/functions.js" afterPath="$PROJECT_DIR$/web/JS/functions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/import.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/import.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/inbox.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/inbox.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" afterPath="$PROJECT_DIR$/app/cache/dev/profiler/index.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/index.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/new.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/index.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/jobs/ImportEtudiant/jobInfo.properties" afterPath="$PROJECT_DIR$/web/jobs/ImportEtudiant/jobInfo.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/layout.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/layout.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Security/login.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Security/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesetudiants.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesetudiants.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/new.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/RemarqueTuteurRapport/new.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/RemarqueTuteurRapport/new.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/newThread.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/newThread.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/passwordAlreadyRequested.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/passwordAlreadyRequested.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request_content.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request_content.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/reset.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/reset.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/search.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/search.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/sent.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/sent.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/thread.html.twig" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/thread.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Export/tous.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Export/tous.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Registration/user_four.form.html.twig" afterPath="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Registration/user_four.form.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GAlter.iws" />
@@ -41,23 +170,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="edit.html.twig" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/edit.html.twig">
+      <file leaf-file-name="Rapport.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Rapport.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="8" selection-start="319" selection-end="319" vertical-scroll-proportion="0.46650717" vertical-offset="30" max-vertical-offset="2490">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="42.5" vertical-offset="1020" max-vertical-offset="4800">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new.html.twig" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/RemarqueTuteurRapport/new.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="58" selection-start="278" selection-end="278" vertical-scroll-proportion="-8.125" vertical-offset="15" max-vertical-offset="660">
               <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="etudiantType.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Form/etudiantType.php">
+      <file leaf-file-name="RemarqueTuteurRapportController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="69" selection-start="1091" selection-end="1091" vertical-scroll-proportion="-12.5" vertical-offset="135" max-vertical-offset="885">
+            <state line="53" column="12" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.3243243" vertical-offset="615" max-vertical-offset="3615">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemarqueTuteurRapportType.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Form/RemarqueTuteurRapportType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="38" selection-start="482" selection-end="482" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -76,57 +221,57 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Form/Type/RegistrationUserThreeFormType.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Registration/checkEmail.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Registration/confirmed.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Registration/register.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/FormationController.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Formation/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Formation/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/RemarqueTuteurRapportRepository.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Form/RemarqueTuteurRapportType.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Rapport.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RapportController.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/remarquetuteurrapport.yml" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/RemarqueTuteurRapport.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Entity/TuteurEntreprise.php" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/inbox.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/newThread.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/search.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/sent.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/thread.html.twig" />
-        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/deleted.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Profile/show_content.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/layout.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Formation.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Form/AnneeFormationEtudiantType.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/AnneeFormationEtudiant/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Formation/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Agenda.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Form/AgendaType.php" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/show.html.twig" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/ImportController.php" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Import/etudiant.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/document.yml" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/import.html.twig" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Document.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DocumentController.php" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/new.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/config/routing/etudiant.yml" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesetudiants.html.twig" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/agendaetudiant&gt;html.twig" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/agendaetudiant.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AgendaController.php" />
-        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Controller/etudiantController.php" />
         <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AnneeFormationEtudiantController.php" />
         <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Form/etudiantType.php" />
         <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Registration/user_four.form.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Form/Type/RegistrationUserFourFormType.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/document.yml" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/passage.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesetudiants.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AgendaController.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Controller/etudiantController.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesapprentis.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/config/routing/etudiant.yml" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Profile/show_content.html.twig" />
+        <option value="$PROJECT_DIR$/web/CSS/style.css" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Security/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/checkEmail.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/passwordAlreadyRequested.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/reset_content.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/reset.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request_content.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/security.yml" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/ExportController.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Export/tous.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/sent.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/deleted.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/newThread.html.twig" />
+        <option value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/thread.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/import.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DocumentController.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RapportController.php" />
+        <option value="$PROJECT_DIR$/web/JS/functions.js" />
+        <option value="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/indextuteur.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Form/RemarqueTuteurRapportType.php" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/RemarqueTuteurRapport/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php" />
       </list>
     </option>
   </component>
@@ -135,9 +280,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
+    <option name="x" value="-26" />
     <option name="y" value="23" />
-    <option name="width" value="1350" />
+    <option name="width" value="1280" />
     <option name="height" value="712" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -209,6 +354,218 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="JS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CSS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="message-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="message-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="message-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Message" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsofsymfony" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="message-bundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="FOS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MessageBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -262,6 +619,108 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resetting" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Profile" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -437,6 +896,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Type" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UserBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -549,6 +1038,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="RemarqueTuteurRapport" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Rapport" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -584,6 +1107,74 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Formation" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Export" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Document" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -680,6 +1271,70 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GAlter" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GestionBundle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -747,24 +1402,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GAlter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="GAlter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -774,9 +1411,12 @@
     <property name="FullScreen" value="false" />
     <property name="LayoutCode.rearrangeEntriesTwig" value="false" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
+    <property name="SearchEverywhereHistory" value="" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport" />
+      <recent name="$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document" />
       <recent name="C:\wamp\www\GAlter\src\GAlter\GestionBundle\Resources\views\Export" />
       <recent name="$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views" />
     </key>
@@ -816,28 +1456,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="23" width="1350" height="712" extended-state="0" />
+    <frame x="-26" y="23" width="1280" height="712" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14309764" sideWeight="0.7240061" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25084174" sideWeight="0.7240061" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28058103" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29402262" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14309764" sideWeight="0.27522936" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.052188553" sideWeight="0.27522936" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49158877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.49158877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -856,9 +1496,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31502423" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -880,372 +1520,350 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/config/routing.xml">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Agenda.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="12" selection-start="976" selection-end="976" vertical-scroll-proportion="0.6214689" vertical-offset="30" max-vertical-offset="705">
+        <state line="27" column="7" selection-start="558" selection-end="558" vertical-scroll-proportion="1.1035422" vertical-offset="0" max-vertical-offset="3375" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AgendaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="0" selection-start="1162" selection-end="1162" vertical-scroll-proportion="0.34615386" vertical-offset="405" max-vertical-offset="4470" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="0" selection-start="1792" selection-end="1792" vertical-scroll-proportion="0.7307692" vertical-offset="679" max-vertical-offset="1530" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesetudiants.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="0" selection-end="1388" vertical-scroll-proportion="0.2387268" vertical-offset="0" max-vertical-offset="720" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesapprentis.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="769" selection-end="769" vertical-scroll-proportion="0.4376658" vertical-offset="210" max-vertical-offset="690" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/config/routing/etudiant.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="68" selection-start="323" selection-end="323" vertical-scroll-proportion="0.54347825" vertical-offset="0" max-vertical-offset="765" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/document.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="25" selection-start="974" selection-end="986" vertical-scroll-proportion="0.71014494" vertical-offset="261" max-vertical-offset="675" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Controller/etudiantController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="5" selection-start="1596" selection-end="1596" vertical-scroll-proportion="0.602122" vertical-offset="733" max-vertical-offset="3960" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Profile/show_content.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="115" selection-end="115" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="720">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Profile/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="531">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="529">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/search.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="16" selection-start="67" selection-end="67" vertical-scroll-proportion="0.0591716" vertical-offset="0" max-vertical-offset="507">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="529">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/inbox.html.twig">
+    <entry file="file://$PROJECT_DIR$/web/CSS/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="14" selection-start="65" selection-end="65" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="255">
+        <state line="35" column="29" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="7980">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Profile/show_content.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Formation/show.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="50" selection-end="50" vertical-scroll-proportion="-0.40123457" vertical-offset="210" max-vertical-offset="720">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/AnneeFormationEtudiant/index.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/reset.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.06944445" vertical-offset="30" max-vertical-offset="735">
+        <state line="5" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.14851485" vertical-offset="0" max-vertical-offset="505">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/anneeformationetudiant.yml">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="22" selection-start="0" selection-end="22" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="557">
+        <state line="4" column="17" selection-start="153" selection-end="153" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="165">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Form/Type/RegistrationUserOneFormType.php">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/request_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="0" selection-start="1180" selection-end="1380" vertical-scroll-proportion="0.2843602" vertical-offset="435" max-vertical-offset="1125">
+        <state line="7" column="7" selection-start="337" selection-end="337" vertical-scroll-proportion="0.21784233" vertical-offset="0" max-vertical-offset="482">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Form/FormationType.php">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/passwordAlreadyRequested.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="13" selection-start="646" selection-end="1231" vertical-scroll-proportion="0.6042654" vertical-offset="240" max-vertical-offset="915">
+        <state line="6" column="17" selection-start="189" selection-end="189" vertical-scroll-proportion="0.186722" vertical-offset="0" max-vertical-offset="482">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Form/AnneeFormationEtudiantType.php">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/email.txt.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="28" selection-start="662" selection-end="671" vertical-scroll-proportion="0.048101265" vertical-offset="356" max-vertical-offset="1095">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="529">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/checkEmail.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="500" column="75" selection-start="17055" selection-end="17060" vertical-scroll-proportion="0.33333334" vertical-offset="7371" max-vertical-offset="15465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Formation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="32" selection-start="4422" selection-end="4422" vertical-scroll-proportion="0.8382353" vertical-offset="2958" max-vertical-offset="3465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="74" selection-start="3758" selection-end="3758" vertical-scroll-proportion="0.10440835" vertical-offset="1110" max-vertical-offset="2265">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/formation.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="309" selection-end="325" vertical-scroll-proportion="0.23076923" vertical-offset="72" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Form/AgendaType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="577" selection-end="594" vertical-scroll-proportion="-12.5" vertical-offset="0" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/remarquetuteurrapport.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="15" selection-start="297" selection-end="297" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="31" selection-start="2387" selection-end="2387" vertical-scroll-proportion="-7.8333335" vertical-offset="937" max-vertical-offset="3585">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="233" selection-end="233" vertical-scroll-proportion="0.29850745" vertical-offset="0" max-vertical-offset="435">
-          <folding>
-            <element signature="e#51#108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="124" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/import.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="199" selection-end="199" vertical-scroll-proportion="0.22857143" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/config/routing/document.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="70" selection-start="940" selection-end="940" vertical-scroll-proportion="0.8360656" vertical-offset="51" max-vertical-offset="600">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Document.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="4" selection-start="2039" selection-end="2039" vertical-scroll-proportion="0.51428574" vertical-offset="1140" max-vertical-offset="1695">
-          <folding>
-            <element signature="e#90#122#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DocumentController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="0" selection-start="6509" selection-end="6509" vertical-scroll-proportion="0.20131291" vertical-offset="3358" max-vertical-offset="3900">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="139" column="23" selection-start="3650" selection-end="3650" vertical-scroll-proportion="0.95426196" vertical-offset="1626" max-vertical-offset="2175">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.49234137" vertical-offset="225" max-vertical-offset="735">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/User/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="16" selection-start="378" selection-end="378" vertical-scroll-proportion="0.4595186" vertical-offset="0" max-vertical-offset="555">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Controller/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.13513513" vertical-offset="60" max-vertical-offset="3420">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/User/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="3" selection-start="131" selection-end="1170" vertical-scroll-proportion="-0.23648648" vertical-offset="180" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="52" selection-start="0" selection-end="1583" vertical-scroll-proportion="0.47297296" vertical-offset="0" max-vertical-offset="795">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/mesetudiants.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="0" selection-start="1100" selection-end="1100" vertical-scroll-proportion="-14.375" vertical-offset="165" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Entity/Etudiant.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="18" selection-start="633" selection-end="633" vertical-scroll-proportion="0.67695963" vertical-offset="0" max-vertical-offset="6540">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Agenda.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="7" selection-start="558" selection-end="558" vertical-scroll-proportion="-11.583333" vertical-offset="127" max-vertical-offset="3375">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/config/routing/etudiant.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="68" selection-start="204" selection-end="204" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="660">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/agendaetudiant.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="100" selection-end="100" vertical-scroll-proportion="-2.5" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AgendaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="107" selection-start="1361" selection-end="1361" vertical-scroll-proportion="-24.666666" vertical-offset="173" max-vertical-offset="4425">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="39" selection-start="764" selection-end="837" vertical-scroll-proportion="0.6389497" vertical-offset="158" max-vertical-offset="705">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RapportController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="33" selection-start="915" selection-end="915" vertical-scroll-proportion="-8.594595" vertical-offset="4176" max-vertical-offset="4725">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/new.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="252" selection-end="252" vertical-scroll-proportion="-0.5202703" vertical-offset="336" max-vertical-offset="795">
+        <state line="4" column="11" selection-start="107" selection-end="107" vertical-scroll-proportion="0.11881188" vertical-offset="0" max-vertical-offset="505">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Formation/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="52" selection-start="174" selection-end="284" vertical-scroll-proportion="0.26258206" vertical-offset="0" max-vertical-offset="780">
+        <state line="19" column="14" selection-start="296" selection-end="479" vertical-scroll-proportion="0.3049505" vertical-offset="131" max-vertical-offset="780">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/FormationController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="5" selection-start="392" selection-end="704" vertical-scroll-proportion="-3.4310722" vertical-offset="1958" max-vertical-offset="3390">
+        <state line="139" column="23" selection-start="3650" selection-end="3650" vertical-scroll-proportion="2.3288202" vertical-offset="881" max-vertical-offset="2175">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Formation/edit.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Resetting/reset_content.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="997" selection-end="997" vertical-scroll-proportion="1.1824324" vertical-offset="45" max-vertical-offset="780">
+        <state line="3" column="27" selection-start="216" selection-end="216" vertical-scroll-proportion="0.09375" vertical-offset="0" max-vertical-offset="480">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Agenda/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2102" selection-end="2102" vertical-scroll-proportion="0.7972973" vertical-offset="546" max-vertical-offset="990">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1050">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/Security/login.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="10" selection-start="1742" selection-end="1742" vertical-scroll-proportion="1.9736842" vertical-offset="0" max-vertical-offset="945">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="0" selection-start="1832" selection-end="1832" vertical-scroll-proportion="0.676259" vertical-offset="423" max-vertical-offset="840">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="0" selection-start="331" selection-end="331" vertical-scroll-proportion="0.45801526" vertical-offset="0" max-vertical-offset="393">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="104" column="0" selection-start="5090" selection-end="5090" vertical-scroll-proportion="3.5131578" vertical-offset="225" max-vertical-offset="2235">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Export/tous.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="118" selection-start="455" selection-end="455" vertical-scroll-proportion="0.5131579" vertical-offset="0" max-vertical-offset="495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/ExportController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="223" column="41" selection-start="8619" selection-end="8619" vertical-scroll-proportion="0.7457627" vertical-offset="2871" max-vertical-offset="3525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/deleted.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="393">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/sent.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="68" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="393">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/newThread.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="78" selection-start="130" selection-end="130" vertical-scroll-proportion="-1.25" vertical-offset="0" max-vertical-offset="315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/inbox.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="417">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle/FOS/MessageBundle/Resources/views/Message/thread.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="6" selection-start="819" selection-end="819" vertical-scroll-proportion="-7.7083335" vertical-offset="280" max-vertical-offset="660">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="735">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Export/formulaire.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.6870229" vertical-offset="270" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="228" column="24" selection-start="4437" selection-end="4441" vertical-scroll-proportion="0.33242506" vertical-offset="3178" max-vertical-offset="8790">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Entity/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="1" selection-start="699" selection-end="699" vertical-scroll-proportion="0.7236842" vertical-offset="145" max-vertical-offset="525">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Document/import.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="38" selection-start="1304" selection-end="1415" vertical-scroll-proportion="0.7251908" vertical-offset="285" max-vertical-offset="780">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/DocumentController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="336" column="1" selection-start="9374" selection-end="9374" vertical-scroll-proportion="2.2711864" vertical-offset="4176" max-vertical-offset="5070">
+          <folding>
+            <marker date="1436236211000" expanded="true" signature="-1:-1" placeholder="SELECT MAX(p..GAlterUserBundle..." />
+            <marker date="1436236211000" expanded="true" signature="-1:-1" placeholder="SELECT p FRO..GAlterUserBundle..." />
+            <marker date="1436236211000" expanded="true" signature="-1:-1" placeholder="SELECT p FRO..GAlterUserBundle..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/JS/functions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="4" selection-start="147" selection-end="147" vertical-scroll-proportion="0.38071066" vertical-offset="0" max-vertical-offset="394">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/layout.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="8" selection-start="2803" selection-end="2803" vertical-scroll-proportion="0.25263157" vertical-offset="1194" max-vertical-offset="15495">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="0" selection-end="1540" vertical-scroll-proportion="0.7236842" vertical-offset="340" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/RemarqueTuteurRapport.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="65" column="28" selection-start="1496" selection-end="1512" vertical-scroll-proportion="0.28700906" vertical-offset="880" max-vertical-offset="2460">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="14" selection-start="1179" selection-end="1568" vertical-scroll-proportion="0.5882353" vertical-offset="420" max-vertical-offset="870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/Rapport/indextuteur.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="148" selection-start="5392" selection-end="5392" vertical-scroll-proportion="0.5042017" vertical-offset="1455" max-vertical-offset="2295">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Form/RemarqueTuteurRapportType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="38" selection-start="482" selection-end="482" vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/RemarqueTuteurRapport/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="58" selection-start="278" selection-end="278" vertical-scroll-proportion="-8.125" vertical-offset="15" max-vertical-offset="660">
           <folding>
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/AnneeFormationEtudiantController.php">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RapportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="66" selection-start="2091" selection-end="2091" vertical-scroll-proportion="0.67695963" vertical-offset="690" max-vertical-offset="3390">
+        <state line="118" column="62" selection-start="2855" selection-end="2960" vertical-scroll-proportion="0.88235295" vertical-offset="1320" max-vertical-offset="5490">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Resources/views/AnneeFormationEtudiant/new.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Entity/Rapport.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="58" selection-start="1785" selection-end="1810" vertical-scroll-proportion="0.5810811" vertical-offset="462" max-vertical-offset="945">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="42.5" vertical-offset="1020" max-vertical-offset="4800">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Form/etudiantType.php">
+    <entry file="file://$PROJECT_DIR$/src/GAlter/GestionBundle/Controller/RemarqueTuteurRapportController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="69" selection-start="1091" selection-end="1091" vertical-scroll-proportion="-12.5" vertical-offset="135" max-vertical-offset="885">
+        <state line="53" column="12" selection-start="1509" selection-end="1509" vertical-scroll-proportion="0.3243243" vertical-offset="615" max-vertical-offset="3615">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Controller/etudiantController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="121" selection-start="4591" selection-end="4591" vertical-scroll-proportion="-6.78" vertical-offset="2196" max-vertical-offset="3750">
-          <folding>
-            <element signature="e#48#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GAlter/UserBundle/Resources/views/etudiant/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="8" selection-start="319" selection-end="319" vertical-scroll-proportion="0.46650717" vertical-offset="30" max-vertical-offset="2490">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

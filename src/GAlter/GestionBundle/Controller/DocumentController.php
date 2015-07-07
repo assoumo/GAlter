@@ -134,12 +134,12 @@ class DocumentController extends Controller
     }
 
     /**
-    * Creates a form to edit a Document entity.
-    *
-    * @param Document $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Document entity.
+     *
+     * @param Document $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Document $entity)
     {
         $form = $this->createForm(new DocumentType(), $entity, array(
@@ -219,8 +219,29 @@ class DocumentController extends Controller
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
             ->getForm()
-        ;
+            ;
     }
+
+
+
+    public function passageAction()
+    {
+
+        $jobs_path=__DIR__."/../../../../web/jobs/passageannee/passageannee/passageannee_run.sh";
+        try{
+            $retour=exec($jobs_path , $out, $code);
+        }catch(Exception $ex){
+            print($ex);
+        }
+
+
+
+    }
+
+
+
+
+
 
 
     public function etudiantAction()
@@ -241,18 +262,76 @@ class DocumentController extends Controller
                 $em->persist($document);
                 $em->flush();
 
-                $jobs_path=__DIR__."../../../../web/jobs/";
+                $em1 = $this->getDoctrine()->getManager();
+                $query = $em1->createQuery('SELECT MAX(p.id) FROM GAlterUserBundle:User p');
+                $var=$query->getResult();
+                $id=$var[0][1];
+
+
+
+
+                $jobs_path=__DIR__."/../../../../web/jobs/ImportEtudiant/ImportEtudiant/ImportEtudiant_run.sh";
                 $file_path=$document->getAbsolutePath();
 
-                var_dump($jobs_path);
-                var_dump($file_path);
-                exec($jobs_path." --context-param source=".$file_path,$out,$code);
+
+                $out = array();
+                $code = "1";
+                try{
+                    $retour=exec($jobs_path."  --context_param source=".$file_path, $out, $code);
+
+                    $query2 = $em->createQuery(
+                        'SELECT p
+                        FROM GAlterUserBundle:User p
+                        WHERE p.id > :id'
+                    )->setParameter('id',$id);
+                    ;
+                    $etudiant_concerne=$query2->getResult();
+
+                    $this->sendEmailsTousers($etudiant_concerne);
+
+                }catch(Exception $ex){
+                    print($ex);
+                }
+
+                // var_dump($out);
+                //var_dump($code);
+                $retour=0;
+                if($retour == 0)
+                {
+                    //  print_r('   Importation réusssie: ');
+
+                }
+
+                else
+                {
+                    //print_r(" Echèc d'importation: ");
+                }
+
+            }
+        }
+        return $this->render('GAlterGestionBundle:Document:import.html.twig',
+            array('form' => $form->createView()));
+
+    }
+
+
+    public function sendEmailsTousers($users){
+        if(isset($users)){
+            foreach($users as $user){
+                $email=$user->getEmail();
+                $prenom=$user->getPrenom();
+
+                $swiftmessage = \Swift_Message::newInstance();
+                $swiftmessage->setSubject("Vous avez un nouveau message");
+                $message = "Bonjour M./Mme " .$prenom. " \n Le responsable vient d activer votre compte. \n Votre id est votre nom et  votre mot de passe est 1234 ";
+                $swiftmessage->setFrom("assoumourad@gmail.com")
+                    ->setTo($email)
+                    ->setBody($message);
+                $this->get('mailer')->send($swiftmessage);
+
+
             }
         }
 
-
-
-        return $this->render('GAlterGestionBundle:Document:import.html.twig',
-         array('form' => $form->createView()));
-          }
+    }
 }

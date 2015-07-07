@@ -44,6 +44,38 @@ class RapportController extends Controller
 
 
 
+
+
+
+    /**
+     * Lists all report by id etudiants.
+     *
+     * @Route("/voir/{id}", name="rapportpourtuteur")
+     * @Method("GET")
+     * @Template()
+     */
+    public function indextuteurAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $session = new session();
+        $user = $session->get('user');
+
+        $etudiant = $em->getRepository('GAlterUserBundle:Etudiant')->findBy(array('id'=>$id));
+
+
+
+
+        $entities= $etudiant[0]->getRapports();
+
+
+        return array(
+            'entities' => $entities,
+            'user' => $user
+        );
+    }
+
+
+
     /**
      * Creates a new Rapport entity.
      *
@@ -81,8 +113,10 @@ class RapportController extends Controller
             } catch (Exception $exc) {
                 print($exc);
             }
-            $this->sendpublicemail($etudiant);
-            return $this->redirect($this->generateUrl('rapport'));
+            $this->sendemailtuteur($etudiant);
+            $this->sendemailtuteurentreprise($etudiant);
+            $etudiantId=$this->getUser()->getId();
+            return $this->redirect($this->generateUrl('rapportpourtuteur', array('id' => $etudiantId)));
 
 
         }
@@ -100,7 +134,7 @@ class RapportController extends Controller
      * send email to tuteur
      * @param $etudiant
      */
-    private function sendpublicemail($etudiant, $message = null)
+    private function sendemailtuteur($etudiant, $message = null)
     {
 
 
@@ -113,15 +147,30 @@ class RapportController extends Controller
 
         $swiftmessage = \Swift_Message::newInstance();
         $swiftmessage->setSubject("Vous avez un nouveau message");
-        $message = "Bonjour M./Mme " + $nom_tuteur + " \n Votre apprenti " + $nom_apprenti + " a soumis un nouveau rapport";
+        $message = "Bonjour M./Mme " .$nom_tuteur . " \n Votre apprenti " .$nom_apprenti . " a soumis un nouveau compte-rendu";
         $swiftmessage->setFrom("assoumourad@gmail.com")
             ->setTo($email)
             ->setBody($message);
         $this->get('mailer')->send($swiftmessage);
     }
 
-    private function sendsecureemail($etudiant)
+    private function sendemailtuteurentreprise($etudiant)
     {
+
+        $tuteur = $etudiant->getTuteurEntreprise();
+        $userManager = $this->get('fos_user.user_manager');
+        $user = $userManager->findUserBy(array('id' => $tuteur->getId()));
+        $email = $user->getEmail();
+        $nom_tuteur = $tuteur->getUsername();
+        $nom_apprenti = $etudiant->getPrenom();
+
+        $swiftmessage = \Swift_Message::newInstance();
+        $swiftmessage->setSubject("Vous avez un nouveau message");
+        $message = "Bonjour M./Mme " .$nom_tuteur . " \n Votre apprenti " .$nom_apprenti . " a soumis un nouveau compte-rendu";
+        $swiftmessage->setFrom("assoumourad@gmail.com")
+            ->setTo($email)
+            ->setBody($message);
+        $this->get('mailer')->send($swiftmessage);
 
     }
 
@@ -233,7 +282,7 @@ class RapportController extends Controller
             'method' => 'PUT',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Valider'));
 
         return $form;
     }
@@ -264,7 +313,9 @@ class RapportController extends Controller
             $entity->settoCurrentdate();
             $em->flush();
 
-            return $this->redirect($this->generateUrl('rapport_edit', array('id' => $id)));
+
+            $etudiantId=$this->getUser()->getId();
+            return $this->redirect($this->generateUrl('rapportpourtuteur', array('id' => $etudiantId)));
         }
 
         return array(

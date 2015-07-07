@@ -10,6 +10,13 @@ mes_etudiant:
 
 
 
+
+mes_apprentis:
+    path:     /mesapprentis
+    defaults: { _controller: "GAlterUserBundle:etudiant:mesapprentis" }
+
+
+
 etudiant_show:
     path:     /{id}/show
     defaults: { _controller: "GAlterUserBundle:etudiant:show" }

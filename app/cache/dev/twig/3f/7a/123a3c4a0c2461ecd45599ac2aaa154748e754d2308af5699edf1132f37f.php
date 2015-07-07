@@ -40,7 +40,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         // line 82
         echo "    ";
         $this->displayBlock('javascripts_head', $context, $blocks);
-        // line 159
+        // line 161
         echo "
 
 
@@ -48,10 +48,10 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
 
 ";
-        // line 173
+        // line 175
         echo "
 ";
-        // line 183
+        // line 185
         echo "
 <body>
 
@@ -81,14 +81,14 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
 
         ";
-        // line 211
+        // line 213
         $context["var"] = $this->env->getExtension('fos_message')->getNbUnread();
-        // line 212
+        // line 214
         echo "
         ";
-        // line 213
+        // line 215
         if (((isset($context["var"]) ? $context["var"] : $this->getContext($context, "var")) == 0)) {
-            // line 214
+            // line 216
             echo "
 
         <i class=\"fa fa-envelope fa-fw\"></i>  <i class=\"fa fa-caret-down\"></i>
@@ -98,22 +98,22 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
         ";
         } else {
-            // line 222
+            // line 224
             echo "
 
             ";
-            // line 225
+            // line 227
             echo "
 
             <button class=\"btn btn-danger\" type=\"button\">
                 Messages <span class=\"badge\">";
-            // line 228
+            // line 230
             echo twig_escape_filter($this->env, $this->env->getExtension('fos_message')->getNbUnread(), "html", null, true);
             echo "</span><i class=\"fa fa-caret-down\"></i>
             </button>
         ";
         }
-        // line 231
+        // line 233
         echo "
 
 
@@ -123,7 +123,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
         <li>
             <a href=\"";
-        // line 239
+        // line 241
         echo $this->env->getExtension('routing')->getUrl("fos_message_thread_new");
         echo "\">";
         echo $this->env->getExtension('translator')->getTranslator()->trans("send_new", array(), "FOSMessageBundle");
@@ -132,7 +132,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         <li class=\"divider\"></li>
         <li>
             <a href=\"";
-        // line 243
+        // line 245
         echo $this->env->getExtension('routing')->getUrl("fos_message_inbox");
         echo "\">";
         echo $this->env->getExtension('translator')->getTranslator()->trans("inbox", array(), "FOSMessageBundle");
@@ -141,7 +141,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         <li class=\"divider\"></li>
         <li>
             <a href=\"";
-        // line 247
+        // line 249
         echo $this->env->getExtension('routing')->getUrl("fos_message_sent");
         echo "\">";
         echo $this->env->getExtension('translator')->getTranslator()->trans("sent", array(), "FOSMessageBundle");
@@ -152,7 +152,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         <li class=\"divider\"></li>
         <li>
             <a href=\"";
-        // line 253
+        // line 255
         echo $this->env->getExtension('routing')->getUrl("fos_message_deleted");
         echo "\">";
         echo $this->env->getExtension('translator')->getTranslator()->trans("deleted", array(), "FOSMessageBundle");
@@ -313,7 +313,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         </li>
         <li class=\"divider\"></li>
         <li> <a href=\"";
-        // line 409
+        // line 411
         echo $this->env->getExtension('routing')->getPath("fos_user_security_logout");
         echo "\">  Deconnexion</a>
         </li>
@@ -341,37 +341,37 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
 
             ";
-        // line 434
+        // line 436
         if ($this->env->getExtension('security')->isGranted("ROLE_ADMIN")) {
-            // line 435
+            // line 437
             echo "            <li>
                 <a href=\"";
-            // line 436
+            // line 438
             echo $this->env->getExtension('routing')->getPath("etudiant");
             echo "\"><i class=\"fa fa-dashboard fa-fw\"></i> Gestion des étudiants</a>
             </li>
 
             <li>
                 <a href=\"";
-            // line 440
+            // line 442
             echo $this->env->getExtension('routing')->getPath("user");
             echo "\"><i class=\"fa fa-table fa-fw\"></i> Gestion des responsables</a>
             </li>
             <li>
                 <a href=\"";
-            // line 443
+            // line 445
             echo $this->env->getExtension('routing')->getPath("formation");
             echo "\"><i class=\"fa fa-edit fa-fw\"></i> Gestion des formations</a>
             </li>
             ";
         }
-        // line 446
+        // line 448
         echo "
 
             ";
-        // line 448
+        // line 450
         if ($this->env->getExtension('security')->isGranted("ROLE_RESPONSABLE")) {
-            // line 449
+            // line 451
             echo "                <li>
                     <a href=\"#\"><i class=\"fa fa-dashboard fa-fw\"></i> Menu responsable</a>
                 </li>
@@ -382,14 +382,14 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
                     <a href=\"#\"><i class=\"fa fa-dashboard fa-fw\"></i> Menu responsable</a>                </li>
             ";
         }
-        // line 458
+        // line 460
         echo "
 
 
             ";
-        // line 461
+        // line 463
         if ($this->env->getExtension('security')->isGranted("ROLE_TUTEUR")) {
-            // line 462
+            // line 464
             echo "                <li>
                     <a href=\"#\"><i class=\"fa fa-dashboard fa-fw\"></i> menu tuteur</a>
                 </li>
@@ -402,14 +402,14 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
                 </li>
             ";
         }
-        // line 473
+        // line 475
         echo "
 
 
             ";
-        // line 476
+        // line 478
         if ($this->env->getExtension('security')->isGranted("ROLE_ETUDIANT")) {
-            // line 477
+            // line 479
             echo "                <li>
                     <a href=\"#\"><i class=\"fa fa-dashboard fa-fw\"></i> menu etudiant</a>
                 </li>
@@ -418,11 +418,14 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
                     <a href=\"#\"><i class=\"fa fa-dashboard fa-fw\"></i> menu etudiant</a>
                 </li>
                 <li>
-                    <a href=\"#\"><i class=\"fa fa-dashboard fa-fw\"></i> menu etudiant</a>
+                    <a href=\"";
+            // line 487
+            echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("rapportpourtuteur", array("id" => $this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "getId", array(), "method"))), "html", null, true);
+            echo "\"><i class=\"fa fa-dashboard fa-fw\"></i> consulter mes rapports</a>
                 </li>
             ";
         }
-        // line 488
+        // line 490
         echo "
         </ul>
     </div>
@@ -437,7 +440,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 <div class=\"row\">
     <div class=\"col-lg-12\">
        <div class=\"text-center\">  <h1 class=\"page-header\" >  ";
-        // line 501
+        // line 503
         $this->displayBlock('titre', $context, $blocks);
         echo "</h1> </div>
     </div>
@@ -446,9 +449,9 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 </div>
 <!-- /.row -->
 ";
-        // line 507
+        // line 509
         $this->displayBlock('corps', $context, $blocks);
-        // line 1022
+        // line 1024
         echo "
 </body>
 
@@ -562,6 +565,8 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         echo "
         <script src=\"//code.jquery.com/jquery-1.10.2.min.js\"></script>
         <script src=\"//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js\"></script>
+
+
         <script type=\"text/javascript\">
             \$(document).ready(function () {
                 var navListItems = \$('div.setup-panel div a'),
@@ -613,52 +618,52 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
         <!-- jQuery -->
         <script src=";
-        // line 136
+        // line 138
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/jquery.min.js"), "html", null, true);
         echo "> </script>
 
 
         <script src=";
-        // line 139
+        // line 141
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/jquery.steps.js"), "html", null, true);
         echo "> </script>
         <script src=";
-        // line 140
+        // line 142
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("lib/ckeditor/ckeditor.js"), "html", null, true);
         echo "> </script>
         <script src=";
-        // line 141
+        // line 143
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/functions.js"), "html", null, true);
         echo "> </script>
 
         ";
-        // line 144
+        // line 146
         echo "        ";
-        // line 145
+        // line 147
         echo "
         <!-- Metis Menu Plugin JavaScript -->
         <script src=";
-        // line 147
+        // line 149
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/metisMenu.min.js"), "html", null, true);
         echo " ></script>
 
         <!-- Morris Charts JavaScript -->
         <script src=";
-        // line 150
+        // line 152
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/raphael-min.js"), "html", null, true);
         echo " ></script>
         <script src=";
-        // line 151
+        // line 153
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/morris.min.js"), "html", null, true);
         echo " ></script>
         <script src=";
-        // line 152
+        // line 154
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/morris-data.js"), "html", null, true);
         echo "  ></script>
 
         <!-- Custom Theme JavaScript -->
         <script src=";
-        // line 155
+        // line 157
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("JS/sb-admin-2.js"), "html", null, true);
         echo "></script>
 
@@ -666,16 +671,16 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
     ";
     }
 
-    // line 501
+    // line 503
     public function block_titre($context, array $blocks = array())
     {
         echo "  ";
     }
 
-    // line 507
+    // line 509
     public function block_corps($context, array $blocks = array())
     {
-        // line 508
+        // line 510
         echo "<div class=\"row\">
     <div class=\"col-lg-3 col-md-6\">
         <div class=\"panel panel-primary\">
@@ -770,28 +775,24 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 <div class=\"row\">
 <div class=\"col-lg-8\">
 ";
-        // line 602
-        echo "    ";
-        // line 603
-        echo "        ";
         // line 604
-        echo "        ";
+        echo "    ";
         // line 605
-        echo "            ";
+        echo "        ";
         // line 606
-        echo "                ";
+        echo "        ";
         // line 607
-        echo "                    ";
+        echo "            ";
         // line 608
-        echo "                    ";
+        echo "                ";
         // line 609
-        echo "                ";
+        echo "                    ";
         // line 610
-        echo "                ";
+        echo "                    ";
         // line 611
-        echo "                    ";
+        echo "                ";
         // line 612
-        echo "                    ";
+        echo "                ";
         // line 613
         echo "                    ";
         // line 614
@@ -807,25 +808,29 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
         // line 619
         echo "                    ";
         // line 620
-        echo "                ";
+        echo "                    ";
         // line 621
-        echo "            ";
+        echo "                    ";
         // line 622
-        echo "        ";
+        echo "                ";
         // line 623
-        echo "    ";
+        echo "            ";
         // line 624
-        echo "    ";
+        echo "        ";
         // line 625
         echo "    ";
         // line 626
+        echo "    ";
+        // line 627
+        echo "    ";
+        // line 628
         echo "
         ";
-        // line 628
-        echo "    ";
-        // line 629
+        // line 630
         echo "    ";
         // line 631
+        echo "    ";
+        // line 633
         echo "<!-- /.panel -->
 <div class=\"panel panel-default\">
     <div class=\"panel-heading\">
@@ -922,7 +927,7 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
             <div class=\"col-lg-8\">
 
                 ";
-        // line 727
+        // line 729
         echo "                mon test
             </div>
             <!-- /.col-lg-8 (nested) -->
@@ -1232,6 +1237,6 @@ class __TwigTemplate_3f7a123a3c4a0c2461ecd45599ac2aaa154748e754d2308af5699edf113
 
     public function getDebugInfo()
     {
-        return array (  926 => 727,  829 => 631,  827 => 629,  825 => 628,  822 => 626,  820 => 625,  818 => 624,  816 => 623,  814 => 622,  812 => 621,  810 => 620,  808 => 619,  806 => 618,  804 => 617,  802 => 616,  800 => 615,  798 => 614,  796 => 613,  794 => 612,  792 => 611,  790 => 610,  788 => 609,  786 => 608,  784 => 607,  782 => 606,  780 => 605,  778 => 604,  776 => 603,  774 => 602,  679 => 508,  676 => 507,  670 => 501,  662 => 155,  656 => 152,  652 => 151,  648 => 150,  642 => 147,  638 => 145,  636 => 144,  631 => 141,  627 => 140,  623 => 139,  617 => 136,  562 => 83,  559 => 82,  554 => 80,  548 => 76,  542 => 73,  536 => 70,  530 => 67,  524 => 64,  520 => 62,  469 => 12,  466 => 11,  460 => 4,  452 => 1022,  450 => 507,  441 => 501,  426 => 488,  413 => 477,  411 => 476,  406 => 473,  393 => 462,  391 => 461,  386 => 458,  375 => 449,  373 => 448,  369 => 446,  363 => 443,  357 => 440,  350 => 436,  347 => 435,  345 => 434,  317 => 409,  156 => 253,  145 => 247,  136 => 243,  127 => 239,  117 => 231,  111 => 228,  106 => 225,  102 => 222,  92 => 214,  90 => 213,  87 => 212,  85 => 211,  55 => 183,  52 => 173,  44 => 159,  41 => 82,  39 => 11,  29 => 4,  24 => 1,);
+        return array (  931 => 729,  834 => 633,  832 => 631,  830 => 630,  827 => 628,  825 => 627,  823 => 626,  821 => 625,  819 => 624,  817 => 623,  815 => 622,  813 => 621,  811 => 620,  809 => 619,  807 => 618,  805 => 617,  803 => 616,  801 => 615,  799 => 614,  797 => 613,  795 => 612,  793 => 611,  791 => 610,  789 => 609,  787 => 608,  785 => 607,  783 => 606,  781 => 605,  779 => 604,  684 => 510,  681 => 509,  675 => 503,  667 => 157,  661 => 154,  657 => 153,  653 => 152,  647 => 149,  643 => 147,  641 => 146,  636 => 143,  632 => 142,  628 => 141,  622 => 138,  565 => 83,  562 => 82,  557 => 80,  551 => 76,  545 => 73,  539 => 70,  533 => 67,  527 => 64,  523 => 62,  472 => 12,  469 => 11,  463 => 4,  455 => 1024,  453 => 509,  444 => 503,  429 => 490,  423 => 487,  413 => 479,  411 => 478,  406 => 475,  393 => 464,  391 => 463,  386 => 460,  375 => 451,  373 => 450,  369 => 448,  363 => 445,  357 => 442,  350 => 438,  347 => 437,  345 => 436,  317 => 411,  156 => 255,  145 => 249,  136 => 245,  127 => 241,  117 => 233,  111 => 230,  106 => 227,  102 => 224,  92 => 216,  90 => 215,  87 => 214,  85 => 213,  55 => 185,  52 => 175,  44 => 161,  41 => 82,  39 => 11,  29 => 4,  24 => 1,);
     }
 }

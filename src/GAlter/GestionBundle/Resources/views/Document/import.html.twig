@@ -1,10 +1,46 @@
-<h1>Upload File</h1>
+{#<h1>Upload File</h1>#}
 
-{#<form action="#" method="post" {{ form_enctype(form) }}>#}
+{#&#123;&#35;<form action="#" method="post" {{ form_enctype(form) }}>&#35;&#125;#}
+    {#&#123;&#35;{{ form_widget(form) }}&#35;&#125;#}
+
+    {#&#123;&#35;<input type="submit" value="Upload Document" />&#35;&#125;#}
+
+    {#{{ form_start(form)}}#}
     {#{{ form_widget(form) }}#}
+    {#{{ form_end(form) }}#}
 
-    {#<input type="submit" value="Upload Document" />#}
 
-    {{ form_start(form)}}
-    {{ form_widget(form) }}
-    {{ form_end(form) }}
+{% extends 'GAlterUserBundle::layout.html.twig' %}
+
+
+{% block titre %}  Importer un fichier excel {% endblock %}
+{% block corps %}
+    <div class="well" style="height: 170px">
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}}) }}
+        {{ form_errors(form) }}
+
+        <div class="form-group">
+            {{ form_label(form.name, "Nom du fichier", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.name) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.name, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+        <div class="form-group">
+            {{ form_label(form.file, "Fichier", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(form.file) }}
+            <div class="col-sm-4">
+                {{ form_widget(form.file, {'attr': {'class': ' col-sm-5 form-control'}}) }}
+            </div>
+
+        </div>
+
+        {#{{ form_widget(form.Submit, {'attr': {'class' : ' col-sm-offset-5  col-sm-3 btn btn-primary'}}) }}#}
+
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
+
+

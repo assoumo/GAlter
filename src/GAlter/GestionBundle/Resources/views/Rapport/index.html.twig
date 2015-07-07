@@ -99,11 +99,9 @@
 
 
                             <div class="btn-groupe" role="toolbar">
-                            {% if is_granted("ROLE_ETUDIANT") %}
                             <a class="btn btn-success glyphicon glyphicon-pencil" href="{{ path('rapport_edit',{'id': entity.id}) }}"></a>
                             <a class="btn btn-danger glyphicon  glyphicon-trash" href="{{ path('rapport_delete',{'id':entity.id}) }}"></a>
 
-                            {% endif %}
                             {# visible  uniquemen t#}
                             {% if is_granted("ROLE_TUTEUR")%}
                             <a class="btn btn-primary glyphicon glyphicon-comment" href="{{ path('remarquetuteurrapport_new',{'id': entity.id}) }}"></a>

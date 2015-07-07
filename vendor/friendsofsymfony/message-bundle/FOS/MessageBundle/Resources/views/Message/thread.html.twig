@@ -1,17 +1,28 @@
-{% extends "GAlterUserBundle::layout.html.twig"%}
+{% extends 'GAlterUserBundle::layout.html.twig' %}
 
 {% block corps%}
 
-<h2>{{ thread.subject }}</h2>
+<h2>Sujet de la conversation :{{ thread.subject }}</h2>
 
 {% for message in thread.messages %}
+
+
     <div class="messenger_thread_message">
         <div class="messenger_thread_message_info">
+            <div class="well">
             {% trans with {'%sender%': message.sender|e, '%date%': message.createdAt|date} from 'FOSMessageBundle' %}message_info{% endtrans %}
-        </div>
+                <br>
+                {{ message.body }}
+
+            </div>
+            </div>
 
         <div class="messenger_thread_message_body" id="message_{{ message.id }}">
-            {{ message.body }}
+            <div class="success">
+            {#{{ message.body }}#}
+
+                </div>
+
         </div>
     </div>
 {% endfor %}

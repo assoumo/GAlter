@@ -1,0 +1,148 @@
+{% extends "GAlterUserBundle::layout.html.twig"%}
+
+{% block corps %}
+    {#<div class="container">#}
+        {#<div class="page-header">#}
+            {#<h1 id="timeline">Rapports</h1>#}
+        {#</div>#}
+
+
+        {#<ul class="timeline">#}
+            {#{% for entity in entities %}#}
+                {#<li>#}
+                    {#<div class="timeline-badge"><i class="glyphicon glyphicon-check"></i>#}
+                    {#</div>#}
+                    {#<div class="timeline-panel">#}
+                        {#<div class="timeline-heading">#}
+                            {#<h4 class="timeline-title">{{ entity.etudiant.prenom }}#}
+                            {#</h4>#}
+                            {#<p>#}
+                                {#<small class="text-muted"><i class="glyphicon glyphicon-briefcase"></i>#}
+                                    {#du {{ entity.periodedebut | date('Y-d-m')}} à {{ entity.periodefin | date('Y-d-m') }}#}
+                                {#</small>#}
+                            {#</p>#}
+                            {#<p>#}
+                                {#<small class="text-muted"><i class="glyphicon glyphicon-time"></i>#}
+                                    {#{{ entity.textaudit }} le {{ entity.date | date('Y-d-m')}}#}
+                                {#</small>#}
+                            {#</p>#}
+                        {#</div>#}
+                        {#<div class="timeline-body">#}
+                            {#{{ entity.contenu | raw}}#}
+
+                        {#</div>#}
+                        {#<div class="btn-groupe" role="toolbar">#}
+                            {#{% if is_granted("ROLE_ETUDIANT") %}#}
+                                {#<a class="btn btn-success glyphicon glyphicon-pencil" href="{{ path('rapport_edit',{'id': entity.id}) }}"></a>#}
+                                {#<a class="btn btn-danger glyphicon  glyphicon-trash" href="{{ path('rapport_delete',{'id':entity.id}) }}"></a>#}
+
+                            {#{% endif %}#}
+                          {#&#123;&#35; visible  uniquemen t&#35;&#125;#}
+                            {#{% if is_granted("ROLE_TUTEUR")%}#}
+                            {#<a class="btn btn-primary glyphicon glyphicon-comment" href="{{ path('remarquetuteurrapport_new',{'id': entity.id}) }}"></a>#}
+                            {#<a class="btn btn-danger" href=""><span class=" glyphicon glyphicon-envelope"></span></a>#}
+
+                                {#&#123;&#35;{{ render(controller('GAlterGestionBundle:RemarqueTuteurRapport:new', { 'id':entity.id } )) }}&#35;&#125;#}
+                            {#{% endif %}#}
+
+                        {#</div>#}
+                    {#</div>#}
+                {#</li>#}
+                {#{% for remarque in entity.remarque %}#}
+                    {#<li>#}
+                        {#<div class="timeline-panel btn-info">#}
+                            {#<div class="timeline-heading">#}
+                                {#<h4 class="timeline-title"> Mr: {{remarque.tuteurId.prenom}}  {{ remarque.tuteurId.username  }} </h4>#}
+                            {#</div>#}
+                            {#<div class="timeline-body">#}
+                                {#{{ remarque.contenu }}#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</li>#}
+                    {#{% endfor %}#}
+
+
+            {#{% endfor %}#}
+        {#</ul>#}
+    {#</div>#}
+
+
+
+
+
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="text-center info">  <h2> <i class="fa fa-file-text"></i> Compte-rendus </h2></div>
+        </div>
+        <!-- /.panel-heading -->
+        <div class="panel-body">
+
+    {% if is_granted("ROLE_TUTEUR")%}
+            <a class="btn btn-success glyphicon glyphicon-pencil" href="{{ path('exportertout',{'id': entities.first.etudiant.id}) }}"> exporter</a>
+      {% endif %}
+            <ul class="timeline">
+                {% for entity in entities %}
+                <li>
+                    <div class="timeline-badge success"><i class="fa fa-graduation-cap"></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">{{ entity.etudiant.prenom }}</h4>
+                            <p><small class="text-muted"><i class="fa fa-clock-o"></i> {{ entity.textaudit}} {{ entity.date | date('d-m-Y H:m:i')}}</small>
+                            </p>
+                        </div>
+                        <div class="timeline-body">
+
+                        <div class="text-right" >   du {{ entity.periodedebut | date('Y-d-m')}} à {{ entity.periodefin | date('Y-d-m') }}  </div>
+
+
+                            <p>  {{ entity.contenu | raw}}</p>
+
+
+                            <div class="btn-groupe" role="toolbar">
+                            {% if is_granted("ROLE_ETUDIANT") %}
+                            <a class="btn btn-success glyphicon glyphicon-pencil" href="{{ path('rapport_edit',{'id': entity.id}) }}"> Editer</a>
+
+                            {% endif %}
+                            {# visible  uniquemen t#}
+                            {% if is_granted("ROLE_TUTEUR")%}
+                            <a class="btn btn-primary glyphicon glyphicon-comment" href="{{ path('remarquetuteurrapport_new',{'id': entity.id}) }}">remarque</a>
+                            {#<a class="btn btn-danger" href=""><span class=" glyphicon glyphicon-envelope"></span></a>#}
+
+
+                            {#{{ render(controller('GAlterGestionBundle:RemarqueTuteurRapport:new', { 'id':entity.id } )) }}#}
+                            {% endif %}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+
+                    {% for remarque in entity.remarque %}
+                <li class="timeline-inverted">
+
+
+                    <div class="timeline-badge warning"><i class="fa fa-user"></i>
+                    </div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title"> Mr: {{remarque.tuteurId.prenom}}  {{ remarque.tuteurId.username  }}</h4>
+                        </div>
+                        <div class="timeline-body">
+
+                            {{ remarque.contenu }}
+                        </div>
+                    </div>
+
+                </li>
+                    {% endfor %}
+               {% endfor %}
+            </ul>
+        </div>
+        <!-- /.panel-body -->
+    </div>
+
+
+{% endblock %}

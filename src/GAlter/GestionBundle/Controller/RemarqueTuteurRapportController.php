@@ -52,7 +52,9 @@ class RemarqueTuteurRapportController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('rapport'));
+            $id=$entity->getTuteurIdRapport()->getEtudiant()->getId();
+
+            return $this->redirect($this->generateUrl('rapportpourtuteur', array('id' =>$id)));
         }
 
         return $this->render('GAlterGestionBundle:RemarqueTuteurRapport:new.html.twig', array(
@@ -80,7 +82,7 @@ class RemarqueTuteurRapportController extends Controller
             'method' => 'POST',
         ));
 
-        $form->add('submit', 'submit', array('label' => 'Create'));
+        $form->add('submit', 'submit', array('label' => 'Envoyer'));
 
         return $form;
     }

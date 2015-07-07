@@ -24,7 +24,11 @@
 
                     <td class="text-center"><a href="{{ path('agenda_new',{'id':entity.id}) }}">  <button type="button" class="btn btn-danger">
                                 <span class="glyphicon glyphicon-wrench"></span> RDV
-                            </button> </a> </td>
+                            </button> </a>
+
+                        <a href="{{ path('rapportpourtuteur',{'id':entity.id}) }}">  <button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-off"></span> Lire compte rendu
+                            </button> </a></td>
 
                 </tr>
             {% endfor %}

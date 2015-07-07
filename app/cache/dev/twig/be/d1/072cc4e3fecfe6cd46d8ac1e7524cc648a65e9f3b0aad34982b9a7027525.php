@@ -8,15 +8,15 @@ class __TwigTemplate_bed1072cc4e3fecfe6cd46d8ac1e7524cc648a65e9f3b0aad34982b9a70
         parent::__construct($env);
 
         // line 1
-        $this->parent = $this->loadTemplate("GAlterUserBundle::layout.html.twig", "FOSMessageBundle:Message:inbox.html.twig", 1);
+        $this->parent = $this->loadTemplate("FOSMessageBundle::layout.html.twig", "FOSMessageBundle:Message:inbox.html.twig", 1);
         $this->blocks = array(
-            'corps' => array($this, 'block_corps'),
+            'fos_message_content' => array($this, 'block_fos_message_content'),
         );
     }
 
     protected function doGetParent(array $context)
     {
-        return "GAlterUserBundle::layout.html.twig";
+        return "FOSMessageBundle::layout.html.twig";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
@@ -25,7 +25,7 @@ class __TwigTemplate_bed1072cc4e3fecfe6cd46d8ac1e7524cc648a65e9f3b0aad34982b9a70
     }
 
     // line 3
-    public function block_corps($context, array $blocks = array())
+    public function block_fos_message_content($context, array $blocks = array())
     {
         // line 4
         echo "

@@ -31,11 +31,14 @@ class AgendaController extends Controller
     {
 
         $tuteur= $this->getUser();
+        $etudiant= $tuteur->getEtudiant();
+        $em = $this->getDoctrine()->getManager();
 
-       $etudiant= $tuteur->getEtudiant();
-
+        foreach($etudiant as $etu){
+        $agendas[]= $em->getRepository('GAlterGestionBundle:Agenda')->findBy(array('etudiant'=>$etu));
+        }
         return $this->render('GAlterGestionBundle:Agenda:index.html.twig', array(
-            'entities' => $etudiant,
+            'agendas' => $agendas,
         ));
     }
 
